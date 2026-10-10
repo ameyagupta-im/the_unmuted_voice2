@@ -1,0 +1,20 @@
+# Render Blueprint for the VANI live demo (src/web_app.py).
+# Render reads this file from the repository root: New + -> Blueprint -> pick this repo.
+services:
+  - type: web
+    name: vani-demo
+    runtime: python
+    plan: free                 # 512 MB; the app uses about 300 MB with the seller data loaded
+    region: singapore          # closest to India and Sarvam's API
+    branch: master
+    autoDeploy: true           # every push to master redeploys
+    buildCommand: pip install -r requirements.txt gunicorn
+    # One worker only: calls in progress are kept in this process's memory between turns.
+    # Threads let one call's slow Sarvam request not block another visitor.
+    startCommand: gunicorn --chdir src web_app:app --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 180
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.7          # pandas 3 needs Python 3.11+
+      - key: SARVAM_API_KEY
+        sync: false            # secret: Render asks for the value when the Blueprint is created; never commit it
