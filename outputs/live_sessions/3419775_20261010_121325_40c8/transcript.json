@@ -1,0 +1,192 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "info_whatsapp"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {
+    "business_status": "Not going well"
+  },
+  "turns": 4,
+  "final_delivery": {
+    "language": "en-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "DEFAULT",
+    "pace": 0.93,
+    "max_words": 24,
+    "empathy": 3,
+    "assertiveness": 3,
+    "goal": "info_whatsapp",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "goal_step": 3,
+      "refusals": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 2,
+      "t_sec": 43.5,
+      "kind": "goal",
+      "signal": "refused_with_reason",
+      "detector": "regex",
+      "seller_said": "But why is the meeting required? I don't want any meeting.",
+      "trigger": "no + reason",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "info_whatsapp"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'refused_with_reason': goal moves to info_whatsapp (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I am sorry to hear that ji. Our executive can help you with exactly this, and the meeting itself is free. Would you prefer an online meeting or an in-person visit?",
+      "after": "I am sorry to hear that ji. Our executive can help you with exactly this, and the meeting itself is free. Would you prefer an online meeting or an in-person visit?"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I understand ji. Since you do not want a meeting, I can just send the details on WhatsApp instead. Would you like me to do that?",
+      "after": "I understand ji. Since you do not want a meeting, I can just send the details on WhatsApp instead. Would you like me to do that?"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I can share the catalog and buyer details on WhatsApp ji. Shall I send it to your number?",
+      "after": "I can share the catalog and buyer details on WhatsApp ji. Shall I send it to your number?"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "I understand ji. I can share the catalog and buyer details on WhatsApp for you. Shall I go ahead and send it there?",
+      "after": "I understand ji. I can share the catalog and buyer details on WhatsApp for you."
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "I understand ji. I can share the catalog and buyer details on WhatsApp for you.",
+      "after": "I understand ji. I can share the catalog and buyer details on WhatsApp for you."
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "I understand ji. I can share the catalog and buyer details on WhatsApp for you.",
+      "after": "I understand ji. I can share the catalog and buyer details on WhatsApp for you."
+    },
+    {
+      "turn": 4,
+      "kind": "tier2_rejected",
+      "signal": "wants_whatsapp"
+    },
+    {
+      "turn": 4,
+      "kind": "outcome_rejected",
+      "proposed": "INFO_SENT"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "It's not going well, what can I do?"
+    },
+    {
+      "speaker": "vani",
+      "text": "I am sorry to hear that ji. Our executive can help you with exactly this, and the meeting itself is free. Would you prefer an online meeting or an in-person visit?"
+    },
+    {
+      "speaker": "seller",
+      "text": "But why is the meeting required? I don't want any meeting."
+    },
+    {
+      "speaker": "vani",
+      "text": "I understand ji. Since you do not want a meeting, I can just send the details on WhatsApp instead. Would you like me to do that?"
+    },
+    {
+      "speaker": "seller",
+      "text": "What details are it about? Ye wala catalog to batana padega."
+    },
+    {
+      "speaker": "vani",
+      "text": "I can share the catalog and buyer details on WhatsApp ji. Shall I send it to your number?"
+    },
+    {
+      "speaker": "seller",
+      "text": "About."
+    },
+    {
+      "speaker": "vani",
+      "text": "I understand ji. I can share the catalog and buyer details on WhatsApp for you."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "seller_id": 4118435,
+  "seller_type": "do_not_call",
+  "seller_type_label": "Do-not-call",
+  "seller_snapshot": {
+    "state": "Chandigarh",
+    "city": "Chandigarh",
+    "business_type": "Proprietorship",
+    "turnover": "5 - 25 Cr",
+    "category": "Bed Sheets",
+    "cqs": 9.0,
+    "enq_90d": 1.0,
+    "attempts": 9.0,
+    "meetings": 0,
+    "not_interested": 5.0,
+    "call_later": 0,
+    "bucket": "PIM",
+    "best_hour": null,
+    "own_english": null,
+    "seller_wps": null,
+    "exec_calls": 0,
+    "summary_flags": [],
+    "past_objections": {},
+    "last_summaries": [
+      "The agent introduced herself as Payal from IndiaMart and mentioned a previous conversation. The lead acknowledged the call and asked for the agent's name. The call disconnected abruptly before any further discussion.",
+      "The lead explicitly stated that they do not want to receive calls and asked the agent not to call them again. The lead also mentioned that they do not need any help."
+    ]
+  },
+  "goal": {
+    "value": null,
+    "reason": "do_not_call_requested=1: never dialled.",
+    "evidence": [
+      "policy:compliance",
+      "playbook"
+    ],
+    "confidence": "high"
+  },
+  "fallback_goals": [],
+  "voice": {},
+  "language": {},
+  "tone": {},
+  "conversation_plan": {},
+  "guardrails": [
+    "HARD STOP: do not call."
+  ],
+  "missing_fields": [],
+  "blocked": true,
+  "block_reason": "do_not_call_requested=1"
+}

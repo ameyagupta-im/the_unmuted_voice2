@@ -1,0 +1,208 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "callback"
+  ],
+  "final_outcome": "ESCALATED_EXIT",
+  "do_not_call": false,
+  "seller_disposition": "Frustrated",
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 3,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "CALM_EMPATHETIC",
+    "pace": 0.87,
+    "max_words": 20,
+    "empathy": 5,
+    "assertiveness": 1,
+    "goal": "callback",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 2,
+      "frustration": 2,
+      "goal_step": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 2,
+      "t_sec": 20.6,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Yaar kyon baar baar phone karte ho?",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 2,
+      "t_sec": 20.6,
+      "kind": "goal",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Yaar kyon baar baar phone karte ho?",
+      "trigger": "baar baar",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "callback"
+        ],
+        "stage": [
+          "understand",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'frustration': goal moves to callback (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 2,
+      "t_sec": 20.6,
+      "kind": "persona",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Yaar kyon baar baar phone karte ho?",
+      "trigger": "baar baar",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CALM_EMPATHETIC"
+        ],
+        "pace": [
+          0.93,
+          0.87
+        ],
+        "max_words": [
+          24,
+          20
+        ],
+        "empathy": [
+          3,
+          5
+        ],
+        "assertiveness": [
+          3,
+          1
+        ]
+      },
+      "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 38.5,
+      "kind": "end",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Abhi main bol raha hoon baar baar call karte ho, kal phir se call karogi aap log.",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "ESCALATED_EXIT"
+        ]
+      },
+      "reason": "Frustrated twice: end politely (ask limit 2).",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "repeat_sentence",
+      "action": "repaired",
+      "before": "Ji, I understand. I am Payal, IndiaMART's virtual assistant. I am calling because buyers in Chennai are sending enquiries for your Automatic Idli Making Machine. How is your business doing right now?",
+      "after": "Ji, I understand. I am Payal, IndiaMART's virtual assistant. How is your business doing right now?"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "Ji, I understand. I am Payal, IndiaMART's virtual assistant. How is your business doing right now?",
+      "after": "Ji, I understand. I am Payal, IndiaMART's virtual assistant. How is your business doing right now?"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "मुझे सच में बहुत खेद है कि आपको परेशानी हुई। मैं अभी आपसे कोई सवाल नहीं पूछूँगी। क्या मैं आपको कल सुबह 10 बजे के आसपास call कर लूँ?",
+      "after": "मुझे सच में बहुत खेद है कि आपको परेशानी हुई। मैं अभी आपसे कोई सवाल नहीं पूछूँगी। क्या मैं आपको कल सुबह 10 बजे के आसपास call कर लूँ?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "(silence)"
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, I understand. I am Payal, IndiaMART's virtual assistant. How is your business doing right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Yaar kyon baar baar phone karte ho?"
+    },
+    {
+      "speaker": "vani",
+      "text": "मुझे सच में बहुत खेद है कि आपको परेशानी हुई। मैं अभी आपसे कोई सवाल नहीं पूछूँगी। क्या मैं आपको कल सुबह 10 बजे के आसपास call कर लूँ?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Abhi main bol raha hoon baar baar call karte ho, kal phir se call karogi aap log."
+    },
+    {
+      "speaker": "vani",
+      "text": "परेशानी के लिए माफ़ी चाहती हूँ। मैं call यहीं समाप्त करती हूँ। धन्यवाद।"
+    }
+  ]
+}

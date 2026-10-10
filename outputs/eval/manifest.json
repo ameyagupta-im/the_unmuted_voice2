@@ -1,0 +1,51 @@
+{
+  "split": "by call: md5(attempt_id) % 10 < 7 -> dev, else test",
+  "signals.jsonl": {
+    "rows": 4718,
+    "by_split": {
+      "dev": 3300,
+      "test": 1418
+    }
+  },
+  "incorrect_mf.jsonl": {
+    "rows": 19617,
+    "by_split": {
+      "dev": 13815,
+      "test": 5802
+    }
+  },
+  "disposition.jsonl": {
+    "rows": 150821,
+    "by_split": {
+      "test": 45059,
+      "dev": 105762
+    }
+  },
+  "execdrop.jsonl": {
+    "rows": 18768,
+    "by_split": {
+      "dev": 13203,
+      "test": 5565
+    }
+  },
+  "act_labels.csv": {
+    "rows": 500,
+    "by_rule_act": {
+      "deny": 83,
+      "affirm": 83,
+      "closing": 83,
+      "request": 83,
+      "statement": 84,
+      "question": 84
+    },
+    "acts": [
+      "question",
+      "request",
+      "deny",
+      "closing",
+      "affirm",
+      "statement"
+    ],
+    "fill": "human_act with one of the acts"
+  }
+}

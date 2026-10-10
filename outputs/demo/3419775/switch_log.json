@@ -1,0 +1,192 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 4.6,
+    "kind": "persona",
+    "signal": "identity_question",
+    "detector": "regex",
+    "seller_said": "Who is this calling? Why are you reaching out to me?",
+    "trigger": "Who is this",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "TRANSPARENT"
+      ],
+      "max_words": [
+        24,
+        30
+      ],
+      "empathy": [
+        3,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 6: identity_question -> TRANSPARENT.",
+    "evidence": [
+      "playbook",
+      "E15_seller_questions"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 9.2,
+    "kind": "recovery",
+    "signal": "transparent_done",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "TRANSPARENT",
+        "DEFAULT"
+      ]
+    },
+    "reason": "TRANSPARENT lasts one reply; resume the previous mode.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 9.2,
+    "kind": "persona",
+    "signal": "confusion",
+    "detector": "regex",
+    "seller_said": "Business is okay, what exactly do you want from me?",
+    "trigger": "what exactly",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "SIMPLE"
+      ],
+      "pace": [
+        0.93,
+        0.83
+      ],
+      "max_words": [
+        24,
+        20
+      ]
+    },
+    "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+    "evidence": [
+      "playbook",
+      "E3_pace"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 23.9,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "SIMPLE",
+        "DEFAULT"
+      ],
+      "pace": [
+        0.83,
+        0.93
+      ],
+      "max_words": [
+        20,
+        24
+      ]
+    },
+    "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 23.9,
+    "kind": "goal",
+    "signal": "refused_with_reason",
+    "detector": "regex",
+    "seller_said": "No need for a meeting I will call you if I want anything.",
+    "trigger": "no + reason",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "info_whatsapp"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'refused_with_reason': goal moves to info_whatsapp (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 6,
+    "t_sec": 28.9,
+    "kind": "goal",
+    "signal": "not_interested",
+    "detector": "regex",
+    "seller_said": "No need just send me a WhatsApp message with the details.",
+    "trigger": "No need",
+    "change_made": {
+      "goal": [
+        "info_whatsapp",
+        "respectful_exit"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 6,
+    "t_sec": 31.5,
+    "kind": "goal",
+    "signal": "wants_whatsapp",
+    "detector": "llm",
+    "seller_said": "No need just send me a WhatsApp message with the details.",
+    "trigger": "Seller explicitly asked to send details on WhatsApp.",
+    "change_made": {
+      "goal": [
+        "respectful_exit",
+        "info_whatsapp"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'wants_whatsapp': goal moves to info_whatsapp (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 6,
+    "t_sec": 31.5,
+    "kind": "end",
+    "signal": "wants_whatsapp",
+    "detector": "llm",
+    "seller_said": "No need just send me a WhatsApp message with the details.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "INFO_SENT"
+      ]
+    },
+    "reason": "Seller wants details on WhatsApp: confirm and close.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

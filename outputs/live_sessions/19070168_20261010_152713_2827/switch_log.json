@@ -1,0 +1,72 @@
+[
+  {
+    "turn": 2,
+    "t_sec": 41.0,
+    "kind": "goal",
+    "signal": "not_interested",
+    "detector": "llm",
+    "seller_said": "Kiske saath set?",
+    "trigger": "Seller clearly said 'kabhi fayda hi nahi hua', a calm refusal.",
+    "change_made": {
+      "goal": [
+        "nurture",
+        "respectful_exit"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 58.8,
+    "kind": "persona",
+    "signal": "confusion",
+    "detector": "llm",
+    "seller_said": "Pehle toh yeh batao meeting kiske saath set karoge aur WhatsApp pe kya details bhejoge?",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "SIMPLE"
+      ],
+      "pace": [
+        1.1,
+        1.0
+      ],
+      "max_words": [
+        24,
+        20
+      ]
+    },
+    "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+    "evidence": [
+      "playbook",
+      "E3_pace"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 58.8,
+    "kind": "end",
+    "signal": "llm_outcome",
+    "detector": "llm",
+    "seller_said": "Pehle toh yeh batao meeting kiske saath set karoge aur WhatsApp pe kya details bhejoge?",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "RESPECTFUL_EXIT"
+      ]
+    },
+    "reason": "LLM proposed RESPECTFUL_EXIT; supported by what the seller said.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

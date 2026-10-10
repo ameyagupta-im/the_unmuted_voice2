@@ -1,0 +1,88 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 4.2,
+    "kind": "persona",
+    "signal": "identity_question",
+    "detector": "regex",
+    "seller_said": "Kaun bol raha hai IndiaMART se hai kya? Hyderabad mein buyers ki enquiries aayi hain aapne kaha.",
+    "trigger": "Kaun bol",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "TRANSPARENT"
+      ],
+      "max_words": [
+        17,
+        30
+      ],
+      "empathy": [
+        3,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 6: identity_question -> TRANSPARENT.",
+    "evidence": [
+      "playbook",
+      "E15_seller_questions"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 10.2,
+    "kind": "recovery",
+    "signal": "transparent_done",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "TRANSPARENT",
+        "DEFAULT"
+      ]
+    },
+    "reason": "TRANSPARENT lasts one reply; resume the previous mode.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 19.0,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Ledu malli call cheyakandi naaku time ledu.",
+    "trigger": "seller spoke te-IN",
+    "change_made": {
+      "language": [
+        "hi-IN",
+        "te-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 19.0,
+    "kind": "end",
+    "signal": "do_not_call",
+    "detector": "regex",
+    "seller_said": "Ledu malli call cheyakandi naaku time ledu.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "DO_NOT_CALL"
+      ]
+    },
+    "reason": "Seller asked not to be called: honour immediately.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

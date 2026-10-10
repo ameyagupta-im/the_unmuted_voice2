@@ -1,0 +1,63 @@
+[
+  {
+    "turn": 2,
+    "t_sec": 7.8,
+    "kind": "goal",
+    "signal": "refused_with_reason",
+    "detector": "regex",
+    "seller_said": "No I am not interested.",
+    "trigger": "no + reason",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "info_whatsapp"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'refused_with_reason': goal moves to info_whatsapp (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 16.9,
+    "kind": "end",
+    "signal": "wants_whatsapp",
+    "detector": "regex",
+    "seller_said": "Okay, send it on WhatsApp.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "INFO_SENT"
+      ]
+    },
+    "reason": "Seller wants details on WhatsApp: confirm and close. Confirm it, then ask whether anything else is needed; close on a no.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 18.0,
+    "kind": "end",
+    "signal": "nothing_more",
+    "detector": "utterance",
+    "seller_said": "No, that's all. Thank you.",
+    "trigger": "",
+    "change_made": {
+      "stage": [
+        "wrap_up",
+        "closed"
+      ]
+    },
+    "reason": "Seller has nothing more after INFO_SENT: goodbye.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

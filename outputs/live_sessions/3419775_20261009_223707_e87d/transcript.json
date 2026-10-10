@@ -1,0 +1,352 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "respectful_exit"
+  ],
+  "final_outcome": "RESPECTFUL_EXIT",
+  "do_not_call": false,
+  "seller_disposition": "Not interested",
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {
+    "uses_vani_catalog": true
+  },
+  "turns": 6,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "SIMPLE",
+    "pace": 0.83,
+    "max_words": 20,
+    "empathy": 4,
+    "assertiveness": 3,
+    "goal": "respectful_exit",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 2,
+      "goal_step": 2,
+      "refusals": 2
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 19.3,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Chaudah bada hai ji.",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 2,
+      "t_sec": 44.6,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Vani catalog.",
+      "trigger": "seller spoke en-IN",
+      "change_made": {
+        "language": [
+          "hi-IN",
+          "en-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 66.5,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Meeting nahi chahiye.",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 83.2,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Kaun si details?",
+      "trigger": "seller spoke en-IN",
+      "change_made": {
+        "language": [
+          "hi-IN",
+          "en-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 5,
+      "t_sec": 118.7,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Nahi mujhe kuch nahi chahiye, aap mera peecha chhod do bas.",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 5,
+      "t_sec": 118.7,
+      "kind": "goal",
+      "signal": "not_interested",
+      "detector": "regex",
+      "seller_said": "Nahi mujhe kuch nahi chahiye, aap mera peecha chhod do bas.",
+      "trigger": "nahi chahiye",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "respectful_exit"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 6,
+      "t_sec": 136.2,
+      "kind": "persona",
+      "signal": "confusion",
+      "detector": "regex",
+      "seller_said": "Are samajh nahi aa rahi, ek bhi baari neeche hai.",
+      "trigger": "samajh nahi",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "SIMPLE"
+        ],
+        "pace": [
+          0.93,
+          0.83
+        ],
+        "max_words": [
+          24,
+          20
+        ],
+        "empathy": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+      "evidence": [
+        "playbook",
+        "E3_pace"
+      ]
+    },
+    {
+      "turn": 6,
+      "t_sec": 136.7,
+      "kind": "end",
+      "signal": "llm_outcome",
+      "detector": "llm",
+      "seller_said": "Are samajh nahi aa rahi, ek bhi baari neeche hai.",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "RESPECTFUL_EXIT"
+        ]
+      },
+      "reason": "LLM proposed RESPECTFUL_EXIT; supported by what the seller said.",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, समझ गई। आपका काम बड़ा है। हम एक free meeting arrange कर सकते हैं जिससे आपको और buyers मिल सकें।",
+      "after": "जी, समझ गई। आपका काम बड़ा है। हम एक free meeting arrange कर सकते हैं जिससे आपको और buyers मिल सकें। आपका Automatic Idli Making Machine का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I understand you use the Vani catalog. I am IndiaMART's virtual assistant calling to help your Automatic Idli Making Machine business grow.",
+      "after": "I understand you use the Vani catalog. I am IndiaMART's virtual assistant calling to help your Automatic Idli Making Machine business grow. Shall I set up a short meeting with our executive, online or at your place?"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "pitch_after_no",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "ठीक है ji, कोई बात नहीं। क्या मैं जान सकती हूँ कि अभी meeting क्यों नहीं चाहिए, या फिर WhatsApp पर details भेज दूँ?",
+      "after": "ठीक है ji, कोई बात नहीं। क्या मैं जान सकती हूँ कि अभी meeting क्यों नहीं चाहिए, या फिर WhatsApp पर details भेज दूँ?"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I can share how our executive helps get more buyers for your Automatic Idli Making Machine. The meeting itself is completely free. Would you like to try a short online meeting, or should I send the details on WhatsApp?",
+      "after": "I can share how our executive helps get more buyers for your Automatic Idli Making Machine. The meeting itself is completely free. Would you like to try a short online meeting, or should I send the details on WhatsApp?"
+    },
+    {
+      "turn": 5,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 5,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 5,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, बिल्कुल समझ गई। मैं आगे disturb नहीं करूँगी।",
+      "after": "जी, बिल्कुल समझ गई। मैं आगे disturb नहीं करूँगी। आपको IndiaMART से कितनी बार call आना ठीक लगेगा?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Chaudah bada hai ji."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, समझ गई। आपका काम बड़ा है। हम एक free meeting arrange कर सकते हैं जिससे आपको और buyers मिल सकें। आपका Automatic Idli Making Machine का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Vani catalog."
+    },
+    {
+      "speaker": "vani",
+      "text": "I understand you use the Vani catalog. I am IndiaMART's virtual assistant calling to help your Automatic Idli Making Machine business grow. Shall I set up a short meeting with our executive, online or at your place?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Meeting nahi chahiye."
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है ji, कोई बात नहीं। क्या मैं जान सकती हूँ कि अभी meeting क्यों नहीं चाहिए, या फिर WhatsApp पर details भेज दूँ?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Kaun si details?"
+    },
+    {
+      "speaker": "vani",
+      "text": "I can share how our executive helps get more buyers for your Automatic Idli Making Machine. The meeting itself is completely free. Would you like to try a short online meeting, or should I send the details on WhatsApp?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi mujhe kuch nahi chahiye, aap mera peecha chhod do bas."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, बिल्कुल समझ गई। मैं आगे disturb नहीं करूँगी। आपको IndiaMART से कितनी बार call आना ठीक लगेगा?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Are samajh nahi aa rahi, ek bhi baari neeche hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, माफ़ी चाहती हूँ। कोई बात नहीं, समय देने के लिए धन्यवाद। आपका दिन शुभ हो।"
+    }
+  ]
+}

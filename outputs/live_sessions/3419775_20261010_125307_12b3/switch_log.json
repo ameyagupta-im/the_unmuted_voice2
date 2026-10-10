@@ -1,0 +1,146 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 58.6,
+    "kind": "persona",
+    "signal": "confusion",
+    "detector": "regex",
+    "seller_said": "Like it's going good, the business is going good, achha chal raha hai, but ye matlab I have a doubt, ye query kya hai? Ye matlab inquiries kya bhej rahe hain sellers wagera, sorry buyers wagera.",
+    "trigger": "matlab",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "SIMPLE"
+      ],
+      "pace": [
+        0.93,
+        0.83
+      ],
+      "max_words": [
+        24,
+        20
+      ],
+      "empathy": [
+        3,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+    "evidence": [
+      "playbook",
+      "E3_pace"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 125.4,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "SIMPLE",
+        "DEFAULT"
+      ],
+      "pace": [
+        0.83,
+        0.93
+      ],
+      "max_words": [
+        20,
+        24
+      ]
+    },
+    "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 125.4,
+    "kind": "goal",
+    "signal": "refused_with_reason",
+    "detector": "regex",
+    "seller_said": "Nahi mujhe koi meeting nahi chahiye I don't require any meeting.",
+    "trigger": "no + reason",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "info_whatsapp"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'refused_with_reason': goal moves to info_whatsapp (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 185.6,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Nahi, mujhe koi details nahi chahiye.",
+    "trigger": "seller spoke hi-IN",
+    "change_made": {
+      "language": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 185.6,
+    "kind": "goal",
+    "signal": "not_interested",
+    "detector": "regex",
+    "seller_said": "Nahi, mujhe koi details nahi chahiye.",
+    "trigger": "nahi chahiye",
+    "change_made": {
+      "goal": [
+        "info_whatsapp",
+        "respectful_exit"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 6,
+    "t_sec": 200.7,
+    "kind": "end",
+    "signal": "not_interested",
+    "detector": "regex",
+    "seller_said": "Mujhe ek bhi baari call nahi chahiye.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "RESPECTFUL_EXIT"
+      ]
+    },
+    "reason": "Refusal limit (2) reached: respectful exit.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

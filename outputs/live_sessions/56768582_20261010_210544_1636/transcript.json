@@ -1,0 +1,506 @@
+{
+  "seller_id": 56768582,
+  "seller_type": "Busy business owner",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "callback",
+    "info_whatsapp",
+    "respectful_exit"
+  ],
+  "final_outcome": "RESPECTFUL_EXIT",
+  "do_not_call": false,
+  "seller_disposition": "Not interested",
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 8,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "shubh_hi_customer",
+    "gender": "male",
+    "mode": "DEFAULT",
+    "pace": 0.98,
+    "max_words": 17,
+    "empathy": 3,
+    "assertiveness": 4,
+    "goal": "respectful_exit",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "frustration": 1,
+      "goal_step": 2,
+      "buylead": 1,
+      "connectivity": 1,
+      "refusals": 2
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 20.7,
+      "kind": "goal",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Yaar bahut bekaar chal raha hai bhai, bahut zyada pareshan hoon, pata nahi kya ho raha hai business mein.",
+      "trigger": "pareshan",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "callback"
+        ],
+        "stage": [
+          "understand",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'frustration': goal moves to callback (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 1,
+      "t_sec": 20.7,
+      "kind": "persona",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Yaar bahut bekaar chal raha hai bhai, bahut zyada pareshan hoon, pata nahi kya ho raha hai business mein.",
+      "trigger": "pareshan",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CALM_EMPATHETIC"
+        ],
+        "pace": [
+          0.98,
+          0.92
+        ],
+        "max_words": [
+          17,
+          20
+        ],
+        "empathy": [
+          3,
+          5
+        ],
+        "assertiveness": [
+          4,
+          1
+        ]
+      },
+      "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 1,
+      "t_sec": 23.7,
+      "kind": "clarify",
+      "signal": "sarcasm",
+      "detector": "llm",
+      "seller_said": "Yaar bahut bekaar chal raha hai bhai, bahut zyada pareshan hoon, pata nahi kya ho raha hai business mein.",
+      "trigger": "",
+      "change_made": {
+        "sarcasm": [
+          false,
+          true
+        ]
+      },
+      "reason": "Seller expressed strong frustration and being troubled by business issues.",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration",
+        "live:3419775_20261009_231212"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 73.5,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "regex:explicit_request",
+      "seller_said": "Are are are kahan ja rahe ho? Main toh yeh bol raha tha aap abhi mujhe call kar do, maine toh Telugu mein kuch bola hi nahi.",
+      "trigger": "Telugu mein",
+      "change_made": {
+        "language": [
+          "hi-IN",
+          "te-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 79.3,
+      "kind": "goal",
+      "signal": "goal_ask_limit",
+      "detector": "engine",
+      "seller_said": "Are are are kahan ja rahe ho? Main toh yeh bol raha tha aap abhi mujhe call kar do, maine toh Telugu mein kuch bola hi nahi.",
+      "trigger": "goal ask limit reached",
+      "change_made": {
+        "goal": [
+          "callback",
+          "info_whatsapp"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'goal_ask_limit': goal moves to info_whatsapp (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 93.7,
+      "kind": "persona",
+      "signal": "connectivity",
+      "detector": "silence",
+      "seller_said": "(silence)",
+      "trigger": "no speech heard",
+      "change_made": {
+        "mode": [
+          "CALM_EMPATHETIC",
+          "CLEAR_AUDIO"
+        ],
+        "pace": [
+          0.92,
+          0.9
+        ],
+        "max_words": [
+          20,
+          14
+        ],
+        "empathy": [
+          5,
+          3
+        ],
+        "assertiveness": [
+          1,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    },
+    {
+      "turn": 6,
+      "t_sec": 132.2,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "CLEAR_AUDIO",
+          "DEFAULT"
+        ],
+        "pace": [
+          0.9,
+          0.98
+        ],
+        "max_words": [
+          14,
+          17
+        ]
+      },
+      "reason": "Two turns without the signal behind CLEAR_AUDIO: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 7,
+      "t_sec": 144.2,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "regex:explicit_request",
+      "seller_said": "Behenchod Hindi mein baat kar le.",
+      "trigger": "Hindi mein",
+      "change_made": {
+        "language": [
+          "te-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 7,
+      "t_sec": 146.7,
+      "kind": "goal",
+      "signal": "not_interested",
+      "detector": "llm",
+      "seller_said": "Behenchod Hindi mein baat kar le.",
+      "trigger": "Seller clearly declined further engagement by not responding to the ask and showing disinterest.",
+      "change_made": {
+        "goal": [
+          "info_whatsapp",
+          "respectful_exit"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 8,
+      "t_sec": 159.8,
+      "kind": "end",
+      "signal": "llm_outcome",
+      "detector": "llm",
+      "seller_said": "Haan main bol raha tha abhi call kar le.",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "RESPECTFUL_EXIT"
+        ]
+      },
+      "reason": "LLM proposed RESPECTFUL_EXIT; supported by what the seller said.",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "no_question",
+      "action": "repaired",
+      "before": "जी, मैं सुन रहा हूँ। Hyderabad में आपके De Oiled Rice Bran के buyers IndiaMART पर enquiry भेज रहे हैं, पिछले 90 दिन में आपको 7 enquiries आई हैं। जो seller जल्दी reply करते हैं और catalog पूरा रखते हैं, उन्हें ज़्यादा orders मिलते हैं — हमारे executive यही free में set up कर देते हैं।",
+      "after": "जी, मैं सुन रहा हूँ। Hyderabad में आपके De Oiled Rice Bran के buyers IndiaMART पर enquiry भेज रहे हैं, पिछले 90 दिन में आपको 7 enquiries आई हैं। जो seller जल्दी reply करते हैं और catalog पूरा रखते हैं, उन्हें ज़्यादा orders मिलते हैं — हमारे executive यही free में set up कर देते हैं। आपको किस time call करना ठीक रहेगा?"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "సరే ji, మీరు BuyLeads గురించి అడిగారు. details నేను WhatsApp లో పంపిస్తాను. పంపించమంటారా?",
+      "after": "సరే ji, మీరు BuyLeads గురించి అడిగారు. details నేను WhatsApp లో పంపిస్తాను. పంపించమంటారా?"
+    },
+    {
+      "turn": 5,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    },
+    {
+      "turn": 6,
+      "kind": "script",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 6,
+      "kind": "script",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 6,
+      "kind": "script",
+      "action": "repaired",
+      "before": "Ji, Hindi lo matladutunna. Hyderabad lo De Oiled Rice Bran buyers enquiries bhejuthunnaru, last 90 days lo 7 vachayi. Details WhatsApp lo pampamantara?",
+      "after": "జి, హిందీ-లో మాట్లాడుతున్నా. హైదరాబాద్-లో డీ ఆయిల్డ్ రైస్ బ్రాన్ బయర్స్ ఎన్‌క్వైరీస్ భుజస్తున్నారు, లాస్ట్ 90 డేస్-లో 7 వచ్చాయి. డీటెయిల్స్ వాట్సాప్‌‌లో పంపమంటారా?"
+    },
+    {
+      "turn": 7,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 7,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 7,
+      "kind": "pitch_after_complaint",
+      "action": "repaired",
+      "before": "ठीक है ji, समझ गया। अगर अभी meeting नहीं चाहिए तो मैं details WhatsApp पर भेज देता हूँ। क्या मैं भेज दूँ?",
+      "after": "ठीक है ji, समझ गया। क्या मैं भेज दूँ?"
+    },
+    {
+      "turn": 7,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "ठीक है ji, समझ गया। क्या मैं भेज दूँ?",
+      "after": "ठीक है ji, समझ गया।"
+    },
+    {
+      "turn": 7,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "ठीक है ji, समझ गया।",
+      "after": "ठीक है ji, समझ गया।"
+    },
+    {
+      "turn": 8,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    },
+    {
+      "turn": 8,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 8,
+      "kind": "tier2_rejected",
+      "signal": "wants_whatsapp"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Rohan बोल रहा हूँ। call इसलिए किया क्योंकि Hyderabad में आपकी De Oiled Rice Bran category में काफ़ी buyer enquiries आई हैं। आपका De Oiled Rice Bran का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Yaar bahut bekaar chal raha hai bhai, bahut zyada pareshan hoon, pata nahi kya ho raha hai business mein."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं सुन रहा हूँ। Hyderabad में आपके De Oiled Rice Bran के buyers IndiaMART पर enquiry भेज रहे हैं, पिछले 90 दिन में आपको 7 enquiries आई हैं। जो seller जल्दी reply करते हैं और catalog पूरा रखते हैं, उन्हें ज़्यादा orders मिलते हैं — हमारे executive यही free में set up कर देते हैं। आपको किस time call करना ठीक रहेगा?"
+    },
+    {
+      "speaker": "seller",
+      "text": "BuyLead to aapvanu che."
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है, अगर आप चाहें तो हम Telugu में भी बात कर सकते हैं। आप अपने IndiaMART seller dashboard में login करके BuyLeads section देख सकते हैं, website या app पर। …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "Are are are kahan ja rahe ho? Main toh yeh bol raha tha aap abhi mujhe call kar do, maine toh Telugu mein kuch bola hi nahi."
+    },
+    {
+      "speaker": "vani",
+      "text": "సరే ji, మీరు BuyLeads గురించి అడిగారు. details నేను WhatsApp లో పంపిస్తాను. పంపించమంటారా?"
+    },
+    {
+      "speaker": "seller",
+      "text": "(silence)"
+    },
+    {
+      "speaker": "vani",
+      "text": "Hello ji, can you hear me? This is Rohan from IndiaMART. call इसलिए किया क्योंकि Hyderabad में आपकी De Oiled Rice Bran category में काफ़ी buyer enquiries आई हैं."
+    },
+    {
+      "speaker": "seller",
+      "text": "Aap mujhe if you are listening to me main aapko bol raha hoon main Telugu mein baat nahi kiya aap meri baat sun bhi rahe ho."
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, నేను వింటున్నాను. Hyderabad లో De Oiled …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "Are I don't want you to speak in Telugu I want you speaking in Hindi."
+    },
+    {
+      "speaker": "vani",
+      "text": "జి, హిందీ-లో మాట్లాడుతున్నా. హైదరాబాద్-లో డీ ఆయిల్డ్ రైస్ బ్రాన్ బయర్స్ …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "Behenchod Hindi mein baat kar le."
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है ji, समझ गया।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Haan main bol raha tha abhi call kar le."
+    },
+    {
+      "speaker": "vani",
+      "text": "कोई बात नहीं, समय देने के लिए धन्यवाद। आपका दिन शुभ हो।"
+    }
+  ],
+  "facts": {
+    "business_status": [
+      {
+        "turn": 1,
+        "value": "bad",
+        "words": "Yaar bahut bekaar chal raha hai bhai, bahut zyada pareshan hoon, pata nahi kya ho raha hai business mein.",
+        "source": "llm"
+      },
+      {
+        "turn": 2,
+        "value": "bad",
+        "words": "BuyLead to aapvanu che.",
+        "source": "llm"
+      }
+    ]
+  },
+  "integrations": {
+    "crm": {
+      "ts": "2026-10-10T21:08:25+0530",
+      "mode": "dry_run",
+      "call_id": "56768582_20261010_210544_1636",
+      "seller_id": 56768582,
+      "vani_outcome": "RESPECTFUL_EXIT",
+      "disposition_label": "Not Interested",
+      "meeting_fixed": false,
+      "slot": null,
+      "do_not_call": false,
+      "goal_achieved": "no",
+      "primary_goal": "meeting",
+      "goal_history": [
+        "meeting",
+        "callback",
+        "info_whatsapp",
+        "respectful_exit"
+      ],
+      "seller_insights": {},
+      "turns": 8,
+      "completed": true
+    }
+  }
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "turn": 2,
+    "t_sec": 62.2,
+    "kind": "persona",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Bas call pe call karte rehte ho, inquiry kabhi aati nahi hai time ki aur pareshan aur ho jaate hain hum.",
+    "trigger": "pareshan",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CALM_EMPATHETIC"
+      ],
+      "pace": [
+        0.93,
+        0.87
+      ],
+      "max_words": [
+        18,
+        20
+      ]
+    },
+    "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 88.8,
+    "kind": "end",
+    "signal": "llm_outcome",
+    "detector": "llm",
+    "seller_said": "Bolo kya kya time slots hain?",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "COMPLAINT_LOGGED"
+      ]
+    },
+    "reason": "LLM proposed COMPLAINT_LOGGED; supported by what the seller said.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

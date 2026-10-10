@@ -1,0 +1,52 @@
+{
+  "seller_id": 245358089,
+  "seller_type": "do_not_call",
+  "seller_type_label": "Do-not-call",
+  "seller_snapshot": {
+    "state": "Gujarat",
+    "city": "Surat",
+    "business_type": "Proprietorship",
+    "turnover": "0 - 40 L",
+    "category": "Automotive Polish",
+    "cqs": 14.0,
+    "enq_90d": 0.0,
+    "attempts": 4.0,
+    "meetings": 0,
+    "not_interested": 2.0,
+    "call_later": 0,
+    "bucket": "PIM",
+    "best_hour": 16,
+    "own_english": null,
+    "seller_wps": null,
+    "exec_calls": 0,
+    "summary_flags": [
+      "callback",
+      "interest"
+    ],
+    "past_objections": {},
+    "last_summaries": [
+      "The agent called the lead regarding IndiaMART's paid services and proposed a meeting with a sales executive. The lead explicitly stated that they are not interested in a meeting and asked the agent to stop calling them and close their inquiry.",
+      "The lead was abusive and used inappropriate language during the call. The agent tried to de-escalate the situation but the lead continued to be abusive."
+    ]
+  },
+  "goal": {
+    "value": null,
+    "reason": "do_not_call_requested=1: never dialled.",
+    "evidence": [
+      "policy:compliance",
+      "playbook"
+    ],
+    "confidence": "high"
+  },
+  "fallback_goals": [],
+  "voice": {},
+  "language": {},
+  "tone": {},
+  "conversation_plan": {},
+  "guardrails": [
+    "HARD STOP: do not call."
+  ],
+  "missing_fields": [],
+  "blocked": true,
+  "block_reason": "do_not_call_requested=1"
+}

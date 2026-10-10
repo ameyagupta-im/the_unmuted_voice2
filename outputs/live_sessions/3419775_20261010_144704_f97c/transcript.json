@@ -1,0 +1,215 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "complaint_recovery"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 4,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "CALM_EMPATHETIC",
+    "pace": 0.87,
+    "max_words": 20,
+    "empathy": 5,
+    "assertiveness": 1,
+    "goal": "complaint_recovery",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 3,
+      "goal_step": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 14.0,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Lagana iska sabse pehle Indiaart theek kar do bhai, baaki baatein theek hai.",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 46.8,
+      "kind": "goal",
+      "signal": "complaint",
+      "detector": "regex",
+      "seller_said": "Lagega bhi ye dekhna us taraf, kya laptop hai bhai? Indiamart ka laptop kahan rakhta fake.",
+      "trigger": "fake",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "complaint_recovery"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'complaint': goal moves to complaint_recovery (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 46.8,
+      "kind": "persona",
+      "signal": "complaint",
+      "detector": "regex",
+      "seller_said": "Lagega bhi ye dekhna us taraf, kya laptop hai bhai? Indiamart ka laptop kahan rakhta fake.",
+      "trigger": "fake",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CALM_EMPATHETIC"
+        ],
+        "pace": [
+          0.93,
+          0.87
+        ],
+        "max_words": [
+          24,
+          20
+        ],
+        "empathy": [
+          3,
+          5
+        ],
+        "assertiveness": [
+          3,
+          1
+        ]
+      },
+      "reason": "Playbook scenario 4: complaint -> CALM_EMPATHETIC.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "understand_first",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, मैं IndiaMART की virtual assistant हूँ। आपके Automatic Idli Making Machine category में buyers enquiries भेज रहे हैं। आपका यह काम अभी कैसा चल रहा है?",
+      "after": "जी, मैं IndiaMART की virtual assistant हूँ। आपके Automatic Idli Making Machine category में buyers enquiries भेज रहे हैं। आपका यह काम अभी कैसा चल रहा है?"
+    },
+    {
+      "turn": 2,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, बिल्कुल। आपके Automatic Idli Making Machine category में buyers enquiries भेज रहे हैं, इसलिए एक free visit arrange हो सकती है।",
+      "after": "जी, बिल्कुल। आपके Automatic Idli Making Machine category में buyers enquiries भेज रहे हैं, इसलिए एक free visit arrange हो सकती है। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, मैं समझ गई और इसके लिए मैं सच में माफी चाहती हूँ। मैं आपकी यह शिकायत IndiaMART support team को भेज रही हूँ।",
+      "after": "जी, मैं समझ गई और इसके लिए मैं सच में माफी चाहती हूँ। मैं आपकी यह शिकायत IndiaMART support team को भेज रही हूँ। support team आपको किस time call करे?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Lagana iska sabse pehle Indiaart theek kar do bhai, baaki baatein theek hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं IndiaMART की virtual assistant हूँ। आपके Automatic Idli Making Machine category में buyers enquiries भेज रहे हैं। आपका यह काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Vani na IndiaMART par tyre hoy che."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, बिल्कुल। मैं आपकी भाषा में बात कर रही हूँ। आपके Automatic Idli Making Machine में buyers enquiries भेज रहे हैं, तो यह काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Jaoge?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, बिल्कुल। आपके Automatic Idli Making Machine category में buyers enquiries भेज रहे हैं, इसलिए एक free visit arrange हो सकती है। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Lagega bhi ye dekhna us taraf, kya laptop hai bhai? Indiamart ka laptop kahan rakhta fake."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं समझ गई और इसके लिए मैं सच में माफी चाहती हूँ। मैं आपकी यह शिकायत IndiaMART support team को भेज रही हूँ। support team आपको किस time call करे?"
+    }
+  ]
+}

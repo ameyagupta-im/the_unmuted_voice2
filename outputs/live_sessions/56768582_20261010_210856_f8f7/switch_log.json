@@ -1,0 +1,145 @@
+[
+  {
+    "turn": 2,
+    "t_sec": 42.5,
+    "kind": "persona",
+    "signal": "confusion",
+    "detector": "regex",
+    "seller_said": "Nahi nahi kal shaam paanch baje nahi sir mujhe pata nahi mujhe samajh nahi aa raha kuch.",
+    "trigger": "samajh nahi",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "SIMPLE"
+      ],
+      "pace": [
+        0.98,
+        0.88
+      ],
+      "max_words": [
+        17,
+        20
+      ],
+      "empathy": [
+        3,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+    "evidence": [
+      "playbook",
+      "E3_pace"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 65.5,
+    "kind": "goal",
+    "signal": "refused_with_reason",
+    "detector": "regex",
+    "seller_said": "Mujhe meeting nahi chahiye, mujhe mujhe aise hi bata do ab kya karna hai, mujhe samajh nahi aa raha kuch.",
+    "trigger": "no + reason",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "info_whatsapp"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'refused_with_reason': goal moves to info_whatsapp (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 88.8,
+    "kind": "goal",
+    "signal": "not_interested",
+    "detector": "regex",
+    "seller_said": "Haan okay matlab WhatsApp bhi nahi chahiye mujhe aapke paas aur koi alternative nahi hai.",
+    "trigger": "nahi chahiye",
+    "change_made": {
+      "goal": [
+        "info_whatsapp",
+        "respectful_exit"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 113.6,
+    "kind": "end",
+    "signal": "llm_outcome",
+    "detector": "llm",
+    "seller_said": "Aap mujhe ek hafte baad call kar lena.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "CALLBACK_SCHEDULED"
+      ]
+    },
+    "reason": "LLM proposed CALLBACK_SCHEDULED; supported by what the seller said. Confirm it, then ask whether anything else is needed; close on a no.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 6,
+    "t_sec": 124.3,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "SIMPLE",
+        "DEFAULT"
+      ],
+      "pace": [
+        0.88,
+        0.98
+      ],
+      "max_words": [
+        20,
+        17
+      ]
+    },
+    "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 6,
+    "t_sec": 124.3,
+    "kind": "end",
+    "signal": "nothing_more",
+    "detector": "utterance",
+    "seller_said": "Nahi thank you.",
+    "trigger": "",
+    "change_made": {
+      "stage": [
+        "wrap_up",
+        "closed"
+      ]
+    },
+    "reason": "Seller has nothing more after CALLBACK_SCHEDULED: goodbye.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

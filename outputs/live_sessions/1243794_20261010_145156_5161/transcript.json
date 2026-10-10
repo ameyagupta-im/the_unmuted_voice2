@@ -1,0 +1,85 @@
+{
+  "seller_id": 1243794,
+  "seller_type": "Fatigued repeat lead",
+  "primary_goal": "complaint_recovery",
+  "goal_history": [
+    "complaint_recovery"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 1,
+  "final_delivery": {
+    "language": "en-IN",
+    "speaker": "kavya_hi_conversational",
+    "gender": "female",
+    "mode": "DEFAULT",
+    "pace": 0.93,
+    "max_words": 18,
+    "empathy": 5,
+    "assertiveness": 1,
+    "goal": "complaint_recovery",
+    "stage": "understand",
+    "counts": {
+      "understanding_question": 2
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 15.4,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "",
+      "trigger": "seller spoke en-IN",
+      "change_made": {
+        "language": [
+          "hi-IN",
+          "en-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I am Payal, IndiaMART's virtual assistant, calling again about the issue from your last interaction. I sincerely apologise for the trouble you faced. Could you please tell me what went wrong last time?",
+      "after": "I am Payal, IndiaMART's virtual assistant, calling again about the issue from your last interaction. I sincerely apologise for the trouble you faced. Could you please tell me what went wrong last time?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Payal बोल रही हूँ। दोबारा call करने के लिए माफ़ी चाहती हूँ। call इसलिए किया क्योंकि पिछली बार आपको जो परेशानी हुई, उसके बारे में आपसे बात करनी थी। पिछली बार क्या दिक्कत आई थी, ज़रा बताइए?"
+    },
+    {
+      "speaker": "seller",
+      "text": "(silence)"
+    },
+    {
+      "speaker": "vani",
+      "text": "I am Payal, IndiaMART's virtual assistant, calling again about the issue from your last interaction. I sincerely apologise for the trouble you faced. Could you please tell me what went wrong last time?"
+    }
+  ]
+}

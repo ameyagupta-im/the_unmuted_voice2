@@ -1,0 +1,693 @@
+{
+  "E1_personalisation": {
+    "claim": "A personalised script (seller-specific opening) fixes more meetings than the standard VANI script.",
+    "metric": "Meeting Fixed rate, answered calls, restricted to the lead buckets the trial ran on",
+    "group_a_label": "personalised-script trial",
+    "group_b_label": "main_vani",
+    "group_a": {
+      "rate": 0.1416,
+      "ci95": [
+        0.1125,
+        0.1768
+      ],
+      "n": 452
+    },
+    "group_b": {
+      "rate": 0.1145,
+      "ci95": [
+        0.1131,
+        0.1159
+      ],
+      "n": 203046
+    },
+    "diff_pp": 2.71,
+    "z": 1.81,
+    "strength": "weak",
+    "confound": "Trial is 452 calls; campaigns label General/Not-Interested differently, so NI is NOT compared across versions.",
+    "used_by": [
+      "conversation_plan.personalisation",
+      "conversation_plan.opening"
+    ],
+    "verdict": "inconclusive"
+  },
+  "E2_interrupted_opening": {
+    "claim": "When a seller cuts VANI's opening pitch off mid-sentence, the call is far more likely to be lost -- interruption is an early rush/impatience signal.",
+    "metric": "Not Interested rate",
+    "group_a_label": "seller interrupted the opening",
+    "group_b_label": "opening delivered in full",
+    "group_a": {
+      "rate": 0.4247,
+      "ci95": [
+        0.3911,
+        0.459
+      ],
+      "n": 810
+    },
+    "group_b": {
+      "rate": 0.2804,
+      "ci95": [
+        0.2721,
+        0.2889
+      ],
+      "n": 11022
+    },
+    "diff_pp": 14.43,
+    "z": 8.73,
+    "strength": "strong",
+    "used_by": [
+      "live_adaptation.rush",
+      "voice.pace",
+      "conversation_plan.opening"
+    ],
+    "verdict": "supported"
+  },
+  "E2b_brevity_for_terse_sellers": {
+    "claim": "Among fully-delivered openings, terse sellers (1-3 word replies) respond better to a short opening (<=30 words).",
+    "metric": "Meeting Fixed rate, terse sellers, non-interrupted openings only",
+    "group_a_label": "opening <=30 words",
+    "group_b_label": "opening >30 words",
+    "group_a": {
+      "rate": 0.1671,
+      "ci95": [
+        0.1529,
+        0.1822
+      ],
+      "n": 2496
+    },
+    "group_b": {
+      "rate": 0.3541,
+      "ci95": [
+        0.3313,
+        0.3775
+      ],
+      "n": 1641
+    },
+    "diff_pp": -18.7,
+    "z": -13.75,
+    "strength": "strong",
+    "confound": "Opening length still varies with campaign script, not randomised.",
+    "used_by": [
+      "voice.pace",
+      "conversation_plan.opening"
+    ],
+    "verdict": "contradicted"
+  },
+  "E3_pace": {
+    "claim": "Delivery speed matters differently by seller type: terse sellers tolerate faster delivery; chatty sellers do better slower.",
+    "metric": "Meeting Fixed rate; fast = top third of bot words/sec, slow = bottom third",
+    "bot_wps_terciles": [
+      2.95,
+      3.35
+    ],
+    "terse_sellers_fast_vs_slow": {
+      "group_a": {
+        "rate": 0.1805,
+        "ci95": [
+          0.1616,
+          0.2011
+        ],
+        "n": 1457
+      },
+      "group_b": {
+        "rate": 0.2917,
+        "ci95": [
+          0.2699,
+          0.3145
+        ],
+        "n": 1594
+      },
+      "diff_pp": -11.12,
+      "z": -7.2,
+      "strength": "strong",
+      "verdict": "contradicted"
+    },
+    "chatty_sellers_fast_vs_slow": {
+      "group_a": {
+        "rate": 0.1218,
+        "ci95": [
+          0.1052,
+          0.1406
+        ],
+        "n": 1314
+      },
+      "group_b": {
+        "rate": 0.2863,
+        "ci95": [
+          0.2609,
+          0.3132
+        ],
+        "n": 1149
+      },
+      "diff_pp": -16.46,
+      "z": -10.21,
+      "strength": "strong",
+      "verdict": "supported"
+    },
+    "confound": "Bot speech rate is not randomised; it partly reflects how much the bot said, not only TTS pace.",
+    "used_by": [
+      "voice.pace"
+    ],
+    "strength": "strong"
+  },
+  "E4_backoff_after_frustration": {
+    "claim": "After a frustration cue, a short acknowledging reply (<=15 words) loses fewer sellers than continuing the pitch.",
+    "metric": "Not Interested rate after the first frustration cue",
+    "group_a_label": "bot's next turn <=15 words",
+    "group_b_label": "bot's next turn >15 words (kept pitching)",
+    "group_a": {
+      "rate": 0.3992,
+      "ci95": [
+        0.339,
+        0.4625
+      ],
+      "n": 238
+    },
+    "group_b": {
+      "rate": 0.4059,
+      "ci95": [
+        0.364,
+        0.4493
+      ],
+      "n": 505
+    },
+    "diff_pp": -0.68,
+    "z": -0.18,
+    "strength": "weak",
+    "frustration_cue_prevalence": 0.071,
+    "used_by": [
+      "live_adaptation.frustration",
+      "conversation_plan.escalation_rules"
+    ],
+    "verdict": "inconclusive"
+  },
+  "E5_repetition": {
+    "claim": "In calls long enough to repeat, a VANI that repeats itself (same question/point again) fixes fewer meetings.",
+    "metric": "Meeting Fixed rate, calls with >=10 turns only (controls for call length)",
+    "group_a_label": "bot repeated itself",
+    "group_b_label": "no bot repetition",
+    "group_a": {
+      "rate": 0.5143,
+      "ci95": [
+        0.4874,
+        0.5411
+      ],
+      "n": 1328
+    },
+    "group_b": {
+      "rate": 0.3336,
+      "ci95": [
+        0.3205,
+        0.347
+      ],
+      "n": 4856
+    },
+    "diff_pp": 18.07,
+    "z": 12.07,
+    "strength": "strong",
+    "uncontrolled_ni_comparison_for_transparency": {
+      "group_a": {
+        "rate": 0.1866,
+        "ci95": [
+          0.169,
+          0.2056
+        ],
+        "n": 1736
+      },
+      "group_b": {
+        "rate": 0.3273,
+        "ci95": [
+          0.3187,
+          0.336
+        ],
+        "n": 11412
+      },
+      "diff_pp": -14.07,
+      "z": -11.82,
+      "strength": "strong"
+    },
+    "confound": "Uncontrolled, repetition looks protective only because short calls cannot repeat.",
+    "used_by": [
+      "conversation_plan.guardrails.ask_limits",
+      "live_adaptation.deferral"
+    ],
+    "verdict": "contradicted"
+  },
+  "E6_latency": {
+    "claim": "Slow bot turn-taking (p95 latency >= 2s) makes sellers repeat themselves more.",
+    "metric": "share of calls where the seller had to repeat",
+    "group_a_label": "p95 latency >= 2s",
+    "group_b_label": "p95 latency < 2s",
+    "group_a": {
+      "rate": 0.4697,
+      "ci95": [
+        0.4539,
+        0.4856
+      ],
+      "n": 3817
+    },
+    "group_b": {
+      "rate": 0.039,
+      "ci95": [
+        0.0353,
+        0.0431
+      ],
+      "n": 9331
+    },
+    "diff_pp": 43.07,
+    "z": 60.54,
+    "strength": "strong",
+    "used_by": [
+      "engineering: regex fast-path before LLM fallback",
+      "voice.pace"
+    ],
+    "verdict": "supported"
+  },
+  "E7_language_mismatch": {
+    "claim": "VANI always speaks Hindi-heavy Hinglish; sellers who reply mostly in English are lost more often (a language mismatch).",
+    "metric": "Not Interested rate",
+    "group_a_label": "seller English share >= 40%",
+    "group_b_label": "seller English share < 40%",
+    "group_a": {
+      "rate": 0.2054,
+      "ci95": [
+        0.1691,
+        0.2472
+      ],
+      "n": 409
+    },
+    "group_b": {
+      "rate": 0.238,
+      "ci95": [
+        0.2296,
+        0.2466
+      ],
+      "n": 9642
+    },
+    "diff_pp": -3.26,
+    "z": -1.52,
+    "strength": "weak",
+    "english_leaning_share_of_calls": 0.0407,
+    "used_by": [
+      "language.primary",
+      "language.hinglish_mix",
+      "live_adaptation.language_switch"
+    ],
+    "verdict": "inconclusive"
+  },
+  "E8_state_language_prior": {
+    "claim": "Seller state predicts how much English the seller uses on the call.",
+    "metric": "mean seller English share by state (states with >=40 transcribed calls)",
+    "by_state": {
+      "Tamil Nadu": {
+        "english_share": 0.81,
+        "n": 93
+      },
+      "Telangana": {
+        "english_share": 0.137,
+        "n": 232
+      },
+      "Maharashtra": {
+        "english_share": 0.095,
+        "n": 1585
+      },
+      "Chhattisgarh": {
+        "english_share": 0.094,
+        "n": 77
+      },
+      "Odisha": {
+        "english_share": 0.083,
+        "n": 140
+      },
+      "Haryana": {
+        "english_share": 0.082,
+        "n": 474
+      },
+      "Delhi": {
+        "english_share": 0.077,
+        "n": 1009
+      },
+      "Punjab": {
+        "english_share": 0.074,
+        "n": 330
+      },
+      "Madhya Pradesh": {
+        "english_share": 0.074,
+        "n": 355
+      },
+      "Rajasthan": {
+        "english_share": 0.071,
+        "n": 750
+      },
+      "Gujarat": {
+        "english_share": 0.07,
+        "n": 2146
+      },
+      "Uttar Pradesh": {
+        "english_share": 0.068,
+        "n": 1845
+      },
+      "Bihar": {
+        "english_share": 0.068,
+        "n": 147
+      },
+      "Uttarakhand": {
+        "english_share": 0.067,
+        "n": 75
+      },
+      "West Bengal": {
+        "english_share": 0.061,
+        "n": 544
+      },
+      "Jharkhand": {
+        "english_share": 0.053,
+        "n": 79
+      },
+      "Assam": {
+        "english_share": 0.046,
+        "n": 89
+      }
+    },
+    "strength": "moderate",
+    "used_by": [
+      "language.primary",
+      "language.hinglish_mix"
+    ]
+  },
+  "E9_ai_identity": {
+    "claim": "When sellers ask whether they are talking to a bot, claiming to be human does not save the call.",
+    "metric": "Not Interested rate after the seller asked 'is this a bot'",
+    "group_a_label": "bot claimed to be human",
+    "group_b_label": "bot did not claim to be human",
+    "group_a": {
+      "rate": 0.381,
+      "ci95": [
+        0.25,
+        0.5319
+      ],
+      "n": 42
+    },
+    "group_b": {
+      "rate": 0.2216,
+      "ci95": [
+        0.1689,
+        0.2852
+      ],
+      "n": 194
+    },
+    "diff_pp": 15.93,
+    "z": 2.16,
+    "strength": "weak",
+    "asked_ai_prevalence": 0.0199,
+    "policy_note": "Sarvam/IndiaMART global rule: VANI must never claim to be human, regardless of this metric.",
+    "used_by": [
+      "live_adaptation.ai_bot_suspicion",
+      "conversation_plan.guardrails"
+    ],
+    "verdict": "inconclusive"
+  },
+  "E10_objection_recoverability": {
+    "claim": "Some objection types still end in a secured callback, others end the relationship and should be respected, not argued.",
+    "metric": "per objection category: share ending Call-Later (callback secured) and share ending Not-Interested",
+    "by_category": {
+      "Callback / Deferred Engagement (Neutral)": {
+        "callback_rate": 0.742,
+        "ni_rate": 0.144,
+        "n": 1215,
+        "callback_ci95": [
+          0.717,
+          0.766
+        ]
+      },
+      "Seller Unavailability & Scheduling Constraints": {
+        "callback_rate": 0.615,
+        "ni_rate": 0.216,
+        "n": 1328,
+        "callback_ci95": [
+          0.589,
+          0.641
+        ]
+      },
+      "Wrong Contact / Business Not Applicable": {
+        "callback_rate": 0.441,
+        "ni_rate": 0.351,
+        "n": 202,
+        "callback_ci95": [
+          0.374,
+          0.51
+        ]
+      },
+      "Not Ready / Needs Time / Early-Stage Seller": {
+        "callback_rate": 0.429,
+        "ni_rate": 0.146,
+        "n": 198,
+        "callback_ci95": [
+          0.362,
+          0.499
+        ]
+      },
+      "Others": {
+        "callback_rate": 0.324,
+        "ni_rate": 0.189,
+        "n": 37,
+        "callback_ci95": [
+          0.196,
+          0.485
+        ]
+      },
+      "Information / Trust / Privacy Concerns": {
+        "callback_rate": 0.294,
+        "ni_rate": 0.431,
+        "n": 51,
+        "callback_ci95": [
+          0.187,
+          0.43
+        ]
+      },
+      "Product / Service / Business Mismatch": {
+        "callback_rate": 0.201,
+        "ni_rate": 0.142,
+        "n": 134,
+        "callback_ci95": [
+          0.142,
+          0.277
+        ]
+      },
+      "Existing Engagement / Past Experience": {
+        "callback_rate": 0.2,
+        "ni_rate": 0.157,
+        "n": 370,
+        "callback_ci95": [
+          0.162,
+          0.244
+        ]
+      },
+      "Explicit Disinterest / Refusal": {
+        "callback_rate": 0.18,
+        "ni_rate": 0.178,
+        "n": 787,
+        "callback_ci95": [
+          0.155,
+          0.209
+        ]
+      },
+      "Call Handling / Executive Gaps": {
+        "callback_rate": 0.139,
+        "ni_rate": 0.741,
+        "n": 598,
+        "callback_ci95": [
+          0.113,
+          0.169
+        ]
+      },
+      "No Seller Response / Engagement Drop": {
+        "callback_rate": 0.042,
+        "ni_rate": 0.913,
+        "n": 757,
+        "callback_ci95": [
+          0.03,
+          0.059
+        ]
+      },
+      "Call Quality / Technical Failures": {
+        "callback_rate": 0.032,
+        "ni_rate": 0.931,
+        "n": 840,
+        "callback_ci95": [
+          0.022,
+          0.046
+        ]
+      }
+    },
+    "selection_note": "objections evaluator covers only non-meeting calls; meeting rate after objection is not measurable from it.",
+    "strength": "moderate",
+    "used_by": [
+      "conversation_plan.objection_playbook"
+    ]
+  },
+  "E11_forced_meetings": {
+    "claim": "A share of 'Meeting Fixed' calls are wrong (seller never really agreed). Pushing for the meeting is not the same as winning it.",
+    "metric": "incorrect meeting-fixed rate among calls VANI marked Meeting Fixed",
+    "overall_incorrect_mf_rate": 0.0239,
+    "n": 19622,
+    "repeated_vs_not": {
+      "group_a": {
+        "rate": 0.0182,
+        "ci95": [
+          0.0104,
+          0.0315
+        ],
+        "n": 660
+      },
+      "group_b": {
+        "rate": 0.0211,
+        "ci95": [
+          0.0155,
+          0.0286
+        ],
+        "n": 1895
+      },
+      "diff_pp": -0.29,
+      "z": -0.46,
+      "strength": "weak"
+    },
+    "strength": "strong",
+    "used_by": [
+      "conversation_plan.goal",
+      "conversation_plan.guardrails"
+    ]
+  },
+  "E12_call_fatigue": {
+    "claim": "The more times VANI has already called a seller, the more likely the seller says Not Interested.",
+    "metric": "Not Interested rate, main_vani only",
+    "group_a_label": "4th+ attempt",
+    "group_b_label": "1st attempt",
+    "group_a": {
+      "rate": 0.5729,
+      "ci95": [
+        0.5679,
+        0.5779
+      ],
+      "n": 37395
+    },
+    "group_b": {
+      "rate": 0.4554,
+      "ci95": [
+        0.4523,
+        0.4585
+      ],
+      "n": 99910
+    },
+    "diff_pp": 11.75,
+    "z": 38.79,
+    "strength": "strong",
+    "used_by": [
+      "conversation_plan.opening",
+      "tone.empathy",
+      "conversation_plan.goal"
+    ],
+    "verdict": "supported"
+  },
+  "E13_existing_executive": {
+    "claim": "Sellers already in touch with an IndiaMART executive rarely want another meeting pitch.",
+    "metric": "Meeting Fixed rate, main_vani only",
+    "group_a_label": "already in touch with executive",
+    "group_b_label": "not in touch",
+    "group_a": {
+      "rate": 0.0735,
+      "ci95": [
+        0.0691,
+        0.0782
+      ],
+      "n": 12670
+    },
+    "group_b": {
+      "rate": 0.1188,
+      "ci95": [
+        0.1174,
+        0.1202
+      ],
+      "n": 195935
+    },
+    "diff_pp": -4.53,
+    "z": -15.43,
+    "strength": "strong",
+    "confound": "Flag is derived from these same calls (seller said so), so it partly describes the outcome.",
+    "used_by": [
+      "conversation_plan.goal",
+      "conversation_plan.opening"
+    ],
+    "verdict": "supported"
+  },
+  "E14_segments": {
+    "claim": "Meeting appetite differs by business type and turnover band.",
+    "metric": "Meeting Fixed rate, main_vani only",
+    "by_business_type": {
+      "Limited Company": {
+        "rate": 0.103,
+        "n": 13357
+      },
+      "Partnership": {
+        "rate": 0.105,
+        "n": 20804
+      },
+      "Proprietorship": {
+        "rate": 0.117,
+        "n": 171826
+      }
+    },
+    "by_turnover": {
+      "5 - 25 Cr": {
+        "rate": 0.087,
+        "n": 8289
+      },
+      "1.5 - 5 Cr": {
+        "rate": 0.089,
+        "n": 17322
+      },
+      "25 - 100 Cr": {
+        "rate": 0.09,
+        "n": 2163
+      },
+      "100 - 500 Cr": {
+        "rate": 0.095,
+        "n": 548
+      },
+      "40 L - 1.5 Cr": {
+        "rate": 0.096,
+        "n": 31976
+      },
+      "0 - 40 L": {
+        "rate": 0.115,
+        "n": 125090
+      }
+    },
+    "strength": "moderate",
+    "used_by": [
+      "language.formality",
+      "conversation_plan.goal"
+    ]
+  },
+  "E15_seller_questions": {
+    "claim": "What sellers ask VANI most, so the playbook answers these first.",
+    "metric": "count of question categories across calls with seller questions",
+    "top_categories": {
+      "Meeting Visit": 1510,
+      "Identity Confirmation": 1099,
+      "Clarification": 1094,
+      "Purpose Reason": 837,
+      "Service Product Info": 740,
+      "Pricing Payment": 404,
+      "Location Confirmation": 390,
+      "Callback Contact": 375,
+      "Enquiry Lead": 312,
+      "Benefit Value": 219,
+      "Frustrated User": 171,
+      "AI Bot Confirmation": 163
+    },
+    "strength": "strong",
+    "used_by": [
+      "conversation_plan.objection_playbook",
+      "prompt: SELLER_QUESTION handlers"
+    ]
+  }
+}

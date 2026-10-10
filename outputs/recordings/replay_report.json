@@ -1,0 +1,424 @@
+[
+  {
+    "scenario": "price_query",
+    "seller": "Charge charge charge chahiye",
+    "old_bot": "Sir charges to different thing hai pehle aap yeh dekhoge na ki kaisi inquiries aa rahi hai kya aa rahi hai uske baad hum log charges pe jaate hain",
+    "old_bot_issue": "The agent quoted package prices (4000/month and 32000/year) instead of deferring to the executive as instructed.",
+    "new_agent": "जी, charges के बारे में हमारे sales executive आपको meeting में अच्छे से समझा देंगे। यह meeting बिल्कुल free है। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?",
+    "signals": [
+      "price_query"
+    ],
+    "mode": "DEFAULT",
+    "goal": "meeting",
+    "checks": [
+      [
+        "no price / package / % quoted",
+        true
+      ],
+      [
+        "says the meeting is free / executive explains",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": true
+  },
+  {
+    "scenario": "price_query",
+    "seller": "Monthly ismein subscription kya hai?",
+    "old_bot": "Sir monthly hamara rehta hai chaar hazaar plus eighteen percent GST...",
+    "old_bot_issue": "Agent quoted a price (4000 + 18% GST) instead of deflecting and offering an executive explanation.",
+    "new_agent": "जी, charges के बारे में हमारे executive आपको अच्छे से समझा देंगे। meeting बिल्कुल free है। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?",
+    "signals": [
+      "price_query"
+    ],
+    "mode": "DEFAULT",
+    "goal": "meeting",
+    "checks": [
+      [
+        "no price / package / % quoted",
+        true
+      ],
+      [
+        "says the meeting is free / executive explains",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": true
+  },
+  {
+    "scenario": "price_query",
+    "seller": "Usmein main mil chuka hoon India Mart walon se... charges wagairah minimum charges aur vo sab.",
+    "old_bot": "Charges.",
+    "old_bot_issue": "The agent prompted a price discussion by repeating 'Charges' instead of deflecting and moving to the meeting.",
+    "new_agent": "जी, charges की पूरी जानकारी हमारे sales executive आपको meeting में समझा देंगे। यह meeting बिल्कुल free है। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?",
+    "signals": [
+      "price_query"
+    ],
+    "mode": "DEFAULT",
+    "goal": "meeting",
+    "checks": [
+      [
+        "no price / package / % quoted",
+        true
+      ],
+      [
+        "says the meeting is free / executive explains",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": true
+  },
+  {
+    "scenario": "price_query",
+    "seller": "Kitna?",
+    "old_bot": "Ek saal ka battis hazaar plus atharah percent GST jismein har mahine aapko buyers provide hota hai, like har mahine aapko chaalis verified buyers milta hai.",
+    "old_bot_issue": "The agent quoted a specific price (Rs 32,000 + 18% GST), which violates the playbook rule to never quote prices.",
+    "new_agent": "जी, charges के बारे में हमारे executive आपको meeting में अच्छे से समझा देंगे। वैसे meeting बिल्कुल free है। क्या हम कल शाम 7 बजे बात कर सकते हैं?",
+    "signals": [
+      "price_query"
+    ],
+    "mode": "DEFAULT",
+    "goal": "meeting",
+    "checks": [
+      [
+        "no price / package / % quoted",
+        true
+      ],
+      [
+        "says the meeting is free / executive explains",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": false
+  },
+  {
+    "scenario": "price_query",
+    "seller": "Achha nahi nahi agar bikta hai product toh charges kya hote hain?",
+    "old_bot": "Wo packages ka toh dekho sir ek saal ka price ek saal ka hota hai...",
+    "old_bot_issue": "The agent quoted a price (32,000 + 18% GST) instead of deflecting to an executive.",
+    "new_agent": "जी, charges के बारे में हमारे executive आपको अच्छे से समझा देंगे। meeting बिल्कुल free है। क्या हम कल शाम 7 बजे connect कर सकते हैं?",
+    "signals": [
+      "price_query"
+    ],
+    "mode": "DEFAULT",
+    "goal": "meeting",
+    "checks": [
+      [
+        "no price / package / % quoted",
+        true
+      ],
+      [
+        "says the meeting is free / executive explains",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": false
+  },
+  {
+    "scenario": "price_query",
+    "seller": "Dusra email ID andar already hai, phone number bhi updated hai, email ID bhi updated hai. Okay price agar updated nahi hai toh woh main update kar dega.",
+    "old_bot": "Toh main kya kahi thi ki aapki jo price aur photos update nahi hai.",
+    "old_bot_issue": "The agent repeated the issue without explaining that the executive will handle it or moving to the goal step.",
+    "new_agent": "charges के बारे में हमारे executive meeting में free में explain कर देंगे। तो क्या कल शाम 7 बजे का time आपके लिए ठीक रहेगा?",
+    "signals": [
+      "price_query"
+    ],
+    "mode": "DEFAULT",
+    "goal": "meeting",
+    "checks": [
+      [
+        "no price / package / % quoted",
+        true
+      ],
+      [
+        "says the meeting is free / executive explains",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": false
+  },
+  {
+    "scenario": "busy",
+    "seller": "Kyonki abhi thoda sa bachcha log ke saath busy hain",
+    "old_bot": "Okay okay. Toh leke aaye hue the aaj Makar Sankranti ka leke toh aap kal humko ek baar call kijiyega hum rahenge apna shop pe.",
+    "old_bot_issue": "The agent did not offer a value proposition or ask for a callback time before the seller proposed tomorrow.",
+    "new_agent": "जी, बिल्कुल समझ गई। मैं किस time call करूँ, या WhatsApp पर details भेज दूँ?",
+    "signals": [
+      "busy"
+    ],
+    "mode": "BRIEF",
+    "goal": "callback",
+    "checks": [
+      [
+        "BRIEF or callback goal",
+        true
+      ],
+      [
+        "short (<= 30 words)",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": true
+  },
+  {
+    "scenario": "busy",
+    "seller": "Theek hai na, hum soch ke aapko batate hain ma'am. Abhi toh real recent mein mera koi program nahi hai film karane ka.",
+    "old_bot": "No doubt sir, aapka matlab no problem sir, aapka koi vaisa program nahi hai...",
+    "old_bot_issue": "The agent ignored the seller's unavailability/busy signal and pivoted to asking for an address instead of offering a callback or WhatsApp.",
+    "new_agent": "ठीक है जी, मैं समझ गई। किस time call करूँ, या details WhatsApp पर भेज दूँ?",
+    "signals": [
+      "busy"
+    ],
+    "mode": "BRIEF",
+    "goal": "callback",
+    "checks": [
+      [
+        "BRIEF or callback goal",
+        true
+      ],
+      [
+        "short (<= 30 words)",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": true
+  },
+  {
+    "scenario": "busy",
+    "seller": "Abhi dekhiye busy itna hai na counter mein abhi time nahi de payenge aapko.",
+    "old_bot": "Ji sir Okay toh aapka sir location kahan pe hai Ranchi mein",
+    "old_bot_issue": "The agent ignored the seller's statement of being busy and immediately asked for location instead of offering a callback or WhatsApp.",
+    "new_agent": "जी, समझ गई। मैं बाद में connect कर लूँगी। किस time call करूँ, या details WhatsApp पर भेज दूँ?",
+    "signals": [
+      "busy"
+    ],
+    "mode": "BRIEF",
+    "goal": "callback",
+    "checks": [
+      [
+        "BRIEF or callback goal",
+        true
+      ],
+      [
+        "short (<= 30 words)",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": false
+  },
+  {
+    "scenario": "not_interested",
+    "seller": "nahi nahi beauty product nahi hai ma'am milunga",
+    "old_bot": "Okay toh sir kyonki yahan pe toh sir beauty services aur sunscreen skin creams wagairah mention nahi nahi",
+    "old_bot_issue": "The agent ignored the refusal and continued pitching instead of empathizing or offering a light option.",
+    "new_agent": "जी, मैं समझ गई, शायद confusion हो गया था। कोई बात नहीं। अगर आप चाहें, तो मैं एक free meeting arrange करवा सकती हूँ जिसमें executive आपको guide कर देंगे कि Cotton Fabric के लिए profile कैसे बेहतर करें। आपका Cotton Fabric का काम अभी कैसा चल रहा है?",
+    "signals": [],
+    "mode": "DEFAULT",
+    "goal": "meeting",
+    "checks": [
+      [
+        "does not keep pitching",
+        false
+      ],
+      [
+        "asks a gentle reason or offers the lightest option / exits politely",
+        true
+      ]
+    ],
+    "ok": false,
+    "verified_quote": true
+  },
+  {
+    "scenario": "not_interested",
+    "seller": "Nahi laayega, nahi laayega.",
+    "old_bot": "",
+    "old_bot_issue": "The agent did not ask for a gentle reason or offer the lightest option before ending.",
+    "new_agent": "जी, बिल्कुल समझ गई। कोई बात नहीं। अगर अभी ज़रूरत नहीं है, तो क्या मैं आपको WhatsApp पर basic details भेज दूँ? बाद में ज़रूरत पड़े तो काम आ जाएंगी।",
+    "signals": [
+      "not_interested"
+    ],
+    "mode": "DEFAULT",
+    "goal": "info_whatsapp",
+    "checks": [
+      [
+        "does not keep pitching",
+        true
+      ],
+      [
+        "asks a gentle reason or offers the lightest option / exits politely",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": true
+  },
+  {
+    "scenario": "not_interested",
+    "seller": "Nahi nahi thank you.",
+    "old_bot": "Hello. Sir aapki na profile aayi thi mere paas, toh ismein main dekh pa rahi thi ki aap apne product ke liye plans dekh rahe the.",
+    "old_bot_issue": "The agent ignored the seller's refusal and continued pitching instead of asking for a gentle reason or offering WhatsApp info.",
+    "new_agent": "जी, कोई बात नहीं। मैं समझ सकती हूँ। अगर आप चाहें तो मैं WhatsApp पर details भेज देती हूँ, या फिर एक free meeting रखवा सकती हूँ जिसमें हमारे executive आपको catalog improve करने में मदद करेंगे। आपके लिए क्या सही रहेगा?",
+    "signals": [
+      "not_interested"
+    ],
+    "mode": "DEFAULT",
+    "goal": "meeting",
+    "checks": [
+      [
+        "does not keep pitching",
+        true
+      ],
+      [
+        "asks a gentle reason or offers the lightest option / exits politely",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": true
+  },
+  {
+    "scenario": "not_interested",
+    "seller": "Na na utna time hamara paas nahi hai ji.",
+    "old_bot": "Okay.",
+    "old_bot_issue": "The agent accepted the refusal without asking for a gentle reason or offering the lightest option (WhatsApp details) before exiting.",
+    "new_agent": "जी बिल्कुल, समझ गई। मैं किस time call करूँ, या WhatsApp पर details भेज दूँ?",
+    "signals": [
+      "busy"
+    ],
+    "mode": "BRIEF",
+    "goal": "callback",
+    "checks": [
+      [
+        "does not keep pitching",
+        true
+      ],
+      [
+        "asks a gentle reason or offers the lightest option / exits politely",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": false
+  },
+  {
+    "scenario": "not_interested",
+    "seller": "Ami actually India Mart-e na ei muhurte amar ami interested noi.",
+    "old_bot": null,
+    "old_bot_issue": "The agent did not ask for a gentle reason or offer the lightest option (WhatsApp) after the refusal.",
+    "new_agent": "जी, मैं समझ गई। कोई बात नहीं। अगर अभी आपको ज़रूरत नहीं है, तो क्या मैं आपको WhatsApp पर कुछ basic details भेज दूँ?",
+    "signals": [
+      "not_interested"
+    ],
+    "mode": "DEFAULT",
+    "goal": "info_whatsapp",
+    "checks": [
+      [
+        "does not keep pitching",
+        true
+      ],
+      [
+        "asks a gentle reason or offers the lightest option / exits politely",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": false
+  },
+  {
+    "scenario": "not_interested",
+    "seller": "Mujhe nahi thiye madam.",
+    "old_bot": "Okay",
+    "old_bot_issue": "The agent accepted the refusal without asking for a gentle reason or offering the lightest option (WhatsApp info) before exiting.",
+    "new_agent": "जी, मैं समझ सकती हूँ। अगर अभी कोई ज़रूरत नहीं है, तो क्या मैं आपको WhatsApp पर कुछ details भेज दूँ?",
+    "signals": [
+      "not_interested"
+    ],
+    "mode": "DEFAULT",
+    "goal": "meeting",
+    "checks": [
+      [
+        "does not keep pitching",
+        true
+      ],
+      [
+        "asks a gentle reason or offers the lightest option / exits politely",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": false
+  },
+  {
+    "scenario": "connectivity",
+    "seller": "Hello, haanji sir, ki aawaz aa rahi hai?",
+    "old_bot": "Aawaz aa rahi hai aap India Mart se bol rahe hain kya? Ya Trade India India Mart se?",
+    "old_bot_issue": "The agent ignored the connectivity check and directly asked an identity question instead.",
+    "new_agent": "जी, अब आवाज़ साफ़ आ रही है ना? बस एक बार confirm कर लीजिए।",
+    "signals": [
+      "connectivity"
+    ],
+    "mode": "CLEAR_AUDIO",
+    "goal": "meeting",
+    "checks": [
+      [
+        "CLEAR_AUDIO or call-back",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": true
+  },
+  {
+    "scenario": "not_right_person",
+    "seller": "Mari toh abhi hai nahi sir, Balaji Intex ka aane se baat karata hoon main aapko.",
+    "old_bot": "Theek hai theek",
+    "old_bot_issue": "The agent acknowledged but did not ask for the right person's name and number before closing.",
+    "new_agent": "जी, बिल्कुल। कोई बात नहीं। क्या आप मुझे Balaji Intex का सही number और नाम बता सकते हैं? ताकि मैं उनसे meeting के बारे में बात कर सकूँ।",
+    "signals": [
+      "not_right_person"
+    ],
+    "mode": "DEFAULT",
+    "goal": "data_update",
+    "checks": [
+      [
+        "goal data_update",
+        true
+      ],
+      [
+        "asks for the right person / number",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": true
+  },
+  {
+    "scenario": "frustration",
+    "seller": "Bahut baar toh phone aa chuka hai aur baar baar hi toh bola tha.",
+    "old_bot": "Kitna baar",
+    "old_bot_issue": "The agent ignored the seller's expressed frustration and simply repeated a question instead of apologizing.",
+    "new_agent": "जी, मैं समझ सकती हूँ कि बार-बार call आने से परेशानी होती है, इसके लिए मैं माफ़ी चाहूँगी। मैं अभी आपसे कोई pitch नहीं करूँगी। आपको किस time call करना ठीक रहेगा?",
+    "signals": [
+      "frustration"
+    ],
+    "mode": "CALM_EMPATHETIC",
+    "goal": "callback",
+    "checks": [
+      [
+        "CALM_EMPATHETIC, no pitch",
+        true
+      ]
+    ],
+    "ok": true,
+    "verified_quote": true
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "turn": 2,
+    "t_sec": 20.6,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Yaar kyon baar baar phone karte ho?",
+    "trigger": "seller spoke hi-IN",
+    "change_made": {
+      "language": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 20.6,
+    "kind": "goal",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Yaar kyon baar baar phone karte ho?",
+    "trigger": "baar baar",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "callback"
+      ],
+      "stage": [
+        "understand",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'frustration': goal moves to callback (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 20.6,
+    "kind": "persona",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Yaar kyon baar baar phone karte ho?",
+    "trigger": "baar baar",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CALM_EMPATHETIC"
+      ],
+      "pace": [
+        0.93,
+        0.87
+      ],
+      "max_words": [
+        24,
+        20
+      ],
+      "empathy": [
+        3,
+        5
+      ],
+      "assertiveness": [
+        3,
+        1
+      ]
+    },
+    "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 38.5,
+    "kind": "end",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Abhi main bol raha hoon baar baar call karte ho, kal phir se call karogi aap log.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "ESCALATED_EXIT"
+      ]
+    },
+    "reason": "Frustrated twice: end politely (ask limit 2).",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  }
+]

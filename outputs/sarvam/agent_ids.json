@@ -1,0 +1,38 @@
+{
+  "vani_female_calm": {
+    "app_id": "",
+    "app_version": null
+  },
+  "vani_female_neutral": {
+    "app_id": "",
+    "app_version": null
+  },
+  "vani_female_warm": {
+    "app_id": "",
+    "app_version": null
+  },
+  "vani_female_warmest": {
+    "app_id": "",
+    "app_version": null
+  },
+  "vani_male_crisp": {
+    "app_id": "",
+    "app_version": null
+  },
+  "vani_male_calm": {
+    "app_id": "",
+    "app_version": null
+  },
+  "vani_male_neutral": {
+    "app_id": "",
+    "app_version": null
+  },
+  "vani_male_warm": {
+    "app_id": "",
+    "app_version": null
+  },
+  "vani_male_warmest": {
+    "app_id": "",
+    "app_version": null
+  }
+}

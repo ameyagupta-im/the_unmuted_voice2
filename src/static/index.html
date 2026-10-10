@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VANI Live Persona</title>
+<style>
+  :root {
+    --bg: #f6f5f2; --panel: #ffffff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e3e1db;
+    --accent: #b4232a; --accent-soft: #fbe9e9; --ok: #1f7a4d; --ok-soft: #e4f3ea; --warn: #8a5a00; --warn-soft: #fbf1dc;
+    --vani: #eef2f8; --seller: #f4f1ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #151514; --panel: #1f1f1d; --ink: #ecebe7; --muted: #a3a19b; --line: #34332f;
+            --accent: #e5656b; --accent-soft: #3a2223; --ok: #6cc596; --ok-soft: #1d3327; --warn: #e2b459; --warn-soft: #3a2f1a;
+            --vani: #222a35; --seller: #2b2822; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--panel); flex-wrap: wrap; }
+  header h1 { font-size: 16px; margin: 0 12px 0 0; }
+  select, button, input[type=text] { font: inherit; color: inherit; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; }
+  button { cursor: pointer; }
+  button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  button:disabled { opacity: .45; cursor: default; }
+  main { display: grid; grid-template-columns: 300px 1fr 340px; gap: 12px; padding: 12px; height: calc(100vh - 62px); }
+  @media (max-width: 1000px) { main { grid-template-columns: 1fr; height: auto; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px; overflow: auto; }
+  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 4px 0 8px; }
+  .kv { display: grid; grid-template-columns: 110px 1fr; gap: 4px 8px; font-size: 13px; }
+  .kv div:nth-child(odd) { color: var(--muted); }
+  .why { font-size: 12px; color: var(--muted); margin: 6px 0 10px; }
+  .changed { background: var(--warn-soft); color: var(--warn); border-radius: 4px; padding: 0 4px; transition: background 2s; }
+  .chat { display: flex; flex-direction: column; gap: 8px; }
+  .msg { padding: 8px 10px; border-radius: 10px; max-width: 92%; }
+  .msg.vani { background: var(--vani); align-self: flex-start; }
+  .msg.seller { background: var(--seller); align-self: flex-end; }
+  .msg .meta { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .badge { display: inline-block; font-size: 11px; padding: 1px 6px; border-radius: 999px; margin: 2px 3px 0 0; background: var(--accent-soft); color: var(--accent); }
+  .badge.t2 { background: var(--ok-soft); color: var(--ok); }
+  .sw { border-left: 3px solid var(--accent); padding: 6px 8px; margin-bottom: 8px; background: var(--bg); border-radius: 0 8px 8px 0; font-size: 12.5px; }
+  .sw b { font-size: 13px; }
+  .sw code { font-size: 11.5px; }
+  .controls { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .controls input { flex: 1; min-width: 200px; }
+  #talk.rec { background: var(--accent); color: #fff; }
+  #handsfree.on { background: var(--ok); color: #fff; border-color: var(--ok); }
+  .meter { width: 70px; height: 8px; border-radius: 4px; background: var(--line); align-self: center; overflow: hidden; }
+  .meter i { display: block; height: 100%; width: 0; background: var(--ok); transition: width .08s; }
+  .status { font-size: 12px; color: var(--muted); }
+  .outcome { font-weight: 600; }
+</style>
+</head>
+<body>
+<header>
+  <h1>VANI · seller-fit live persona</h1>
+  <select id="seller"></select>
+  <input id="customId" type="text" placeholder="or any seller id" style="width:150px">
+  <button id="start" class="primary">Start call</button>
+  <span class="status" id="status">Pick a seller and start the call. Hands-free is on: just speak as the seller, and you can interrupt VANI.</span>
+</header>
+<main>
+  <section class="panel" id="personaPanel">
+    <h2>Persona (pre-call)</h2>
+    <div id="persona" class="why">No call yet.</div>
+    <h2>Live delivery</h2>
+    <div class="kv" id="delivery"></div>
+    <h2 style="margin-top:14px">Outcome</h2>
+    <div class="outcome" id="outcome">-</div>
+  </section>
+  <section class="panel" style="display:flex;flex-direction:column">
+    <h2>Call</h2>
+    <div class="chat" id="chat" style="flex:1;overflow:auto"></div>
+    <div class="controls">
+      <button id="handsfree" class="on" title="Speak naturally; a pause ends your turn; talking clearly over VANI interrupts her, background sound does not">Hands-free: on</button>
+      <div class="meter" title="mic level"><i id="level"></i></div>
+      <button id="talk" disabled>Hold to talk</button>
+      <input id="text" type="text" placeholder="…or type what the seller says (Hinglish / English / Telugu)" disabled>
+      <button id="send" disabled>Send</button>
+    </div>
+  </section>
+  <section class="panel">
+    <h2>Switch log</h2>
+    <div id="log" class="why">Every live persona change appears here: signal, detector, exact change, reason.</div>
+  </section>
+</main>
+<audio id="player"></audio>
+<script>
+const $ = id => document.getElementById(id);
+let callId = null, lastDelivery = null, recorder = null, chunks = [], busy = false;
+
+fetch('/api/sellers').then(r => r.json()).then(list => {
+  $('seller').innerHTML = list.map(s => `<option value="${s.seller_id}">${s.seller_id} · ${s.label}</option>`).join('');
+});
+
+function esc(s) { return (s ?? '').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function renderPersona(p) {
+  const f = x => `${esc(x.value)} <span class="why">(${esc(x.confidence)})</span>`;
+  $('persona').innerHTML = `
+    <div class="kv">
+      <div>Seller type</div><div>${esc(p.seller_type_label)}</div>
+      <div>Primary goal</div><div>${f(p.goal)}</div>
+      <div>Fallbacks</div><div>${esc((p.fallback_goals || []).join(', ') || '-')}</div>
+      <div>Bot</div><div>${esc(p.voice.bot_name.value)} · ${esc(p.voice.gender.value)}, ${esc(p.voice.style.value)} · ${esc(p.voice.speaker.value)}</div>
+      <div>Language</div><div>${f(p.language.primary)}${p.conversation_plan.telugu_offer ? ' · Telugu offered' : ''}</div>
+      <div>Formality</div><div>${f(p.language.formality)}</div>
+      <div>Pace</div><div>${f(p.voice.pace)}</div>
+      <div>Empathy / assert.</div><div>${p.tone.empathy.value} / ${p.tone.assertiveness.value} (1-5)</div>
+      <div>Callback slot</div><div>${esc(p.conversation_plan.callback_slot.value || '-')}</div>
+    </div>
+    <p class="why"><b>Why this goal:</b> ${esc(p.goal.reason)}</p>
+    <p class="why"><b>Why this pace:</b> ${esc(p.voice.pace.reason)}</p>
+    ${p.missing_fields.length ? `<p class="why"><b>Missing data (lower confidence):</b> ${esc(p.missing_fields.join(', '))}</p>` : ''}`;
+}
+
+function renderDelivery(d) {
+  const keys = ['goal','stage','mode','language','speaker','pace','max_words','empathy','assertiveness'];
+  $('delivery').innerHTML = keys.map(k => {
+    const ch = lastDelivery && lastDelivery[k] !== d[k];
+    return `<div>${k}</div><div><span class="${ch ? 'changed' : ''}">${esc(d[k])}</span></div>`;
+  }).join('');
+  lastDelivery = d;
+}
+
+function addMsg(who, text, meta, signals) {
+  const div = document.createElement('div');
+  div.className = 'msg ' + who;
+  const badges = (signals || []).map(([s, t]) => `<span class="badge ${t === 2 ? 't2' : ''}">${esc(s)}${t === 2 ? ' · llm' : ''}</span>`).join('');
+  div.innerHTML = `<div>${esc(text)}</div>${badges ? '<div>' + badges + '</div>' : ''}${meta ? `<div class="meta">${esc(meta)}</div>` : ''}`;
+  $('chat').appendChild(div);
+  $('chat').scrollTop = 1e9;
+}
+
+function addSwitches(list) {
+  if (!list || !list.length) return;
+  if ($('log').classList.contains('why')) { $('log').classList.remove('why'); $('log').innerHTML = ''; }
+  for (const s of list) {
+    const ch = Object.entries(s.change_made).map(([k, v]) => `${k}: ${esc(v[0])} → ${esc(v[1])}`).join('<br>');
+    const div = document.createElement('div');
+    div.className = 'sw';
+    div.innerHTML = `<b>turn ${s.turn} · ${esc(s.kind)} · ${esc(s.signal)}</b> <span class="why">via ${esc(s.detector)} at ${s.t_sec}s</span>
+      <div>"${esc(s.trigger)}"</div><code>${ch}</code><div class="why">${esc(s.reason)}</div>`;
+    $('log').prepend(div);
+  }
+}
+
+// VANI's audio; bargeIn() stops it mid-sentence and remembers how much the seller heard
+let speaking = null;  // {resolve, audio}
+function play(b64) {
+  if (!b64) return Promise.resolve();
+  return new Promise(res => {
+    const a = $('player');
+    const done = () => { if (speaking && speaking.audio === a) speaking = null; res(); };
+    speaking = {resolve: done, audio: a};
+    a.src = 'data:audio/wav;base64,' + b64; a.onended = done; a.play().catch(done);
+  });
+}
+let interrupted = null;  // fraction of VANI's last reply that was played before the seller cut in
+let paused = null;       // VANI's audio stopped by an interruption, kept so she can resume if it was only noise
+function bargeIn() {
+  if (!speaking) return;
+  const a = speaking.audio;
+  a.volume = 1;
+  interrupted = a.duration ? Math.min(1, a.currentTime / a.duration) : 0.5;
+  a.pause();
+  paused = a;
+  speaking.resolve();
+}
+// the server heard only background voices / noise / a "haan" over VANI: she carries on from where she stopped
+function resumeVani() {
+  const a = paused; paused = null; interrupted = null;
+  if (!a || a.ended || !a.src) return Promise.resolve();
+  return new Promise(res => {
+    const done = () => { if (speaking && speaking.audio === a) speaking = null; res(); };
+    speaking = {resolve: done, audio: a};
+    a.volume = 1; a.onended = done; a.play().catch(done);
+  });
+}
+
+function setBusy(b, msg) {
+  busy = b;
+  ['talk','text','send'].forEach(id => $(id).disabled = b || !callId);
+  $('status').textContent = msg || '';
+}
+
+function handleTurn(r) {
+  if (r.seller_text !== undefined && r.seller_text !== null) {
+    const sigs = (r.signals_tier1 || []).map(s => [s, 1]).concat((r.signals_tier2 || []).filter(s => !(r.signals_tier1 || []).includes(s)).map(s => [s, 2]));
+    addMsg('seller', r.seller_text || '(silence)', r.stt_language ? 'STT language: ' + r.stt_language : '', sigs);
+  }
+  addSwitches(r.switches);
+  renderDelivery(r.delivery);
+  const lat = r.latency_ms ? Object.entries(r.latency_ms).map(([k, v]) => `${k} ${v}ms`).join(' · ') : '';
+  const risk = (r.hangup_risk !== null && r.hangup_risk !== undefined) ? ` · hang-up risk ${r.hangup_risk}` : '';
+  addMsg('vani', r.reply, `goal ${r.delivery.goal} (${r.delivery.stage}) · mode ${r.delivery.mode} · pace ${r.delivery.pace}${risk} · ${lat}`);
+  $('outcome').textContent = r.outcome + (r.end_call ? ' (call ended)' : '');
+  return play(r.audio).then(() => {
+    if (r.end_call) { callId = null; clearNoReply(); setBusy(false, 'Call ended. Switch log saved under outputs/live_sessions/.'); }
+    else {
+      setBusy(false, hf.on ? 'Your turn: speak as the seller (a short pause ends your turn).' : 'Your turn: hold the mic button and speak as the seller.');
+      if (!interrupted) armNoReply();
+    }
+  });
+}
+
+$('start').onclick = async () => {
+  const id = $('customId').value.trim() || $('seller').value;
+  $('chat').innerHTML = ''; $('log').innerHTML = 'Every live persona change appears here.'; $('log').classList.add('why'); lastDelivery = null;
+  setBusy(true, 'Generating persona and opening…');
+  const r = await fetch('/api/call/start', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({seller_id: id})}).then(r => r.json());
+  if (r.error) { setBusy(false, r.error); return; }
+  if (r.blocked) { $('persona').textContent = 'BLOCKED: ' + r.reason + ' (no call placed)'; setBusy(false, 'Do-not-call seller: VANI will not call.'); return; }
+  callId = r.call_id; renderPersona(r.persona);
+  if (r.warnings && r.warnings.length) $('persona').insertAdjacentHTML('beforeend', `<p class="why"><b>Pre-call checks:</b> ${esc(r.warnings.join('; '))}</p>`);
+  if (hf.on) await hfStart();
+  await handleTurn(r);
+};
+
+async function sendTurn(form) {
+  clearNoReply();
+  if (interrupted !== null) { form.append('interrupted', '1'); form.append('heard_fraction', interrupted.toFixed(2)); interrupted = null; }
+  setBusy(true, 'Listening → detecting → adapting → speaking…');
+  const r = await fetch(`/api/call/${callId}/turn`, {method: 'POST', body: form}).then(r => r.json());
+  if (r.error) { setBusy(false, r.error); return; }
+  if (r.ignored) {   // background voices / noise / a backchannel: not a turn
+    setBusy(false, 'Background sound ignored, VANI continues.');
+    await resumeVani();
+    setBusy(false, hf.on ? 'Your turn: speak as the seller (a short pause ends your turn).' : 'Your turn.');
+    armNoReply();
+    return;
+  }
+  paused = null;
+  await handleTurn(r);
+}
+
+$('send').onclick = () => { const t = $('text').value.trim(); if (!t || !callId) return; const f = new FormData(); f.append('text', t); $('text').value = ''; sendTurn(f); };
+$('text').onkeydown = e => { if (e.key === 'Enter') $('send').click(); };
+
+async function startRec() {
+  if (busy || !callId || recorder) return;
+  if (hf.on) { hf.on = false; renderHf(); hfStop(); }  // one mic path at a time
+  const stream = await navigator.mediaDevices.getUserMedia({audio: true});
+  recorder = new MediaRecorder(stream, {mimeType: MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : ''});
+  chunks = [];
+  recorder.ondataavailable = e => chunks.push(e.data);
+  recorder.onstop = () => {
+    stream.getTracks().forEach(t => t.stop());
+    const blob = new Blob(chunks, {type: 'audio/webm'});
+    recorder = null; $('talk').classList.remove('rec'); $('talk').textContent = 'Hold to talk';
+    if (blob.size < 2000) { setBusy(false, 'Too short, hold the button while you speak.'); return; }
+    const f = new FormData(); f.append('audio', blob, 'turn.webm'); sendTurn(f);
+  };
+  recorder.start(); $('talk').classList.add('rec'); $('talk').textContent = 'Recording… release to send';
+}
+function stopRec() { if (recorder && recorder.state === 'recording') recorder.stop(); }
+$('talk').onmousedown = startRec; $('talk').onmouseup = stopRec; $('talk').onmouseleave = stopRec;
+$('talk').ontouchstart = e => { e.preventDefault(); startRec(); }; $('talk').ontouchend = stopRec;
+
+// ---------------- hands-free: voice activity detection + barge-in ----------------
+// Energy VAD on the echo-cancelled, noise-suppressed mic, gated against a running noise floor, so steady
+// background (fans, traffic, a TV, people talking further away) is learned as the floor and not taken as the seller.
+// A turn starts after ~200 ms of speech (300 ms of pre-roll keeps the first syllable) and ends after ~900 ms of
+// silence; under 400 ms of real speech in total is dropped (a cough, a click, a passing voice).
+// While VANI speaks, interrupting takes two steps: speech clearly above the floor ducks her volume at once, and only
+// ~600 ms of sustained near-mic speech stops her. A short or distant sound lets her carry on at full volume; if the
+// server then hears nothing or only "haan / hmm" over her, she resumes where she stopped (IndiaMART, 10 Oct 2026).
+// If the seller says nothing for 8 s after VANI finishes, an empty turn asks "were you saying something?".
+const hf = {on: true, ctx: null, stream: null, node: null, floor: 0.004, frames: [], pre: [], inSpeech: false,
+            speechMs: 0, silenceMs: 0, voicedMs: 0, overVani: false, ducked: false};
+const HF = {startMs: 200, endSilenceMs: 900, preRollMs: 300, minVoicedMs: 400, maxMs: 15000,
+            bargeConfirmMs: 600, bargeGiveUpMs: 500, noReplyMs: 8000};
+let noReplyTimer = null;
+function clearNoReply() { if (noReplyTimer) { clearTimeout(noReplyTimer); noReplyTimer = null; } }
+function armNoReply() {
+  clearNoReply();
+  if (!hf.on || !callId) return;
+  noReplyTimer = setTimeout(() => {
+    noReplyTimer = null;
+    if (!hf.on || !callId || busy || speaking || hf.inSpeech) return;
+    const f = new FormData(); f.append('text', ''); f.append('silence', '1'); sendTurn(f);   // nothing heard
+  }, HF.noReplyMs);
+}
+
+async function hfStart() {
+  if (hf.ctx) return;
+  try {
+    hf.stream = await navigator.mediaDevices.getUserMedia({audio: {echoCancellation: true, noiseSuppression: true, autoGainControl: true}});
+  } catch (e) { hf.on = false; renderHf(); $('status').textContent = 'Microphone blocked: type instead, or allow the mic.'; return; }
+  hf.ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const src = hf.ctx.createMediaStreamSource(hf.stream);
+  hf.node = hf.ctx.createScriptProcessor(2048, 1, 1);
+  const mute = hf.ctx.createGain(); mute.gain.value = 0;
+  src.connect(hf.node); hf.node.connect(mute); mute.connect(hf.ctx.destination);
+  hf.node.onaudioprocess = e => hfFrame(e.inputBuffer.getChannelData(0));
+}
+function hfStop() {
+  if (!hf.ctx) return;
+  hf.node.disconnect(); hf.stream.getTracks().forEach(t => t.stop()); hf.ctx.close();
+  Object.assign(hf, {ctx: null, stream: null, node: null, frames: [], pre: [], inSpeech: false});
+  $('level').style.width = '0';
+}
+function hfFrame(buf) {
+  const ms = buf.length / hf.ctx.sampleRate * 1000;
+  let sum = 0; for (let i = 0; i < buf.length; i++) sum += buf[i] * buf[i];
+  const rms = Math.sqrt(sum / buf.length);
+  $('level').style.width = Math.min(100, rms * 900) + '%';
+  const listening = callId && hf.on && (!busy || speaking);   // not while the server is thinking
+  if (!listening) { hf.inSpeech = false; hf.frames = []; hf.pre = []; hf.speechMs = 0; $('talk').classList.remove('rec'); return; }
+  // near-mic speech only: well above the background floor (higher while VANI speaks: her echo leaks in)
+  const thr = speaking ? Math.max(hf.floor * 8, 0.04) : Math.max(hf.floor * 4, 0.015);
+  const voiced = rms > thr;
+  // the floor follows steady background sound, including far-off voices (capped so a loud room still works)
+  if (!hf.inSpeech && !voiced) hf.floor = Math.min(0.03, 0.97 * hf.floor + 0.03 * rms);
+  const copy = new Float32Array(buf);
+  if (!hf.inSpeech) {
+    hf.pre.push(copy);
+    while (hf.pre.length * ms > HF.preRollMs) hf.pre.shift();
+    hf.speechMs = voiced ? hf.speechMs + ms : 0;
+    if (hf.speechMs >= HF.startMs) {
+      clearNoReply();
+      hf.inSpeech = true; hf.frames = hf.pre.slice(); hf.pre = []; hf.silenceMs = 0; hf.voicedMs = hf.speechMs;
+      hf.overVani = !!speaking; hf.ducked = false;
+      if (speaking) { speaking.audio.volume = 0.3; hf.ducked = true; $('status').textContent = 'Hearing something over VANI…'; }
+      else $('status').textContent = 'Listening…';
+      $('talk').classList.add('rec');
+    }
+    return;
+  }
+  hf.frames.push(copy);
+  if (voiced) { hf.silenceMs = 0; hf.voicedMs += ms; } else hf.silenceMs += ms;
+  if (hf.overVani && speaking && hf.ducked) {
+    if (hf.voicedMs >= HF.bargeConfirmMs) {            // sustained near-mic speech: a real interruption
+      hf.ducked = false; bargeIn(); $('status').textContent = 'You interrupted VANI. Listening…';
+    } else if (hf.silenceMs >= HF.bargeGiveUpMs) {     // a short or distant sound: VANI carries on
+      speaking.audio.volume = 1; hf.ducked = false;
+      hf.inSpeech = false; hf.frames = []; hf.speechMs = 0; hf.overVani = false; $('talk').classList.remove('rec');
+      $('status').textContent = 'Background sound ignored.';
+      return;
+    }
+    return;                                            // still deciding: keep collecting
+  }
+  if (hf.silenceMs >= HF.endSilenceMs || hf.frames.length * ms >= HF.maxMs) {
+    const frames = hf.frames, voicedMs = hf.voicedMs;
+    hf.inSpeech = false; hf.frames = []; hf.speechMs = 0; hf.overVani = false; $('talk').classList.remove('rec');
+    if (speaking && hf.ducked) { speaking.audio.volume = 1; hf.ducked = false; }
+    if (voicedMs < HF.minVoicedMs || !callId) { if (!speaking && !busy) armNoReply(); return; }   // a cough, a click, a passing voice
+    const f = new FormData(); f.append('audio', wavBlob(frames, hf.ctx.sampleRate), 'turn.wav'); sendTurn(f);
+  }
+}
+// float frames at the device rate -> 16 kHz 16-bit mono WAV
+function wavBlob(frames, rate) {
+  const n = frames.reduce((a, f) => a + f.length, 0), all = new Float32Array(n);
+  let o = 0; for (const f of frames) { all.set(f, o); o += f.length; }
+  const out = 16000, ratio = rate / out, len = Math.floor(n / ratio), pcm = new Int16Array(len);
+  for (let i = 0; i < len; i++) {
+    const a = Math.floor(i * ratio), b = Math.min(n, Math.floor((i + 1) * ratio));
+    let s = 0; for (let j = a; j < b; j++) s += all[j];
+    const v = Math.max(-1, Math.min(1, s / Math.max(1, b - a)));
+    pcm[i] = v < 0 ? v * 0x8000 : v * 0x7fff;
+  }
+  const buf = new ArrayBuffer(44 + pcm.length * 2), dv = new DataView(buf);
+  const w = (p, str) => { for (let i = 0; i < str.length; i++) dv.setUint8(p + i, str.charCodeAt(i)); };
+  w(0, 'RIFF'); dv.setUint32(4, 36 + pcm.length * 2, true); w(8, 'WAVE'); w(12, 'fmt ');
+  dv.setUint32(16, 16, true); dv.setUint16(20, 1, true); dv.setUint16(22, 1, true); dv.setUint32(24, out, true);
+  dv.setUint32(28, out * 2, true); dv.setUint16(32, 2, true); dv.setUint16(34, 16, true); w(36, 'data');
+  dv.setUint32(40, pcm.length * 2, true);
+  new Int16Array(buf, 44).set(pcm);
+  return new Blob([buf], {type: 'audio/wav'});
+}
+function renderHf() { $('handsfree').classList.toggle('on', hf.on); $('handsfree').textContent = 'Hands-free: ' + (hf.on ? 'on' : 'off'); }
+$('handsfree').onclick = async () => { hf.on = !hf.on; renderHf(); if (hf.on && callId) await hfStart(); if (!hf.on) { hfStop(); clearNoReply(); } };
+</script>
+</body>
+</html>

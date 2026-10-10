@@ -1,0 +1,82 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 14.0,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Lagana iska sabse pehle Indiaart theek kar do bhai, baaki baatein theek hai.",
+    "trigger": "seller spoke hi-IN",
+    "change_made": {
+      "language": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 46.8,
+    "kind": "goal",
+    "signal": "complaint",
+    "detector": "regex",
+    "seller_said": "Lagega bhi ye dekhna us taraf, kya laptop hai bhai? Indiamart ka laptop kahan rakhta fake.",
+    "trigger": "fake",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "complaint_recovery"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'complaint': goal moves to complaint_recovery (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 46.8,
+    "kind": "persona",
+    "signal": "complaint",
+    "detector": "regex",
+    "seller_said": "Lagega bhi ye dekhna us taraf, kya laptop hai bhai? Indiamart ka laptop kahan rakhta fake.",
+    "trigger": "fake",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CALM_EMPATHETIC"
+      ],
+      "pace": [
+        0.93,
+        0.87
+      ],
+      "max_words": [
+        24,
+        20
+      ],
+      "empathy": [
+        3,
+        5
+      ],
+      "assertiveness": [
+        3,
+        1
+      ]
+    },
+    "reason": "Playbook scenario 4: complaint -> CALM_EMPATHETIC.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  }
+]

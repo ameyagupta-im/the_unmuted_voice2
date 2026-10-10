@@ -1,0 +1,223 @@
+{
+  "seller_id": 1243794,
+  "seller_type": "Fatigued repeat lead",
+  "primary_goal": "complaint_recovery",
+  "goal_history": [
+    "complaint_recovery"
+  ],
+  "final_outcome": "COMPLAINT_LOGGED",
+  "do_not_call": false,
+  "seller_disposition": "Dissatisfied",
+  "goal_achieved": "yes",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 4,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "kavya_hi_conversational",
+    "gender": "female",
+    "mode": "CALM_EMPATHETIC",
+    "pace": 0.87,
+    "max_words": 20,
+    "empathy": 5,
+    "assertiveness": 1,
+    "goal": "complaint_recovery",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 3,
+      "goal_step": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 22.5,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "",
+      "trigger": "seller spoke en-IN",
+      "change_made": {
+        "language": [
+          "hi-IN",
+          "en-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 44.5,
+      "kind": "persona",
+      "signal": "complaint",
+      "detector": "llm",
+      "seller_said": "Eh product hi sahi nahi dikha te mainu.",
+      "trigger": "Seller explicitly stated the product was not displaying correctly, which is a problem with the platform/product listing.",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CALM_EMPATHETIC"
+        ],
+        "pace": [
+          0.93,
+          0.87
+        ],
+        "max_words": [
+          18,
+          20
+        ]
+      },
+      "reason": "Playbook scenario 4: complaint -> CALM_EMPATHETIC.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 61.1,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Vani catalog.",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 62.3,
+      "kind": "end",
+      "signal": "llm_outcome",
+      "detector": "llm",
+      "seller_said": "Vani catalog.",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "COMPLAINT_LOGGED"
+        ]
+      },
+      "reason": "LLM proposed COMPLAINT_LOGGED; supported by what the seller said.",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "translate",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "Ji, I am Payal, IndiaMART's virtual assistant. I am calling to sincerely apologise for the trouble you faced last time. I really want to help fix this for you.",
+      "after": "Ji, I am Payal, IndiaMART's virtual assistant. I am calling to sincerely apologise for the trouble you faced last time. I really want to help fix this for you. How is your business going right now?"
+    },
+    {
+      "turn": 2,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "repeat_sentence",
+      "action": "repaired",
+      "before": "Ji, I am Payal, IndiaMART's virtual assistant. I am calling to apologise for the trouble you faced last time. Could you please tell me what issue came up previously?",
+      "after": "Could you please tell me what issue came up previously?"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "Could you please tell me what issue came up previously?",
+      "after": "Could you please tell me what issue came up previously?"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I am really sorry about that problem with the product display, ji. I am routing this complaint to our support team right now.",
+      "after": "I am really sorry about that problem with the product display, ji. I am routing this complaint to our support team right now. What time should our support team call you?"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Payal बोल रही हूँ। दोबारा call करने के लिए माफ़ी चाहती हूँ। call इसलिए किया क्योंकि पिछली बार आपको जो परेशानी हुई, उसके बारे में आपसे बात करनी थी। पिछली बार क्या दिक्कत आई थी, ज़रा बताइए?"
+    },
+    {
+      "speaker": "seller",
+      "text": "(silence)"
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, I am Payal, IndiaMART's virtual assistant. I am calling to sincerely apologise for the trouble you faced last time. I really want to help fix this for you. How is your business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Vani."
+    },
+    {
+      "speaker": "vani",
+      "text": "Could you please tell me what issue came up previously?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Eh product hi sahi nahi dikha te mainu."
+    },
+    {
+      "speaker": "vani",
+      "text": "I am really sorry about that problem with the product display, ji. I am routing this complaint to our support team right now. What time should our support team call you?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Vani catalog."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं समझ गई। असुविधा के लिए माफ़ी चाहती हूँ। आपकी बात मैंने note कर ली है, support team आपसे संपर्क करेगी। समय देने के लिए धन्यवाद।"
+    }
+  ]
+}

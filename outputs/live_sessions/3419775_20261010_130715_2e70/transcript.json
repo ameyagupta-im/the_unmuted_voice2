@@ -1,0 +1,104 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 2,
+  "final_delivery": {
+    "language": "en-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "DEFAULT",
+    "pace": 0.93,
+    "max_words": 24,
+    "empathy": 3,
+    "assertiveness": 3,
+    "goal": "meeting",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 2,
+      "goal_step": 1
+    }
+  },
+  "switch_log": [],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "Ji, I understand. To help your business grow, I would like to understand a bit more. Could you tell me how your business is doing right now?",
+      "after": "Ji, I understand. To help your business grow, I would like to understand a bit more. Could you tell me how your business is doing right now?"
+    },
+    {
+      "turn": 2,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "repeat_sentence",
+      "action": "repaired",
+      "before": "I am Payal, IndiaMART's virtual assistant. I am calling because buyers are sending enquiries in your Automatic Idli Making Machine category. How is your business doing right now?",
+      "after": "I am Payal, IndiaMART's virtual assistant. How is your business doing right now?"
+    },
+    {
+      "turn": 2,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "I am Payal, IndiaMART's virtual assistant. How is your business doing right now?",
+      "after": "I am Payal, IndiaMART's virtual assistant."
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I am Payal, IndiaMART's virtual assistant.",
+      "after": "I am Payal, IndiaMART's virtual assistant. Shall I set up a short meeting with our executive, online or at your place?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Understood."
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, I understand. To help your business grow, I would like to understand a bit more. Could you tell me how your business is doing right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "(silence)"
+    },
+    {
+      "speaker": "vani",
+      "text": "I am Payal, IndiaMART's virtual assistant. Shall I set up a short meeting with our executive, online or at your place?"
+    }
+  ]
+}

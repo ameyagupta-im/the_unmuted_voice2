@@ -1,0 +1,222 @@
+{
+  "seller_id": 19070168,
+  "seller_type": "Small local trader",
+  "primary_goal": "nurture",
+  "goal_history": [
+    "nurture",
+    "info_whatsapp"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": "kal subah 4 baje",
+  "seller_insights": {
+    "business_status": "good"
+  },
+  "turns": 7,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "sanchita_enhi_companion",
+    "gender": "female",
+    "mode": "DEFAULT",
+    "pace": 1.1,
+    "max_words": 24,
+    "empathy": 5,
+    "assertiveness": 2,
+    "goal": "info_whatsapp",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "goal_step": 2
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 5,
+      "t_sec": 72.1,
+      "kind": "goal",
+      "signal": "goal_ask_limit",
+      "detector": "engine",
+      "seller_said": "Mujhse poocha hi nahi aapne, aapne toh meeting hi fix kar di.",
+      "trigger": "goal ask limit reached",
+      "change_made": {
+        "goal": [
+          "nurture",
+          "info_whatsapp"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'goal_ask_limit': goal moves to info_whatsapp (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "ठीक है जी, kal subah meeting fix कर लेते हैं। क्या मैं executive को आपके पास भेजूँ या online रखनी है?",
+      "after": "ठीक है जी, kal subah meeting fix कर लेते हैं।"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "ठीक है जी, kal subah meeting fix कर लेते हैं।",
+      "after": "ठीक है जी, kal subah meeting fix कर लेते हैं।"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "ठीक है जी, kal subah meeting fix कर लेते हैं।",
+      "after": "ठीक है जी, kal subah meeting fix कर लेते हैं।"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Ji, kal subah 11 baje meeting fix कर लेते हैं। क्या आप milkar मिलना पसंद करेंगे या online?",
+      "after": "Ji, kal subah 11 baje meeting fix कर लेते हैं।"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Ji, kal subah 11 baje meeting fix कर लेते हैं।",
+      "after": "Ji, kal subah 11 baje meeting fix कर लेते हैं।"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Ji, kal subah 11 baje meeting fix कर लेते हैं।",
+      "after": "Ji, kal subah 11 baje meeting fix कर लेते हैं।"
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 6,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    },
+    {
+      "turn": 6,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    },
+    {
+      "turn": 6,
+      "kind": "script",
+      "action": "repaired",
+      "before": "Ji, aap bilkul sahi keh rahe hain, mujhe pehle poochhna chahiye tha. Kal subah 11 baje, parso shaam 4 baje, ya koi aur time jo aapko suit kare — kya theek rahega?",
+      "after": "जी, आप बिल्कुल सही कह रहे हैं, मुझे पहले पूछना चाहिए था। कल सुबह 11 बजे, परसो शाम 4 बजे, या कोई और टाइम जो आपको सूट करे — क्या ठीक रहेगा?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Payal बोल रही हूँ। call इसलिए किया क्योंकि आपने IndiaMART पर BuyLead लेने की कोशिश की थी। आपका Men Socks का काम अभी कैसा चल रहा है, IndiaMART से कुछ फ़ायदा हो रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Badhiya chal raha hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, यह सुनकर अच्छा लगा कि business बढ़िया चल रहा है। क्या आप चाहेंगे कि हमारा executive free में आपके catalog और profile को बेहतर set up कर दे, ताकि आपको ज़्यादा orders मिल सकें?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Haan karva do."
+    },
+    {
+      "speaker": "vani",
+      "text": "बहुत अच्छा जी। kal दोपहर 2 बजे के आसपास meeting रख लें? online ya milkar, क्या सही रहेगा?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Milkar meeting rakh lo aur do baje nahi aap subah aa jaana."
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है जी, kal subah meeting fix कर लेते हैं।"
+    },
+    {
+      "speaker": "seller",
+      "text": "But kitne baje meeting fix kar rahe ho ye to bata do."
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, kal subah 11 baje meeting fix कर लेते हैं।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Mujhse poocha hi nahi aapne, aapne toh meeting hi fix kar di."
+    },
+    {
+      "speaker": "vani",
+      "text": "बहुत अच्छा, कल सुबह 11 बजे — मिलकर या online?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi mujhe gyarah baje chahiye hi nahi meeting, mujhse time slot to pooch lo kis time slot chahiye."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, आप बिल्कुल सही कह रहे हैं, मुझे पहले पूछना चाहिए था। कल सुबह 11 बजे, परसो शाम 4 बजे, या कोई और टाइम जो आपको सूट करे — क्या ठीक रहेगा?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Ab subah ke chaar baje ki meeting rakh dena."
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है जी, कल सुबह 4 बजे की meeting fix कर देती हूँ। online या मिलकर, क्या सही रहेगा?"
+    }
+  ],
+  "facts": {
+    "business_status": [
+      {
+        "turn": 1,
+        "value": "good",
+        "words": "Badhiya chal raha hai.",
+        "source": "rules"
+      }
+    ]
+  }
+}

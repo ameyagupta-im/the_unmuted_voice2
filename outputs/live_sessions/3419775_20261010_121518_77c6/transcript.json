@@ -1,0 +1,38 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 0,
+  "final_delivery": {
+    "language": "en-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "DEFAULT",
+    "pace": 0.93,
+    "max_words": 24,
+    "empathy": 3,
+    "assertiveness": 3,
+    "goal": "meeting",
+    "stage": "understand",
+    "counts": {
+      "understanding_question": 1
+    }
+  },
+  "switch_log": [],
+  "guard_corrections": [],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    }
+  ]
+}

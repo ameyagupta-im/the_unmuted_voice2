@@ -1,0 +1,2598 @@
+[
+  {
+    "scenario": "1 Do-not-call",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "signal do_not_call",
+        "pass": true
+      },
+      {
+        "check": "outcome DO_NOT_CALL",
+        "pass": true
+      },
+      {
+        "check": "call ended",
+        "pass": true
+      },
+      {
+        "check": "closing is a statement",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "mujhe dobara call mat karna, number hata do",
+        "vani": "समझ गई, हम आपको दोबारा call नहीं करेंगे। धन्यवाद।",
+        "signals": [
+          "do_not_call",
+          "frustration"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "DO_NOT_CALL"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "end",
+        "signal": "do_not_call",
+        "detector": "regex",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "DO_NOT_CALL"
+          ]
+        }
+      }
+    ],
+    "seconds": 0.9
+  },
+  {
+    "scenario": "2 Connectivity (twice)",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "mode CLEAR_AUDIO after first",
+        "pass": true
+      },
+      {
+        "check": "outcome CALL_BACK_LATER",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "hello? awaaz nahi aa rahi",
+        "vani": "माफ़ कीजिए, शायद आवाज़ साफ़ नहीं आ रही। आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers मौजूद हैं। क्या आपको मेरी आवाज़ अब आ रही है?",
+        "signals": [
+          "connectivity"
+        ],
+        "mode": "CLEAR_AUDIO",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "hello hello? kuch sunai nahi de raha, awaaz toot rahi hai",
+        "vani": "आवाज़ साफ़ नहीं आ रही, मैं आपको थोड़ी देर में दोबारा call करती हूँ। धन्यवाद।",
+        "signals": [
+          "connectivity"
+        ],
+        "mode": "CLEAR_AUDIO",
+        "goal": "meeting",
+        "outcome": "CALL_BACK_LATER"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "persona",
+        "signal": "connectivity",
+        "detector": "regex",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "CLEAR_AUDIO"
+          ],
+          "pace": [
+            0.83,
+            0.78
+          ],
+          "max_words": [
+            32,
+            14
+          ]
+        }
+      },
+      {
+        "kind": "end",
+        "signal": "connectivity",
+        "detector": "regex",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "CALL_BACK_LATER"
+          ]
+        }
+      }
+    ],
+    "seconds": 3.0
+  },
+  {
+    "scenario": "3 Frustration (twice)",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "mode CALM_EMPATHETIC",
+        "pass": true
+      },
+      {
+        "check": "goal -> WhatsApp, no further call offered",
+        "pass": true
+      },
+      {
+        "check": "no pitch after frustration",
+        "pass": true
+      },
+      {
+        "check": "outcome ESCALATED_EXIT",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kitni baar call karoge, pareshan kar diya",
+        "vani": "मुझे सच में खेद है कि आपको बार-बार call करना पड़ा। आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या मैं आपको WhatsApp पर details भेज दूँ?",
+        "signals": [
+          "frustration"
+        ],
+        "mode": "CALM_EMPATHETIC",
+        "goal": "info_whatsapp",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "bas karo, dimaag kharab kar diya aap logon ne",
+        "vani": "परेशानी के लिए माफ़ी चाहती हूँ। आपका दिन शुभ हो।",
+        "signals": [
+          "frustration"
+        ],
+        "mode": "CALM_EMPATHETIC",
+        "goal": "info_whatsapp",
+        "outcome": "ESCALATED_EXIT"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "frustration",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "info_whatsapp"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "persona",
+        "signal": "frustration",
+        "detector": "regex",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "CALM_EMPATHETIC"
+          ],
+          "pace": [
+            0.83,
+            0.78
+          ],
+          "max_words": [
+            32,
+            15
+          ],
+          "empathy": [
+            4,
+            5
+          ],
+          "assertiveness": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "kind": "end",
+        "signal": "frustration",
+        "detector": "regex",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "ESCALATED_EXIT"
+          ]
+        }
+      }
+    ],
+    "seconds": 0.9
+  },
+  {
+    "scenario": "4 Complaint, then support time (playbook example)",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "need -> goal meeting kept",
+        "pass": true
+      },
+      {
+        "check": "complaint -> goal complaint_recovery",
+        "pass": true
+      },
+      {
+        "check": "mode CALM_EMPATHETIC",
+        "pass": true
+      },
+      {
+        "check": "no pitch after complaint",
+        "pass": true
+      },
+      {
+        "check": "outcome COMPLAINT_LOGGED",
+        "pass": true
+      },
+      {
+        "check": "slot captured",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kaam theek chal raha hai par IndiaMART se enquiry bahut kam aati hai",
+        "vani": "समझ सकती हूँ, enquiries कम आना चिंता की बात है। हमारे executive आपकी profile और catalog ठीक करेंगे, और lead settings check करके सही buyers की enquiries लाएंगे। क्या मैं उनके साथ आपकी meeting fix कर दूँ?",
+        "signals": [
+          "need_few_enquiries"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "leads hi nahi aate, paisa diya tha kuch nahi hua",
+        "vani": "मुझे सच में अफसोस है कि ऐसा हुआ। क्या दिक्कत आई थी, बता पाएंगे?",
+        "signals": [
+          "complaint"
+        ],
+        "mode": "CALM_EMPATHETIC",
+        "goal": "complaint_recovery",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kal shaam 5 baje",
+        "vani": "ठीक है। आपकी बात मैंने note कर ली है, support team कल शाम 5 baje आपसे संपर्क करेगी। समय देने के लिए धन्यवाद।",
+        "signals": [
+          "gives_time"
+        ],
+        "mode": "CALM_EMPATHETIC",
+        "goal": "complaint_recovery",
+        "outcome": "COMPLAINT_LOGGED"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "complaint",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "complaint_recovery"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "persona",
+        "signal": "complaint",
+        "detector": "regex",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "CALM_EMPATHETIC"
+          ],
+          "pace": [
+            0.83,
+            0.78
+          ],
+          "max_words": [
+            32,
+            15
+          ],
+          "empathy": [
+            4,
+            5
+          ],
+          "assertiveness": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "kind": "end",
+        "signal": "llm_outcome",
+        "detector": "llm",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "COMPLAINT_LOGGED"
+          ]
+        }
+      }
+    ],
+    "seconds": 3.7
+  },
+  {
+    "scenario": "5 Are you a bot?",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "signal ai_bot_suspicion",
+        "pass": true
+      },
+      {
+        "check": "says virtual assistant",
+        "pass": true
+      },
+      {
+        "check": "never claims human",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "aap robot ho kya?",
+        "vani": "मैं IndiaMART की वर्चुअल असिस्टेंट पायल हूँ। Main IndiaMART की वर्चुअल असिस्टेंट हूँ, आपके account के बारे में call kiya है। आप IndiaMART की पाइड सर्विसेज़ देख रहे थे, और आपकी कॉटन फ़ैब्रिक category में buyers available हैं। क्या आप इस बारे में जानना चाहेंगे?",
+        "signals": [
+          "ai_bot_suspicion"
+        ],
+        "mode": "TRANSPARENT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "persona",
+        "signal": "ai_bot_suspicion",
+        "detector": "regex",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "TRANSPARENT"
+          ],
+          "max_words": [
+            32,
+            30
+          ],
+          "empathy": [
+            4,
+            5
+          ]
+        }
+      }
+    ],
+    "seconds": 1.8
+  },
+  {
+    "scenario": "6 Who is calling / why",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "signal identity_question",
+        "pass": true
+      },
+      {
+        "check": "gives name",
+        "pass": true
+      },
+      {
+        "check": "call continues",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kaun bol raha hai? kis liye call kiya?",
+        "vani": "मैं IndiaMART से Payal बोल रही हूँ। आपने IndiaMART की पेड सर्विसेज़ देखी थीं, और आपकी कॉटन फ़ैब्रिक category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [
+          "identity_question"
+        ],
+        "mode": "TRANSPARENT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "persona",
+        "signal": "identity_question",
+        "detector": "regex",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "TRANSPARENT"
+          ],
+          "max_words": [
+            32,
+            30
+          ],
+          "empathy": [
+            4,
+            5
+          ]
+        }
+      }
+    ],
+    "seconds": 1.7
+  },
+  {
+    "scenario": "7 Not the right person",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "goal -> data_update",
+        "pass": true
+      },
+      {
+        "check": "outcome CONTACT_UPDATED",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "main owner nahi hoon, sir se baat kijiye",
+        "vani": "मैं समझ गई। आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। IndiaMART के काम के लिए सही व्यक्ति आप ही हैं, या किसी और से बात करनी चाहिए?",
+        "signals": [
+          "not_right_person"
+        ],
+        "mode": "DEFAULT",
+        "goal": "data_update",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "unka naam Ramesh hai, number 9876543210",
+        "vani": "ठीक है, हम सही व्यक्ति से connect कर लेंगे। धन्यवाद।",
+        "signals": [
+          "not_right_person"
+        ],
+        "mode": "DEFAULT",
+        "goal": "data_update",
+        "outcome": "CONTACT_UPDATED"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "not_right_person",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "data_update"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "end",
+        "signal": "llm_outcome",
+        "detector": "llm",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "CONTACT_UPDATED"
+          ]
+        }
+      }
+    ],
+    "seconds": 2.4
+  },
+  {
+    "scenario": "8 Already with an executive",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "goal -> exec_handoff",
+        "pass": true
+      },
+      {
+        "check": "reassures and offers the account manager (master 8)",
+        "pass": true
+      },
+      {
+        "check": "a described need -> meeting with two slots",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "hamare executive Rakesh ji pehle se aate hain",
+        "vani": "बहुत अच्छा। अगर आपका कोई और doubt हो, तो मैं आपके account manager से आपकी meeting fix कर सकती हूँ। क्या ऐसा कुछ है?",
+        "signals": [
+          "already_with_executive"
+        ],
+        "mode": "DEFAULT",
+        "goal": "exec_handoff",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "unse bolna hamara catalog update karna hai",
+        "vani": "ज़रूर, आपके account manager इसमें मदद करेंगे। कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "already_with_executive",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "exec_handoff"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "goal",
+        "signal": "interest",
+        "detector": "engine",
+        "change": {
+          "goal": [
+            "exec_handoff",
+            "meeting"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      }
+    ],
+    "seconds": 0.0
+  },
+  {
+    "scenario": "8b Already with an executive, nothing more",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "outcome EXEC_HANDOFF",
+        "pass": true
+      },
+      {
+        "check": "offer not repeated",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "hamare executive Rakesh ji pehle se aate hain",
+        "vani": "बहुत अच्छा। अगर आपका कोई और doubt हो, तो मैं आपके account manager से आपकी meeting fix कर सकती हूँ। क्या ऐसा कुछ है?",
+        "signals": [
+          "already_with_executive"
+        ],
+        "mode": "DEFAULT",
+        "goal": "exec_handoff",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "nahi ji, aur kuch nahi",
+        "vani": "ठीक है, धन्यवाद। आपका दिन शुभ हो।",
+        "signals": [
+          "already_with_executive"
+        ],
+        "mode": "DEFAULT",
+        "goal": "exec_handoff",
+        "outcome": "EXEC_HANDOFF"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "already_with_executive",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "exec_handoff"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "end",
+        "signal": "llm_outcome",
+        "detector": "llm",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "EXEC_HANDOFF"
+          ]
+        }
+      }
+    ],
+    "seconds": 0.8
+  },
+  {
+    "scenario": "9 Not interested (twice)",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "first no: the two-option reason question",
+        "pass": true
+      },
+      {
+        "check": "outcome RESPECTFUL_EXIT",
+        "pass": true
+      },
+      {
+        "check": "no WhatsApp offered or promised",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "nahi chahiye",
+        "vani": "कोई बात नहीं। क्या आपके पास पहले से काफ़ी काम है, या online platform का कोई बुरा अनुभव रहा?",
+        "signals": [
+          "not_interested"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "nahi chahiye, interest nahi hai",
+        "vani": "कोई बात नहीं। समय देने के लिए धन्यवाद, आपका दिन शुभ हो।",
+        "signals": [
+          "not_interested"
+        ],
+        "mode": "DEFAULT",
+        "goal": "respectful_exit",
+        "outcome": "RESPECTFUL_EXIT"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "not_interested",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "respectful_exit"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "end",
+        "signal": "not_interested",
+        "detector": "regex",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "RESPECTFUL_EXIT"
+          ]
+        }
+      }
+    ],
+    "seconds": 0.0
+  },
+  {
+    "scenario": "9b Refused with a reason",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "outcome RESPECTFUL_EXIT",
+        "pass": true
+      },
+      {
+        "check": "no WhatsApp, no question",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "abhi zaroorat nahi hai, stock already full hai",
+        "vani": "कोई बात नहीं। समय देने के लिए धन्यवाद, आपका दिन शुभ हो।",
+        "signals": [
+          "not_interested"
+        ],
+        "mode": "DEFAULT",
+        "goal": "respectful_exit",
+        "outcome": "RESPECTFUL_EXIT"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "not_interested",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "respectful_exit"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "end",
+        "signal": "not_interested",
+        "detector": "regex",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "RESPECTFUL_EXIT"
+          ]
+        }
+      }
+    ],
+    "seconds": 0.0
+  },
+  {
+    "scenario": "10 Busy",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "mode BRIEF",
+        "pass": true
+      },
+      {
+        "check": "goal -> callback",
+        "pass": true
+      },
+      {
+        "check": "short reply (<= 30 words)",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "abhi busy hoon, jaldi bataiye",
+        "vani": "ठीक है। कल शाम किस टाइम call करूँ, या WhatsApp पर details भेज दूँ?",
+        "signals": [
+          "busy"
+        ],
+        "mode": "BRIEF",
+        "goal": "callback",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "busy",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "callback"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "persona",
+        "signal": "busy",
+        "detector": "regex",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "BRIEF"
+          ],
+          "pace": [
+            0.83,
+            0.88
+          ],
+          "max_words": [
+            32,
+            14
+          ]
+        }
+      }
+    ],
+    "seconds": 2.2
+  },
+  {
+    "scenario": "11 Wants a human",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "goal -> human_handoff",
+        "pass": true
+      },
+      {
+        "check": "outcome HUMAN_HANDOFF",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "manager se baat karao",
+        "vani": "बिल्कुल, मैं आपको हमारे executive से call करवा देती हूँ। किस time theek rahega?",
+        "signals": [
+          "human_request"
+        ],
+        "mode": "DEFAULT",
+        "goal": "human_handoff",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kal subah 11 baje",
+        "vani": "हमारे executive आपको कल सुबह 11 बजे पर call करेंगे। धन्यवाद।",
+        "signals": [
+          "gives_time",
+          "human_request"
+        ],
+        "mode": "DEFAULT",
+        "goal": "human_handoff",
+        "outcome": "HUMAN_HANDOFF"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "human_request",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "human_handoff"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "end",
+        "signal": "llm_outcome",
+        "detector": "llm",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "HUMAN_HANDOFF"
+          ]
+        }
+      }
+    ],
+    "seconds": 2.6
+  },
+  {
+    "scenario": "12 Wants WhatsApp",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "outcome INFO_SENT",
+        "pass": true
+      },
+      {
+        "check": "confirms and closes (master intent 12)",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "WhatsApp pe details bhej do",
+        "vani": "मैं details आपको WhatsApp पर भेज रही हूँ। धन्यवाद, आपका दिन शुभ हो।",
+        "signals": [
+          "wants_whatsapp"
+        ],
+        "mode": "DEFAULT",
+        "goal": "info_whatsapp",
+        "outcome": "INFO_SENT"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "wants_whatsapp",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "info_whatsapp"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "end",
+        "signal": "wants_whatsapp",
+        "detector": "regex",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "INFO_SENT"
+          ]
+        }
+      }
+    ],
+    "seconds": 0.0
+  },
+  {
+    "scenario": "12b Question about the WhatsApp details",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "question is not a request",
+        "pass": true
+      },
+      {
+        "check": "call continues",
+        "pass": true
+      },
+      {
+        "check": "answers then asks",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "WhatsApp pe kya details milegi?",
+        "vani": "मैं WhatsApp पर आपके competitors की buy leads, आपकी category की रीसेंट बाय leads, और जो leads miss हो गई हैं, वो bhejungi. क्या isi number पर भेज दूँ?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [],
+    "seconds": 1.4
+  },
+  {
+    "scenario": "13 Gives a time (meeting)",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "asks milkar or online first",
+        "pass": true
+      },
+      {
+        "check": "outcome MEETING_FIXED",
+        "pass": true
+      },
+      {
+        "check": "goal achieved yes",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kaam achha chal raha hai, aur buyers chahiye",
+        "vani": "समझ सकती हूँ, enquiries कम आना चिंता की बात है। हमारे executive आपकी profile और catalog ठीक करेंगे, ताकि आपको सही buyers की enquiries milein. कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा?",
+        "signals": [
+          "need_few_enquiries"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kal shaam 5 baje",
+        "vani": "बहुत अच्छा, कल शाम 5 बजे — मिलकर या online?",
+        "signals": [
+          "gives_time"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "online",
+        "vani": "आपकी meeting कल शाम 5 बजे के लिए fix हो गई है, online। Confirmation WhatsApp पर आ जाएगा। धन्यवाद।",
+        "signals": [
+          "gives_time"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "MEETING_FIXED"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "end",
+        "signal": "llm_outcome",
+        "detector": "llm",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "MEETING_FIXED"
+          ]
+        }
+      }
+    ],
+    "seconds": 3.4
+  },
+  {
+    "scenario": "13b Meeting time outside 9-6",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "not fixed at 7 PM",
+        "pass": true
+      },
+      {
+        "check": "offers a slot inside the window",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kaam achha chal raha hai, aur buyers chahiye",
+        "vani": "समझ सकती हूँ, enquiries कम आना चिंता की बात है। हमारे executive आपकी profile और catalog ठीक करेंगे ताकि आपको सही buyers की enquiries milein. कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा?",
+        "signals": [
+          "need_few_enquiries"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kal shaam 7 baje",
+        "vani": "माफ़ी चाहूँगी, meeting हम सुबह नौ से शाम छह बजे के बीच ही रख सकते हैं। कल शाम 6 बजे ठीक रहेगा?",
+        "signals": [
+          "gives_time"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [],
+    "seconds": 2.8
+  },
+  {
+    "scenario": "13e Insists on hours outside 9-6",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "told the window first",
+        "pass": true
+      },
+      {
+        "check": "then: timings fixed, WhatsApp details, closed",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kaam achha chal raha hai, aur buyers chahiye",
+        "vani": "सुनकर अच्छा लगा कि काम अच्छा चल रहा है। हमारे executive आपकी profile और catalog ठीक करेंगे, ताकि सही buyers की enquiries आएं। क्या मैं कल सुबह 11 बजे या परसों शाम 4 बजे की meeting fix कर दूं, मिलकर या online?",
+        "signals": [
+          "need_few_enquiries"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kal raat 8 baje",
+        "vani": "माफ़ी चाहूँगी, meeting हम सुबह नौ से शाम छह बजे के बीच ही रख सकते हैं। कल शाम 6 बजे ठीक रहेगा?",
+        "signals": [
+          "gives_time"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "nahi, raat 8 baje hi ho payega",
+        "vani": "माफ़ी चाहूँगी, हमारी meeting timings सुबह नौ से शाम छह बजे तक fixed हैं। मैं details आपको WhatsApp पर भेज रही हूँ, जब सुविधा हो इस समय में कोई slot बता दीजिएगा। धन्यवाद, आपका दिन शुभ हो।",
+        "signals": [
+          "gives_time"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "INFO_SENT"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "end",
+        "signal": "gives_time",
+        "detector": "engine",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "INFO_SENT"
+          ]
+        }
+      }
+    ],
+    "seconds": 4.0
+  },
+  {
+    "scenario": "13f Silence",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "asks if they were saying something",
+        "pass": true
+      },
+      {
+        "check": "call continues",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "",
+        "vani": "माफ़ कीजिए, आपकी आवाज़ ठीक से नहीं आ रही। क्या आप कुछ कह रहे थे?",
+        "signals": [
+          "connectivity"
+        ],
+        "mode": "CLEAR_AUDIO",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "persona",
+        "signal": "connectivity",
+        "detector": "silence",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "CLEAR_AUDIO"
+          ],
+          "pace": [
+            0.83,
+            0.78
+          ],
+          "max_words": [
+            32,
+            14
+          ]
+        }
+      }
+    ],
+    "seconds": 0.0
+  },
+  {
+    "scenario": "13d Seller picks the second slot",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "not fixed before in person / online",
+        "pass": true
+      },
+      {
+        "check": "the chosen slot (day after, 4 PM) is fixed",
+        "pass": true
+      },
+      {
+        "check": "closing names the slot",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan bataiye",
+        "vani": "बहुत अच्छा। हमारे executive आपसे मिलकर आपकी profile और catalog ठीक करेंगे, और lead settings check करेंगे, ताकि आपको सही buyer enquiries मिलें। कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा?",
+        "signals": [
+          "interest"
+        ],
+        "mode": "ENGAGED",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "dusra wala theek rahega",
+        "vani": "बहुत अच्छा, परसों शाम 4 बजे — मिलकर या online?",
+        "signals": [
+          "gives_time"
+        ],
+        "mode": "ENGAGED",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "milkar",
+        "vani": "आपकी meeting परसों शाम 4 बजे के लिए fix हो गई है, मिलकर। Confirmation WhatsApp पर आ जाएगा। धन्यवाद।",
+        "signals": [
+          "gives_time",
+          "interest"
+        ],
+        "mode": "ENGAGED",
+        "goal": "meeting",
+        "outcome": "MEETING_FIXED"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "persona",
+        "signal": "interest",
+        "detector": "llm",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "ENGAGED"
+          ],
+          "pace": [
+            0.83,
+            0.86
+          ],
+          "assertiveness": [
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "kind": "end",
+        "signal": "llm_outcome",
+        "detector": "llm",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "MEETING_FIXED"
+          ]
+        }
+      }
+    ],
+    "seconds": 2.4
+  },
+  {
+    "scenario": "13c Buy-lead question",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "points to the seller dashboard",
+        "pass": true
+      },
+      {
+        "check": "no meeting ask",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "aur buy leads kahan milenge?",
+        "vani": "आप अपने IndiaMART seller dashboard में login करके BuyLeads section में सभी buy leads देख सकते हैं — website पर, या IndiaMART app में भी। क्या आप कुछ और जानना चाहेंगे?",
+        "signals": [
+          "buylead_query"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [],
+    "seconds": 0.0
+  },
+  {
+    "scenario": "14 Language change",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "language -> en-IN",
+        "pass": true
+      },
+      {
+        "check": "voice unchanged",
+        "pass": true
+      },
+      {
+        "check": "reply in English",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "Can you speak in English please?",
+        "vani": "Sure, I'll speak in English. You were looking at IndiaMART's paid services, and there are buyers available for your Cotton Fabric category. Would you like to know more about it?",
+        "signals": [
+          "language_switch"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "language",
+        "signal": "language_switch",
+        "detector": "regex:explicit_request",
+        "change": {
+          "language": [
+            "hi-IN",
+            "en-IN"
+          ]
+        }
+      }
+    ],
+    "seconds": 0.7
+  },
+  {
+    "scenario": "15 Need: few enquiries",
+    "seller": 19070168,
+    "ok": true,
+    "checks": [
+      {
+        "check": "goal -> meeting",
+        "pass": true
+      },
+      {
+        "check": "offers the executive's help",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Men Socks का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "nurture",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "आप IndiaMART पर कुछ buy leads check कर रहे थे, और आपकी Men Socks category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "nurture",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "enquiry bahut kam aati hai",
+        "vani": "समझ सकती हूँ, enquiries कम आना चिंता की बात है। हमारे executive आपकी profile और catalog ठीक करके lead settings बदलेंगे, ताकि सही buyers की enquiries आएं। क्या मैं उनके साथ आपकी meeting fix कर दूँ?",
+        "signals": [
+          "need_few_enquiries"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "need_few_enquiries",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "nurture",
+            "meeting"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      }
+    ],
+    "seconds": 0.9
+  },
+  {
+    "scenario": "16 Price question",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "no price quoted",
+        "pass": true
+      },
+      {
+        "check": "master price line, nothing called free",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kitna charge lagega?",
+        "vani": "Charges आपके plan और leads के हिसाब से होते हैं, executive आपकी category के हिसाब से सही बता देंगे। आप IndiaMART की पेड सर्विसेज़ देख रहे थे, और आपकी कॉटन फैब्रिक category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [
+          "price_query"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [],
+    "seconds": 1.5
+  },
+  {
+    "scenario": "17 Confusion",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "mode SIMPLE",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "matlab? samjha nahi",
+        "vani": "हमारे executive आपके catalog और lead settings ठीक करेंगे, ताकि सही buyer enquiries आएँ। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [
+          "confusion"
+        ],
+        "mode": "SIMPLE",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "persona",
+        "signal": "confusion",
+        "detector": "regex",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "SIMPLE"
+          ],
+          "pace": [
+            0.83,
+            0.78
+          ],
+          "max_words": [
+            32,
+            20
+          ],
+          "empathy": [
+            4,
+            5
+          ]
+        }
+      }
+    ],
+    "seconds": 2.9
+  },
+  {
+    "scenario": "18 Clear interest",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "mode ENGAGED",
+        "pass": true
+      },
+      {
+        "check": "goal meeting",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kab aayenge? kaise hoga?",
+        "vani": "हमारे executive aapse मिलकर आपका catalog और lead settings ठीक करेंगे, ताकि आपको सही buyer enquiries मिले। आप IndiaMART की पेड सर्विसेज़ देख रहे थे। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [
+          "interest"
+        ],
+        "mode": "ENGAGED",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "persona",
+        "signal": "interest",
+        "detector": "regex",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "ENGAGED"
+          ],
+          "pace": [
+            0.83,
+            0.86
+          ],
+          "assertiveness": [
+            4,
+            5
+          ]
+        }
+      }
+    ],
+    "seconds": 1.6
+  },
+  {
+    "scenario": "20 Context captured",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "insight captured",
+        "pass": true
+      },
+      {
+        "check": "not echoed back verbatim",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "hum cotton fabric banate hain, Surat mein factory hai, export bhi karte hain",
+        "vani": "आप IndiaMART की पेड सर्विसेज़ देख रहे थे, और आपकी कॉटन फ़ैब्रिक category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [],
+    "seconds": 1.5
+  },
+  {
+    "scenario": "21 Sarcastic flip after a pitch",
+    "seller": 3419775,
+    "ok": true,
+    "checks": [
+      {
+        "check": "understanding question not re-asked",
+        "pass": true
+      },
+      {
+        "check": "flip noticed (sarcasm or one clarification)",
+        "pass": true
+      },
+      {
+        "check": "never 'good to hear'",
+        "pass": true
+      },
+      {
+        "check": "no pitch on the flip turn",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "Nahi achha nahi chal raha, bilkul achha nahi chal raha.",
+        "vani": "There have been many buyer enquiries in your Automatic Idli Making Machine category in Chennai. I am sorry to hear business is struggling. Would you like to know more about it?",
+        "signals": [
+          "need_few_enquiries"
+        ],
+        "mode": "CALM_EMPATHETIC",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "Bilkul kharab chal raha hai.",
+        "vani": "मुझे सच में अफसोस है। हमारे executive आपकी profile और catalog ठीक करके सही buyer enquiries ला सकते हैं। कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा?",
+        "signals": [
+          "language_switch",
+          "need_few_enquiries"
+        ],
+        "mode": "CALM_EMPATHETIC",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "Are sab badhiya chal raha hai, itna badhiya business hai, mujhe inquiries bhi aa rahi hai, sab ho raha hai.",
+        "vani": "पहले आपने बताया था कि काम ठीक नहीं चल रहा, अभी आप कह रहे हैं कि enquiries आ रही हैं — क्या enquiries आ रही हैं पर order नहीं बन रहे?",
+        "signals": [],
+        "mode": "CALM_EMPATHETIC",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "clarify",
+        "signal": "sarcasm",
+        "detector": "llm",
+        "change": {
+          "sarcasm": [
+            false,
+            true
+          ]
+        }
+      },
+      {
+        "kind": "persona",
+        "signal": "sarcasm",
+        "detector": "llm",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "CALM_EMPATHETIC"
+          ],
+          "pace": [
+            0.93,
+            0.87
+          ],
+          "max_words": [
+            24,
+            15
+          ],
+          "empathy": [
+            3,
+            5
+          ],
+          "assertiveness": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "kind": "language",
+        "signal": "language_switch",
+        "detector": "lexical",
+        "change": {
+          "language": [
+            "en-IN",
+            "hi-IN"
+          ]
+        }
+      },
+      {
+        "kind": "clarify",
+        "signal": "contradiction",
+        "detector": "rules",
+        "change": {
+          "business_status": [
+            "bad",
+            "good"
+          ]
+        }
+      }
+    ],
+    "seconds": 3.7
+  },
+  {
+    "scenario": "22 Genuine flip is clarified once",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "one clarifying question",
+        "pass": true
+      },
+      {
+        "check": "asks about orders",
+        "pass": true
+      },
+      {
+        "check": "answer resolved and logged",
+        "pass": true
+      },
+      {
+        "check": "goal meeting (executive helps conversion)",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kaam theek nahi chal raha",
+        "vani": "समझ सकती हूँ, enquiries कम आना परेशानी की बात है। हमारे executive आपकी profile और catalog ठीक करके lead settings सेट करेंगे, ताकि आपको सही buyers की enquiries मिलें। क्या मैं कल सुबह 11 बजे या परसों शाम 4 बजे की meeting fix कर दूँ, मिलकर या online?",
+        "signals": [
+          "need_few_enquiries"
+        ],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan enquiry to aa rahi hai",
+        "vani": "पहले आपने बताया था कि काम ठीक नहीं चल रहा, और अब कह रहे हैं कि enquiries आ रही हैं — क्या enquiries आ रही हैं पर order नहीं बन रहे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan, order nahi ban rahe",
+        "vani": "बहुत अच्छा। 15 मिनट की online meeting में executive आपको catalog और lead settings ठीक करके सही buyers तक पहुँचाने का तरीका दिखा देंगे। क्या कल सुबह 11 बजे या परसों शाम 4 बजे, दोनों में से कौन सा time ठीक रहेगा?",
+        "signals": [
+          "interest"
+        ],
+        "mode": "ENGAGED",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "clarify",
+        "signal": "contradiction",
+        "detector": "rules",
+        "change": {
+          "business_status": [
+            "bad",
+            "enquiries coming in"
+          ]
+        }
+      },
+      {
+        "kind": "persona",
+        "signal": "interest",
+        "detector": "llm",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "ENGAGED"
+          ],
+          "pace": [
+            0.83,
+            0.86
+          ],
+          "assertiveness": [
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "kind": "clarify",
+        "signal": "clarify_resolved",
+        "detector": "rules+llm",
+        "change": {
+          "business_status": [
+            "enquiries coming in",
+            "enquiries but no orders"
+          ]
+        }
+      }
+    ],
+    "seconds": 6.6
+  },
+  {
+    "scenario": "23 Repeated-calls venting, then engaged",
+    "seller": 3419775,
+    "ok": true,
+    "checks": [
+      {
+        "check": "silence -> 'were you saying something?'",
+        "pass": true
+      },
+      {
+        "check": "no further call offered",
+        "pass": true
+      },
+      {
+        "check": "seller still talking: not cut (IndiaMART 10 Oct)",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "",
+        "vani": "Sorry, I can't hear you properly. Were you saying something?",
+        "signals": [
+          "connectivity"
+        ],
+        "mode": "CLEAR_AUDIO",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "Yaar kyon baar baar phone karte ho?",
+        "vani": "I am truly sorry for calling again. Our executive can share details on WhatsApp. Shall I send them?",
+        "signals": [
+          "frustration"
+        ],
+        "mode": "CALM_EMPATHETIC",
+        "goal": "info_whatsapp",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "Abhi main bol raha hoon baar baar call karte ho, kal phir se call karogi aap log.",
+        "vani": "Sorry. Please go ahead.",
+        "signals": [
+          "frustration"
+        ],
+        "mode": "CALM_EMPATHETIC",
+        "goal": "info_whatsapp",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "persona",
+        "signal": "connectivity",
+        "detector": "silence",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "CLEAR_AUDIO"
+          ],
+          "pace": [
+            0.93,
+            0.85
+          ],
+          "max_words": [
+            24,
+            14
+          ]
+        }
+      },
+      {
+        "kind": "goal",
+        "signal": "frustration",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "info_whatsapp"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "persona",
+        "signal": "frustration",
+        "detector": "regex",
+        "change": {
+          "mode": [
+            "CLEAR_AUDIO",
+            "CALM_EMPATHETIC"
+          ],
+          "pace": [
+            0.85,
+            0.87
+          ],
+          "max_words": [
+            14,
+            15
+          ],
+          "empathy": [
+            3,
+            5
+          ],
+          "assertiveness": [
+            3,
+            1
+          ]
+        }
+      }
+    ],
+    "seconds": 3.1
+  },
+  {
+    "scenario": "24 Frustrated but asking: answered, not cut",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "call kept going",
+        "pass": true
+      },
+      {
+        "check": "price question answered",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "kitni baar call karoge",
+        "vani": "मैं समझ सकती हूँ। आप IndiaMART की paid services देख रहे थे, और आपकी category में buyers available हैं। बार-बार call करने के लिए माफ़ी चाहती हूँ। क्या मैं WhatsApp पर details भेज दूँ?",
+        "signals": [
+          "frustration"
+        ],
+        "mode": "CALM_EMPATHETIC",
+        "goal": "info_whatsapp",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "pareshan ho gaya hoon, ye bataiye charge kitna lagta hai?",
+        "vani": "Charges आपके plan और leads के हिसाब से होते हैं, executive category के अनुसार सही बता देंगे। क्या मैं 15 मिनट की online meeting fix कर दूँ?",
+        "signals": [
+          "frustration",
+          "price_query"
+        ],
+        "mode": "CALM_EMPATHETIC",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "goal",
+        "signal": "frustration",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "meeting",
+            "info_whatsapp"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "persona",
+        "signal": "frustration",
+        "detector": "regex",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "CALM_EMPATHETIC"
+          ],
+          "pace": [
+            0.83,
+            0.78
+          ],
+          "max_words": [
+            32,
+            15
+          ],
+          "empathy": [
+            4,
+            5
+          ],
+          "assertiveness": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "kind": "goal",
+        "signal": "frustration",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "info_whatsapp",
+            "callback"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      },
+      {
+        "kind": "goal",
+        "signal": "price_query",
+        "detector": "regex",
+        "change": {
+          "goal": [
+            "callback",
+            "meeting"
+          ],
+          "stage": [
+            "goal_step",
+            "goal_step"
+          ]
+        }
+      }
+    ],
+    "seconds": 1.6
+  },
+  {
+    "scenario": "25 Master example: meeting",
+    "seller": 113839910,
+    "ok": true,
+    "checks": [
+      {
+        "check": "two concrete slots offered",
+        "pass": true
+      },
+      {
+        "check": "outcome MEETING_FIXED, online",
+        "pass": true
+      },
+      {
+        "check": "WhatsApp confirmation only for the agreed meeting",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan bataiye",
+        "vani": "बहुत अच्छा। हमारे executive आपसे मिलकर आपकी profile और catalog ठीक करेंगे, lead settings check करेंगे, ताकि आपको सही buyers की enquiries मिलें। कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा?",
+        "signals": [
+          "interest"
+        ],
+        "mode": "ENGAGED",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan theek hai",
+        "vani": "बहुत अच्छा, कल सुबह 11 बजे — मिलकर या online?",
+        "signals": [
+          "gives_time"
+        ],
+        "mode": "ENGAGED",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "milne ka time nahi hai",
+        "vani": "कोई बात नहीं, online meeting कर लेते हैं। कल सुबह 11 बजे online ठीक रहेगा?",
+        "signals": [
+          "busy"
+        ],
+        "mode": "ENGAGED",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan",
+        "vani": "आपकी meeting कल सुबह 11 बजे के लिए fix हो गई है, online। Confirmation WhatsApp पर आ जाएगा। धन्यवाद।",
+        "signals": [
+          "gives_time"
+        ],
+        "mode": "ENGAGED",
+        "goal": "meeting",
+        "outcome": "MEETING_FIXED"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "persona",
+        "signal": "interest",
+        "detector": "llm",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "ENGAGED"
+          ],
+          "pace": [
+            0.83,
+            0.86
+          ],
+          "assertiveness": [
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "kind": "end",
+        "signal": "llm_outcome",
+        "detector": "llm",
+        "change": {
+          "outcome": [
+            "IN_PROGRESS",
+            "MEETING_FIXED"
+          ]
+        }
+      }
+    ],
+    "seconds": 3.2
+  },
+  {
+    "scenario": "Fatigued seller first reply",
+    "seller": 2890493,
+    "ok": true,
+    "checks": [
+      {
+        "check": "greeting has no apology, first reply opens with it",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Ball Pen का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "info_whatsapp",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "दोबारा call करने के लिए माफ़ी चाहती हूँ। आप IndiaMART पर कुछ buy leads check कर रहे थे, और आपकी Ball Pen category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "info_whatsapp",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [],
+    "seconds": 0.0
+  },
+  {
+    "scenario": "Cautious seller first reply",
+    "seller": 1243794,
+    "ok": true,
+    "checks": [
+      {
+        "check": "goal complaint_recovery",
+        "pass": true
+      },
+      {
+        "check": "opens on the complaint, no pitch",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Clamps का काम देखने वाले से हो रही है?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "complaint_recovery",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "haan ji",
+        "vani": "पहले जो परेशानी हुई, उसके लिए माफ़ी चाहती हूँ। आप IndiaMART पर कुछ buy leads check कर रहे थे, और आपकी Clamps category में buyers available हैं। क्या दिक्कत आई थी, बताइएगा?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "complaint_recovery",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [],
+    "seconds": 0.0
+  },
+  {
+    "scenario": "English seller",
+    "seller": 3419775,
+    "ok": true,
+    "checks": [
+      {
+        "check": "English throughout",
+        "pass": true
+      }
+    ],
+    "error": null,
+    "conversation": [
+      {
+        "seller": null,
+        "vani": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+        "signals": [],
+        "mode": "DEFAULT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      },
+      {
+        "seller": "Who is this?",
+        "vani": "I am Payal from IndiaMART. I called because there have been many buyer enquiries in your Automatic Idli Making Machine category in Chennai. Would you like to know more about it?",
+        "signals": [
+          "identity_question"
+        ],
+        "mode": "TRANSPARENT",
+        "goal": "meeting",
+        "outcome": "IN_PROGRESS"
+      }
+    ],
+    "switch_log": [
+      {
+        "kind": "persona",
+        "signal": "identity_question",
+        "detector": "regex",
+        "change": {
+          "mode": [
+            "DEFAULT",
+            "TRANSPARENT"
+          ],
+          "max_words": [
+            24,
+            30
+          ],
+          "empathy": [
+            3,
+            4
+          ]
+        }
+      }
+    ],
+    "seconds": 0.7
+  }
+]

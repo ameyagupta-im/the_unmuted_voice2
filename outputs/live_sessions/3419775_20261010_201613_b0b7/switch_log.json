@@ -1,0 +1,127 @@
+[
+  {
+    "turn": 2,
+    "t_sec": 44.5,
+    "kind": "persona",
+    "signal": "connectivity",
+    "detector": "llm",
+    "seller_said": "Sorry what did you say I didn't hear it.",
+    "trigger": "Seller said they did not hear the previous turn.",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CLEAR_AUDIO"
+      ],
+      "pace": [
+        0.93,
+        0.85
+      ],
+      "max_words": [
+        24,
+        14
+      ]
+    },
+    "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 75.0,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "CLEAR_AUDIO",
+        "DEFAULT"
+      ],
+      "pace": [
+        0.85,
+        0.93
+      ],
+      "max_words": [
+        14,
+        24
+      ]
+    },
+    "reason": "Two turns without the signal behind CLEAR_AUDIO: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 77.0,
+    "kind": "persona",
+    "signal": "interest",
+    "detector": "llm",
+    "seller_said": "But when will you set up the meeting at least clear that?",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "ENGAGED"
+      ],
+      "pace": [
+        0.93,
+        0.96
+      ],
+      "max_words": [
+        24,
+        32
+      ],
+      "assertiveness": [
+        3,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 18: interest -> ENGAGED.",
+    "evidence": [
+      "playbook",
+      "E11_forced_meetings"
+    ]
+  },
+  {
+    "turn": 6,
+    "t_sec": 105.3,
+    "kind": "end",
+    "signal": "llm_outcome",
+    "detector": "llm",
+    "seller_said": "No.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "CALLBACK_SCHEDULED"
+      ]
+    },
+    "reason": "LLM proposed CALLBACK_SCHEDULED; supported by what the seller said. Confirm it, then ask whether anything else is needed; close on a no.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 8,
+    "t_sec": 147.0,
+    "kind": "end",
+    "signal": "nothing_more",
+    "detector": "utterance",
+    "seller_said": "Are I don't want you to call me again just don't set up any meeting at all.",
+    "trigger": "",
+    "change_made": {
+      "stage": [
+        "wrap_up",
+        "closed"
+      ]
+    },
+    "reason": "Seller has nothing more after CALLBACK_SCHEDULED: goodbye.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

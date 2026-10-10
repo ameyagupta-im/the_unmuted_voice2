@@ -1,0 +1,122 @@
+{
+  "seller_id": 1243794,
+  "seller_type": "Fatigued repeat lead",
+  "primary_goal": "complaint_recovery",
+  "goal_history": [
+    "complaint_recovery"
+  ],
+  "final_outcome": "COMPLAINT_LOGGED",
+  "do_not_call": false,
+  "seller_disposition": "Dissatisfied",
+  "goal_achieved": "yes",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 2,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "kavya_hi_conversational",
+    "gender": "female",
+    "mode": "CALM_EMPATHETIC",
+    "pace": 0.87,
+    "max_words": 20,
+    "empathy": 5,
+    "assertiveness": 1,
+    "goal": "complaint_recovery",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "frustration": 1,
+      "goal_step": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 4.0,
+      "kind": "persona",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Kaun bol raha hai IndiaMART se baar baar kyon call kar rahe ho?",
+      "trigger": "baar baar",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CALM_EMPATHETIC"
+        ],
+        "pace": [
+          0.93,
+          0.87
+        ],
+        "max_words": [
+          18,
+          20
+        ]
+      },
+      "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 2,
+      "t_sec": 9.7,
+      "kind": "end",
+      "signal": "llm_outcome",
+      "detector": "llm",
+      "seller_said": "Business toh VANI ka hai but leads hi nahi aate yaar, paisa diya tha kuch nahi hua.",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "COMPLAINT_LOGGED"
+        ]
+      },
+      "reason": "LLM proposed COMPLAINT_LOGGED; supported by what the seller said.",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, मैं IndiaMART की virtual assistant Payal हूँ। पिछली बार जो परेशानी हुई उसके लिए माफ़ी चाहती हूँ।",
+      "after": "जी, मैं IndiaMART की virtual assistant Payal हूँ। पिछली बार जो परेशानी हुई उसके लिए माफ़ी चाहती हूँ। support team आपको किस time call करे?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Payal बोल रही हूँ। दोबारा call करने के लिए माफ़ी चाहती हूँ। call इसलिए किया क्योंकि पिछली बार आपको जो परेशानी हुई, उसके बारे में आपसे बात करनी थी। पिछली बार क्या दिक्कत आई थी, ज़रा बताइए?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Kaun bol raha hai IndiaMART se baar baar kyon call kar rahe ho?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं IndiaMART की virtual assistant Payal हूँ। पिछली बार जो परेशानी हुई उसके लिए माफ़ी चाहती हूँ। support team आपको किस time call करे?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Business toh VANI ka hai but leads hi nahi aate yaar, paisa diya tha kuch nahi hua."
+    },
+    {
+      "speaker": "vani",
+      "text": "असुविधा के लिए माफ़ी चाहती हूँ। आपकी बात मैंने note कर ली है, support team आपसे संपर्क करेगी। समय देने के लिए धन्यवाद।"
+    }
+  ]
+}

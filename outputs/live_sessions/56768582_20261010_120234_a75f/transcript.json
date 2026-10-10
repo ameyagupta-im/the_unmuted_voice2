@@ -1,0 +1,198 @@
+{
+  "seller_id": 56768582,
+  "seller_type": "Busy business owner",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "respectful_exit"
+  ],
+  "final_outcome": "RESPECTFUL_EXIT",
+  "do_not_call": false,
+  "seller_disposition": "Not interested",
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 4,
+  "final_delivery": {
+    "language": "en-IN",
+    "speaker": "shubh_hi_customer",
+    "gender": "male",
+    "mode": "DEFAULT",
+    "pace": 0.98,
+    "max_words": 17,
+    "empathy": 3,
+    "assertiveness": 4,
+    "goal": "respectful_exit",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "goal_step": 1,
+      "refusals": 3
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 3,
+      "t_sec": 97.7,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Nahi koi meeting nahi rakhni hai I don't require a meeting.",
+      "trigger": "seller spoke en-IN",
+      "change_made": {
+        "language": [
+          "hi-IN",
+          "en-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 101.0,
+      "kind": "goal",
+      "signal": "not_interested",
+      "detector": "llm",
+      "seller_said": "Nahi koi meeting nahi rakhni hai I don't require a meeting.",
+      "trigger": "Seller clearly declined the meeting twice without accepting alternative asks.",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "respectful_exit"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 117.6,
+      "kind": "end",
+      "signal": "not_interested",
+      "detector": "llm",
+      "seller_said": "What details?",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "RESPECTFUL_EXIT"
+        ]
+      },
+      "reason": "Refusal limit (2) reached: respectful exit.",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "ठीक है जी। चूँकि buyers enquiries आ रही हैं, तो क्या हम एक छोटी सी meeting रख लें? आप online या in-person, जैसा चाहें वैसा कर सकते हैं।",
+      "after": "ठीक है जी। चूँकि buyers enquiries आ रही हैं, तो क्या हम एक छोटी सी meeting रख लें? आप online या in-person, जैसा चाहें वैसा कर सकते हैं।"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी ठीक है, कोई बात नहीं। अगर अभी meeting सही नहीं लग रही है, तो क्या हम कल शाम 5 बजे की एक callback रख लें?",
+      "after": "जी ठीक है, कोई बात नहीं। अगर अभी meeting सही नहीं लग रही है, तो क्या हम कल शाम 5 बजे की एक callback रख लें?"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "pitch_after_no",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I understand sir. Since you do not require a meeting, may I send the relevant details to you on WhatsApp instead?",
+      "after": "I understand sir. Since you do not require a meeting, may I send the relevant details to you on WhatsApp instead?"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "pitch_after_no",
+      "action": "llm_retry"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Rohan बोल रहा हूँ। call इसलिए किया क्योंकि Hyderabad में आपकी De Oiled Rice Bran category में काफ़ी buyer enquiries आई हैं। आपका De Oiled Rice Bran का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Sahi chal raha hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है जी। चूँकि buyers enquiries आ रही हैं, तो क्या हम एक छोटी सी meeting रख लें? आप online या in-person, जैसा चाहें वैसा कर सकते हैं।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी ठीक है, कोई बात नहीं। अगर अभी meeting सही नहीं लग रही है, तो क्या हम कल शाम 5 बजे की एक callback रख लें?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi koi meeting nahi rakhni hai I don't require a meeting."
+    },
+    {
+      "speaker": "vani",
+      "text": "I understand sir. Since you do not require a meeting, may I send the relevant details to you on WhatsApp instead?"
+    },
+    {
+      "speaker": "seller",
+      "text": "What details?"
+    },
+    {
+      "speaker": "vani",
+      "text": "I understand sir. No problem, thank you for your time. Have a good day."
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 17.9,
+    "kind": "persona",
+    "signal": "connectivity",
+    "detector": "silence",
+    "seller_said": "(silence)",
+    "trigger": "no speech heard",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CLEAR_AUDIO"
+      ],
+      "pace": [
+        0.93,
+        0.85
+      ],
+      "max_words": [
+        24,
+        14
+      ]
+    },
+    "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 45.2,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "CLEAR_AUDIO",
+        "DEFAULT"
+      ],
+      "pace": [
+        0.85,
+        0.93
+      ],
+      "max_words": [
+        14,
+        24
+      ]
+    },
+    "reason": "Two turns without the signal behind CLEAR_AUDIO: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 46.5,
+    "kind": "persona",
+    "signal": "confusion",
+    "detector": "llm",
+    "seller_said": "No no no like you were asking me how is my like business going where did like we start the conversation.",
+    "trigger": "Seller is confused about the conversation flow and where it started.",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "SIMPLE"
+      ],
+      "pace": [
+        0.93,
+        0.83
+      ],
+      "max_words": [
+        24,
+        20
+      ],
+      "empathy": [
+        3,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+    "evidence": [
+      "playbook",
+      "E3_pace"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 94.2,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "SIMPLE",
+        "DEFAULT"
+      ],
+      "pace": [
+        0.83,
+        0.93
+      ],
+      "max_words": [
+        20,
+        24
+      ]
+    },
+    "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 96.5,
+    "kind": "persona",
+    "signal": "confusion",
+    "detector": "llm",
+    "seller_said": "How will he be updating my catalogue?",
+    "trigger": "Seller asked how the executive will update the catalog, which is a question about process.",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "SIMPLE"
+      ],
+      "pace": [
+        0.93,
+        0.83
+      ],
+      "max_words": [
+        24,
+        20
+      ],
+      "empathy": [
+        3,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+    "evidence": [
+      "playbook",
+      "E3_pace"
+    ]
+  },
+  {
+    "turn": 7,
+    "t_sec": 139.1,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "SIMPLE",
+        "DEFAULT"
+      ],
+      "pace": [
+        0.83,
+        0.93
+      ],
+      "max_words": [
+        20,
+        24
+      ]
+    },
+    "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 7,
+    "t_sec": 141.7,
+    "kind": "goal",
+    "signal": "already_with_executive",
+    "detector": "llm",
+    "seller_said": "But like I had an executive call before it was useless, I don't think it will help me at all.",
+    "trigger": "Seller mentioned a previous executive visit was useless.",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "exec_handoff"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'already_with_executive': goal moves to exec_handoff (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 8,
+    "t_sec": 165.9,
+    "kind": "persona",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Are yaar, abhi to bola ki baat kar chuka hoon, I don't want any calls, matlab mujhe pareshan mat karo please, bahut dimaag kharab kar rakha hai aap logon ne.",
+    "trigger": "pareshan",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CALM_EMPATHETIC"
+      ],
+      "pace": [
+        0.93,
+        0.87
+      ],
+      "max_words": [
+        24,
+        20
+      ],
+      "empathy": [
+        3,
+        5
+      ],
+      "assertiveness": [
+        3,
+        1
+      ]
+    },
+    "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 9,
+    "t_sec": 176.4,
+    "kind": "end",
+    "signal": "connectivity",
+    "detector": "silence",
+    "seller_said": "(silence)",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "CALL_BACK_LATER"
+      ]
+    },
+    "reason": "Second audio failure: call back later.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  }
+]

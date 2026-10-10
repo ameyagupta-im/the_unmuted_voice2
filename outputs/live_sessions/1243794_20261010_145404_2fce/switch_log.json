@@ -1,0 +1,49 @@
+[
+  {
+    "turn": 2,
+    "t_sec": 46.9,
+    "kind": "persona",
+    "signal": "complaint",
+    "detector": "llm",
+    "seller_said": "Aapke catalog na quality ke nahi hote hain, vo bas enquiry vency poochte hain.",
+    "trigger": "Seller clearly stated that catalog quality is poor and only enquiries are asked for, indicating dissatisfaction with IndiaMART service.",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CALM_EMPATHETIC"
+      ],
+      "pace": [
+        0.93,
+        0.87
+      ],
+      "max_words": [
+        18,
+        20
+      ]
+    },
+    "reason": "Playbook scenario 4: complaint -> CALM_EMPATHETIC.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 64.9,
+    "kind": "end",
+    "signal": "llm_outcome",
+    "detector": "llm",
+    "seller_said": "Aa VANI.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "COMPLAINT_LOGGED"
+      ]
+    },
+    "reason": "LLM proposed COMPLAINT_LOGGED; supported by what the seller said.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

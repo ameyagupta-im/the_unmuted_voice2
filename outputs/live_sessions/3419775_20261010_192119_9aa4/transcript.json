@@ -1,0 +1,796 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "callback",
+    "meeting",
+    "info_whatsapp",
+    "callback"
+  ],
+  "final_outcome": "ESCALATED_EXIT",
+  "do_not_call": false,
+  "seller_disposition": "Frustrated",
+  "goal_achieved": "no",
+  "slot": "32 तारीख",
+  "seller_insights": {
+    "business_status": "good"
+  },
+  "turns": 17,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "CALM_EMPATHETIC",
+    "pace": 0.87,
+    "max_words": 20,
+    "empathy": 5,
+    "assertiveness": 1,
+    "goal": "callback",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 2,
+      "goal_step": 0,
+      "frustration": 2,
+      "refusals": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 21.7,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "regex:explicit_request",
+      "seller_said": "Are mujhe aati nahi English, aap Hindi mein baat karoge kya?",
+      "trigger": "Hindi mein",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 111.4,
+      "kind": "persona",
+      "signal": "interest",
+      "detector": "llm",
+      "seller_said": "Haan ji bilkul rakh lo.",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "ENGAGED"
+        ],
+        "pace": [
+          0.93,
+          0.96
+        ],
+        "max_words": [
+          24,
+          32
+        ],
+        "assertiveness": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 18: interest -> ENGAGED.",
+      "evidence": [
+        "playbook",
+        "E11_forced_meetings"
+      ]
+    },
+    {
+      "turn": 5,
+      "t_sec": 123.5,
+      "kind": "persona",
+      "signal": "confusion",
+      "detector": "llm",
+      "seller_said": "Kya samajh gaye?",
+      "trigger": "Seller asked 'Kya samajh gaye?' indicating they did not understand the meeting proposal.",
+      "change_made": {
+        "mode": [
+          "ENGAGED",
+          "SIMPLE"
+        ],
+        "pace": [
+          0.96,
+          0.83
+        ],
+        "max_words": [
+          32,
+          20
+        ],
+        "empathy": [
+          3,
+          4
+        ],
+        "assertiveness": [
+          4,
+          3
+        ]
+      },
+      "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+      "evidence": [
+        "playbook",
+        "E3_pace"
+      ]
+    },
+    {
+      "turn": 5,
+      "t_sec": 123.5,
+      "kind": "goal",
+      "signal": "goal_ask_limit",
+      "detector": "engine",
+      "seller_said": "Kya samajh gaye?",
+      "trigger": "goal ask limit reached",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "callback"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'goal_ask_limit': goal moves to callback (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 6,
+      "t_sec": 139.5,
+      "kind": "goal",
+      "signal": "interest",
+      "detector": "regex",
+      "seller_said": "Haan bilkul theek rahega, lekin free meeting aap rakhoge kab?",
+      "trigger": "Haan bilkul",
+      "change_made": {
+        "goal": [
+          "callback",
+          "meeting"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'interest': goal moves to meeting (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook",
+        "E11_forced_meetings"
+      ]
+    },
+    {
+      "turn": 7,
+      "t_sec": 153.7,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "SIMPLE",
+          "DEFAULT"
+        ],
+        "pace": [
+          0.83,
+          0.93
+        ],
+        "max_words": [
+          20,
+          24
+        ]
+      },
+      "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 9,
+      "t_sec": 192.7,
+      "kind": "persona",
+      "signal": "confusion",
+      "detector": "llm",
+      "seller_said": "Aur mujhe agar online meeting chahiye ho to.",
+      "trigger": "Seller is asking for clarification on the meeting format after agreeing.",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "SIMPLE"
+        ],
+        "pace": [
+          0.93,
+          0.83
+        ],
+        "max_words": [
+          24,
+          20
+        ],
+        "empathy": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+      "evidence": [
+        "playbook",
+        "E3_pace"
+      ]
+    },
+    {
+      "turn": 11,
+      "t_sec": 228.3,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "SIMPLE",
+          "DEFAULT"
+        ],
+        "pace": [
+          0.83,
+          0.93
+        ],
+        "max_words": [
+          20,
+          24
+        ]
+      },
+      "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 12,
+      "t_sec": 244.8,
+      "kind": "goal",
+      "signal": "goal_ask_limit",
+      "detector": "engine",
+      "seller_said": "Battis tareekh battis tareekh ye kaun se mahine mein battis aata hai ji?",
+      "trigger": "goal ask limit reached",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "info_whatsapp"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'goal_ask_limit': goal moves to info_whatsapp (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 13,
+      "t_sec": 268.2,
+      "kind": "persona",
+      "signal": "confusion",
+      "detector": "llm",
+      "seller_said": "Wo sab to theek hai but battis aati nahi hai, to aapne kaise bola ki battis confirm kar diya hai?",
+      "trigger": "Seller asked why 32 तारीख confirm कर दी when 32 तारीख आती नहीं है.",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "SIMPLE"
+        ],
+        "pace": [
+          0.93,
+          0.83
+        ],
+        "max_words": [
+          24,
+          20
+        ],
+        "empathy": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+      "evidence": [
+        "playbook",
+        "E3_pace"
+      ]
+    },
+    {
+      "turn": 15,
+      "t_sec": 336.0,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "SIMPLE",
+          "DEFAULT"
+        ],
+        "pace": [
+          0.83,
+          0.93
+        ],
+        "max_words": [
+          20,
+          24
+        ]
+      },
+      "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 16,
+      "t_sec": 364.1,
+      "kind": "goal",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Are mujhe koi details vitails nahi chahiye, dimaag mat kharab karo aap mera, aap kuch mat karo meeting bhi cancel karo, mujhe IndiaMART se baat hi nahi karni hai.",
+      "trigger": "mat karo",
+      "change_made": {
+        "goal": [
+          "info_whatsapp",
+          "callback"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'frustration': goal moves to callback (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 16,
+      "t_sec": 364.1,
+      "kind": "persona",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Are mujhe koi details vitails nahi chahiye, dimaag mat kharab karo aap mera, aap kuch mat karo meeting bhi cancel karo, mujhe IndiaMART se baat hi nahi karni hai.",
+      "trigger": "mat karo",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CALM_EMPATHETIC"
+        ],
+        "pace": [
+          0.93,
+          0.87
+        ],
+        "max_words": [
+          24,
+          20
+        ],
+        "empathy": [
+          3,
+          5
+        ],
+        "assertiveness": [
+          3,
+          1
+        ]
+      },
+      "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 17,
+      "t_sec": 390.2,
+      "kind": "end",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Are abhi to bola ki aap call kar kar ke pareshan kar rahe ho mujhe koi call nahi chahiye.",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "ESCALATED_EXIT"
+        ]
+      },
+      "reason": "Frustrated twice: end politely (ask limit 2).",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "ठीक है, तो कल सुबह 11 baje या परसों शाम 4 baje में से कौन सा time आपके लिए सही रहेगा? और आप मिलना पसंद करेंगे या online meeting?",
+      "after": "ठीक है, तो कल सुबह 11 baje या परसों शाम 4 baje में से कौन सा time आपके लिए सही रहेगा?"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "ठीक है, तो कल सुबह 11 baje या परसों शाम 4 baje में से कौन सा time आपके लिए सही रहेगा?",
+      "after": "जी, समझ गई।"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, समझ गई।",
+      "after": "जी, समझ गई।"
+    },
+    {
+      "turn": 8,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 9,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 9,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 9,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, online meeting भी हो सकती है। क्या कल सुबह 11 बजे या परसों शाम 4 बजे, इनमें से कोई time ठीक रहेगा?",
+      "after": "जी, online meeting भी हो सकती है।"
+    },
+    {
+      "turn": 9,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, online meeting भी हो सकती है।",
+      "after": "जी, online meeting भी हो सकती है।"
+    },
+    {
+      "turn": 9,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, online meeting भी हो सकती है।",
+      "after": "जी, online meeting भी हो सकती है।"
+    },
+    {
+      "turn": 10,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 10,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    },
+    {
+      "turn": 10,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, online meeting के लिए भी time सुबह 11 से शाम 5 के बीच ही रहेगा। क्या कल सुबह 11 बजे ठीक रहेगा?",
+      "after": "जी, online meeting के लिए भी time सुबह 11 से शाम 5 के बीच ही रहेगा।"
+    },
+    {
+      "turn": 10,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, online meeting के लिए भी time सुबह 11 से शाम 5 के बीच ही रहेगा।",
+      "after": "जी, online meeting के लिए भी time सुबह 11 से शाम 5 के बीच ही रहेगा।"
+    },
+    {
+      "turn": 10,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, online meeting के लिए भी time सुबह 11 से शाम 5 के बीच ही रहेगा।",
+      "after": "जी, online meeting के लिए भी time सुबह 11 से शाम 5 के बीच ही रहेगा।"
+    },
+    {
+      "turn": 11,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 11,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 11,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    },
+    {
+      "turn": 11,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, 32 तारीख confirm कर दिया है। क्या आप personally मिलना चाहेंगे या online meeting ठीक रहेगी?",
+      "after": "जी, 32 तारीख confirm कर दिया है।"
+    },
+    {
+      "turn": 11,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, 32 तारीख confirm कर दिया है।",
+      "after": "जी, 32 तारीख confirm कर दिया है।"
+    },
+    {
+      "turn": 11,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, 32 तारीख confirm कर दिया है।",
+      "after": "जी, 32 तारीख confirm कर दिया है।"
+    },
+    {
+      "turn": 13,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 14,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 14,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    },
+    {
+      "turn": 14,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    },
+    {
+      "turn": 14,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "ठीक है, कल दोपहर 1 बजे online meeting रख लेती हूँ। यह ठीक रहेगा?",
+      "after": "ठीक है, कल दोपहर 1 बजे online meeting रख लेती हूँ।"
+    },
+    {
+      "turn": 14,
+      "kind": "no_question",
+      "action": "repaired",
+      "before": "ठीक है, कल दोपहर 1 बजे online meeting रख लेती हूँ।",
+      "after": "ठीक है, कल दोपहर 1 बजे online meeting रख लेती हूँ। क्या मैं details आपको WhatsApp पर भेज दूँ?"
+    },
+    {
+      "turn": 16,
+      "kind": "repeat_declined_offer",
+      "action": "llm_retry"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Are mujhe aati nahi English, aap Hindi mein baat karoge kya?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, बिल्कुल। मैं Hindi में बात कर रही हूँ। आपके Automatic Idli Making Machine का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Accha chal raha hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "सुनकर …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "Hello."
+    },
+    {
+      "speaker": "vani",
+      "text": "अच्छा, सुनकर अच्छा लगा। Chennai में buyers आपके Automatic Idli Making Machine के लिए enquiry भेज रहे हैं। हमारा executive आपका catalog free में मजबूत कर सकता है। क्या हम एक free meeting रख लें?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Haan ji bilkul rakh lo."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, समझ गई।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Kya samajh gaye?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं free meeting की बात कर रही थी जिसमें हमारे executive आपके catalog को बेहतर बनाएंगे। क्या यह ठीक रहेगा?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Haan bilkul theek rahega, lekin free meeting aap rakhoge kab?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, कल सुबह 11 baje या परसों शाम 4 baje, क्या ठीक रहेगा?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi mujhe toh raat ke baarah baje meeting schedule karni hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, रात 12 बजे का slot available नहीं है। कल सुबह 11 बजे या परसों शाम 4 बजे, इनमें से कौन सा time ठीक रहेगा?"
+    },
+    {
+      "speaker": "seller",
+      "text": "But raat baarah baje ka slot available kyon nahin hai aapke paas?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, हमारे executive visits सिर्फ सुबह 11 से शाम 5 के बीच ही कर सकते हैं। तो कल सुबह 11 बजे या परसों शाम 4 बजे, कौन सा time ठीक रहेगा?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Aur mujhe agar online meeting chahiye ho to."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, online meeting भी हो सकती है।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Toh online meeting baarah baje schedule kara do raat ke."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, online meeting के लिए भी time सुबह 11 से शाम 5 के बीच ही रहेगा।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Accha theek hai, ek kaam karo aap meri is mahine ki battis tareekh ko meeting ek schedule kar do."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, 32 तारीख confirm कर दिया है।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Battis tareekh battis tareekh ye kaun se mahine mein battis aata hai ji?"
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, 32 तारीख किसी महीने में नहीं आती है। कल सुबह 11 बजे या परसों शाम 4 बजे में से कोई online slot ठीक रहेगा?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Wo sab to theek hai but battis aati nahi hai, to aapne kaise bola ki battis confirm kar diya hai?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मेरी गलती हुई, 32 तारीख तो आती नहीं है। कल सुबह 11 बजे या परसों शाम 4 बजे online meeting रख लें?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi, aap ek kaam karo, aap dopahar ke ek baje meeting schedule karo meri."
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है, कल दोपहर 1 बजे online meeting रख लेती हूँ। क्या मैं details आपको WhatsApp पर भेज दूँ?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Kaun si details?"
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, details में यह होगा कि Chennai में आपके competitors ने कितने buy leads लिए हैं, आपकी category के recent leads, और जो leads आपसे miss हो गए हैं। क्या मैं ये details आपको WhatsApp पर भेज दूँ?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Are mujhe koi details vitails nahi chahiye, dimaag mat kharab karo aap mera, aap kuch mat karo meeting bhi cancel karo, mujhe IndiaMART se baat hi nahi karni hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं समझ गई। क्या आप चाहेंगे कि IndiaMART आपको कितनी बार call करे?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Are abhi to bola ki aap call kar kar ke pareshan kar rahe ho mujhe koi call nahi chahiye."
+    },
+    {
+      "speaker": "vani",
+      "text": "परेशानी के लिए माफ़ी चाहती हूँ। मैं call यहीं समाप्त करती हूँ। धन्यवाद।"
+    }
+  ],
+  "facts": {
+    "business_status": [
+      {
+        "turn": 2,
+        "value": "good",
+        "words": "Accha chal raha hai.",
+        "source": "rules"
+      },
+      {
+        "turn": 3,
+        "value": "good",
+        "words": "Hello.",
+        "source": "llm"
+      },
+      {
+        "turn": 13,
+        "value": "good",
+        "words": "Wo sab to theek hai but battis aati nahi hai, to aapne kaise bola ki battis confirm kar diya hai?",
+        "source": "rules"
+      }
+    ]
+  },
+  "integrations": {
+    "crm": {
+      "ts": "2026-10-10T19:27:50+0530",
+      "mode": "dry_run",
+      "call_id": "3419775_20261010_192119_9aa4",
+      "seller_id": 3419775,
+      "vani_outcome": "ESCALATED_EXIT",
+      "disposition_label": "Not Interested",
+      "meeting_fixed": false,
+      "slot": "32 तारीख",
+      "do_not_call": false,
+      "goal_achieved": "no",
+      "primary_goal": "meeting",
+      "goal_history": [
+        "meeting",
+        "callback",
+        "meeting",
+        "info_whatsapp",
+        "callback"
+      ],
+      "seller_insights": {
+        "business_status": "good"
+      },
+      "turns": 17,
+      "completed": true
+    }
+  }
+}

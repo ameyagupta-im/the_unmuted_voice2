@@ -1,0 +1,570 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "exec_handoff"
+  ],
+  "final_outcome": "CALL_BACK_LATER",
+  "do_not_call": false,
+  "seller_disposition": "Unknown",
+  "goal_achieved": "partly",
+  "slot": null,
+  "seller_insights": {
+    "business_status": "bad",
+    "enquiry_level": "low"
+  },
+  "turns": 9,
+  "final_delivery": {
+    "language": "en-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "CALM_EMPATHETIC",
+    "pace": 0.87,
+    "max_words": 20,
+    "empathy": 5,
+    "assertiveness": 1,
+    "goal": "exec_handoff",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "connectivity": 2,
+      "goal_step": 2,
+      "frustration": 1,
+      "refusals": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 17.9,
+      "kind": "persona",
+      "signal": "connectivity",
+      "detector": "silence",
+      "seller_said": "(silence)",
+      "trigger": "no speech heard",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CLEAR_AUDIO"
+        ],
+        "pace": [
+          0.93,
+          0.85
+        ],
+        "max_words": [
+          24,
+          14
+        ]
+      },
+      "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 45.2,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "CLEAR_AUDIO",
+          "DEFAULT"
+        ],
+        "pace": [
+          0.85,
+          0.93
+        ],
+        "max_words": [
+          14,
+          24
+        ]
+      },
+      "reason": "Two turns without the signal behind CLEAR_AUDIO: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 46.5,
+      "kind": "persona",
+      "signal": "confusion",
+      "detector": "llm",
+      "seller_said": "No no no like you were asking me how is my like business going where did like we start the conversation.",
+      "trigger": "Seller is confused about the conversation flow and where it started.",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "SIMPLE"
+        ],
+        "pace": [
+          0.93,
+          0.83
+        ],
+        "max_words": [
+          24,
+          20
+        ],
+        "empathy": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+      "evidence": [
+        "playbook",
+        "E3_pace"
+      ]
+    },
+    {
+      "turn": 5,
+      "t_sec": 94.2,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "SIMPLE",
+          "DEFAULT"
+        ],
+        "pace": [
+          0.83,
+          0.93
+        ],
+        "max_words": [
+          20,
+          24
+        ]
+      },
+      "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 5,
+      "t_sec": 96.5,
+      "kind": "persona",
+      "signal": "confusion",
+      "detector": "llm",
+      "seller_said": "How will he be updating my catalogue?",
+      "trigger": "Seller asked how the executive will update the catalog, which is a question about process.",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "SIMPLE"
+        ],
+        "pace": [
+          0.93,
+          0.83
+        ],
+        "max_words": [
+          24,
+          20
+        ],
+        "empathy": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+      "evidence": [
+        "playbook",
+        "E3_pace"
+      ]
+    },
+    {
+      "turn": 7,
+      "t_sec": 139.1,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "SIMPLE",
+          "DEFAULT"
+        ],
+        "pace": [
+          0.83,
+          0.93
+        ],
+        "max_words": [
+          20,
+          24
+        ]
+      },
+      "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 7,
+      "t_sec": 141.7,
+      "kind": "goal",
+      "signal": "already_with_executive",
+      "detector": "llm",
+      "seller_said": "But like I had an executive call before it was useless, I don't think it will help me at all.",
+      "trigger": "Seller mentioned a previous executive visit was useless.",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "exec_handoff"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'already_with_executive': goal moves to exec_handoff (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 8,
+      "t_sec": 165.9,
+      "kind": "persona",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Are yaar, abhi to bola ki baat kar chuka hoon, I don't want any calls, matlab mujhe pareshan mat karo please, bahut dimaag kharab kar rakha hai aap logon ne.",
+      "trigger": "pareshan",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CALM_EMPATHETIC"
+        ],
+        "pace": [
+          0.93,
+          0.87
+        ],
+        "max_words": [
+          24,
+          20
+        ],
+        "empathy": [
+          3,
+          5
+        ],
+        "assertiveness": [
+          3,
+          1
+        ]
+      },
+      "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 9,
+      "t_sec": 176.4,
+      "kind": "end",
+      "signal": "connectivity",
+      "detector": "silence",
+      "seller_said": "(silence)",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "CALL_BACK_LATER"
+        ]
+      },
+      "reason": "Second audio failure: call back later.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 3,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "I understand, ji. Our executive can help bring more enquiries by updating your catalog. Shall we fix a free 15-minute online meeting?",
+      "after": "I understand, ji. Our executive can help bring more enquiries by updating your catalog."
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "I understand, ji. Our executive can help bring more enquiries by updating your catalog.",
+      "after": "I understand, ji. Our executive can help bring more enquiries by updating your catalog."
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "I understand, ji. Our executive can help bring more enquiries by updating your catalog.",
+      "after": "I understand, ji. Our executive can help bring more enquiries by updating your catalog."
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 5,
+      "kind": "no_question",
+      "action": "repaired",
+      "before": "Ji, the executive will add the right search keywords and fix your lead settings so the right buyers find you.",
+      "after": "Ji, the executive will add the right search keywords and fix your lead settings so the right buyers find you. Shall I set up a short meeting with our executive, online or at your place?"
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Ji, the executive will add the right search keywords and fix your lead settings so the right buyers find you. Shall I set up a short meeting with our executive, online or at your place?",
+      "after": "Ji, the executive will add the right search keywords and fix your lead settings so the right buyers find you."
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Ji, the executive will add the right search keywords and fix your lead settings so the right buyers find you.",
+      "after": "Ji, the executive will add the right search keywords and fix your lead settings so the right buyers find you."
+    },
+    {
+      "turn": 6,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 6,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 6,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Ji, I cannot guarantee results, but the meeting itself is free. The executive will explain how the profile helps.",
+      "after": "Ji, I cannot guarantee results, but the meeting itself is free. The executive will explain how the profile helps."
+    },
+    {
+      "turn": 6,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Ji, I cannot guarantee results, but the meeting itself is free. The executive will explain how the profile helps.",
+      "after": "Ji, I cannot guarantee results, but the meeting itself is free. The executive will explain how the profile helps."
+    },
+    {
+      "turn": 6,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Ji, I cannot guarantee results, but the meeting itself is free. The executive will explain how the profile helps.",
+      "after": "Ji, I cannot guarantee results, but the meeting itself is free. The executive will explain how the profile helps."
+    },
+    {
+      "turn": 7,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 7,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 7,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "I understand, ji. Since you already work with an executive, I can share what you need with them. Would you like to fix a free 15-minute meeting to guide them?",
+      "after": "I understand, ji. Since you already work with an executive, I can share what you need with them."
+    },
+    {
+      "turn": 7,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "I understand, ji. Since you already work with an executive, I can share what you need with them.",
+      "after": "I understand, ji. Since you already work with an executive, I can share what you need with them."
+    },
+    {
+      "turn": 7,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "I understand, ji. Since you already work with an executive, I can share what you need with them.",
+      "after": "I understand, ji. Since you already work with an executive, I can share what you need with them."
+    },
+    {
+      "turn": 8,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "(silence)"
+    },
+    {
+      "speaker": "vani",
+      "text": "Hello …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "receiving buy."
+    },
+    {
+      "speaker": "vani",
+      "text": "That is good to hear, ji. Since buyers are coming, we can make your catalog stronger. Would you have 15 minutes for a free online meeting?"
+    },
+    {
+      "speaker": "seller",
+      "text": "No no no like you were asking me how is my like business going where did like we start the conversation."
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, we started with your business, and you said it is doing well with buyers. We can make your catalog stronger to get more orders. Shall we fix a free 15-minute online meeting?"
+    },
+    {
+      "speaker": "seller",
+      "text": "No no no, like I I don't know when I said like my business is going well, it is not going well at all. Actually I am not receiving any inquiries, I am not receiving any calls of."
+    },
+    {
+      "speaker": "vani",
+      "text": "I understand, ji. Our executive can help bring more enquiries by updating your catalog."
+    },
+    {
+      "speaker": "seller",
+      "text": "How will he be updating my catalogue?"
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, the executive will add the right search keywords and fix your lead settings so the right buyers find you."
+    },
+    {
+      "speaker": "seller",
+      "text": "Okay do you like guarantee that this call will actually help me to improve my business?"
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, I cannot guarantee results, but the meeting itself is free. The executive will explain how the profile helps."
+    },
+    {
+      "speaker": "seller",
+      "text": "But like I had an executive call before it was useless, I don't think it will help me at all."
+    },
+    {
+      "speaker": "vani",
+      "text": "I understand, ji. Since you already work with an executive, I can share what you need with them."
+    },
+    {
+      "speaker": "seller",
+      "text": "Are yaar, abhi to bola ki baat kar chuka hoon, I don't want any calls, matlab mujhe pareshan mat karo please, bahut dimaag kharab kar rakha hai aap logon ne."
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, I am really sorry for the trouble. Buyers in Chennai …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "(silence)"
+    },
+    {
+      "speaker": "vani",
+      "text": "I can't hear you clearly, I will call you back in a little while. Thank you."
+    }
+  ],
+  "facts": {
+    "business_status": [
+      {
+        "turn": 2,
+        "value": "good",
+        "words": "receiving buy.",
+        "source": "llm"
+      },
+      {
+        "turn": 4,
+        "value": "mixed",
+        "words": "No no no, like I I don't know when I said like my business is going well, it is not going well at all. Actually I am not receiving any inquiries, I am not receiving any calls of.",
+        "source": "rules"
+      }
+    ],
+    "enquiry_level": [
+      {
+        "turn": 4,
+        "value": "low",
+        "words": "No no no, like I I don't know when I said like my business is going well, it is not going well at all. Actually I am not receiving any inquiries, I am not receiving any calls of.",
+        "source": "llm"
+      },
+      {
+        "turn": 5,
+        "value": "low",
+        "words": "How will he be updating my catalogue?",
+        "source": "llm"
+      },
+      {
+        "turn": 7,
+        "value": "low",
+        "words": "But like I had an executive call before it was useless, I don't think it will help me at all.",
+        "source": "llm"
+      }
+    ]
+  },
+  "integrations": {
+    "crm": {
+      "ts": "2026-10-10T19:55:55+0530",
+      "mode": "dry_run",
+      "call_id": "3419775_20261010_195257_62b8",
+      "seller_id": 3419775,
+      "vani_outcome": "CALL_BACK_LATER",
+      "disposition_label": "Call Later",
+      "meeting_fixed": false,
+      "slot": null,
+      "do_not_call": false,
+      "goal_achieved": "partly",
+      "primary_goal": "meeting",
+      "goal_history": [
+        "meeting",
+        "exec_handoff"
+      ],
+      "seller_insights": {
+        "business_status": "bad",
+        "enquiry_level": "low"
+      },
+      "turns": 9,
+      "completed": true
+    }
+  }
+}

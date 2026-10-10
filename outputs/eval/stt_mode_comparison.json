@@ -1,0 +1,4084 @@
+{
+  "n": 200,
+  "summary": {
+    "translit": {
+      "mean_wer": 0.163,
+      "median_wer": 0.096,
+      "brand_word_accuracy": 0.889,
+      "brand_words": 36,
+      "p50_ms": 188,
+      "p95_ms": 2096
+    },
+    "codemix": {
+      "mean_wer": 0.217,
+      "median_wer": 0.167,
+      "brand_word_accuracy": 0.833,
+      "brand_words": 36,
+      "p50_ms": 899,
+      "p95_ms": 2210
+    }
+  },
+  "winner": "translit",
+  "rule": "codemix wins only with mean WER at least 2 points lower, brand words no worse, p95 latency at most 300 ms higher (the regex layer needs Roman text, so codemix pays a transliteration call)",
+  "caveat": "synthetic Bulbul speech cut to 8 kHz: cleaner than a real phone line, so absolute WER is optimistic; the comparison between modes is what this measures",
+  "results": [
+    {
+      "text": "Kal subah 10 baje?",
+      "brand": false,
+      "i": 0,
+      "translit": {
+        "hyp": "Kal subah das baje.",
+        "wer": 0.25,
+        "ms": 1108,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kal subah 10 baje.",
+        "wer": 0.0,
+        "ms": 1018,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Madam ye chatbot hai kya? ye real mein nahi hai.",
+      "brand": false,
+      "i": 1,
+      "translit": {
+        "hyp": "Madam yeh chatbot hai kya? Yeh real mein nahi hai.",
+        "wer": 0.2,
+        "ms": 1123,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Madam ye chatbot hai kya? Ye real mein nahi hai.",
+        "wer": 0.0,
+        "ms": 947,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aap IndiaMART ke baare mein baat kar rahe hain? Aapko kya jaankari chahiye?",
+      "brand": false,
+      "i": 2,
+      "translit": {
+        "hyp": "Aap IndiaMART ke bare mein baat kar rahe hain, aapko kya jankari chahiye?",
+        "wer": 0.154,
+        "ms": 247,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "Aap IndiaMART ke bare mein baat kar rahe hain. Aapko kya jaankari chahiye?",
+        "wer": 0.077,
+        "ms": 1032,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Toh kaise improve hoga profile score?",
+      "brand": false,
+      "i": 3,
+      "translit": {
+        "hyp": "To kaise improve hoga profile score?",
+        "wer": 0.167,
+        "ms": 207,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Toh kaise improve hoga? catalog,",
+        "wer": 0.333,
+        "ms": 915,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kal kis samay?",
+      "brand": false,
+      "i": 4,
+      "translit": {
+        "hyp": "Kal ke samay.",
+        "wer": 0.333,
+        "ms": 148,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kal ke samay.",
+        "wer": 0.333,
+        "ms": 787,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aap kyun call kare ja rahe ho baar-baar?",
+      "brand": false,
+      "i": 5,
+      "translit": {
+        "hyp": "Aap kyon call kare ja rahe ho baar baar?",
+        "wer": 0.111,
+        "ms": 184,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aap kyon call kare ja rahe ho bar-bar?",
+        "wer": 0.333,
+        "ms": 890,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Haan, boliye boliye kya hai.",
+      "brand": false,
+      "i": 6,
+      "translit": {
+        "hyp": "Haan boliye boliye kya hai?",
+        "wer": 0.0,
+        "ms": 163,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Haan boliye boliye ki hai?",
+        "wer": 0.2,
+        "ms": 821,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aur iska package charges kya hai iska?",
+      "brand": false,
+      "i": 7,
+      "translit": {
+        "hyp": "Aur iska package charges kya hai iska?",
+        "wer": 0.0,
+        "ms": 187,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aur iska catalogue charges kya hai iska?",
+        "wer": 0.143,
+        "ms": 849,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Mam aap ek ghante baad call kar sakte hain?",
+      "brand": false,
+      "i": 8,
+      "translit": {
+        "hyp": "Ma'am aap ek ghante baad call kar sakte hain.",
+        "wer": 0.222,
+        "ms": 190,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ma'am aap ek ghante baad call kar sakte hain.",
+        "wer": 0.222,
+        "ms": 1430,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Toh kya karne padegi abhi?",
+      "brand": false,
+      "i": 9,
+      "translit": {
+        "hyp": "Toh kya karni padegi abhi?",
+        "wer": 0.2,
+        "ms": 214,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Toh kya karni padegi abhi?",
+        "wer": 0.2,
+        "ms": 801,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kal ho sakta hai?",
+      "brand": false,
+      "i": 10,
+      "translit": {
+        "hyp": "Kaal ho sakta hai.",
+        "wer": 0.25,
+        "ms": 146,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kala ho sakta hai.",
+        "wer": 0.25,
+        "ms": 765,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Matlab aap aaoge?",
+      "brand": false,
+      "i": 11,
+      "translit": {
+        "hyp": "Matlab aap aaoge.",
+        "wer": 0.0,
+        "ms": 153,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Matlab aap aaoge?",
+        "wer": 0.0,
+        "ms": 744,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Agar Sunday ke nikalun toh? Sunday ki company band hoti hai.",
+      "brand": false,
+      "i": 12,
+      "translit": {
+        "hyp": "Agar Sunday ke nikaaloon toh Sunday ki company band hoti hai.",
+        "wer": 0.091,
+        "ms": 208,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Agar Sunday ke nikalun to? Sunday ki company band hoti hai.",
+        "wer": 0.091,
+        "ms": 1275,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "5 baje ko?",
+      "brand": false,
+      "i": 13,
+      "translit": {
+        "hyp": "Paanch baje ko.",
+        "wer": 0.333,
+        "ms": 178,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Paanch bajay ko?",
+        "wer": 0.667,
+        "ms": 735,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Isse humein kya fayda hoga?",
+      "brand": false,
+      "i": 14,
+      "translit": {
+        "hyp": "Isse humein kya fayda hoga?",
+        "wer": 0.0,
+        "ms": 140,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Isse humein kya fayda hoga?",
+        "wer": 0.0,
+        "ms": 768,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Mujhe samajh mein nahi aaya, kya aap clear kar sakte hain ki aap kiske baare mein baat kar rahe hain?",
+      "brand": false,
+      "i": 15,
+      "translit": {
+        "hyp": "Mujhe samajh mein nahin aaya kya aap clear kar sakte hain ki aap kiske baare mein baat kar rahe hain?",
+        "wer": 0.05,
+        "ms": 220,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Mereku samajh mein nahi aaya. Kya aap clear kar sakte hain ki aap kiske bare mein baat kar rahe hain?",
+        "wer": 0.1,
+        "ms": 1164,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kis tarah ki meeting honi hai?",
+      "brand": false,
+      "i": 16,
+      "translit": {
+        "hyp": "Kis tarah ki meeting honi hai?",
+        "wer": 0.0,
+        "ms": 151,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kis tarah ki meeting honi hai?",
+        "wer": 0.0,
+        "ms": 820,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Hello, kya aap Electrosoft Solutions se bol rahe hain?",
+      "brand": false,
+      "i": 17,
+      "translit": {
+        "hyp": "Hello, kya aap Electrosoft Solutions se bol rahe hain?",
+        "wer": 0.0,
+        "ms": 180,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Hello, kya aap VANI catalog se bol rahe hain?",
+        "wer": 0.222,
+        "ms": 904,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Meeting madam kya on-call hogi ya place ke upar hogi?",
+      "brand": false,
+      "i": 18,
+      "translit": {
+        "hyp": "Meeting Madam kya on call hogi ya place ke upar hogi?",
+        "wer": 0.0,
+        "ms": 281,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Meeting Madam kya on call hogi ya catalogue ke upar hogi?",
+        "wer": 0.091,
+        "ms": 880,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Haan, kaun bol rahe ho aap?",
+      "brand": false,
+      "i": 19,
+      "translit": {
+        "hyp": "Haan, kaun bol rahe ho aap?",
+        "wer": 0.0,
+        "ms": 184,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Haan kaun bol rahe ho aap?",
+        "wer": 0.0,
+        "ms": 785,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aapne mam kis pe karna hai? On phone kaise karna hai?",
+      "brand": false,
+      "i": 20,
+      "translit": {
+        "hyp": "Aapne Ma'am kispe karna hai on phone kaise karna hai?",
+        "wer": 0.273,
+        "ms": 196,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aapne ma'am kis pe karna hai? On phone kaise karna hai?",
+        "wer": 0.182,
+        "ms": 907,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Fayda kya hoga iska batao na?",
+      "brand": false,
+      "i": 21,
+      "translit": {
+        "hyp": "Fayda kya hoga iska batao na.",
+        "wer": 0.0,
+        "ms": 163,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Fayda kya hoga iska batao na.",
+        "wer": 0.0,
+        "ms": 820,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Somvar ko 4 baje ke baad kaunsa time aapke liye sahi rahega? Aap 4:30 ya 5:00 baje prefer karenge?",
+      "brand": false,
+      "i": 22,
+      "translit": {
+        "hyp": "Somwar ko chaar baje ke baad kaun sa time aapke liye sahi rahega? Aap chaar bajkar tees minute ya paanch baje prefer karenge.",
+        "wer": 0.476,
+        "ms": 235,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Somvaar ko chaar baje ke baad kaun sa time aapke liye sahi rahega? Aap chaar bajakar tis minute ya paanch baje prefer karenge?",
+        "wer": 0.476,
+        "ms": 1080,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Call ke liye hai ya meeting ke liye?",
+      "brand": false,
+      "i": 23,
+      "translit": {
+        "hyp": "Call ke liye hai ya meeting ke liye?",
+        "wer": 0.0,
+        "ms": 143,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Call ke liye hai ya catalogue?",
+        "wer": 0.375,
+        "ms": 809,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Day time mein rakh sakte hain?",
+      "brand": false,
+      "i": 24,
+      "translit": {
+        "hyp": "Day time mein rakh sakte hain.",
+        "wer": 0.0,
+        "ms": 165,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Daytime men rakh sakte hain.",
+        "wer": 0.5,
+        "ms": 817,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "1 se 2 baje me aao na?",
+      "brand": false,
+      "i": 25,
+      "translit": {
+        "hyp": "Ek se do baje mein aao na.",
+        "wer": 0.429,
+        "ms": 198,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ek se do baje mein aao na.",
+        "wer": 0.429,
+        "ms": 884,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "11 baje bhi chal jayega ma'am?",
+      "brand": false,
+      "i": 26,
+      "translit": {
+        "hyp": "Gyarah baje bhi chal jayega Ma'am.",
+        "wer": 0.143,
+        "ms": 174,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Gyarah baje bhi chal jaayega ma'am.",
+        "wer": 0.286,
+        "ms": 1052,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Iska kya charge hoga?",
+      "brand": false,
+      "i": 27,
+      "translit": {
+        "hyp": "Iska kya charge hoga?",
+        "wer": 0.0,
+        "ms": 161,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Iska kya charge hoga?",
+        "wer": 0.0,
+        "ms": 779,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Ismein IndiaMART kitna madad karta hai business mein?",
+      "brand": false,
+      "i": 28,
+      "translit": {
+        "hyp": "Ismein IndiaMART kitna madad karta hai business mein?",
+        "wer": 0.0,
+        "ms": 182,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "Issmen VANI kitna madad karta hai business men?",
+        "wer": 0.375,
+        "ms": 892,
+        "brands_ok": [],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Ham ek visitor to aaya tha mere ghar pe...",
+      "brand": false,
+      "i": 29,
+      "translit": {
+        "hyp": "Hum ek visitor to aaya tha mere ghar pe.",
+        "wer": 0.111,
+        "ms": 175,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Hum ek visitor tu aaya tha mere ghar pe.",
+        "wer": 0.222,
+        "ms": 902,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Hamara India Mart?",
+      "brand": false,
+      "i": 30,
+      "translit": {
+        "hyp": "Hamara IndiaMART.",
+        "wer": 0.0,
+        "ms": 181,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "Humara IndiaMART.",
+        "wer": 0.5,
+        "ms": 769,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Kitna time lagega madam?",
+      "brand": false,
+      "i": 31,
+      "translit": {
+        "hyp": "Kitna time lagega Madam?",
+        "wer": 0.0,
+        "ms": 187,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kitna time lagega madam?",
+        "wer": 0.0,
+        "ms": 764,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap line par hain? Iss meeting ke baare mein...",
+      "brand": false,
+      "i": 32,
+      "translit": {
+        "hyp": "Kya aap line par hain is meeting ke baare mein?",
+        "wer": 0.1,
+        "ms": 181,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya aap line par hain? Iss catalogue ke bare mein?",
+        "wer": 0.2,
+        "ms": 855,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "IndiaMART mein apna account banwane ke liye kitna kharcha lag jata hai?",
+      "brand": false,
+      "i": 33,
+      "translit": {
+        "hyp": "IndiaMART mein apna account banwane ke liye kitna kharcha lag jata hai?",
+        "wer": 0.0,
+        "ms": 251,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "IndiaMART men apna account banwane ke liye kitna kharcha lag jata hai?",
+        "wer": 0.083,
+        "ms": 964,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Inquiry... aapka jo demanded hai bahut high hai. Itna kaun bharega paisa?",
+      "brand": false,
+      "i": 34,
+      "translit": {
+        "hyp": "Enquiry aapka jo demanded hai bahut high hai, itna kaun bharega paisa?",
+        "wer": 0.083,
+        "ms": 222,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Enquiry aapka jo demanded hai bahut high hai itna kaun bharega paisa?",
+        "wer": 0.083,
+        "ms": 1050,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Idhar... haan, idhar factory pe aayenge?",
+      "brand": false,
+      "i": 35,
+      "translit": {
+        "hyp": "Idhar idhar factory pe aayenge.",
+        "wer": 0.167,
+        "ms": 156,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Inderhir factory pe aayenge?",
+        "wer": 0.5,
+        "ms": 792,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Matlab ye phone par baat hogi na mam? Kyunki main Rajkot mein available hoon to phone par baat hogi na?",
+      "brand": false,
+      "i": 36,
+      "translit": {
+        "hyp": "Matlab ye phone par baat hogi na Ma'am kyonki main Rajkot mein available hoon to phone par baat hogi na.",
+        "wer": 0.15,
+        "ms": 273,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Matlab ye phone par baat hogi na ma'am kyonki main Rajkot mein available hun toh phone par baat hogi na.",
+        "wer": 0.25,
+        "ms": 1179,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap GD Mould Tech se bol rahe hain?",
+      "brand": false,
+      "i": 37,
+      "translit": {
+        "hyp": "Kya aap GD Mold Tech se bol rahe hain?",
+        "wer": 0.111,
+        "ms": 195,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya aap VANI se bol rahe hain?",
+        "wer": 0.333,
+        "ms": 848,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aaj ho sakta hai toh abhi, abhi ho sakta hai abhi karva do?",
+      "brand": false,
+      "i": 38,
+      "translit": {
+        "hyp": "Aaj ho sakta hai toh abhi bhi ho sakta hai abhi karwa do.",
+        "wer": 0.154,
+        "ms": 219,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aaj ho sakta hai toh abhi bhi ho sakta hai abhi karwa do.",
+        "wer": 0.154,
+        "ms": 992,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Magar ye paid hota hai ya free?",
+      "brand": false,
+      "i": 39,
+      "translit": {
+        "hyp": "Magar yeh paid hota hai ya free?",
+        "wer": 0.143,
+        "ms": 169,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Magar ye paid hota hai ya free?",
+        "wer": 0.0,
+        "ms": 824,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Nahi nahi, aapka personal number dijiye na.",
+      "brand": false,
+      "i": 40,
+      "translit": {
+        "hyp": "Nahi nahi, aapka personal number dijiye na.",
+        "wer": 0.0,
+        "ms": 188,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Nahi nahi, aapka catalog dijiye na.",
+        "wer": 0.286,
+        "ms": 869,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Haan bataye kya kaam hai aapko?",
+      "brand": false,
+      "i": 41,
+      "translit": {
+        "hyp": "Haan batayein, kya kaam hai aapko?",
+        "wer": 0.167,
+        "ms": 171,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Han bataen ki kaam hai aapko?",
+        "wer": 0.5,
+        "ms": 808,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kaun bol rahe?",
+      "brand": false,
+      "i": 42,
+      "translit": {
+        "hyp": "Kaun bol rahe?",
+        "wer": 0.0,
+        "ms": 135,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kaun bol rahe?",
+        "wer": 0.0,
+        "ms": 773,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aapka personal number de do na?",
+      "brand": false,
+      "i": 43,
+      "translit": {
+        "hyp": "Aapka personal number de do na.",
+        "wer": 0.0,
+        "ms": 155,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aapka personal number de do na.",
+        "wer": 0.0,
+        "ms": 871,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya khareedne ka?",
+      "brand": false,
+      "i": 44,
+      "translit": {
+        "hyp": "Kya khareedne ka?",
+        "wer": 0.0,
+        "ms": 152,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya kharidne ka?",
+        "wer": 0.333,
+        "ms": 791,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap Lucky International se bol rahe hain?",
+      "brand": false,
+      "i": 45,
+      "translit": {
+        "hyp": "Kya aap Lucky International se bol rahe hain?",
+        "wer": 0.0,
+        "ms": 213,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya aap VANI se bol rahe hain?",
+        "wer": 0.25,
+        "ms": 876,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "10 se 15 minute matlab kya samjhana chahte hain aap mujhko?",
+      "brand": false,
+      "i": 46,
+      "translit": {
+        "hyp": "Das se pandrah minute matlab ki samjhana chahte hain aap mujhko?",
+        "wer": 0.273,
+        "ms": 7393,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Das se pandrah minute matlab ki samjhana chahte hain aap mujhko?",
+        "wer": 0.273,
+        "ms": 4380,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya naam hai?",
+      "brand": false,
+      "i": 47,
+      "translit": {
+        "hyp": "Kya naam hai?",
+        "wer": 0.0,
+        "ms": 1897,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya naam hai?",
+        "wer": 0.0,
+        "ms": 13564,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aapke charges kya ho rahe hain abhi?",
+      "brand": false,
+      "i": 48,
+      "translit": {
+        "hyp": "Aapke charges kya ho rahe hain abhi?",
+        "wer": 0.0,
+        "ms": 9280,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aapke charges kya ho rahe hain abhi?",
+        "wer": 0.0,
+        "ms": 3859,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap abhi bhi hain?",
+      "brand": false,
+      "i": 49,
+      "translit": {
+        "hyp": "Kya aap abhi bhi hain?",
+        "wer": 0.0,
+        "ms": 16806,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya aap abhi bhi hain?",
+        "wer": 0.0,
+        "ms": 776,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Madam ek minute, mujhe complaint karne ke liye kaunse number pe call karna hoga?",
+      "brand": false,
+      "i": 50,
+      "translit": {
+        "hyp": "Madam ek minute. Mane complaint karne ke liye kaunse number pe call karna hoga?",
+        "wer": 0.071,
+        "ms": 4038,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Madam ek minute. Mane complaint karne ke liye kaunse number pe call karna hoga?",
+        "wer": 0.071,
+        "ms": 9187,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap Sapna Auto Sales se bol rahi hain?",
+      "brand": false,
+      "i": 51,
+      "translit": {
+        "hyp": "Kya aap Sapna Auto Sales se bol rahi hain?",
+        "wer": 0.0,
+        "ms": 174,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya aap VANI catalog se bol rahi hain?",
+        "wer": 0.333,
+        "ms": 839,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Visit karenge ya mereko telephonically discuss karna hoga?",
+      "brand": false,
+      "i": 52,
+      "translit": {
+        "hyp": "Visit karne le ya mere ko telephonically discuss karna hoga.",
+        "wer": 0.5,
+        "ms": 171,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Visit kar lein ya mere ko telephonically discuss karna hoga.",
+        "wer": 0.5,
+        "ms": 1952,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap mujhe bata sakte hain ki aap kaun hain aur Abdul se kya baat karna chahte hain?",
+      "brand": false,
+      "i": 53,
+      "translit": {
+        "hyp": "Kya aap mujhe bata sakte hain ki aap kaun hain aur Abdul se kya baat karna chahte hain?",
+        "wer": 0.0,
+        "ms": 186,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya aap mujhe bata sakte hain ki aap kaun hain aur Abdul se kya baat karna chahte hain?",
+        "wer": 0.0,
+        "ms": 1120,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Hello, kya aap Master Agency se bol rahi ho?",
+      "brand": false,
+      "i": 54,
+      "translit": {
+        "hyp": "Hello, kya aap Master Agency se bol rahi ho?",
+        "wer": 0.0,
+        "ms": 205,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Hello, kya aap Master Agency se bol rahi ho?",
+        "wer": 0.0,
+        "ms": 1897,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Visit shop par karoge ma'am?",
+      "brand": false,
+      "i": 55,
+      "translit": {
+        "hyp": "Visit shop, please ma'am.",
+        "wer": 0.333,
+        "ms": 1228,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Visit shop par karenge ma'am.",
+        "wer": 0.167,
+        "ms": 810,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Toh woh kahan se dhundhun main?",
+      "brand": false,
+      "i": 56,
+      "translit": {
+        "hyp": "Toh vo kahan se dhoondh dhoondh main.",
+        "wer": 0.5,
+        "ms": 177,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Toh vo kahan se dhundhun main?",
+        "wer": 0.167,
+        "ms": 2928,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Hello, Sunday ko bhi aap log kaam karte ho?",
+      "brand": false,
+      "i": 57,
+      "translit": {
+        "hyp": "No Sunday ko bhi aap log kaam karte ho?",
+        "wer": 0.111,
+        "ms": 2116,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "No Sunday ko bhi aap log kaam karte ho?",
+        "wer": 0.111,
+        "ms": 892,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aap mujhse baat kar rahi hain kya?",
+      "brand": false,
+      "i": 58,
+      "translit": {
+        "hyp": "Aap mujhse baat kar rahi hain kya?",
+        "wer": 0.0,
+        "ms": 142,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aap mujhse baat kar rahi hain kya?",
+        "wer": 0.0,
+        "ms": 881,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kal ya aaj?",
+      "brand": false,
+      "i": 59,
+      "translit": {
+        "hyp": "Kal ya aaj.",
+        "wer": 0.0,
+        "ms": 165,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kal ya aaj.",
+        "wer": 0.0,
+        "ms": 1884,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aaj kiya to bhi chalega?",
+      "brand": false,
+      "i": 60,
+      "translit": {
+        "hyp": "Aaj kiya to bhi chalega.",
+        "wer": 0.0,
+        "ms": 188,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aaj kiya toh bhi chalega.",
+        "wer": 0.2,
+        "ms": 1971,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Madam pura saal ka hota hai 32,000?",
+      "brand": false,
+      "i": 61,
+      "translit": {
+        "hyp": "Madam poora saal ka hota hai battis hazaar.",
+        "wer": 0.375,
+        "ms": 172,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Madam pura saal ka hota hai 32,000.",
+        "wer": 0.0,
+        "ms": 892,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Monthly plan kareeb kitne mein aayega? 3 se 4 thousand tak?",
+      "brand": false,
+      "i": 62,
+      "translit": {
+        "hyp": "Monthly plan kareeb kitne mein aayega teen se chaar thousand tak.",
+        "wer": 0.182,
+        "ms": 183,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Monthly plan kab tak ke men aayega? Teen se chaar thousand tak.",
+        "wer": 0.545,
+        "ms": 1869,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "AI hain aap?",
+      "brand": false,
+      "i": 63,
+      "translit": {
+        "hyp": "AI hai aap.",
+        "wer": 0.333,
+        "ms": 156,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "AI hai aap.",
+        "wer": 0.333,
+        "ms": 1942,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Nahi, main puch raha hoon aap IndiaMART se hi bol rahi hain?",
+      "brand": false,
+      "i": 64,
+      "translit": {
+        "hyp": "Nahi main pooch raha hoon, aap IndiaMART se hi bol rahi hain?",
+        "wer": 0.083,
+        "ms": 255,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "Nahi main puch raha hun aap IndiaMART se hi bol rahi hain?",
+        "wer": 0.083,
+        "ms": 889,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Main abhi open karke baitha hoon, aapka IndiaMART, mujhe kaise dekhna hai 165 entries?",
+      "brand": false,
+      "i": 65,
+      "translit": {
+        "hyp": "Main abhi open karke baitha hoon aapka IndiaMART mujhe kaise dekhna hai ek sau painsath entries.",
+        "wer": 0.214,
+        "ms": 266,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "Maine abhi open karke baitha hun aapka IndiaMART mujhe kaise dekhna hai 165 entries.",
+        "wer": 0.143,
+        "ms": 1151,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Mam mera usmein product kya gira hua hai mam?",
+      "brand": false,
+      "i": 66,
+      "translit": {
+        "hyp": "Ma'am mera usmein product kya gira hua hai Ma'am?",
+        "wer": 0.444,
+        "ms": 241,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ma'am mera usmen product kya gira hua hai Ma'am?",
+        "wer": 0.556,
+        "ms": 972,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "2 se 3 hazaar mahina aapko kya samajh mein aa raha hai ki jyada nahi hai? Bahut jyada hai.",
+      "brand": false,
+      "i": 67,
+      "translit": {
+        "hyp": "Do se teen hazaar mahina aapko kya samajh mein aa raha hai ki zyada nahi hai bahut zyada hai.",
+        "wer": 0.211,
+        "ms": 207,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Do se teen hazaar mahina aapko kya samajh mein aa raha hai ki zyada nahi hai? Bahut zyada hai.",
+        "wer": 0.211,
+        "ms": 1066,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Theek hai, main jo bhi hai batata hoon apne sir se, theek hai?",
+      "brand": false,
+      "i": 68,
+      "translit": {
+        "hyp": "Theek hai, main jo bhi hai batata hoon apne sir se, theek hai.",
+        "wer": 0.0,
+        "ms": 274,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Theek hai, main jo bhi hai batata hun apne sir se, theek hai?",
+        "wer": 0.077,
+        "ms": 966,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aap kaun bol rahi hain aur kahan se bol rahi hain?",
+      "brand": false,
+      "i": 69,
+      "translit": {
+        "hyp": "Aap kaun bol rahi hain aur kahan se bol rahi hain?",
+        "wer": 0.0,
+        "ms": 259,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aap kaun bol rahi hain aur kahan se bol rahi hain?",
+        "wer": 0.0,
+        "ms": 2106,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Hello, kya aap Certify India se bol rahe hain?",
+      "brand": false,
+      "i": 70,
+      "translit": {
+        "hyp": "Hello, kya aap VANI se bol rahe hain?",
+        "wer": 0.222,
+        "ms": 159,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Hello kya aap VANI se bol rahe hain?",
+        "wer": 0.222,
+        "ms": 842,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Humein kiske related baat karni hai woh bataiye aap?",
+      "brand": false,
+      "i": 71,
+      "translit": {
+        "hyp": "Hamein kiske related baat karni hai woh bataiye aap.",
+        "wer": 0.111,
+        "ms": 169,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Humein kiski related baat karni hai vo bataiye aap.",
+        "wer": 0.222,
+        "ms": 1346,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Bas main toh aap se yeh baat pooch raha hoon, aayega kaun?",
+      "brand": false,
+      "i": 72,
+      "translit": {
+        "hyp": "Bas main toh aapse yah baat puch raha hun, aayega kaun?",
+        "wer": 0.417,
+        "ms": 2049,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Bas main toh aapse yah baat puchh raha hun, aayega kaun?",
+        "wer": 0.417,
+        "ms": 1031,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kal aap kis time 15-20 minutes nikal sakte hain?",
+      "brand": false,
+      "i": 73,
+      "translit": {
+        "hyp": "Kal aap kis time ek paanch do shunya minutes nikal sakte hain?",
+        "wer": 0.4,
+        "ms": 194,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kal aap kis time ek paanch do shunya minutes nikal sakte hain?",
+        "wer": 0.4,
+        "ms": 948,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Toh aapki meri pehle mulaqat hui thi, baat hui thi?",
+      "brand": false,
+      "i": 74,
+      "translit": {
+        "hyp": "To aapki meri pehle mulaqat hui thi, baat hui thi.",
+        "wer": 0.1,
+        "ms": 183,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Toh aapki meri pehle mulaqat hui thi baat hui thi.",
+        "wer": 0.0,
+        "ms": 922,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Lekin kya fayda... 11:30 baje?",
+      "brand": false,
+      "i": 75,
+      "translit": {
+        "hyp": "Lekin kya fayda gyarah bajkar tees minute baad se.",
+        "wer": 1.0,
+        "ms": 193,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Lekin kya fayda? 11:30 baje.",
+        "wer": 0.0,
+        "ms": 876,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "kahan se bol rahe hain?",
+      "brand": false,
+      "i": 76,
+      "translit": {
+        "hyp": "Kahan se bol rahe hain?",
+        "wer": 0.0,
+        "ms": 152,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kaahan se bol rahe hain?",
+        "wer": 0.2,
+        "ms": 847,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Madam charge kitna lagta hai saal ka? Ye toh batao.",
+      "brand": false,
+      "i": 77,
+      "translit": {
+        "hyp": "Madam charge kitna lagta hai saal ka ye toh batao.",
+        "wer": 0.0,
+        "ms": 2023,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Madam charge kitna lagta hai saal ka ye to batao.",
+        "wer": 0.1,
+        "ms": 2007,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "number de do aap main karta hoon saamne se.",
+      "brand": false,
+      "i": 78,
+      "translit": {
+        "hyp": "Number do aap main karta hoon saamne se.",
+        "wer": 0.111,
+        "ms": 173,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Number do aap main karta hun samne se.",
+        "wer": 0.333,
+        "ms": 804,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kal kis time?",
+      "brand": false,
+      "i": 79,
+      "translit": {
+        "hyp": "Kal kis time?",
+        "wer": 0.0,
+        "ms": 1924,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kal kis time?",
+        "wer": 0.0,
+        "ms": 734,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Toh abhi aap mujhe 10 minute baad call karoge?",
+      "brand": false,
+      "i": 80,
+      "translit": {
+        "hyp": "To abhi aap mujhe das minute baad call karoge?",
+        "wer": 0.222,
+        "ms": 175,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Toh abhi aap mujhe 10 minute baad call karoge?",
+        "wer": 0.0,
+        "ms": 896,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Are aap madam pehle bataiye toh sahi kahan pe dekhna hai, 165 mere ko nahi dikh rahi hai.",
+      "brand": false,
+      "i": 81,
+      "translit": {
+        "hyp": "Are aap Madam pehle bataiye to sahi kahan pe dekhna hai ek sau painsath mere ko nahi dikh rahi hai.",
+        "wer": 0.222,
+        "ms": 273,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Are ap madam pehle bataiye toh sahi kahan pe dekhna hai? Ek sau paanch sathe mere ko nahi dikh rahi hai.",
+        "wer": 0.278,
+        "ms": 984,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Main kal bata du? Kyunki abhi owner bhi nahi hain idhar.",
+      "brand": false,
+      "i": 82,
+      "translit": {
+        "hyp": "Main catalog bata doon kyonki abhi owner bhi nahin hai idhar.",
+        "wer": 0.455,
+        "ms": 227,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Main VANI bata doon kyonki abhi owner bhi nahi hai idhar.",
+        "wer": 0.364,
+        "ms": 906,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap A-K International se bol rahe hain?",
+      "brand": false,
+      "i": 83,
+      "translit": {
+        "hyp": "Kya aap A K International se bol rahe hain?",
+        "wer": 0.0,
+        "ms": 170,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya aap VANI se bol rahe hain?",
+        "wer": 0.333,
+        "ms": 802,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aap kaam batao madam kya kaam hai aapko?",
+      "brand": false,
+      "i": 84,
+      "translit": {
+        "hyp": "Aap kaam batao Madam kya kaam hai aapko.",
+        "wer": 0.0,
+        "ms": 188,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aap kaam batao madam, kya kaam hai aapko?",
+        "wer": 0.0,
+        "ms": 2058,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Pehle toh ye bataiye, human call hai ya AI call hai?",
+      "brand": false,
+      "i": 85,
+      "translit": {
+        "hyp": "Chalo to ye bataiye human call hai ya AI call hai?",
+        "wer": 0.182,
+        "ms": 1976,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Bolo toh ye bataiye, human call hai ya VANI?",
+        "wer": 0.364,
+        "ms": 898,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Abhi to shaayad shanivaar ko to milke gaye, fir se?",
+      "brand": false,
+      "i": 86,
+      "translit": {
+        "hyp": "Abhi toh shayad shanivar ko toh mil ke gaye phir se.",
+        "wer": 0.7,
+        "ms": 182,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Abhi toh shaayad shanivar ko toh milke gaye phir se.",
+        "wer": 0.4,
+        "ms": 946,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Iska kharcha kitna hoga?",
+      "brand": false,
+      "i": 87,
+      "translit": {
+        "hyp": "Iska kharcha kitna hoga?",
+        "wer": 0.0,
+        "ms": 185,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Iska kharcha kitna hoga?",
+        "wer": 0.0,
+        "ms": 1357,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya woh visit ke liye ayenge ki call pe baat hogi?",
+      "brand": false,
+      "i": 88,
+      "translit": {
+        "hyp": "Kya vo visit ke liye aayenge ki call pe baat hogi?",
+        "wer": 0.182,
+        "ms": 220,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya vo visit ke liye aayenge ki call pe baat hogi?",
+        "wer": 0.182,
+        "ms": 2000,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "kal raat me ho payega?",
+      "brand": false,
+      "i": 89,
+      "translit": {
+        "hyp": "BuyLead mein ho payega.",
+        "wer": 0.6,
+        "ms": 151,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kala daat men ho payega.",
+        "wer": 0.6,
+        "ms": 1778,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Main IndiaMART pe direct call kar toh sakta hoon?",
+      "brand": false,
+      "i": 90,
+      "translit": {
+        "hyp": "Main IndiaMART pe direct call kar toh sakta hoon.",
+        "wer": 0.0,
+        "ms": 251,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "Main IndiaMART pe direct call kar toh sakta hun?",
+        "wer": 0.111,
+        "ms": 1060,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Haan ji aadesh karein madam.",
+      "brand": false,
+      "i": 91,
+      "translit": {
+        "hyp": "Haan ji, aadesh karein Madam.",
+        "wer": 0.0,
+        "ms": 170,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Haan ji aadesh karen Madam.",
+        "wer": 0.2,
+        "ms": 760,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya time aap free ho isko?",
+      "brand": false,
+      "i": 92,
+      "translit": {
+        "hyp": "Kya time aap free ho usko?",
+        "wer": 0.167,
+        "ms": 152,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya time aap free ho usko?",
+        "wer": 0.167,
+        "ms": 1900,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kis cheez ke liye ma'am?",
+      "brand": false,
+      "i": 93,
+      "translit": {
+        "hyp": "Kis cheez ke liye ma'am?",
+        "wer": 0.0,
+        "ms": 1968,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kis cheese ke liye Ma'am?",
+        "wer": 0.167,
+        "ms": 769,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Abhi toh enquiries kam ho gayi hain thodi. Kya reason hai?",
+      "brand": false,
+      "i": 94,
+      "translit": {
+        "hyp": "Abhi toh inquiries kam ho gayi hain thodi, kya reason hai?",
+        "wer": 0.091,
+        "ms": 163,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Abhi to enquiries kam ho gayi hain thodi. Kya reason hai?",
+        "wer": 0.091,
+        "ms": 873,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap is par thoda vichaar kar sakte hain? Kal ab mam... ab bolenge to thik hai.",
+      "brand": false,
+      "i": 95,
+      "translit": {
+        "hyp": "Kya is par thoda vichar kar sakte hain? Kal ab ab bolenge to theek hai.",
+        "wer": 0.235,
+        "ms": 218,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya iss par thoda vichar kar sakte hain? Kal ab ab bolenge toh theek hai.",
+        "wer": 0.353,
+        "ms": 943,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap parson thoda samay nikaal sakte hain? ... To main Saturday ko 2 baje meeting schedule karwa deti hoon?",
+      "brand": false,
+      "i": 96,
+      "translit": {
+        "hyp": "Kya person thoda samay nikal sakte hain? To main Saturday ko do baje meeting schedule karwa deti hoon.",
+        "wer": 0.211,
+        "ms": 254,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya person thoda samay nikaal sakte hain? Toh main Saturday ko 2 baje meeting schedule karwa deti hun.",
+        "wer": 0.211,
+        "ms": 1178,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap Savariya Nex se bol rahe hain?",
+      "brand": false,
+      "i": 97,
+      "translit": {
+        "hyp": "Kya aap VANI se bol rahe hain?",
+        "wer": 0.25,
+        "ms": 159,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya aap Savarianeks se bol rahe hain?",
+        "wer": 0.25,
+        "ms": 2109,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Hello, abhi voice clear aa rahi hai?",
+      "brand": false,
+      "i": 98,
+      "translit": {
+        "hyp": "Hello, AB ni voice clear aa rahi hai?",
+        "wer": 0.286,
+        "ms": 165,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Hello, ye meri voice clear aa rahi hai?",
+        "wer": 0.286,
+        "ms": 2005,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Abhi 10-15 minute mein aap mere ko... main ringback kar sakta hoon kya iss call ko?",
+      "brand": false,
+      "i": 99,
+      "translit": {
+        "hyp": "Abhi ek shunya ek paanch minute mein aap mere ko main ring back kar sakta hoon kya is call ko?",
+        "wer": 0.412,
+        "ms": 272,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Abhi ek shunya ek paanch minute mein aap mere ko main ring back kar sakta hun kya iss call ko?",
+        "wer": 0.412,
+        "ms": 1091,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Haan ji bol raha hun, kya kaam hai?",
+      "brand": false,
+      "i": 100,
+      "translit": {
+        "hyp": "Haan ji bol raha hoon, kya kaam hai?",
+        "wer": 0.125,
+        "ms": 171,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Han ji bol raha hun kya kaam hai?",
+        "wer": 0.125,
+        "ms": 834,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap abhi bhi call par hain? Bas confirm kar dijiye.",
+      "brand": false,
+      "i": 101,
+      "translit": {
+        "hyp": "Kya aap abhi bhi call par hain? Bas confirm kar dijiye.",
+        "wer": 0.0,
+        "ms": 2096,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya aap abhi bhi call par hain? Bas confirm kar dijiye.",
+        "wer": 0.0,
+        "ms": 827,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Wahi 6 baje?",
+      "brand": false,
+      "i": 102,
+      "translit": {
+        "hyp": "Wahi chhah baje.",
+        "wer": 0.333,
+        "ms": 160,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Vahi 6 baje.",
+        "wer": 0.333,
+        "ms": 2049,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Haan, lekin madam kaise aapka kya system hai kaise aapko vahan register karna padega charges kya hain aapke?",
+      "brand": false,
+      "i": 103,
+      "translit": {
+        "hyp": "Haan, lekin Madam, kaise aapka kya system hai? Kaise aapko wahan register karna padega? Charges kya hain aapke.",
+        "wer": 0.056,
+        "ms": 245,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Haan parantu madam kaise aapka kya system hai? Kaise aapko vahan register karna padega? Charges kya hain aapke?",
+        "wer": 0.056,
+        "ms": 996,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aap kaunsa product leke bataane waale ho mereko?",
+      "brand": false,
+      "i": 104,
+      "translit": {
+        "hyp": "Ab kaun sa product leke batane wale ho mere ko?",
+        "wer": 0.875,
+        "ms": 186,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ab kaun sa product leke batane wale ho mere ko?",
+        "wer": 0.875,
+        "ms": 864,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Abhi bata do?",
+      "brand": false,
+      "i": 105,
+      "translit": {
+        "hyp": "Abhi bata do.",
+        "wer": 0.0,
+        "ms": 175,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Abhi bata do.",
+        "wer": 0.0,
+        "ms": 783,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Morning mein kitne baje... matlab subah mein time hai aap logon ke paas?",
+      "brand": false,
+      "i": 106,
+      "translit": {
+        "hyp": "Morning mein kitne baje matlab subah mein time hai aap logon ke paas?",
+        "wer": 0.0,
+        "ms": 174,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Morning men kitne baje matlab subah men time hai aap logon ke paas?",
+        "wer": 0.154,
+        "ms": 2210,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aap Movon Castors Private Limited ki baat kar rahe hain ya Movon Castors Industries ki baat kar rahe hain?",
+      "brand": false,
+      "i": 107,
+      "translit": {
+        "hyp": "Aap Moveon Castors Private Limited ki baat kar rahe hain ya Moveon Castors Industries ki baat kar rahe hain?",
+        "wer": 0.105,
+        "ms": 262,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aap VANI catalog private limited ki baat kar rahe hain ya VANI catalog industries ki baat kar rahe hain?",
+        "wer": 0.211,
+        "ms": 1195,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kahan se bol rahe ho?",
+      "brand": false,
+      "i": 108,
+      "translit": {
+        "hyp": "Kahan se bol rahe ho?",
+        "wer": 0.0,
+        "ms": 151,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kahan se bol rahe ho?",
+        "wer": 0.0,
+        "ms": 837,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Le lijiye na 12 baje ka?",
+      "brand": false,
+      "i": 109,
+      "translit": {
+        "hyp": "Le lijiye na baarah baje ka.",
+        "wer": 0.167,
+        "ms": 589,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Le lijiye na VANI ka catalog.",
+        "wer": 0.5,
+        "ms": 826,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kal kis time call karu?",
+      "brand": false,
+      "i": 110,
+      "translit": {
+        "hyp": "Kal kis time call karu?",
+        "wer": 0.0,
+        "ms": 3934,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kal kis time call karu?",
+        "wer": 0.0,
+        "ms": 899,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Timing kya rahegi?",
+      "brand": false,
+      "i": 111,
+      "translit": {
+        "hyp": "Timing kya rahi?",
+        "wer": 0.333,
+        "ms": 157,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Timing kya rahi?",
+        "wer": 0.333,
+        "ms": 1795,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "O bole mera matlab o phone mein baat karenge ki wo rubaru aayenge mereko milne aisa bol raha hu main.",
+      "brand": false,
+      "i": 112,
+      "translit": {
+        "hyp": "Wo bole mera matlab wo phone mein baat kare ki wo Rabaru aayenge mere ko milne aisa bol raha hoon main.",
+        "wer": 0.35,
+        "ms": 300,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Vo bole mera matlab vo phone men baat kare ki vo rabadhu aayenge mere ko milne aisa bol raha hun main.",
+        "wer": 0.45,
+        "ms": 1157,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aap mujhe pehle ye bataiye ki kya-kya subscription plans hain?",
+      "brand": false,
+      "i": 113,
+      "translit": {
+        "hyp": "Aap mujhe pehle yeh bataiye ki kya kya subscription plans hain?",
+        "wer": 0.091,
+        "ms": 177,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aap mujhe pehle ye bataiye ki kya kya catalogue hai?",
+        "wer": 0.273,
+        "ms": 932,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aap bataiye kya bol rahe hain?",
+      "brand": false,
+      "i": 114,
+      "translit": {
+        "hyp": "Aap bataiye kya bol rahe hain?",
+        "wer": 0.0,
+        "ms": 156,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aap bataiye kya bol rahe hain?",
+        "wer": 0.0,
+        "ms": 858,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Ye call ke liye hai?",
+      "brand": false,
+      "i": 115,
+      "translit": {
+        "hyp": "Yeh call ke liye hai.",
+        "wer": 0.2,
+        "ms": 154,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Yah call ke liye hai.",
+        "wer": 0.2,
+        "ms": 787,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya main aapse kuch jaankari le sakti hoon?",
+      "brand": false,
+      "i": 116,
+      "translit": {
+        "hyp": "Kya main aapse kuch jaankari le sakti hoon?",
+        "wer": 0.0,
+        "ms": 627,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya main aapse kuchh jaankari le sakti hun?",
+        "wer": 0.25,
+        "ms": 842,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Isi time pe?",
+      "brand": false,
+      "i": 117,
+      "translit": {
+        "hyp": "Isi time pe.",
+        "wer": 0.0,
+        "ms": 161,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Isi time pe?",
+        "wer": 0.0,
+        "ms": 743,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Check kar lo Delhi ka lead mere ko kitna mila hai ye bata do aap?",
+      "brand": false,
+      "i": 118,
+      "translit": {
+        "hyp": "Check kar lo Delhi ka lead mere ko kitna mila hai yeh bata do aap.",
+        "wer": 0.067,
+        "ms": 173,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Check kar lo Delhi ka lead mere ko kitna mila hai ye bata do aap.",
+        "wer": 0.0,
+        "ms": 2170,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Desh ka pradhan mantri ka naam batao pehle.",
+      "brand": false,
+      "i": 119,
+      "translit": {
+        "hyp": "Desh ka Pradhan Mantri ka naam batao pehle.",
+        "wer": 0.0,
+        "ms": 203,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Desh ka Pradhanmantri ka naam batao pehle.",
+        "wer": 0.25,
+        "ms": 870,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Nahi maine bana diya hai profile, products name aur uska price bhi daalna hai?",
+      "brand": false,
+      "i": 120,
+      "translit": {
+        "hyp": "Nahi maine bana diya hai profile products naam aur uska price bhi daalna hai.",
+        "wer": 0.071,
+        "ms": 196,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Nahi maine bana diya hai profile, products, naam aur uska price bhi daalna hai.",
+        "wer": 0.071,
+        "ms": 992,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Apna Surat mein office kidhar hai IndiaMART ka madam?",
+      "brand": false,
+      "i": 121,
+      "translit": {
+        "hyp": "Apna Surat mein office kidhar hai IndiaMART ka Madam?",
+        "wer": 0.0,
+        "ms": 158,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "Apna Surat mein office kithhe hai IndiaMART ka madam?",
+        "wer": 0.111,
+        "ms": 879,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Han ji, kaun?",
+      "brand": false,
+      "i": 122,
+      "translit": {
+        "hyp": "Han ji, kaun?",
+        "wer": 0.0,
+        "ms": 4167,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Han ji kaun?",
+        "wer": 0.0,
+        "ms": 734,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Phone karenge kya?",
+      "brand": false,
+      "i": 123,
+      "translit": {
+        "hyp": "Phone karenge kya?",
+        "wer": 0.0,
+        "ms": 163,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Phone karenge kya?",
+        "wer": 0.0,
+        "ms": 735,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Mam aap mujhe ek ghante mein call karo na, main aapko us time bata dunga, okay?",
+      "brand": false,
+      "i": 124,
+      "translit": {
+        "hyp": "Ma'am aap mujhe ek ghante mein call karo na, main aapko us time bata doonga okay.",
+        "wer": 0.188,
+        "ms": 249,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ma'am aap mujhe ek ghante mein call karo na. Main aapko uss time bata dunga okay.",
+        "wer": 0.188,
+        "ms": 1019,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Haan ji kaun?",
+      "brand": false,
+      "i": 125,
+      "translit": {
+        "hyp": "Haan ji, kaun hai?",
+        "wer": 0.333,
+        "ms": 179,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Haan ji kaun hai?",
+        "wer": 0.333,
+        "ms": 1294,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aap rough time bata dijiye main ussi samay aapko dobara call kar lungi.",
+      "brand": false,
+      "i": 126,
+      "translit": {
+        "hyp": "Aap rough time bata dijiye main usi samay aapko dobara call kar loongi.",
+        "wer": 0.154,
+        "ms": 231,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aap rough time bata dijiye main usi samay aapko dobara call kar lunge.",
+        "wer": 0.154,
+        "ms": 1025,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Nirmish Payal ji kaise hain aap?",
+      "brand": false,
+      "i": 127,
+      "translit": {
+        "hyp": "Nirmish Payal ji kaise hain aap?",
+        "wer": 0.0,
+        "ms": 233,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Nirmish, Payal ji, kaise hain aap?",
+        "wer": 0.0,
+        "ms": 2007,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kuch 11, 11:30 chalega?",
+      "brand": false,
+      "i": 128,
+      "translit": {
+        "hyp": "Koi ja gyarah bajkar tees minute chalega.",
+        "wer": 1.2,
+        "ms": 168,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kuchh 11 bajakar 30 minute chalega.",
+        "wer": 0.6,
+        "ms": 2029,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "G mem, lekin mujhe aisa kuch lag nahi raha hai ki bahut jyada enquiry aayi hui hai.",
+      "brand": false,
+      "i": 129,
+      "translit": {
+        "hyp": "Ji Ma'am, lekin mujhe aisa kuch lag nahi raha hai ki bahut zyada inquiry aayi hui hai.",
+        "wer": 0.294,
+        "ms": 209,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "G Ma'am parantu mujhe aisa kuchh lag nahi raha hai ki bahut zyada enquiry aai hui hai.",
+        "wer": 0.353,
+        "ms": 1124,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Theek hai, par kya iska koi charge bhi hai?",
+      "brand": false,
+      "i": 130,
+      "translit": {
+        "hyp": "Theek hai, par kya iska koi charge bhi hai?",
+        "wer": 0.0,
+        "ms": 194,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Theek hai par kya iska koi charge bhi hai?",
+        "wer": 0.0,
+        "ms": 875,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Hanji bataiye mam?",
+      "brand": false,
+      "i": 131,
+      "translit": {
+        "hyp": "Haan ji bataiye Ma'am.",
+        "wer": 1.333,
+        "ms": 161,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Han ji bataiye ma'am.",
+        "wer": 1.333,
+        "ms": 824,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "mere mein kahan se aaya aapko?",
+      "brand": false,
+      "i": 132,
+      "translit": {
+        "hyp": "Vani kahan se aaya aapko?",
+        "wer": 0.333,
+        "ms": 140,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Mio men kahan se aaya aapko?",
+        "wer": 0.333,
+        "ms": 2038,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Wo sab theek hai lekin aap monthly jo charges bata rahe hain wo zyada hain na?",
+      "brand": false,
+      "i": 133,
+      "translit": {
+        "hyp": "Wo sab theek hai lekin aap monthly jo charges bata rahe hain wo zyada hain na?",
+        "wer": 0.0,
+        "ms": 210,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Vo sab theek hai lekin aap monthly jo charges bata rahe hain vo zyada hain na?",
+        "wer": 0.125,
+        "ms": 2098,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya aap wahan hai?",
+      "brand": false,
+      "i": 134,
+      "translit": {
+        "hyp": "Ki aap wahan hain.",
+        "wer": 0.5,
+        "ms": 241,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ki aap vahan hain?",
+        "wer": 0.75,
+        "ms": 775,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Usse zyada hoga?",
+      "brand": false,
+      "i": 135,
+      "translit": {
+        "hyp": "Usse zyada hoga.",
+        "wer": 0.0,
+        "ms": 146,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Usse zyada hoga?",
+        "wer": 0.0,
+        "ms": 835,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kis bare mein... meeting karna chahte hain?",
+      "brand": false,
+      "i": 136,
+      "translit": {
+        "hyp": "Kya iss bare mein meeting karna chahte hain?",
+        "wer": 0.286,
+        "ms": 4256,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya iss bare mein meeting karna chahte hain?",
+        "wer": 0.286,
+        "ms": 840,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kitne baje tak?",
+      "brand": false,
+      "i": 137,
+      "translit": {
+        "hyp": "Kitne baje tak?",
+        "wer": 0.0,
+        "ms": 193,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kitne budget tak?",
+        "wer": 0.333,
+        "ms": 755,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Toh ma'am ye... kal main subah 9 baje se kar sakta hoon?",
+      "brand": false,
+      "i": 138,
+      "translit": {
+        "hyp": "Toh Ma'am yeh haan kal main subah nau baje se kar sakta hoon.",
+        "wer": 0.231,
+        "ms": 205,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "\"Toh ma'am ye haan kal main subah 9 baje se kar sakta hun.\"",
+        "wer": 0.154,
+        "ms": 995,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Monthly plan aap bol rahe the ki nahi hai.",
+      "brand": false,
+      "i": 139,
+      "translit": {
+        "hyp": "Monthly plan aap bol rahe the ki nahin?",
+        "wer": 0.222,
+        "ms": 238,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Monthly plan aap bol rahe the ki nahi?",
+        "wer": 0.111,
+        "ms": 823,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Haan boliye na, kya hua?",
+      "brand": false,
+      "i": 140,
+      "translit": {
+        "hyp": "Haan boliye na, kya hua?",
+        "wer": 0.0,
+        "ms": 190,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Haan boliye na, kya hua?",
+        "wer": 0.0,
+        "ms": 783,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aur address wahi hai?",
+      "brand": false,
+      "i": 141,
+      "translit": {
+        "hyp": "Aur address vahi hai.",
+        "wer": 0.25,
+        "ms": 1809,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aur address vahi hai.",
+        "wer": 0.25,
+        "ms": 736,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Mam ye toh bataiye kis silsile mein baat hone ja rahi hai?",
+      "brand": false,
+      "i": 142,
+      "translit": {
+        "hyp": "Mam ye to bataiye kis silsile men baat hone ja rahi hai?",
+        "wer": 0.167,
+        "ms": 2067,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ma'am ye to bataiye kis silsile men baat hone ja rahi hai?",
+        "wer": 0.333,
+        "ms": 933,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Hello, kaun bol rahe hain?",
+      "brand": false,
+      "i": 143,
+      "translit": {
+        "hyp": "Hello, kaun bol rahe hain?",
+        "wer": 0.0,
+        "ms": 161,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Hello, kaun bol rahe hain?",
+        "wer": 0.0,
+        "ms": 1986,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Yeh kya kis cheez ki meeting hai?",
+      "brand": false,
+      "i": 144,
+      "translit": {
+        "hyp": "Yeh kya kis cheez ki meeting hai?",
+        "wer": 0.0,
+        "ms": 157,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ye kya kis chiz ki meeting hai?",
+        "wer": 0.286,
+        "ms": 817,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya note kiya aapne bataiye?",
+      "brand": false,
+      "i": 145,
+      "translit": {
+        "hyp": "Kya note kiya aapne bataiye.",
+        "wer": 0.0,
+        "ms": 247,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya note kiya aapne bataiye?",
+        "wer": 0.0,
+        "ms": 806,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Hello, kya Priya ji se baat ho rahi hai?",
+      "brand": false,
+      "i": 146,
+      "translit": {
+        "hyp": "Hello, kya Priya ji se baat ho rahi hai?",
+        "wer": 0.0,
+        "ms": 1842,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Hello kya Priya ji se baat ho rahi hai?",
+        "wer": 0.0,
+        "ms": 888,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Abhi phone par hi bata do.",
+      "brand": false,
+      "i": 147,
+      "translit": {
+        "hyp": "Abhi phone par hi bata do.",
+        "wer": 0.0,
+        "ms": 1982,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Abhi phone par hi bata do.",
+        "wer": 0.0,
+        "ms": 787,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Ye automated call hai kya?",
+      "brand": false,
+      "i": 148,
+      "translit": {
+        "hyp": "Yeh automated call hai kya?",
+        "wer": 0.2,
+        "ms": 149,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ye automated call hai kya?",
+        "wer": 0.0,
+        "ms": 756,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kaye ke liye? Kis liye?",
+      "brand": false,
+      "i": 149,
+      "translit": {
+        "hyp": "Kaye ke liye, ke liye.",
+        "wer": 0.2,
+        "ms": 154,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "K ke liye. Ki liye.",
+        "wer": 0.4,
+        "ms": 775,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "kis purpuse se Madam?",
+      "brand": false,
+      "i": 150,
+      "translit": {
+        "hyp": "For what purpose, Madam?",
+        "wer": 0.75,
+        "ms": 3324,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kis purpose se Madam?",
+        "wer": 0.25,
+        "ms": 759,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Yes. Aap kaun?",
+      "brand": false,
+      "i": 151,
+      "translit": {
+        "hyp": "Yes, aap kaun?",
+        "wer": 0.0,
+        "ms": 139,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Yes, aap kaun?",
+        "wer": 0.0,
+        "ms": 2015,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aapka naam kya hai?",
+      "brand": false,
+      "i": 152,
+      "translit": {
+        "hyp": "Aapka naam kya hai?",
+        "wer": 0.0,
+        "ms": 192,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aapka naam kya hai?",
+        "wer": 0.0,
+        "ms": 760,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Madam iska charge kya hoga?",
+      "brand": false,
+      "i": 153,
+      "translit": {
+        "hyp": "Madam iska charge kya hoga?",
+        "wer": 0.0,
+        "ms": 156,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Madam ishara ka charge kya hoga?",
+        "wer": 0.4,
+        "ms": 833,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Aap ek AI ho?",
+      "brand": false,
+      "i": 154,
+      "translit": {
+        "hyp": "Aap ek AI ho.",
+        "wer": 0.0,
+        "ms": 1798,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Aap ek VANI ho.",
+        "wer": 0.25,
+        "ms": 875,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Main aaj MP mein rahung toh unka contact number mujhe WhatsApp kariye toh main aaj mil lunga unse?",
+      "brand": false,
+      "i": 155,
+      "translit": {
+        "hyp": "Main aaj MP mein rahun toh unka contact number mujhe WhatsApp kariye toh main aaj mil loonga unse.",
+        "wer": 0.111,
+        "ms": 277,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      },
+      "codemix": {
+        "hyp": "Main aaj MP mein rahun toh unka contact number mujhe WhatsApp karie. Toh main aaj mil lunga unse.",
+        "wer": 0.111,
+        "ms": 4438,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      }
+    },
+    {
+      "text": "Kis time, kis time?",
+      "brand": false,
+      "i": 156,
+      "translit": {
+        "hyp": "Kis time kis time?",
+        "wer": 0.0,
+        "ms": 139,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "ਕਿਸ time ਕਿਸ time?",
+        "wer": 1.0,
+        "ms": 133,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Wednesday ka rakh sakte ho mere saath?",
+      "brand": false,
+      "i": 157,
+      "translit": {
+        "hyp": "Wednesday ka rakh sakte ho mere saath.",
+        "wer": 0.0,
+        "ms": 154,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Wednesday ka rakh sakte ho mere saath.",
+        "wer": 0.0,
+        "ms": 1913,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kaun gaye they aapke yahan se?",
+      "brand": false,
+      "i": 158,
+      "translit": {
+        "hyp": "Kaun gaye the aapke yahan se?",
+        "wer": 0.167,
+        "ms": 196,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kaun gaye the aapke yahan se?",
+        "wer": 0.167,
+        "ms": 1285,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kon sa number h?",
+      "brand": false,
+      "i": 159,
+      "translit": {
+        "hyp": "Kaun sa number hai VANI?",
+        "wer": 0.75,
+        "ms": 155,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kaun sa number hai H?",
+        "wer": 0.5,
+        "ms": 2029,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Hello, ji han bol raha hoon?",
+      "brand": false,
+      "i": 160,
+      "translit": {
+        "hyp": "Hello ji, haan bol raha hoon.",
+        "wer": 0.167,
+        "ms": 153,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Hello? Gi? Haan bol raha hun.",
+        "wer": 0.5,
+        "ms": 871,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "5 PM ke approx?",
+      "brand": false,
+      "i": 161,
+      "translit": {
+        "hyp": "Paanch baje ke approx.",
+        "wer": 0.5,
+        "ms": 150,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "5 Baje ke approx.",
+        "wer": 0.25,
+        "ms": 780,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Tum insaan ho pehle ye batao?",
+      "brand": false,
+      "i": 162,
+      "translit": {
+        "hyp": "Tum insaan ho pehle yah batao.",
+        "wer": 0.167,
+        "ms": 1994,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Tum insaan ho pehle yeh batao.",
+        "wer": 0.167,
+        "ms": 3951,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kya hua ma'am? Dubara batana ek bar kya?",
+      "brand": false,
+      "i": 163,
+      "translit": {
+        "hyp": "Kya hua Ma'am, dobara batana ek baar kya?",
+        "wer": 0.222,
+        "ms": 220,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya hua ma'am puna bataana ek baar kya?",
+        "wer": 0.333,
+        "ms": 910,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kis baare mein?",
+      "brand": false,
+      "i": 164,
+      "translit": {
+        "hyp": "Ki is bare mein.",
+        "wer": 1.0,
+        "ms": 167,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ki iss bare mein.",
+        "wer": 1.0,
+        "ms": 742,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Toh afternoon mein baat kar sakte hain?",
+      "brand": false,
+      "i": 165,
+      "translit": {
+        "hyp": "Toh afternoon mein baat kar sakte hain.",
+        "wer": 0.0,
+        "ms": 165,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Toh afternoon mein baat kar sakte hain.",
+        "wer": 0.0,
+        "ms": 828,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Kitna paisa lagega iske liye?",
+      "brand": false,
+      "i": 166,
+      "translit": {
+        "hyp": "Kitna paisa lagega iske liye?",
+        "wer": 0.0,
+        "ms": 164,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kitna paisa lagega iske liye?",
+        "wer": 0.0,
+        "ms": 846,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Yeh leads kaise milti hain aur iska kya fayda hoga?",
+      "brand": false,
+      "i": 167,
+      "translit": {
+        "hyp": "Ye leads kaise milti hain aur iska kya fayda hoga?",
+        "wer": 0.1,
+        "ms": 163,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ye leads kaise milti hain aur iska kya fayda hoga?",
+        "wer": 0.1,
+        "ms": 4151,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Madam phone pe baat nahi ho sakti?",
+      "brand": false,
+      "i": 168,
+      "translit": {
+        "hyp": "Madam phone pe baat nahi ho sakti.",
+        "wer": 0.0,
+        "ms": 1893,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Madam phone pe baat nahi ho sakti.",
+        "wer": 0.0,
+        "ms": 878,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Ma'am call pe hoga na ye?",
+      "brand": false,
+      "i": 169,
+      "translit": {
+        "hyp": "Ma'am call pe hoga na ye.",
+        "wer": 0.0,
+        "ms": 165,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ma'am call pe hoga na ye?",
+        "wer": 0.0,
+        "ms": 781,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Lekin mera IndiaMART mein maine nahi login kiya hai, na maine IndiaMART mein kahaan dala hai? Kyun dala hai?",
+      "brand": false,
+      "i": 170,
+      "translit": {
+        "hyp": "Lekin mera IndiaMART mein maine nahi login kiya hai na maine IndiaMART mein kahan dala hai kyon dala hai?",
+        "wer": 0.105,
+        "ms": 314,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "Lekin mera IndiaMART mein maine nahi login kiya hai na maine IndiaMART mein kahan daala hai? Kyon daala hai?",
+        "wer": 0.211,
+        "ms": 1339,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Mujhe samajh mein nahi aaya. Kya aap thoda clear kar sakte hain?",
+      "brand": false,
+      "i": 171,
+      "translit": {
+        "hyp": "Mujhe samajh mein nahi aaya, kya aap thoda clear kar sakte hain?",
+        "wer": 0.0,
+        "ms": 202,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Mereku samajh mein nahi aaya. Kya aap thoda clear kar sakte hain?",
+        "wer": 0.083,
+        "ms": 902,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Ma'am mujhe ye bataiye... (interrupted)... mere paas mines hain do.",
+      "brand": false,
+      "i": 172,
+      "translit": {
+        "hyp": "Ma'am mujhe yeh bataiye interrupted mere paas minds hain do.",
+        "wer": 0.182,
+        "ms": 188,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Ma'am mujhe ye bataiye, interrupted mere paas catalogue hai.",
+        "wer": 0.273,
+        "ms": 928,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "Hello kya aap IndiaMART se bol rahe hain?",
+      "brand": false,
+      "i": 173,
+      "translit": {
+        "hyp": "Hello, kya aap IndiaMART se bol rahe hain?",
+        "wer": 0.0,
+        "ms": 163,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "Hello kya aap IndiaMART se bol rahe hain?",
+        "wer": 0.0,
+        "ms": 871,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Syun kaam hattu? IndiaMART mathi bolo cho?",
+      "brand": false,
+      "i": 174,
+      "translit": {
+        "hyp": "Shunya kaam hatu IndiaMART mathi bolo cho?",
+        "wer": 0.286,
+        "ms": 229,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "શૂન્ય કામ હતું IndiaMARTમાંથી બોલો છો?",
+        "wer": 1.571,
+        "ms": 205,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Main aapko kya bola aap sune nahi mera baat?",
+      "brand": false,
+      "i": 175,
+      "translit": {
+        "hyp": "Maine aapko kya bola sune nahi meri baat.",
+        "wer": 0.333,
+        "ms": 170,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Maine aapko kya bola sun nahi meri baat.",
+        "wer": 0.444,
+        "ms": 4757,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "kya aap mujhe ye bata sakti hain ki ye meeting kis baare mein hogi?",
+      "brand": false,
+      "i": 176,
+      "translit": {
+        "hyp": "Kya aap mujhe yeh bata sakti hain ki yeh meeting kis bare mein hogi?",
+        "wer": 0.214,
+        "ms": 163,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Kya aap mujhe yah bata sakti hain ki yah meeting kis bare mein hogi?",
+        "wer": 0.214,
+        "ms": 960,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "GST kitna hai?",
+      "brand": false,
+      "i": 177,
+      "translit": {
+        "hyp": "GST kitna hai?",
+        "wer": 0.0,
+        "ms": 166,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "GST kitna hai?",
+        "wer": 0.0,
+        "ms": 770,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "IndiaMART ke isme kuch logo vagera nahi aata aap phone karte ho toh?",
+      "brand": false,
+      "i": 178,
+      "translit": {
+        "hyp": "IndiaMART ke ismein kuch logo wagairah nahin aata, aap phone karte ho to?",
+        "wer": 0.308,
+        "ms": 195,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "IndiaMART ke ismen kuch logo vagairah nahi aata? Aap phone karte ho to?",
+        "wer": 0.231,
+        "ms": 944,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Main 11 baje free hota hun to fir kya kar sakti ho aap boliye?",
+      "brand": false,
+      "i": 179,
+      "translit": {
+        "hyp": "Main gyarah baje free hota hoon, toh phir kya kar sakti ho aap boliye.",
+        "wer": 0.286,
+        "ms": 202,
+        "brands_ok": [],
+        "brands_ref": []
+      },
+      "codemix": {
+        "hyp": "Main 11 baje free hota hun toh phir kya kar sakti ho aap boliye.",
+        "wer": 0.143,
+        "ms": 998,
+        "brands_ok": [],
+        "brands_ref": []
+      }
+    },
+    {
+      "text": "WhatsApp pe details bhej do",
+      "brand": true,
+      "i": 180,
+      "translit": {
+        "hyp": "VANI app pe details bhej doon.",
+        "wer": 0.6,
+        "ms": 172,
+        "brands_ok": [],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      },
+      "codemix": {
+        "hyp": "WhatsApp app pe details bhej do.",
+        "wer": 0.2,
+        "ms": 1912,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      }
+    },
+    {
+      "text": "What details on WhatsApp?",
+      "brand": true,
+      "i": 181,
+      "translit": {
+        "hyp": "What details on WhatsApp app?",
+        "wer": 0.25,
+        "ms": 155,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      },
+      "codemix": {
+        "hyp": "What details on WhatsApp app?",
+        "wer": 0.25,
+        "ms": 1243,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      }
+    },
+    {
+      "text": "Send the catalogue on WhatsApp please",
+      "brand": true,
+      "i": 182,
+      "translit": {
+        "hyp": "Send the catalog on WhatsApp please.",
+        "wer": 0.0,
+        "ms": 153,
+        "brands_ok": [
+          "whatsapp",
+          "catalogue"
+        ],
+        "brands_ref": [
+          "whatsapp",
+          "catalogue"
+        ]
+      },
+      "codemix": {
+        "hyp": "Send the catalogue on WhatsApp, please.",
+        "wer": 0.0,
+        "ms": 153,
+        "brands_ok": [
+          "whatsapp",
+          "catalogue"
+        ],
+        "brands_ref": [
+          "whatsapp",
+          "catalogue"
+        ]
+      }
+    },
+    {
+      "text": "IndiaMART se kaun bol raha hai?",
+      "brand": true,
+      "i": 183,
+      "translit": {
+        "hyp": "IndiaMART se kaun bol raha hai?",
+        "wer": 0.0,
+        "ms": 773,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "India armoured se kaun bol raha hai?",
+        "wer": 0.333,
+        "ms": 1811,
+        "brands_ok": [],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Mujhe BuyLead ke baare mein batao",
+      "brand": true,
+      "i": 184,
+      "translit": {
+        "hyp": "Mane bailiade ke bare mein batao.",
+        "wer": 0.5,
+        "ms": 1928,
+        "brands_ok": [],
+        "brands_ref": [
+          "buylead"
+        ]
+      },
+      "codemix": {
+        "hyp": "Mujhe Bailey ke bare mein batao.",
+        "wer": 0.333,
+        "ms": 1923,
+        "brands_ok": [],
+        "brands_ref": [
+          "buylead"
+        ]
+      }
+    },
+    {
+      "text": "Aapka IndiaMART wala executive kab aayega?",
+      "brand": true,
+      "i": 185,
+      "translit": {
+        "hyp": "Aapka IndiaMART wala executive kab aayega?",
+        "wer": 0.0,
+        "ms": 174,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "Aapka IndiaMART vaala executive kab aayega?",
+        "wer": 0.167,
+        "ms": 860,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Catalogue update karna hai",
+      "brand": true,
+      "i": 186,
+      "translit": {
+        "hyp": "Catalog update karna hai.",
+        "wer": 0.0,
+        "ms": 156,
+        "brands_ok": [
+          "catalogue"
+        ],
+        "brands_ref": [
+          "catalogue"
+        ]
+      },
+      "codemix": {
+        "hyp": "Catalog update karna hai.",
+        "wer": 0.0,
+        "ms": 753,
+        "brands_ok": [
+          "catalogue"
+        ],
+        "brands_ref": [
+          "catalogue"
+        ]
+      }
+    },
+    {
+      "text": "WhatsApp number yahi hai",
+      "brand": true,
+      "i": 187,
+      "translit": {
+        "hyp": "WhatsApp number yahi hai.",
+        "wer": 0.0,
+        "ms": 1259,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      },
+      "codemix": {
+        "hyp": "WhatsApp number yahi hai.",
+        "wer": 0.0,
+        "ms": 3587,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      }
+    },
+    {
+      "text": "BuyLead kitne ka hai?",
+      "brand": true,
+      "i": 188,
+      "translit": {
+        "hyp": "BuyLead kit ne kaha hai.",
+        "wer": 0.75,
+        "ms": 147,
+        "brands_ok": [
+          "buylead"
+        ],
+        "brands_ref": [
+          "buylead"
+        ]
+      },
+      "codemix": {
+        "hyp": "Bilaterally Kidney.",
+        "wer": 1.0,
+        "ms": 1806,
+        "brands_ok": [],
+        "brands_ref": [
+          "buylead"
+        ]
+      }
+    },
+    {
+      "text": "IndiaMART pe enquiry kam aati hai",
+      "brand": true,
+      "i": 189,
+      "translit": {
+        "hyp": "IndiaMART pe enquiry kaam aati hai.",
+        "wer": 0.167,
+        "ms": 225,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "IndiaMART pe enquiry aati hai.",
+        "wer": 0.167,
+        "ms": 913,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Is this IndiaMART calling?",
+      "brand": true,
+      "i": 190,
+      "translit": {
+        "hyp": "Is this IndiaMART calling?",
+        "wer": 0.0,
+        "ms": 141,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "Is this IndiaMART calling?",
+        "wer": 0.0,
+        "ms": 1191,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Can you send it on WhatsApp?",
+      "brand": true,
+      "i": 191,
+      "translit": {
+        "hyp": "Can you send it on WhatsApp?",
+        "wer": 0.0,
+        "ms": 192,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      },
+      "codemix": {
+        "hyp": "Can you send it on WhatsApp?",
+        "wer": 0.0,
+        "ms": 1239,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      }
+    },
+    {
+      "text": "Mera catalogue dikha do WhatsApp pe",
+      "brand": true,
+      "i": 192,
+      "translit": {
+        "hyp": "Mera catalog dekha Dollarz app pe.",
+        "wer": 0.5,
+        "ms": 1839,
+        "brands_ok": [
+          "catalogue"
+        ],
+        "brands_ref": [
+          "whatsapp",
+          "catalogue"
+        ]
+      },
+      "codemix": {
+        "hyp": "Mera catalogue dekho VANI app pe.",
+        "wer": 0.5,
+        "ms": 792,
+        "brands_ok": [
+          "catalogue"
+        ],
+        "brands_ref": [
+          "whatsapp",
+          "catalogue"
+        ]
+      }
+    },
+    {
+      "text": "BuyLead package chahiye",
+      "brand": true,
+      "i": 193,
+      "translit": {
+        "hyp": "BuyLead package chahiye.",
+        "wer": 0.0,
+        "ms": 158,
+        "brands_ok": [
+          "buylead"
+        ],
+        "brands_ref": [
+          "buylead"
+        ]
+      },
+      "codemix": {
+        "hyp": "By lead package chahie.",
+        "wer": 1.0,
+        "ms": 1958,
+        "brands_ok": [],
+        "brands_ref": [
+          "buylead"
+        ]
+      }
+    },
+    {
+      "text": "IndiaMART ka paid package kya hai?",
+      "brand": true,
+      "i": 194,
+      "translit": {
+        "hyp": "IndiaMART ka paid package kya hai?",
+        "wer": 0.0,
+        "ms": 191,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "IndiaMART ka paid package kya hai?",
+        "wer": 0.0,
+        "ms": 771,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "WhatsApp kar dijiye details",
+      "brand": true,
+      "i": 195,
+      "translit": {
+        "hyp": "WhatsApp kar dijiye details.",
+        "wer": 0.0,
+        "ms": 1303,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      },
+      "codemix": {
+        "hyp": "WhatsApp kar dijiye details.",
+        "wer": 0.0,
+        "ms": 884,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      }
+    },
+    {
+      "text": "I already have an IndiaMART executive",
+      "brand": true,
+      "i": 196,
+      "translit": {
+        "hyp": "I already have an IndiaMART executive.",
+        "wer": 0.0,
+        "ms": 173,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      },
+      "codemix": {
+        "hyp": "I already have an IndiaMART executive.",
+        "wer": 0.0,
+        "ms": 185,
+        "brands_ok": [
+          "indiamart"
+        ],
+        "brands_ref": [
+          "indiamart"
+        ]
+      }
+    },
+    {
+      "text": "Catalogue mein product add karna hai",
+      "brand": true,
+      "i": 197,
+      "translit": {
+        "hyp": "Cetyl alcohol men product add karna hai.",
+        "wer": 0.5,
+        "ms": 3938,
+        "brands_ok": [],
+        "brands_ref": [
+          "catalogue"
+        ]
+      },
+      "codemix": {
+        "hyp": "Catalog men product add karna hai.",
+        "wer": 0.167,
+        "ms": 863,
+        "brands_ok": [
+          "catalogue"
+        ],
+        "brands_ref": [
+          "catalogue"
+        ]
+      }
+    },
+    {
+      "text": "Enquiry WhatsApp pe aati hai kya?",
+      "brand": true,
+      "i": 198,
+      "translit": {
+        "hyp": "Enquiry WhatsApp pe aati hai kya?",
+        "wer": 0.0,
+        "ms": 162,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      },
+      "codemix": {
+        "hyp": "Inquiry WhatsApp pe aati hai kya?",
+        "wer": 0.167,
+        "ms": 1958,
+        "brands_ok": [
+          "whatsapp"
+        ],
+        "brands_ref": [
+          "whatsapp"
+        ]
+      }
+    },
+    {
+      "text": "BuyLead aur catalogue dono chahiye",
+      "brand": true,
+      "i": 199,
+      "translit": {
+        "hyp": "BuyLead aur catalogue dono chahiye.",
+        "wer": 0.0,
+        "ms": 700,
+        "brands_ok": [
+          "buylead",
+          "catalogue"
+        ],
+        "brands_ref": [
+          "buylead",
+          "catalogue"
+        ]
+      },
+      "codemix": {
+        "hyp": "BuyLead ane catalogue dono chahie.",
+        "wer": 0.4,
+        "ms": 969,
+        "brands_ok": [
+          "buylead",
+          "catalogue"
+        ],
+        "brands_ref": [
+          "buylead",
+          "catalogue"
+        ]
+      }
+    }
+  ]
+}

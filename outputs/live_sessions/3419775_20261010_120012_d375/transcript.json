@@ -1,0 +1,248 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "callback"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 4,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "DEFAULT",
+    "pace": 0.93,
+    "max_words": 24,
+    "empathy": 3,
+    "assertiveness": 3,
+    "goal": "callback",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "connectivity": 1,
+      "goal_step": 0
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 50.5,
+      "kind": "persona",
+      "signal": "connectivity",
+      "detector": "regex",
+      "seller_said": "Hello hello hello.",
+      "trigger": "Hello hello hello.",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CLEAR_AUDIO"
+        ],
+        "pace": [
+          0.93,
+          0.85
+        ],
+        "max_words": [
+          24,
+          14
+        ]
+      },
+      "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 81.8,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "CLEAR_AUDIO",
+          "DEFAULT"
+        ],
+        "pace": [
+          0.85,
+          0.93
+        ],
+        "max_words": [
+          14,
+          24
+        ]
+      },
+      "reason": "Two turns without the signal behind CLEAR_AUDIO: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 96.8,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Hum kisi bhi catalog.",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 98.3,
+      "kind": "goal",
+      "signal": "goal_ask_limit",
+      "detector": "engine",
+      "seller_said": "Hum kisi bhi catalog.",
+      "trigger": "goal ask limit reached",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "callback"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'goal_ask_limit': goal moves to callback (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "Ji, can you hear me clearly? If the line is breaking, I will call you back later.",
+      "after": "Ji, can you hear me clearly? If the line is breaking, I will call you back later."
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "Ji, our executive will explain how to get more enquiries for your machines. The meeting itself is completely free. Would you prefer a visit or an online meeting?",
+      "after": "Ji, our executive will explain how to get more enquiries for your machines. The meeting itself is completely free. Would you prefer a visit or an online meeting?"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Buyers in Chennai are sending enquiries for your Automatic Idli Making Machine, ji. I can arrange a free meeting with an executive to explain how to boost them. Would you prefer an in-person visit or an online meeting?",
+      "after": "Buyers in Chennai are sending enquiries for your Automatic Idli Making Machine, ji. I can arrange a free meeting with an executive to explain how to boost them."
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "Buyers in Chennai are sending enquiries for your Automatic Idli Making Machine, ji. I can arrange a free meeting with an executive to explain how to boost them.",
+      "after": "Buyers in Chennai are sending enquiries for your Automatic Idli Making Machine, ji. I can arrange a free meeting with an executive to explain how to boost them. Shall I set up a short meeting with our executive, online or at your place?"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, समझ गई। आपके Automatic Idli Making Machine category में buyers enquiries आ रही हैं। मैं एक free meeting arrange करवा देती हूँ। क्या online ठीक रहेगा या visit पर आना पसंद करेंगे?",
+      "after": "जी, समझ गई। आपके Automatic Idli Making Machine category में buyers enquiries आ रही हैं। मैं एक free meeting arrange करवा देती हूँ। क्या online ठीक रहेगा या visit पर आना पसंद करेंगे?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Hello hello hello."
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, can you hear me clearly? If the line is breaking, I will call you back later."
+    },
+    {
+      "speaker": "seller",
+      "text": "R N A we can it clearly haan the business is going well can you explain me what the enquiry."
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, our executive will explain how to get more enquiries for your machines. The meeting itself is completely free. Would you prefer a visit or an online meeting?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Vani catalog."
+    },
+    {
+      "speaker": "vani",
+      "text": "Buyers in Chennai are sending enquiries for your Automatic Idli Making Machine, ji. I can arrange a free meeting with an executive to explain how to boost them. Shall I set up a short meeting with our executive, online or at your place?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Hum kisi bhi catalog."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, समझ गई। आपके Automatic Idli Making Machine category में buyers enquiries आ रही हैं। मैं एक free meeting arrange करवा देती हूँ। क्या online ठीक रहेगा या visit पर आना पसंद करेंगे?"
+    }
+  ]
+}

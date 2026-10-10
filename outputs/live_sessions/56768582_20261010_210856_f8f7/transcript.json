@@ -1,0 +1,304 @@
+{
+  "seller_id": 56768582,
+  "seller_type": "Busy business owner",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "info_whatsapp",
+    "respectful_exit"
+  ],
+  "final_outcome": "CALLBACK_SCHEDULED",
+  "do_not_call": false,
+  "seller_disposition": "Open",
+  "goal_achieved": "partly",
+  "slot": "ek hafte baad",
+  "seller_insights": {
+    "business_status": "bad"
+  },
+  "turns": 6,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "shubh_hi_customer",
+    "gender": "male",
+    "mode": "DEFAULT",
+    "pace": 0.98,
+    "max_words": 17,
+    "empathy": 3,
+    "assertiveness": 4,
+    "goal": "respectful_exit",
+    "stage": "wrap_up",
+    "counts": {
+      "understanding_question": 1,
+      "goal_step": 2,
+      "refusals": 2
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 2,
+      "t_sec": 42.5,
+      "kind": "persona",
+      "signal": "confusion",
+      "detector": "regex",
+      "seller_said": "Nahi nahi kal shaam paanch baje nahi sir mujhe pata nahi mujhe samajh nahi aa raha kuch.",
+      "trigger": "samajh nahi",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "SIMPLE"
+        ],
+        "pace": [
+          0.98,
+          0.88
+        ],
+        "max_words": [
+          17,
+          20
+        ],
+        "empathy": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+      "evidence": [
+        "playbook",
+        "E3_pace"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 65.5,
+      "kind": "goal",
+      "signal": "refused_with_reason",
+      "detector": "regex",
+      "seller_said": "Mujhe meeting nahi chahiye, mujhe mujhe aise hi bata do ab kya karna hai, mujhe samajh nahi aa raha kuch.",
+      "trigger": "no + reason",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "info_whatsapp"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'refused_with_reason': goal moves to info_whatsapp (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 88.8,
+      "kind": "goal",
+      "signal": "not_interested",
+      "detector": "regex",
+      "seller_said": "Haan okay matlab WhatsApp bhi nahi chahiye mujhe aapke paas aur koi alternative nahi hai.",
+      "trigger": "nahi chahiye",
+      "change_made": {
+        "goal": [
+          "info_whatsapp",
+          "respectful_exit"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 5,
+      "t_sec": 113.6,
+      "kind": "end",
+      "signal": "llm_outcome",
+      "detector": "llm",
+      "seller_said": "Aap mujhe ek hafte baad call kar lena.",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "CALLBACK_SCHEDULED"
+        ]
+      },
+      "reason": "LLM proposed CALLBACK_SCHEDULED; supported by what the seller said. Confirm it, then ask whether anything else is needed; close on a no.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 6,
+      "t_sec": 124.3,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "SIMPLE",
+          "DEFAULT"
+        ],
+        "pace": [
+          0.88,
+          0.98
+        ],
+        "max_words": [
+          20,
+          17
+        ]
+      },
+      "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 6,
+      "t_sec": 124.3,
+      "kind": "end",
+      "signal": "nothing_more",
+      "detector": "utterance",
+      "seller_said": "Nahi thank you.",
+      "trigger": "",
+      "change_made": {
+        "stage": [
+          "wrap_up",
+          "closed"
+        ]
+      },
+      "reason": "Seller has nothing more after CALLBACK_SCHEDULED: goodbye.",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "banned_phrase",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "llm_error",
+      "error": "JSONDecodeError"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "ठीक है जी, मैं समझ गया। आपको कितनी बार call किया जाए, यह आप बता दीजिए, फिर मैं call बंद कर दूँगा।",
+      "after": "ठीक है जी, मैं समझ गया। आपको कितनी बार call किया जाए, यह आप बता दीजिए, फिर मैं call बंद कर दूँगा। आपको IndiaMART से कितनी बार call आना ठीक लगेगा?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Rohan बोल रहा हूँ। call इसलिए किया क्योंकि Hyderabad में आपकी De Oiled Rice Bran category में काफ़ी buyer enquiries आई हैं। आपका De Oiled Rice Bran का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Are yaar bahut raat chal raha hai yaar kya bataun aapko main jitna aisa lag raha hai business band hi karna padega."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, situation काफी मुश्किल लग रही है। हमारे executive आपका catalog free में बेहतर कर सकते हैं ताकि orders बढ़ सकें। क्या हम कल शाम 5 बजे एक छोटी सी online meeting कर लें?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi nahi kal shaam paanch baje nahi sir mujhe pata nahi mujhe samajh nahi aa raha kuch."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं साफ़ बताती हूँ। हमारे executive आपके De Oiled Rice Bran का catalog free में ठीक कर देते हैं। क्या कल सुबह 11 बजे online meeting ठीक रहेगी?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Mujhe meeting nahi chahiye, mujhe mujhe aise hi bata do ab kya karna hai, mujhe samajh nahi aa raha kuch."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, बिल्कुल। पिछले 90 दिन में Hyderabad में De Oiled Rice Bran के buyers ने 7 enquiries भेजी हैं। मैं आपको WhatsApp पर सारी details भेज देती हूँ, क्या भेज दूँ?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Haan okay matlab WhatsApp bhi nahi chahiye mujhe aapke paas aur koi alternative nahi hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है जी, मैं समझ गया। आपको कितनी बार call किया जाए, यह आप बता दीजिए, फिर मैं call बंद कर दूँगा। आपको IndiaMART से कितनी बार call आना ठीक लगेगा?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Aap mujhe ek hafte baad call kar lena."
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है, हम आपको एक हफ्ते बाद पर call करेंगे। क्या मैं आपकी किसी और चीज़ में मदद कर सकता हूँ?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi thank you."
+    },
+    {
+      "speaker": "vani",
+      "text": "समय देने के लिए धन्यवाद, आपका दिन शुभ हो।"
+    }
+  ],
+  "facts": {
+    "business_status": [
+      {
+        "turn": 1,
+        "value": "bad",
+        "words": "Are yaar bahut raat chal raha hai yaar kya bataun aapko main jitna aisa lag raha hai business band hi karna padega.",
+        "source": "rules"
+      }
+    ]
+  },
+  "integrations": {
+    "crm": {
+      "ts": "2026-10-10T21:11:01+0530",
+      "mode": "dry_run",
+      "call_id": "56768582_20261010_210856_f8f7",
+      "seller_id": 56768582,
+      "vani_outcome": "CALLBACK_SCHEDULED",
+      "disposition_label": "Call Later",
+      "meeting_fixed": false,
+      "slot": "ek hafte baad",
+      "do_not_call": false,
+      "goal_achieved": "partly",
+      "primary_goal": "meeting",
+      "goal_history": [
+        "meeting",
+        "info_whatsapp",
+        "respectful_exit"
+      ],
+      "seller_insights": {
+        "business_status": "bad"
+      },
+      "turns": 6,
+      "completed": true
+    }
+  }
+}

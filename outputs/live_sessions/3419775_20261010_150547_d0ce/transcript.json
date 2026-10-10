@@ -1,0 +1,85 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 1,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "DEFAULT",
+    "pace": 0.93,
+    "max_words": 24,
+    "empathy": 3,
+    "assertiveness": 3,
+    "goal": "meeting",
+    "stage": "understand",
+    "counts": {
+      "understanding_question": 2
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 10.0,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Vani.",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी Vani जी, समझ गई। मैं IndiaMART की virtual assistant बात कर रही हूँ। आपके Automatic Idli Making Machine business अभी कैसा चल रहा है?",
+      "after": "जी Vani जी, समझ गई। मैं IndiaMART की virtual assistant बात कर रही हूँ। आपके Automatic Idli Making Machine business अभी कैसा चल रहा है?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Vani."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी Vani जी, समझ गई। मैं IndiaMART की virtual assistant बात कर रही हूँ। आपके Automatic Idli Making Machine business अभी कैसा चल रहा है?"
+    }
+  ]
+}

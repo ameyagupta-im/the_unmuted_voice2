@@ -1,0 +1,185 @@
+{
+  "seller_id": 113839910,
+  "seller_type": "Warm, interested lead",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 3,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "ishita_enhi_customer",
+    "gender": "female",
+    "mode": "CLEAR_AUDIO",
+    "pace": 0.78,
+    "max_words": 14,
+    "empathy": 4,
+    "assertiveness": 4,
+    "goal": "meeting",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 2,
+      "connectivity": 1,
+      "goal_step": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 7.8,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "I",
+      "trigger": "seller spoke en-IN",
+      "change_made": {
+        "language": [
+          "hi-IN",
+          "en-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 2,
+      "t_sec": 20.0,
+      "kind": "persona",
+      "signal": "connectivity",
+      "detector": "regex",
+      "seller_said": "Hello hello hello.",
+      "trigger": "Hello hello hello.",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CLEAR_AUDIO"
+        ],
+        "pace": [
+          0.83,
+          0.78
+        ],
+        "max_words": [
+          32,
+          14
+        ]
+      },
+      "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 38.2,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Pehli baat toh na prompt mein woh theek karo ki IndiaMART virtual assistant bolna band kare aur IndiaMART ko theek bol rahe ho aur Payal U reference kyon nahi le rahi hai?",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "Ji, I am IndiaMART's virtual assistant calling regarding your interest in a paid package. I would like to understand how your Cotton Fabric business is doing right now.",
+      "after": "Ji, I am IndiaMART's virtual assistant calling regarding your interest in a paid package. I would like to understand how your Cotton Fabric business is doing right now. How is your business going right now?"
+    },
+    {
+      "turn": 2,
+      "kind": "translate",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I am IndiaMART's virtual assistant. Sorry for the trouble ji. Can you hear me clearly now?",
+      "after": "I am IndiaMART's virtual assistant. Sorry for the trouble ji. Can you hear me clearly now?"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "ठीक है जी। चूँकि आप New Delhi में Cotton Fabric बेचते हैं, तो क्या हम कल शाम 7 बजे एक online या in-person meeting रख लें?",
+      "after": "ठीक है जी। चूँकि आप New Delhi में Cotton Fabric बेचते हैं, तो क्या हम कल शाम 7 बजे एक online या in-person meeting रख लें?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Payal बोल रही हूँ। call इसलिए किया क्योंकि आपने IndiaMART का paid package लेने की कोशिश की थी। आपका Cotton Fabric का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "I"
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, I am IndiaMART's virtual assistant calling regarding your interest in a paid package. I would like to understand how your Cotton Fabric business is doing right now. How is your business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Hello hello hello."
+    },
+    {
+      "speaker": "vani",
+      "text": "I am IndiaMART's virtual assistant. Sorry for the trouble ji. Can you hear me clearly now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Pehli baat toh na prompt mein woh theek karo ki IndiaMART virtual assistant bolna band kare aur IndiaMART ko theek bol rahe ho aur Payal U reference kyon nahi le rahi hai?"
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है जी। चूँकि आप New Delhi में Cotton Fabric बेचते हैं, तो क्या हम कल शाम 7 बजे एक online या in-person meeting रख लें?"
+    }
+  ]
+}

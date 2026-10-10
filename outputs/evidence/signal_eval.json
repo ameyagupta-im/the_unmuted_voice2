@@ -1,0 +1,293 @@
+{
+  "n_labelled_utterances": 4718,
+  "n_test": 1843,
+  "split": "deterministic 60/40 dev/test by md5(text); regex v2 patterns and v2 definitions were revised using dev-split errors only; every number here is on test",
+  "tier1_regex_on_test": {
+    "ai_bot_suspicion": {
+      "support": 58,
+      "precision_lower_bound": 1.0,
+      "recall": 0.845,
+      "f1": 0.916,
+      "tp": 49,
+      "fp": 0,
+      "fn": 9
+    },
+    "identity_question": {
+      "support": 483,
+      "precision_lower_bound": 0.949,
+      "recall": 0.497,
+      "f1": 0.652,
+      "tp": 240,
+      "fp": 13,
+      "fn": 243
+    },
+    "confusion": {
+      "support": 396,
+      "precision_lower_bound": 0.444,
+      "recall": 0.111,
+      "f1": 0.178,
+      "tp": 44,
+      "fp": 55,
+      "fn": 352
+    },
+    "frustration": {
+      "support": 67,
+      "precision_lower_bound": 0.692,
+      "recall": 0.134,
+      "f1": 0.225,
+      "tp": 9,
+      "fp": 4,
+      "fn": 58
+    },
+    "price_query": {
+      "support": 167,
+      "precision_lower_bound": 0.958,
+      "recall": 0.413,
+      "f1": 0.577,
+      "tp": 69,
+      "fp": 3,
+      "fn": 98
+    },
+    "complaint": {
+      "support": 45,
+      "precision_lower_bound": 0.625,
+      "recall": 0.111,
+      "f1": 0.189,
+      "tp": 5,
+      "fp": 3,
+      "fn": 40
+    }
+  },
+  "stratified_test_sample_size": 193,
+  "sample_tier1": {
+    "ai_bot_suspicion": {
+      "support": 25,
+      "precision_lower_bound": 1.0,
+      "recall": 0.76,
+      "f1": 0.864,
+      "tp": 19,
+      "fp": 0,
+      "fn": 6
+    },
+    "identity_question": {
+      "support": 31,
+      "precision_lower_bound": 0.941,
+      "recall": 0.516,
+      "f1": 0.667,
+      "tp": 16,
+      "fp": 1,
+      "fn": 15
+    },
+    "confusion": {
+      "support": 36,
+      "precision_lower_bound": 0.417,
+      "recall": 0.139,
+      "f1": 0.208,
+      "tp": 5,
+      "fp": 7,
+      "fn": 31
+    },
+    "frustration": {
+      "support": 32,
+      "precision_lower_bound": 0.667,
+      "recall": 0.062,
+      "f1": 0.114,
+      "tp": 2,
+      "fp": 1,
+      "fn": 30
+    },
+    "price_query": {
+      "support": 31,
+      "precision_lower_bound": 0.909,
+      "recall": 0.323,
+      "f1": 0.476,
+      "tp": 10,
+      "fp": 1,
+      "fn": 21
+    },
+    "complaint": {
+      "support": 26,
+      "precision_lower_bound": 0.75,
+      "recall": 0.115,
+      "f1": 0.2,
+      "tp": 3,
+      "fp": 1,
+      "fn": 23
+    }
+  },
+  "sample_tier2_v1_defs": {
+    "ai_bot_suspicion": {
+      "support": 25,
+      "precision_lower_bound": 0.923,
+      "recall": 0.96,
+      "f1": 0.941,
+      "tp": 24,
+      "fp": 2,
+      "fn": 1
+    },
+    "identity_question": {
+      "support": 31,
+      "precision_lower_bound": 0.391,
+      "recall": 0.871,
+      "f1": 0.54,
+      "tp": 27,
+      "fp": 42,
+      "fn": 4
+    },
+    "confusion": {
+      "support": 36,
+      "precision_lower_bound": 0.286,
+      "recall": 0.556,
+      "f1": 0.377,
+      "tp": 20,
+      "fp": 50,
+      "fn": 16
+    },
+    "frustration": {
+      "support": 32,
+      "precision_lower_bound": 0.786,
+      "recall": 0.344,
+      "f1": 0.478,
+      "tp": 11,
+      "fp": 3,
+      "fn": 21
+    },
+    "price_query": {
+      "support": 31,
+      "precision_lower_bound": 0.879,
+      "recall": 0.935,
+      "f1": 0.906,
+      "tp": 29,
+      "fp": 4,
+      "fn": 2
+    },
+    "complaint": {
+      "support": 26,
+      "precision_lower_bound": 0.667,
+      "recall": 0.308,
+      "f1": 0.421,
+      "tp": 8,
+      "fp": 4,
+      "fn": 18
+    }
+  },
+  "sample_tier2_v2_defs": {
+    "ai_bot_suspicion": {
+      "support": 25,
+      "precision_lower_bound": 0.857,
+      "recall": 0.96,
+      "f1": 0.906,
+      "tp": 24,
+      "fp": 4,
+      "fn": 1
+    },
+    "identity_question": {
+      "support": 31,
+      "precision_lower_bound": 0.591,
+      "recall": 0.839,
+      "f1": 0.693,
+      "tp": 26,
+      "fp": 18,
+      "fn": 5
+    },
+    "confusion": {
+      "support": 36,
+      "precision_lower_bound": 0.391,
+      "recall": 0.25,
+      "f1": 0.305,
+      "tp": 9,
+      "fp": 14,
+      "fn": 27
+    },
+    "frustration": {
+      "support": 32,
+      "precision_lower_bound": 0.842,
+      "recall": 0.5,
+      "f1": 0.627,
+      "tp": 16,
+      "fp": 3,
+      "fn": 16
+    },
+    "price_query": {
+      "support": 31,
+      "precision_lower_bound": 0.789,
+      "recall": 0.968,
+      "f1": 0.87,
+      "tp": 30,
+      "fp": 8,
+      "fn": 1
+    },
+    "complaint": {
+      "support": 26,
+      "precision_lower_bound": 0.714,
+      "recall": 0.385,
+      "f1": 0.5,
+      "tp": 10,
+      "fp": 4,
+      "fn": 16
+    }
+  },
+  "sample_combined_live_engine": {
+    "ai_bot_suspicion": {
+      "support": 25,
+      "precision_lower_bound": 0.857,
+      "recall": 0.96,
+      "f1": 0.906,
+      "tp": 24,
+      "fp": 4,
+      "fn": 1
+    },
+    "identity_question": {
+      "support": 31,
+      "precision_lower_bound": 0.591,
+      "recall": 0.839,
+      "f1": 0.693,
+      "tp": 26,
+      "fp": 18,
+      "fn": 5
+    },
+    "confusion": {
+      "support": 36,
+      "precision_lower_bound": 0.357,
+      "recall": 0.278,
+      "f1": 0.313,
+      "tp": 10,
+      "fp": 18,
+      "fn": 26
+    },
+    "frustration": {
+      "support": 32,
+      "precision_lower_bound": 0.842,
+      "recall": 0.5,
+      "f1": 0.627,
+      "tp": 16,
+      "fp": 3,
+      "fn": 16
+    },
+    "price_query": {
+      "support": 31,
+      "precision_lower_bound": 0.789,
+      "recall": 0.968,
+      "f1": 0.87,
+      "tp": 30,
+      "fp": 8,
+      "fn": 1
+    },
+    "complaint": {
+      "support": 26,
+      "precision_lower_bound": 0.75,
+      "recall": 0.462,
+      "f1": 0.571,
+      "tp": 12,
+      "fp": 4,
+      "fn": 14
+    }
+  },
+  "caveats": [
+    "precision is a lower bound (labels are not exhaustive: e.g. 'aap kahan se bol rahe ho' is labelled Location, not Identity)",
+    "IndiaMART's 'Clarification' label also covers logistics questions ('kal kis time?') which VANI's confusion signal deliberately excludes, so confusion recall is understated",
+    "utterances scored without the preceding VANI turn; the live engine's tier 2 sees the full call",
+    "tier 2 scored on a stratified test sample, not every test utterance",
+    "8 example misses per class were viewed from the full set before the split was introduced (minor test contamination)"
+  ]
+}

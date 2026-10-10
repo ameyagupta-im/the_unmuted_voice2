@@ -1,0 +1,116 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "info_whatsapp"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 2,
+  "final_delivery": {
+    "language": "en-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "DEFAULT",
+    "pace": 0.93,
+    "max_words": 24,
+    "empathy": 3,
+    "assertiveness": 3,
+    "goal": "info_whatsapp",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "goal_step": 1,
+      "refusals": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 2,
+      "t_sec": 6.9,
+      "kind": "goal",
+      "signal": "refused_with_reason",
+      "detector": "regex",
+      "seller_said": "No I am not interested.",
+      "trigger": "no + reason",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "info_whatsapp"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'refused_with_reason': goal moves to info_whatsapp (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "That is good to hear, ji. Since buyers in Chennai are showing interest, I would like to arrange a free meeting to see how we can help your business further.",
+      "after": "That is good to hear, ji. Since buyers in Chennai are showing interest, I would like to arrange a free meeting to see how we can help your business further. Shall I set up a short meeting with our executive, online or at your place?"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I understand, ji. No pressure at all. I can simply send the details on WhatsApp for you to review later.",
+      "after": "I understand, ji. No pressure at all. I can simply send the details on WhatsApp for you to review later. Shall I send you the details on WhatsApp?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "It is going good."
+    },
+    {
+      "speaker": "vani",
+      "text": "That is good to hear, ji. Since buyers in Chennai are showing interest, I would like to arrange a free meeting to see how we can help your business further. Shall I set up a short meeting with our executive, online or at your place?"
+    },
+    {
+      "speaker": "seller",
+      "text": "No I am not interested."
+    },
+    {
+      "speaker": "vani",
+      "text": "I understand, ji. No pressure at all. I can simply send the details on WhatsApp for you to review later. Shall I send you the details on WhatsApp?"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "turn": 5,
+    "t_sec": 72.1,
+    "kind": "goal",
+    "signal": "goal_ask_limit",
+    "detector": "engine",
+    "seller_said": "Mujhse poocha hi nahi aapne, aapne toh meeting hi fix kar di.",
+    "trigger": "goal ask limit reached",
+    "change_made": {
+      "goal": [
+        "nurture",
+        "info_whatsapp"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'goal_ask_limit': goal moves to info_whatsapp (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

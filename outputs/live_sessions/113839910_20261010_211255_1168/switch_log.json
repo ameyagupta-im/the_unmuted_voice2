@@ -1,0 +1,158 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 19.7,
+    "kind": "persona",
+    "signal": "connectivity",
+    "detector": "llm",
+    "seller_said": "Hello.",
+    "trigger": "Seller said only 'Hello' which is a common indicator of not hearing clearly or checking audio.",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CLEAR_AUDIO"
+      ],
+      "pace": [
+        0.83,
+        0.78
+      ],
+      "max_words": [
+        32,
+        14
+      ]
+    },
+    "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 75.8,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "CLEAR_AUDIO",
+        "DEFAULT"
+      ],
+      "pace": [
+        0.78,
+        0.83
+      ],
+      "max_words": [
+        14,
+        32
+      ]
+    },
+    "reason": "Two turns without the signal behind CLEAR_AUDIO: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 75.8,
+    "kind": "goal",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Are nahi yaar bahut pareshan kar rakha hai tum logon ne, kya karte rehte ho bhai itne call itne call.",
+    "trigger": "pareshan",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "callback"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'frustration': goal moves to callback (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 75.8,
+    "kind": "persona",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Are nahi yaar bahut pareshan kar rakha hai tum logon ne, kya karte rehte ho bhai itne call itne call.",
+    "trigger": "pareshan",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CALM_EMPATHETIC"
+      ],
+      "pace": [
+        0.83,
+        0.78
+      ],
+      "max_words": [
+        32,
+        20
+      ],
+      "empathy": [
+        4,
+        5
+      ],
+      "assertiveness": [
+        4,
+        1
+      ]
+    },
+    "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 78.5,
+    "kind": "clarify",
+    "signal": "sarcasm",
+    "detector": "llm",
+    "seller_said": "Are nahi yaar bahut pareshan kar rakha hai tum logon ne, kya karte rehte ho bhai itne call itne call.",
+    "trigger": "",
+    "change_made": {
+      "sarcasm": [
+        false,
+        true
+      ]
+    },
+    "reason": "Seller expressed being very annoyed by repeated calls.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration",
+      "live:3419775_20261009_231212"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 98.9,
+    "kind": "end",
+    "signal": "connectivity",
+    "detector": "silence",
+    "seller_said": "(silence)",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "CALL_BACK_LATER"
+      ]
+    },
+    "reason": "Second audio failure: call back later.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  }
+]

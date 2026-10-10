@@ -1,0 +1,222 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 27.7,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Nahi achha nahi chal raha, bilkul achha nahi chal raha.",
+    "trigger": "seller spoke hi-IN",
+    "change_made": {
+      "language": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 162.1,
+    "kind": "persona",
+    "signal": "interest",
+    "detector": "regex",
+    "seller_said": "In person meeting vo kaise karenge?",
+    "trigger": "kaise karenge",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "ENGAGED"
+      ],
+      "pace": [
+        0.93,
+        0.96
+      ],
+      "max_words": [
+        24,
+        32
+      ],
+      "assertiveness": [
+        3,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 18: interest -> ENGAGED.",
+    "evidence": [
+      "playbook",
+      "E11_forced_meetings"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 307.1,
+    "kind": "goal",
+    "signal": "frustration",
+    "detector": "llm",
+    "seller_said": "Are kya meeting meeting yaar mera business itna loss mein ja raha hai logon ke paise dene hain karza ho rakha hai kya karun main bahut ghabrahat ho rahi hai.",
+    "trigger": "Seller expressed distress about business loss, debt, and anxiety, indicating frustration and emotional strain.",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "callback"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'frustration': goal moves to callback (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 307.1,
+    "kind": "persona",
+    "signal": "frustration",
+    "detector": "llm",
+    "seller_said": "Are kya meeting meeting yaar mera business itna loss mein ja raha hai logon ke paise dene hain karza ho rakha hai kya karun main bahut ghabrahat ho rahi hai.",
+    "trigger": "Seller expressed distress about business loss, debt, and anxiety, indicating frustration and emotional strain.",
+    "change_made": {
+      "mode": [
+        "ENGAGED",
+        "CALM_EMPATHETIC"
+      ],
+      "pace": [
+        0.96,
+        0.87
+      ],
+      "max_words": [
+        32,
+        20
+      ],
+      "empathy": [
+        3,
+        5
+      ],
+      "assertiveness": [
+        4,
+        1
+      ]
+    },
+    "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 7,
+    "t_sec": 431.9,
+    "kind": "goal",
+    "signal": "refused_with_reason",
+    "detector": "regex",
+    "seller_said": "Bhige honth thank you call ki to zaroorat nahi hai theek hai ab mujhe zaroorat hogi to main reach out kar loonga IndiaMART ko.",
+    "trigger": "no + reason",
+    "change_made": {
+      "goal": [
+        "callback",
+        "info_whatsapp"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'refused_with_reason': goal moves to info_whatsapp (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 8,
+    "t_sec": 510.7,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Nahi WhatsApp is also not required matlab this is okay I am satisfied right now.",
+    "trigger": "seller spoke en-IN",
+    "change_made": {
+      "language": [
+        "hi-IN",
+        "en-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 9,
+    "t_sec": 539.6,
+    "kind": "goal",
+    "signal": "not_interested",
+    "detector": "regex",
+    "seller_said": "Don't make me repeat repeatedly I don't want any details on WhatsApp or any platform right now.",
+    "trigger": "I don't want any",
+    "change_made": {
+      "goal": [
+        "info_whatsapp",
+        "respectful_exit"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 9,
+    "t_sec": 539.6,
+    "kind": "goal",
+    "signal": "wants_whatsapp",
+    "detector": "regex",
+    "seller_said": "Don't make me repeat repeatedly I don't want any details on WhatsApp or any platform right now.",
+    "trigger": "details on WhatsApp",
+    "change_made": {
+      "goal": [
+        "respectful_exit",
+        "info_whatsapp"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'wants_whatsapp': goal moves to info_whatsapp (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 9,
+    "t_sec": 539.6,
+    "kind": "end",
+    "signal": "wants_whatsapp",
+    "detector": "regex",
+    "seller_said": "Don't make me repeat repeatedly I don't want any details on WhatsApp or any platform right now.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "INFO_SENT"
+      ]
+    },
+    "reason": "Seller wants details on WhatsApp: confirm and close.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

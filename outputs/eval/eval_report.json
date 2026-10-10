@@ -1,0 +1,71 @@
+{
+  "split": "by call (build_eval_set.py)",
+  "n_test_utterances": 1418,
+  "tier1_signals": {
+    "ai_bot_suspicion": {
+      "support": 53,
+      "precision_lower_bound": 1.0,
+      "recall": 0.868,
+      "f1": 0.929,
+      "tp": 46,
+      "fp": 0,
+      "fn": 7
+    },
+    "identity_question": {
+      "support": 335,
+      "precision_lower_bound": 0.967,
+      "recall": 0.433,
+      "f1": 0.598,
+      "tp": 145,
+      "fp": 5,
+      "fn": 190
+    },
+    "confusion": {
+      "support": 341,
+      "precision_lower_bound": 0.473,
+      "recall": 0.103,
+      "f1": 0.169,
+      "tp": 35,
+      "fp": 39,
+      "fn": 306
+    },
+    "frustration": {
+      "support": 43,
+      "precision_lower_bound": 0.857,
+      "recall": 0.14,
+      "f1": 0.24,
+      "tp": 6,
+      "fp": 1,
+      "fn": 37
+    },
+    "price_query": {
+      "support": 123,
+      "precision_lower_bound": 0.945,
+      "recall": 0.423,
+      "f1": 0.584,
+      "tp": 52,
+      "fp": 3,
+      "fn": 71
+    },
+    "complaint": {
+      "support": 37,
+      "precision_lower_bound": 0.636,
+      "recall": 0.189,
+      "f1": 0.292,
+      "tp": 7,
+      "fp": 4,
+      "fn": 30
+    }
+  },
+  "acts_weak": {
+    "n": 1418,
+    "ask_recall": 0.949,
+    "predicted": {
+      "question": 1325,
+      "request": 21,
+      "statement": 71,
+      "affirm": 1
+    }
+  },
+  "acts_human": null
+}

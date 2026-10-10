@@ -1,0 +1,185 @@
+{
+  "seller_id": 56768582,
+  "seller_type": "Busy business owner",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting"
+  ],
+  "final_outcome": "DO_NOT_CALL",
+  "do_not_call": true,
+  "seller_disposition": "Do not call",
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 3,
+  "final_delivery": {
+    "language": "te-IN",
+    "speaker": "shubh_hi_customer",
+    "gender": "male",
+    "mode": "DEFAULT",
+    "pace": 0.98,
+    "max_words": 17,
+    "empathy": 4,
+    "assertiveness": 4,
+    "goal": "meeting",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "goal_step": 2
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 4.2,
+      "kind": "persona",
+      "signal": "identity_question",
+      "detector": "regex",
+      "seller_said": "Kaun bol raha hai IndiaMART se hai kya? Hyderabad mein buyers ki enquiries aayi hain aapne kaha.",
+      "trigger": "Kaun bol",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "TRANSPARENT"
+        ],
+        "max_words": [
+          17,
+          30
+        ],
+        "empathy": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 6: identity_question -> TRANSPARENT.",
+      "evidence": [
+        "playbook",
+        "E15_seller_questions"
+      ]
+    },
+    {
+      "turn": 2,
+      "t_sec": 10.2,
+      "kind": "recovery",
+      "signal": "transparent_done",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "TRANSPARENT",
+          "DEFAULT"
+        ]
+      },
+      "reason": "TRANSPARENT lasts one reply; resume the previous mode.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 19.0,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Ledu malli call cheyakandi naaku time ledu.",
+      "trigger": "seller spoke te-IN",
+      "change_made": {
+        "language": [
+          "hi-IN",
+          "te-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 19.0,
+      "kind": "end",
+      "signal": "do_not_call",
+      "detector": "regex",
+      "seller_said": "Ledu malli call cheyakandi naaku time ledu.",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "DO_NOT_CALL"
+        ]
+      },
+      "reason": "Seller asked not to be called: honour immediately.",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी sir, मैं IndiaMART का virtual assistant हूँ। Hyderabad में आपकी De Oiled Rice Bran category में buyer enquiries आई हैं, उसी के लिए call किया है। अगर आप चाहें तो हम Telugu में भी बात कर सकते हैं।",
+      "after": "जी sir, मैं IndiaMART का virtual assistant हूँ। Hyderabad में आपकी De Oiled Rice Bran category में buyer enquiries आई हैं, उसी के लिए call किया है। अगर आप चाहें तो हम Telugu में भी बात कर सकते हैं। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी sir, बिल्कुल। अगर अभी meeting नहीं हो पा रही है, तो क्या हम कल शाम 5 बजे के आसपास connect कर सकते हैं? या आप किस time पर बात करना पसंद करेंगे?",
+      "after": "जी sir, बिल्कुल। अगर अभी meeting नहीं हो पा रही है, तो क्या हम कल शाम 5 बजे के आसपास connect कर सकते हैं? या आप किस time पर बात करना पसंद करेंगे?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Rohan बोल रहा हूँ। call इसलिए किया क्योंकि Hyderabad में आपकी De Oiled Rice Bran category में काफ़ी buyer enquiries आई हैं। आपका De Oiled Rice Bran का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Kaun bol raha hai IndiaMART se hai kya? Hyderabad mein buyers ki enquiries aayi hain aapne kaha."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी sir, मैं IndiaMART का virtual assistant हूँ। Hyderabad में आपकी De Oiled Rice Bran category में buyer enquiries आई हैं, उसी के लिए call किया है। अगर आप चाहें तो हम Telugu में भी बात कर सकते हैं। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Business toh theek chal raha hai par main abhi koi meeting nahi kar sakti."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी sir, बिल्कुल। अगर अभी meeting नहीं हो पा रही है, तो क्या हम कल शाम 5 बजे के आसपास connect कर सकते हैं? या आप किस time पर बात करना पसंद करेंगे?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Ledu malli call cheyakandi naaku time ledu."
+    },
+    {
+      "speaker": "vani",
+      "text": "అర్థమైంది, మేము మీకు మళ్ళీ call చేయము. ధన్యవాదాలు."
+    }
+  ]
+}

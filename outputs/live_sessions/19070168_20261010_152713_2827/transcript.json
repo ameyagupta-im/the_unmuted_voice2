@@ -1,0 +1,165 @@
+{
+  "seller_id": 19070168,
+  "seller_type": "Small local trader",
+  "primary_goal": "nurture",
+  "goal_history": [
+    "nurture",
+    "respectful_exit"
+  ],
+  "final_outcome": "RESPECTFUL_EXIT",
+  "do_not_call": false,
+  "seller_disposition": "Not interested",
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 3,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "sanchita_enhi_companion",
+    "gender": "female",
+    "mode": "SIMPLE",
+    "pace": 1.0,
+    "max_words": 20,
+    "empathy": 5,
+    "assertiveness": 2,
+    "goal": "respectful_exit",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "refusals": 2,
+      "goal_step": 2
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 2,
+      "t_sec": 41.0,
+      "kind": "goal",
+      "signal": "not_interested",
+      "detector": "llm",
+      "seller_said": "Kiske saath set?",
+      "trigger": "Seller clearly said 'kabhi fayda hi nahi hua', a calm refusal.",
+      "change_made": {
+        "goal": [
+          "nurture",
+          "respectful_exit"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 58.8,
+      "kind": "persona",
+      "signal": "confusion",
+      "detector": "llm",
+      "seller_said": "Pehle toh yeh batao meeting kiske saath set karoge aur WhatsApp pe kya details bhejoge?",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "SIMPLE"
+        ],
+        "pace": [
+          1.1,
+          1.0
+        ],
+        "max_words": [
+          24,
+          20
+        ]
+      },
+      "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+      "evidence": [
+        "playbook",
+        "E3_pace"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 58.8,
+      "kind": "end",
+      "signal": "llm_outcome",
+      "detector": "llm",
+      "seller_said": "Pehle toh yeh batao meeting kiske saath set karoge aur WhatsApp pe kya details bhejoge?",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "RESPECTFUL_EXIT"
+        ]
+      },
+      "reason": "LLM proposed RESPECTFUL_EXIT; supported by what the seller said.",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 2,
+      "kind": "pitch_after_no",
+      "action": "llm_retry"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Payal बोल रही हूँ। call इसलिए किया क्योंकि आपने IndiaMART पर BuyLead लेने की कोशिश की थी। आपका Men Socks का काम अभी कैसा चल रहा है, IndiaMART से कुछ फ़ायदा हो रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi, kabhi fayda hi nahi hua IndiaMART se mujhe."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, समझ गई। Mumbai में Men Socks के buyers IndiaMART पर enquiry भेज रहे हैं, और जो seller जल्दी reply करते हैं उन्हें ज़्यादा orders मिलते हैं। क्या मैं आपको free में यह set up करवाने के लिए 15 minute की meeting fix कर दूँ?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Kiske saath set?"
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है जी, कोई बात नहीं। अगर आप चाहें तो मैं WhatsApp पर details भेज सकती हूँ। क्या मैं भेज दूँ?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Pehle toh yeh batao meeting kiske saath set karoge aur WhatsApp pe kya details bhejoge?"
+    },
+    {
+      "speaker": "vani",
+      "text": "कोई बात नहीं, समय देने के लिए धन्यवाद। आपका दिन शुभ हो।"
+    }
+  ],
+  "facts": {},
+  "integrations": {
+    "crm": {
+      "ts": "2026-10-10T15:28:13+0530",
+      "mode": "dry_run",
+      "call_id": "19070168_20261010_152713_2827",
+      "seller_id": 19070168,
+      "vani_outcome": "RESPECTFUL_EXIT",
+      "disposition_label": "Not Interested",
+      "meeting_fixed": false,
+      "slot": null,
+      "do_not_call": false,
+      "goal_achieved": "no",
+      "primary_goal": "nurture",
+      "goal_history": [
+        "nurture",
+        "respectful_exit"
+      ],
+      "seller_insights": {},
+      "turns": 3,
+      "completed": true
+    }
+  }
+}

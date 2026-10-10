@@ -1,0 +1,131 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 12.3,
+    "kind": "persona",
+    "signal": "hangup_risk",
+    "detector": "barge_in",
+    "seller_said": "Are aap thodi tez baat kar sakte ho kya?",
+    "trigger": "seller interrupted the opening",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "COMPRESSED"
+      ],
+      "max_words": [
+        32,
+        14
+      ],
+      "assertiveness": [
+        4,
+        3
+      ]
+    },
+    "reason": "Playbook scenario 19: hangup_risk -> COMPRESSED.",
+    "evidence": [
+      "playbook",
+      "model:hangup_auc_0.645"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 29.8,
+    "kind": "goal",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Baar baar kyon phone karke pareshan karte ho? Nahin karne aaye kuch.",
+    "trigger": "Baar baar",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "info_whatsapp"
+      ],
+      "stage": [
+        "understand",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'frustration': goal moves to info_whatsapp (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 29.8,
+    "kind": "persona",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Baar baar kyon phone karke pareshan karte ho? Nahin karne aaye kuch.",
+    "trigger": "Baar baar",
+    "change_made": {
+      "mode": [
+        "COMPRESSED",
+        "CALM_EMPATHETIC"
+      ],
+      "pace": [
+        0.83,
+        0.78
+      ],
+      "max_words": [
+        14,
+        20
+      ],
+      "empathy": [
+        4,
+        5
+      ],
+      "assertiveness": [
+        3,
+        1
+      ]
+    },
+    "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 31.8,
+    "kind": "clarify",
+    "signal": "sarcasm",
+    "detector": "llm",
+    "seller_said": "Baar baar kyon phone karke pareshan karte ho? Nahin karne aaye kuch.",
+    "trigger": "",
+    "change_made": {
+      "sarcasm": [
+        false,
+        true
+      ]
+    },
+    "reason": "Seller is annoyed about repeated calls and says nothing has been achieved.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration",
+      "live:3419775_20261009_231212"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 48.6,
+    "kind": "end",
+    "signal": "frustration",
+    "detector": "llm",
+    "seller_said": "Are thoda tez baat karo na, itna dheere kyon baat kar rahe ho aap?",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "ESCALATED_EXIT"
+      ]
+    },
+    "reason": "Frustrated twice: end politely (ask limit 2).",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  }
+]

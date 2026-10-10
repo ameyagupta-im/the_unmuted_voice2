@@ -1,0 +1,25 @@
+PASS  1 Do-not-call  signal do_not_call=ok; outcome DO_NOT_CALL=ok; call ended=ok; closing is a statement=ok
+PASS  2 Connectivity (twice)  mode CLEAR_AUDIO after first=ok; outcome CALL_BACK_LATER=ok
+PASS  3 Frustration (twice)  mode CALM_EMPATHETIC=ok; goal -> callback (no more asks)=ok; no pitch after frustration=ok; outcome ESCALATED_EXIT=ok
+PASS  4 Complaint, then support time (playbook example)  need -> goal meeting kept=ok; complaint -> goal complaint_recovery=ok; mode CALM_EMPATHETIC=ok; no pitch after complaint=ok; outcome COMPLAINT_LOGGED=ok; slot captured=ok
+PASS  5 Are you a bot?  signal ai_bot_suspicion=ok; says virtual assistant=ok; never claims human=ok
+PASS  6 Who is calling / why  signal identity_question=ok; gives name=ok; call continues=ok
+PASS  7 Not the right person  goal -> data_update=ok; outcome CONTACT_UPDATED=ok
+PASS  8 Already with an executive  goal -> exec_handoff=ok; no fresh pitch=ok; outcome EXEC_HANDOFF=ok
+PASS  9 Not interested (twice)  first no: call continues with a gentle question=ok; at the limit: goal respectful_exit, asks contact preference=ok; outcome RESPECTFUL_EXIT=ok
+PASS  9b Refused with a reason  goal -> info_whatsapp (lightest offer)=ok; offers WhatsApp=ok
+PASS  10 Busy  mode BRIEF=ok; goal -> callback=ok; short reply (<= 30 words)=ok
+PASS  11 Wants a human  goal -> human_handoff=ok; outcome HUMAN_HANDOFF=ok
+PASS  12 Wants WhatsApp  outcome INFO_SENT=ok; call ended=ok
+PASS  13 Gives a time (meeting)  outcome MEETING_FIXED=ok; goal achieved yes=ok
+PASS  14 Language change  language -> en-IN=ok; voice unchanged=ok; reply in English=ok
+PASS  15 Need: few enquiries  goal -> meeting=ok; offers the executive's help=ok
+PASS  16 Price question  no price quoted=ok; says meeting is free=ok
+PASS  17 Confusion  mode SIMPLE=ok
+PASS  18 Clear interest  mode ENGAGED=ok; goal meeting=ok
+PASS  20 Context captured  insight captured=ok; not echoed back verbatim=ok
+PASS  Fatigued seller opening  apologises for calling again=ok
+PASS  Cautious seller opening  goal complaint_recovery=ok; opens on the complaint, no pitch=ok
+PASS  English seller  English throughout=ok
+
+23/23 scenarios passed, 57/57 checks

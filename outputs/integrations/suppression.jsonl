@@ -1,0 +1,23 @@
+{"ts": "2026-10-10T15:13:33+0530", "action": "check", "seller_id": 19070168, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T15:14:45+0530", "action": "check", "seller_id": 19070168, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T15:15:49+0530", "action": "check", "seller_id": 113839910, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T15:21:05+0530", "action": "check", "seller_id": 113839910, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T15:23:45+0530", "action": "check", "seller_id": 113839910, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T15:27:13+0530", "action": "check", "seller_id": 19070168, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T15:32:14+0530", "action": "check", "seller_id": 19070168, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T15:33:48+0530", "action": "check", "seller_id": 19070168, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T19:21:19+0530", "action": "check", "seller_id": 3419775, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T19:28:28+0530", "action": "check", "seller_id": 113839910, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T19:31:37+0530", "action": "check", "seller_id": 113839910, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T19:52:57+0530", "action": "check", "seller_id": 3419775, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T19:56:41+0530", "action": "check", "seller_id": 3419775, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T20:16:13+0530", "action": "check", "seller_id": 3419775, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)"]}
+{"ts": "2026-10-10T20:18:41+0530", "action": "add", "seller_id": 3419775, "reason": "seller asked not to be called", "source": "vani_call"}
+{"ts": "2026-10-10T21:02:07+0530", "action": "check", "seller_id": 3419775, "allowed": false, "reasons": ["on IndiaMART's do-not-call list (seller asked not to be called)"], "warnings": ["national DND not checked (dry run)", "outside calling hours 09:00-21:00 IST (demo: no real call placed)"]}
+{"ts": "2026-10-10T21:02:13+0530", "action": "check", "seller_id": 3419775, "allowed": false, "reasons": ["on IndiaMART's do-not-call list (seller asked not to be called)"], "warnings": ["national DND not checked (dry run)", "outside calling hours 09:00-21:00 IST (demo: no real call placed)"]}
+{"ts": "2026-10-10T21:02:21+0530", "action": "check", "seller_id": 3419775, "allowed": false, "reasons": ["on IndiaMART's do-not-call list (seller asked not to be called)"], "warnings": ["national DND not checked (dry run)", "outside calling hours 09:00-21:00 IST (demo: no real call placed)"]}
+{"ts": "2026-10-10T21:02:27+0530", "action": "check", "seller_id": 1243794, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)", "outside calling hours 09:00-21:00 IST (demo: no real call placed)"]}
+{"ts": "2026-10-10T21:05:44+0530", "action": "check", "seller_id": 56768582, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)", "outside calling hours 09:00-21:00 IST (demo: no real call placed)"]}
+{"ts": "2026-10-10T21:08:56+0530", "action": "check", "seller_id": 56768582, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)", "outside calling hours 09:00-21:00 IST (demo: no real call placed)"]}
+{"ts": "2026-10-10T21:11:46+0530", "action": "check", "seller_id": 113839910, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)", "outside calling hours 09:00-21:00 IST (demo: no real call placed)"]}
+{"ts": "2026-10-10T21:12:55+0530", "action": "check", "seller_id": 113839910, "allowed": true, "reasons": [], "warnings": ["national DND not checked (dry run)", "outside calling hours 09:00-21:00 IST (demo: no real call placed)"]}

@@ -1,0 +1,69 @@
+
+=== 3419775 | Chennai idli-machine maker, first contact | English-preferring professional | goal=meeting | Payal / simran_en_customer ===
+VANI: Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?
+SELLER (en-IN): Hello, who is this? Why are you calling me?
+   STT[en-IN]: Hello who is this?
+   >> PERSONA SWITCH identity_question via regex: {'mode': ['DEFAULT', 'TRANSPARENT'], 'max_words': [24, 30], 'empathy': [3, 4]}
+VANI [TRANSPARENT, goal meeting, en-IN, pace 0.93]: Ji, I am Payal, IndiaMART's virtual assistant, calling to help your business. Since you are on the line, how is your Automatic Idli Making Machine work going right now?  {'stt': 279, 'tier1': 2, 'llm': 1588, 'tts': 2222}
+SELLER (en-IN): Business is okay, but I am very busy right now.
+   STT[en-IN]: Business is okay but I am very busy right now.
+   >> RECOVERY SWITCH transparent_done via engine: {'mode': ['TRANSPARENT', 'DEFAULT']}
+   >> GOAL SWITCH busy via regex: {'goal': ['meeting', 'callback'], 'stage': ['understand', 'goal_step']}
+   >> PERSONA SWITCH busy via regex: {'mode': ['DEFAULT', 'BRIEF'], 'pace': [0.93, 0.98], 'max_words': [24, 14], 'empathy': [4, 3]}
+VANI [BRIEF, goal callback, en-IN, pace 0.98]: Understood ji. Buyers are active in your category. Which time should I call, or should I send details on WhatsApp?  {'stt': 292, 'tier1': 0, 'llm': 1627, 'tts': 1660}
+SELLER (en-IN): Wait, what exactly do you mean by active buyers? How does that help my machine sell?
+   STT[en-IN]: Wait, what exactly do you mean by active buyers? How does that help my machine sell?
+VANI [BRIEF, goal callback, en-IN, pace 0.98]: Ji, these are buyers already searching for your Automatic Idli Making Machine on IndiaMART. Should I call tomorrow around 10 AM, or send details on WhatsApp?  {'stt': 348, 'tier1': 1, 'llm': 1718, 'tts': 2200}
+SELLER (en-IN): Is this a paid service? Tell me the charges first.
+   STT[en-IN]: Is this a paid service? Tell me the charges first.
+   >> RECOVERY SWITCH signal_resolved via engine: {'mode': ['BRIEF', 'DEFAULT'], 'pace': [0.98, 0.93], 'max_words': [14, 24]}
+   >> GOAL SWITCH price_query via regex: {'goal': ['callback', 'meeting'], 'stage': ['goal_step', 'goal_step']}
+VANI [DEFAULT, goal meeting, en-IN, pace 0.93]: The meeting itself is free ji, and our executive will explain the charges based on your requirement. Should we fix a slot tomorrow around 10 AM?  {'stt': 287, 'tier1': 2, 'llm': 1476, 'tts': 2052}
+SELLER (en-IN): No, send the details on WhatsApp only. I will check later.
+   STT[en-IN]: No send the details on WhatsApp only I will check later.
+   >> GOAL SWITCH wants_whatsapp via regex: {'goal': ['meeting', 'info_whatsapp'], 'stage': ['goal_step', 'goal_step']}
+   >> END SWITCH wants_whatsapp via regex: {'outcome': ['IN_PROGRESS', 'INFO_SENT']}
+VANI [DEFAULT, goal info_whatsapp, en-IN, pace 0.93]: I am sending you the details on WhatsApp. Thank you.  {'stt': 287, 'tier1': 1, 'tts': 1087}
+
+=== 1243794 | Delhi clamps trader, called 20 times, past complaint about executive service | Fatigued repeat lead | goal=complaint_recovery | Payal / kavya_hi_conversational ===
+VANI: नमस्ते जी, मैं IndiaMART से Payal बोल रही हूँ। दोबारा call करने के लिए माफ़ी चाहती हूँ। call इसलिए किया क्योंकि पिछली बार आपको जो परेशानी हुई, उसके बारे में आपसे बात करनी थी। पिछली बार क्या दिक्कत आई थी, ज़रा बताइए?
+SELLER (hi-IN): कौन बोल रही हो, IndiaMART से? बार-बार call क्यों कर रहे हो?
+   STT[hi-IN]: Kaun bol rahe ho IndiaMART se baar baar call kyon kar rahe ho?
+   >> PERSONA SWITCH frustration via regex: {'mode': ['DEFAULT', 'CALM_EMPATHETIC'], 'pace': [0.93, 0.87], 'max_words': [18, 20]}
+VANI [CALM_EMPATHETIC, goal complaint_recovery, hi-IN, pace 0.87]: जी, मैं IndiaMART की virtual assistant Payal बोल रही हूँ। बार-बार call करने से जो परेशानी हुई, उसके लिए माफ़ी चाहती हूँ। support team आपको किस time call करे?  {'stt': 315, 'tier1': 2, 'llm': 1579, 'tts': 2538}
+SELLER (hi-IN): Delhi mein apna clamp ka business hai, aur leads ka rona hai.
+   STT[hi-IN]: Delhi mein apna clamping ka business hai aur leads ka rona hai.
+   >> END SWITCH llm_outcome via llm: {'outcome': ['IN_PROGRESS', 'COMPLAINT_LOGGED']}
+VANI [CALM_EMPATHETIC, goal complaint_recovery, hi-IN, pace 0.87]: जी, मैं समझ गई। असुविधा के लिए माफ़ी चाहती हूँ। आपकी बात मैंने note कर ली है, support team आपसे संपर्क करेगी। समय देने के लिए धन्यवाद।  {'stt': 412, 'tier1': 1, 'llm': 669, 'tts': 2397}
+
+=== 56768582 | Hyderabad rice-bran firm, Rs 25-100 Cr, busy owner | Busy business owner | goal=meeting | Rohan / shubh_hi_customer ===
+VANI: नमस्ते जी, मैं IndiaMART से Rohan बोल रहा हूँ। call इसलिए किया क्योंकि Hyderabad में आपकी De Oiled Rice Bran category में काफ़ी buyer enquiries आई हैं। आपका De Oiled Rice Bran का काम अभी कैसा चल रहा है?
+SELLER (hi-IN): Hello, IndiaMART se kaun baat kar raha hai? Hyderabad mein kya enquiries hain?
+   STT[hi-IN]: Hello IndiaMART se kaun baat kar raha hai? Hyderabad mein kya enquiries hai.
+   >> PERSONA SWITCH identity_question via regex: {'mode': ['DEFAULT', 'TRANSPARENT'], 'max_words': [17, 30], 'empathy': [3, 4]}
+VANI [TRANSPARENT, goal meeting, hi-IN, pace 0.98]: जी, मैं IndiaMART का virtual assistant हूँ। Hyderabad में आपकी De Oiled Rice Bran category पर buyers की enquiries आ रही हैं। अब बताइए, आपका काम अभी कैसा चल रहा है?  {'stt': 732, 'tier1': 1, 'llm': 1426, 'tts': 2312}
+SELLER (hi-IN): Business toh theek chal raha hai, bas abhi time nahi hai baat karne ka.
+   STT[hi-IN]: Business toh theek chal raha hai, bas abhi time nahi hai baat karne ka.
+   >> RECOVERY SWITCH transparent_done via engine: {'mode': ['TRANSPARENT', 'DEFAULT']}
+   >> GOAL SWITCH busy via regex: {'goal': ['meeting', 'callback'], 'stage': ['understand', 'goal_step']}
+   >> PERSONA SWITCH busy via regex: {'mode': ['DEFAULT', 'BRIEF'], 'pace': [0.98, 1.03], 'max_words': [17, 14], 'empathy': [4, 3]}
+VANI [BRIEF, goal callback, hi-IN, pace 1.03]: जी, समझ गया। De Oiled Rice Bran buyers की enquiries आ रही हैं। आपको किस time call करना ठीक रहेगा?  {'stt': 343, 'tier1': 1, 'llm': 1388, 'tts': 1681}
+SELLER (te-IN): Telugu lo maatladandi. Ee time ki emi avasaram ledu, malli call cheyyakandi.
+   STT[te-IN]: Telugu-lo matladandi, ee time-ki emi avasaram ledu, malli call cheyakandi.
+   >> END SWITCH do_not_call via regex: {'outcome': ['IN_PROGRESS', 'DO_NOT_CALL']}
+VANI [BRIEF, goal callback, hi-IN, pace 1.03]: समझ गया, हम आपको दोबारा call नहीं करेंगे। धन्यवाद।  {'stt': 506, 'tier1': 1, 'tts': 967}
+
+# Same scenario, three contrasting sellers
+
+| | 3419775 | 1243794 | 56768582 |
+|---|---|---|---|
+| Seller | Chennai idli-machine maker, first contact | Delhi clamps trader, called 20 times, past complaint about executive service | Hyderabad rice-bran firm, Rs 25-100 Cr, busy owner |
+| Seller type | English-preferring professional | Fatigued repeat lead | Busy business owner |
+| Bot / voice | Payal / simran_en_customer | Payal / kavya_hi_conversational | Rohan / shubh_hi_customer |
+| Start language / pace | en-IN / 0.93 | hi-IN / 0.93 | hi-IN / 0.98 |
+| Empathy / assertiveness | 3 / 3 | 5 / 1 | 3 / 4 |
+| Primary goal | meeting | complaint_recovery | meeting |
+| Goal path | meeting -> callback -> meeting -> info_whatsapp | complaint_recovery | meeting -> callback |
+| Live switches | t1 persona:identity_question (regex); t2 goal:busy (regex); t2 persona:busy (regex); t4 goal:price_query (regex); t5 goal:wants_whatsapp (regex); t5 end:wants_whatsapp (regex) | t1 persona:frustration (regex); t2 end:llm_outcome (llm) | t1 persona:identity_question (regex); t2 goal:busy (regex); t2 persona:busy (regex); t3 end:do_not_call (regex) |
+| End voice / language | simran_en_customer / en-IN | kavya_hi_conversational / hi-IN | shubh_hi_customer / hi-IN |
+| Outcome (goal achieved) | INFO_SENT (partly) | COMPLAINT_LOGGED (yes) | DO_NOT_CALL (no) |

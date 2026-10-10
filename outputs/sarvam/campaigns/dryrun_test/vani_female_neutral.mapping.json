@@ -1,0 +1,30 @@
+{
+  "phone_number": "Phone Number",
+  "agent_variables": {
+    "seller_city": "seller_city",
+    "seller_category": "seller_category",
+    "seller_type": "seller_type",
+    "seller_brief": "seller_brief",
+    "goal": "goal",
+    "goal_reason": "goal_reason",
+    "fallback_goals": "fallback_goals",
+    "understanding_question": "understanding_question",
+    "callback_slot": "callback_slot",
+    "personalisation": "personalisation",
+    "empathy": "empathy",
+    "assertiveness": "assertiveness",
+    "max_words": "max_words",
+    "ask_style": "ask_style",
+    "formality": "formality",
+    "telugu_offer": "telugu_offer",
+    "ask_limits": "ask_limits",
+    "whatsapp_details": "whatsapp_details"
+  },
+  "overrides": {
+    "initial_message": "initial_bot_message",
+    "initial_language": "initial_language_name"
+  },
+  "metadata": {
+    "seller_id": "seller_id"
+  }
+}

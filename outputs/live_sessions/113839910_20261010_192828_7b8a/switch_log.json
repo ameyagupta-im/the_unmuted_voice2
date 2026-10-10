@@ -1,0 +1,202 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 23.9,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "regex:explicit_request",
+    "seller_said": "Are I don't understand you talking in Hindi can you please repeat in English?",
+    "trigger": "in English",
+    "change_made": {
+      "language": [
+        "hi-IN",
+        "en-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 1,
+    "t_sec": 23.9,
+    "kind": "persona",
+    "signal": "confusion",
+    "detector": "regex",
+    "seller_said": "Are I don't understand you talking in Hindi can you please repeat in English?",
+    "trigger": "I don't understand",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "SIMPLE"
+      ],
+      "pace": [
+        0.83,
+        0.78
+      ],
+      "max_words": [
+        32,
+        20
+      ],
+      "empathy": [
+        4,
+        5
+      ]
+    },
+    "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+    "evidence": [
+      "playbook",
+      "E3_pace"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 57.1,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "SIMPLE",
+        "DEFAULT"
+      ],
+      "pace": [
+        0.78,
+        0.83
+      ],
+      "max_words": [
+        20,
+        32
+      ]
+    },
+    "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 57.1,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Are bahut bekar chal raha hai, it's not going well at all, aise bahut losses ho rahe hain, bahut karze mein doob gaya hoon, IndiaMART aur pareshan karne ja raha hai mujhe.",
+    "trigger": "seller spoke hi-IN",
+    "change_made": {
+      "language": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 57.1,
+    "kind": "goal",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Are bahut bekar chal raha hai, it's not going well at all, aise bahut losses ho rahe hain, bahut karze mein doob gaya hoon, IndiaMART aur pareshan karne ja raha hai mujhe.",
+    "trigger": "pareshan",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "callback"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'frustration': goal moves to callback (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 57.1,
+    "kind": "persona",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Are bahut bekar chal raha hai, it's not going well at all, aise bahut losses ho rahe hain, bahut karze mein doob gaya hoon, IndiaMART aur pareshan karne ja raha hai mujhe.",
+    "trigger": "pareshan",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CALM_EMPATHETIC"
+      ],
+      "pace": [
+        0.83,
+        0.78
+      ],
+      "max_words": [
+        32,
+        20
+      ],
+      "empathy": [
+        4,
+        5
+      ],
+      "assertiveness": [
+        4,
+        1
+      ]
+    },
+    "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 62.5,
+    "kind": "clarify",
+    "signal": "sarcasm",
+    "detector": "llm",
+    "seller_said": "Are bahut bekar chal raha hai, it's not going well at all, aise bahut losses ho rahe hain, bahut karze mein doob gaya hoon, IndiaMART aur pareshan karne ja raha hai mujhe.",
+    "trigger": "",
+    "change_made": {
+      "sarcasm": [
+        false,
+        true
+      ]
+    },
+    "reason": "Seller expressed strong distress about losses and debt, and explicitly asked to repeat in English.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration",
+      "live:3419775_20261009_231212"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 81.7,
+    "kind": "end",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Are abhi to bola ki aap bahut pareshan kar rahe ho I don't want any call.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "ESCALATED_EXIT"
+      ]
+    },
+    "reason": "Frustrated twice: end politely (ask limit 2).",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  }
+]

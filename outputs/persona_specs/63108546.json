@@ -1,0 +1,51 @@
+{
+  "seller_id": 63108546,
+  "seller_type": "do_not_call",
+  "seller_type_label": "Do-not-call",
+  "seller_snapshot": {
+    "state": "Uttar Pradesh",
+    "city": "Noida",
+    "business_type": "Partnership",
+    "turnover": "0 - 40 L",
+    "category": "Bags",
+    "cqs": 1.0,
+    "enq_90d": 0.0,
+    "attempts": 3.0,
+    "meetings": 0,
+    "not_interested": 1.0,
+    "call_later": 1.0,
+    "bucket": "UA",
+    "best_hour": 18,
+    "own_english": 0.0,
+    "seller_wps": null,
+    "exec_calls": 0,
+    "summary_flags": [
+      "callback"
+    ],
+    "past_objections": {},
+    "last_summaries": [
+      "The agent introduced herself as calling from IndiaMART. The lead asked who was calling. The agent repeated her introduction, but the call disconnected before any further conversation could take place.",
+      "The agent called the lead from IndiaMART regarding handbags, stating that the lead had requested a callback. The lead denied having spoken to the agent before and asked for a callback."
+    ]
+  },
+  "goal": {
+    "value": null,
+    "reason": "do_not_call_requested=1: never dialled.",
+    "evidence": [
+      "policy:compliance",
+      "playbook"
+    ],
+    "confidence": "high"
+  },
+  "fallback_goals": [],
+  "voice": {},
+  "language": {},
+  "tone": {},
+  "conversation_plan": {},
+  "guardrails": [
+    "HARD STOP: do not call."
+  ],
+  "missing_fields": [],
+  "blocked": true,
+  "block_reason": "do_not_call_requested=1"
+}

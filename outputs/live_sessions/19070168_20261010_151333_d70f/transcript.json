@@ -1,0 +1,130 @@
+{
+  "seller_id": 19070168,
+  "seller_type": "Small local trader",
+  "primary_goal": "nurture",
+  "goal_history": [
+    "nurture"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 2,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "sanchita_enhi_companion",
+    "gender": "female",
+    "mode": "TRANSPARENT",
+    "pace": 1.1,
+    "max_words": 30,
+    "empathy": 5,
+    "assertiveness": 2,
+    "goal": "nurture",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 2,
+      "goal_step": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 2,
+      "t_sec": 10.5,
+      "kind": "persona",
+      "signal": "identity_question",
+      "detector": "regex",
+      "seller_said": "kaun bol raha hai?",
+      "trigger": "kaun bol",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "TRANSPARENT"
+        ],
+        "max_words": [
+          24,
+          30
+        ]
+      },
+      "reason": "Playbook scenario 6: identity_question -> TRANSPARENT.",
+      "evidence": [
+        "playbook",
+        "E15_seller_questions"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "no_clarify",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "no_question",
+      "action": "repaired",
+      "before": "जी, मैं IndiaMART की virtual assistant बात कर रही हूँ। मैं बस यह समझना चाहती थी कि आपका Men Socks का business कैसा चल रहा है और IndiaMART से कुछ फ़ायदा मिल रहा है या नहीं।",
+      "after": "जी, मैं IndiaMART की virtual assistant बात कर रही हूँ। मैं बस यह समझना चाहती थी कि आपका Men Socks का business कैसा चल रहा है और IndiaMART से कुछ फ़ायदा मिल रहा है या नहीं। क्या कोई सवाल है जिसमें मैं मदद कर सकूँ?"
+    },
+    {
+      "turn": 2,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "repeat_sentence",
+      "action": "repaired",
+      "before": "जी, मैं IndiaMART की virtual assistant Payal बात कर रही हूँ। आपके Men Socks business की जानकारी लेने के लिए call किया है। अब बताइए, आपका काम कैसा चल रहा है और IndiaMART से कुछ फ़ायदा हो रहा है?",
+      "after": "आपके Men Socks business की जानकारी लेने के लिए call किया है। अब बताइए, आपका काम कैसा चल रहा है और IndiaMART से कुछ फ़ायदा हो रहा है?"
+    },
+    {
+      "turn": 2,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "आपके Men Socks business की जानकारी लेने के लिए call किया है। अब बताइए, आपका काम कैसा चल रहा है और IndiaMART से कुछ फ़ायदा हो रहा है?",
+      "after": "आपके Men Socks business की जानकारी लेने के लिए call किया है।"
+    },
+    {
+      "turn": 2,
+      "kind": "disclosure",
+      "action": "repaired",
+      "before": "आपके Men Socks business की जानकारी लेने के लिए call किया है।",
+      "after": "जी, मैं IndiaMART की virtual assistant Payal हूँ। आपके Men Socks business की जानकारी लेने के लिए call किया है।"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Payal बोल रही हूँ। call इसलिए किया क्योंकि आपने IndiaMART पर BuyLead लेने की कोशिश की थी। आपका Men Socks का काम अभी कैसा चल रहा है, IndiaMART से कुछ फ़ायदा हो रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Enna maadhiri?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं IndiaMART की virtual assistant बात कर रही हूँ। मैं बस यह समझना चाहती थी कि आपका Men Socks का business कैसा चल रहा है और IndiaMART से कुछ फ़ायदा मिल रहा है या नहीं। क्या कोई सवाल है जिसमें मैं मदद कर सकूँ?"
+    },
+    {
+      "speaker": "seller",
+      "text": "kaun bol raha hai?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं IndiaMART की virtual assistant Payal हूँ। आपके Men Socks business की जानकारी लेने के लिए call किया है।"
+    }
+  ],
+  "facts": {}
+}

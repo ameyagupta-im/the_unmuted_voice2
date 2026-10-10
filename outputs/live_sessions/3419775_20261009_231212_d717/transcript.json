@@ -1,0 +1,522 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "callback",
+    "info_whatsapp",
+    "respectful_exit",
+    "info_whatsapp"
+  ],
+  "final_outcome": "INFO_SENT",
+  "do_not_call": false,
+  "seller_disposition": "Curious",
+  "goal_achieved": "partly",
+  "slot": null,
+  "seller_insights": {
+    "business_status": "Seller is currently facing severe financial distress, loss, and debt, which contrasts with earlier claim of good business."
+  },
+  "turns": 9,
+  "final_delivery": {
+    "language": "en-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "CALM_EMPATHETIC",
+    "pace": 0.87,
+    "max_words": 20,
+    "empathy": 5,
+    "assertiveness": 1,
+    "goal": "info_whatsapp",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 2,
+      "goal_step": 0,
+      "frustration": 1,
+      "refusals": 2
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 27.7,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Nahi achha nahi chal raha, bilkul achha nahi chal raha.",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 162.1,
+      "kind": "persona",
+      "signal": "interest",
+      "detector": "regex",
+      "seller_said": "In person meeting vo kaise karenge?",
+      "trigger": "kaise karenge",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "ENGAGED"
+        ],
+        "pace": [
+          0.93,
+          0.96
+        ],
+        "max_words": [
+          24,
+          32
+        ],
+        "assertiveness": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 18: interest -> ENGAGED.",
+      "evidence": [
+        "playbook",
+        "E11_forced_meetings"
+      ]
+    },
+    {
+      "turn": 5,
+      "t_sec": 307.1,
+      "kind": "goal",
+      "signal": "frustration",
+      "detector": "llm",
+      "seller_said": "Are kya meeting meeting yaar mera business itna loss mein ja raha hai logon ke paise dene hain karza ho rakha hai kya karun main bahut ghabrahat ho rahi hai.",
+      "trigger": "Seller expressed distress about business loss, debt, and anxiety, indicating frustration and emotional strain.",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "callback"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'frustration': goal moves to callback (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 5,
+      "t_sec": 307.1,
+      "kind": "persona",
+      "signal": "frustration",
+      "detector": "llm",
+      "seller_said": "Are kya meeting meeting yaar mera business itna loss mein ja raha hai logon ke paise dene hain karza ho rakha hai kya karun main bahut ghabrahat ho rahi hai.",
+      "trigger": "Seller expressed distress about business loss, debt, and anxiety, indicating frustration and emotional strain.",
+      "change_made": {
+        "mode": [
+          "ENGAGED",
+          "CALM_EMPATHETIC"
+        ],
+        "pace": [
+          0.96,
+          0.87
+        ],
+        "max_words": [
+          32,
+          20
+        ],
+        "empathy": [
+          3,
+          5
+        ],
+        "assertiveness": [
+          4,
+          1
+        ]
+      },
+      "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 7,
+      "t_sec": 431.9,
+      "kind": "goal",
+      "signal": "refused_with_reason",
+      "detector": "regex",
+      "seller_said": "Bhige honth thank you call ki to zaroorat nahi hai theek hai ab mujhe zaroorat hogi to main reach out kar loonga IndiaMART ko.",
+      "trigger": "no + reason",
+      "change_made": {
+        "goal": [
+          "callback",
+          "info_whatsapp"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'refused_with_reason': goal moves to info_whatsapp (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 8,
+      "t_sec": 510.7,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Nahi WhatsApp is also not required matlab this is okay I am satisfied right now.",
+      "trigger": "seller spoke en-IN",
+      "change_made": {
+        "language": [
+          "hi-IN",
+          "en-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 9,
+      "t_sec": 539.6,
+      "kind": "goal",
+      "signal": "not_interested",
+      "detector": "regex",
+      "seller_said": "Don't make me repeat repeatedly I don't want any details on WhatsApp or any platform right now.",
+      "trigger": "I don't want any",
+      "change_made": {
+        "goal": [
+          "info_whatsapp",
+          "respectful_exit"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 9,
+      "t_sec": 539.6,
+      "kind": "goal",
+      "signal": "wants_whatsapp",
+      "detector": "regex",
+      "seller_said": "Don't make me repeat repeatedly I don't want any details on WhatsApp or any platform right now.",
+      "trigger": "details on WhatsApp",
+      "change_made": {
+        "goal": [
+          "respectful_exit",
+          "info_whatsapp"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'wants_whatsapp': goal moves to info_whatsapp (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 9,
+      "t_sec": 539.6,
+      "kind": "end",
+      "signal": "wants_whatsapp",
+      "detector": "regex",
+      "seller_said": "Don't make me repeat repeatedly I don't want any details on WhatsApp or any platform right now.",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "INFO_SENT"
+        ]
+      },
+      "reason": "Seller wants details on WhatsApp: confirm and close.",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "understand_first",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, यह सुनकर मुझे खेद हुआ। business में उतार-चढ़ाव आते रहते हैं, मैं समझ सकती हूँ।",
+      "after": "जी, यह सुनकर मुझे खेद हुआ। business में उतार-चढ़ाव आते रहते हैं, मैं समझ सकती हूँ। आपका Automatic Idli Making Machine का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, मैं समझ सकती हूँ। चूँकि आपके category में buyers enquiries भेज रहे हैं, तो एक free meeting arrange कर सकते हैं।",
+      "after": "जी, मैं समझ सकती हूँ। चूँकि आपके category में buyers enquiries भेज रहे हैं, तो एक free meeting arrange कर सकते हैं। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, यह जानकर अच्छा लगा। चूँकि buyers enquiries आ रही हैं, तो एक free meeting arrange कर सकते हैं। क्या हम online या in-person meeting fix कर लें?",
+      "after": "जी, यह जानकर अच्छा लगा। चूँकि buyers enquiries आ रही हैं, तो एक free meeting arrange कर सकते हैं। क्या हम online या in-person meeting fix कर लें?"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, मैं समझ गई। चूँकि आपकी enquiries आ रही हैं, तो एक free meeting arrange कर सकते हैं। क्या कल सुबह 10 बजे के आसपास बात हो सकती है?",
+      "after": "जी, मैं समझ गई। चूँकि आपकी enquiries आ रही हैं, तो एक free meeting arrange कर सकते हैं।"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, मैं समझ गई। चूँकि आपकी enquiries आ रही हैं, तो एक free meeting arrange कर सकते हैं।",
+      "after": "जी, मैं समझ गई। चूँकि आपकी enquiries आ रही हैं, तो एक free meeting arrange कर सकते हैं।"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, मैं समझ गई। चूँकि आपकी enquiries आ रही हैं, तो एक free meeting arrange कर सकते हैं।",
+      "after": "जी, मैं समझ गई। चूँकि आपकी enquiries आ रही हैं, तो एक free meeting arrange कर सकते हैं।"
+    },
+    {
+      "turn": 4,
+      "kind": "outcome_rejected",
+      "proposed": "CALLBACK_SCHEDULED"
+    },
+    {
+      "turn": 4,
+      "kind": "premature_close",
+      "action": "kept_call_open"
+    },
+    {
+      "turn": 5,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 5,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, मैं सुन पा रही हूँ कि आप काफी परेशान हैं। यह सुनकर मुझे सच में दुःख हुआ। अभी मैं कोई pitch नहीं करूँगी, बस इतना कहूँगी कि हमारे executive आपकी मदद कर सकते हैं।",
+      "after": "जी, मैं सुन पा रही हूँ कि आप काफी परेशान हैं। यह सुनकर मुझे सच में दुःख हुआ। अभी मैं कोई pitch नहीं करूँगी, बस इतना कहूँगी कि हमारे executive आपकी मदद कर सकते हैं।"
+    },
+    {
+      "turn": 6,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 6,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 6,
+      "kind": "repeat_sentence",
+      "action": "repaired",
+      "before": "जी, मैं समझ सकती हूँ। मैं कोई दबाव नहीं डालूँगी।",
+      "after": "मैं कोई दबाव नहीं डालूँगी।"
+    },
+    {
+      "turn": 6,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "मैं कोई दबाव नहीं डालूँगी।",
+      "after": "मैं कोई दबाव नहीं डालूँगी। आपको किस time call करना ठीक रहेगा?"
+    },
+    {
+      "turn": 7,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 7,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 7,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, बिल्कुल। जब भी आपको ज़रूरत हो, आप खुद contact कर लीजिएगा। अभी के लिए क्या मैं details आपके WhatsApp पर भेज दूँ?",
+      "after": "जी, बिल्कुल। जब भी आपको ज़रूरत हो, आप खुद contact कर लीजिएगा। अभी के लिए क्या मैं details आपके WhatsApp पर भेज दूँ?"
+    },
+    {
+      "turn": 8,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 8,
+      "kind": "repeat_declined_offer",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 8,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "Ji, I understand. Since you are satisfied right now, that is perfectly fine. If you ever need us, you can reach out to IndiaMART directly.",
+      "after": "Ji, I understand. Since you are satisfied right now, that is perfectly fine. If you ever need us, you can reach out to IndiaMART directly. Shall I send you the details on WhatsApp?"
+    },
+    {
+      "turn": 8,
+      "kind": "repeat_declined_offer",
+      "action": "repaired",
+      "before": "Ji, I understand. Since you are satisfied right now, that is perfectly fine. If you ever need us, you can reach out to IndiaMART directly. Shall I send you the details on WhatsApp?",
+      "after": "Ji, I understand. Since you are satisfied right now, that is perfectly fine. If you ever need us, you can reach out to IndiaMART directly."
+    },
+    {
+      "turn": 8,
+      "kind": "no_question",
+      "action": "repaired",
+      "before": "Ji, I understand. Since you are satisfied right now, that is perfectly fine. If you ever need us, you can reach out to IndiaMART directly.",
+      "after": "Ji, I understand. Since you are satisfied right now, that is perfectly fine. If you ever need us, you can reach out to IndiaMART directly. Shall I send you the details on WhatsApp?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi achha nahi chal raha, bilkul achha nahi chal raha."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, यह सुनकर मुझे खेद हुआ। business में उतार-चढ़ाव आते रहते हैं, मैं समझ सकती हूँ। आपका Automatic Idli Making Machine का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Bilkul kharab chal raha hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं समझ सकती हूँ। चूँकि आपके category में buyers enquiries भेज रहे हैं, तो एक free meeting arrange कर सकते हैं। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Are sab badhiya chal raha hai, itna badhiya business hai, mujhe inquiries bhi aa rahi hai, sab ho raha hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, यह जानकर अच्छा लगा। चूँकि buyers enquiries आ रही हैं, तो एक free meeting arrange कर सकते हैं। क्या हम online या in-person meeting fix कर लें?"
+    },
+    {
+      "speaker": "seller",
+      "text": "In person meeting vo kaise karenge?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं समझ गई। चूँकि आपकी enquiries आ रही हैं, तो एक free meeting arrange कर सकते हैं।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Are kya meeting meeting yaar mera business itna loss mein ja raha hai logon ke paise dene hain karza ho rakha hai kya karun main bahut ghabrahat ho rahi hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं सुन पा रही हूँ कि आप काफी परेशान हैं। यह सुनकर मुझे सच में दुःख हुआ। अभी मैं कोई pitch नहीं करूँगी, बस इतना कहूँगी कि हमारे executive आपकी मदद कर सकते हैं।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Thank you, achha laga. Ab thoda hope mil rahi hai, dekhte hain kaise jaata hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "मैं कोई दबाव नहीं डालूँगी। आपको किस time call करना ठीक रहेगा?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Bhige honth thank you call ki to zaroorat nahi hai theek hai ab mujhe zaroorat hogi to main reach out kar loonga IndiaMART ko."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, बिल्कुल। जब भी आपको ज़रूरत हो, आप खुद contact कर लीजिएगा। अभी के लिए क्या मैं details आपके WhatsApp पर भेज दूँ?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi WhatsApp is also not required matlab this is okay I am satisfied right now."
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, I understand. Since you are satisfied right now, that is perfectly fine. If you ever need us, you can reach out to IndiaMART directly. Shall I send you the details on WhatsApp?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Don't make me repeat repeatedly I don't want any details on WhatsApp or any platform right now."
+    },
+    {
+      "speaker": "vani",
+      "text": "I am sending you the details on WhatsApp. Thank you."
+    }
+  ]
+}

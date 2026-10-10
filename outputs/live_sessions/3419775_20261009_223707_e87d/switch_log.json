@@ -1,0 +1,176 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 19.3,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Chaudah bada hai ji.",
+    "trigger": "seller spoke hi-IN",
+    "change_made": {
+      "language": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 44.6,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Vani catalog.",
+    "trigger": "seller spoke en-IN",
+    "change_made": {
+      "language": [
+        "hi-IN",
+        "en-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 66.5,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Meeting nahi chahiye.",
+    "trigger": "seller spoke hi-IN",
+    "change_made": {
+      "language": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 83.2,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Kaun si details?",
+    "trigger": "seller spoke en-IN",
+    "change_made": {
+      "language": [
+        "hi-IN",
+        "en-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 118.7,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Nahi mujhe kuch nahi chahiye, aap mera peecha chhod do bas.",
+    "trigger": "seller spoke hi-IN",
+    "change_made": {
+      "language": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 118.7,
+    "kind": "goal",
+    "signal": "not_interested",
+    "detector": "regex",
+    "seller_said": "Nahi mujhe kuch nahi chahiye, aap mera peecha chhod do bas.",
+    "trigger": "nahi chahiye",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "respectful_exit"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 6,
+    "t_sec": 136.2,
+    "kind": "persona",
+    "signal": "confusion",
+    "detector": "regex",
+    "seller_said": "Are samajh nahi aa rahi, ek bhi baari neeche hai.",
+    "trigger": "samajh nahi",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "SIMPLE"
+      ],
+      "pace": [
+        0.93,
+        0.83
+      ],
+      "max_words": [
+        24,
+        20
+      ],
+      "empathy": [
+        3,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+    "evidence": [
+      "playbook",
+      "E3_pace"
+    ]
+  },
+  {
+    "turn": 6,
+    "t_sec": 136.7,
+    "kind": "end",
+    "signal": "llm_outcome",
+    "detector": "llm",
+    "seller_said": "Are samajh nahi aa rahi, ek bhi baari neeche hai.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "RESPECTFUL_EXIT"
+      ]
+    },
+    "reason": "LLM proposed RESPECTFUL_EXIT; supported by what the seller said.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

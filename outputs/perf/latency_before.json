@@ -1,0 +1,1034 @@
+{
+ "summary": {
+  "turns": 65,
+  "total_median": 2344,
+  "total_p90": 5468,
+  "total_max": 8465,
+  "llm_first_call_median": 881.5,
+  "turns_with_llm_retry": 15,
+  "llm_calls_total": 66,
+  "turns_without_llm": 23,
+  "translit_calls_total": 17,
+  "other_ms_median": 5
+ },
+ "turns": [
+  {
+   "scenario": "1 Do-not-call",
+   "seller": "mujhe dobara call mat karna, number hata do",
+   "total_ms": 959,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    955
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "समझ गई, हम आपको दोबारा call नहीं करेंगे। धन्यवाद।"
+  },
+  {
+   "scenario": "2 Connectivity (twice)",
+   "seller": "hello? awaaz nahi aa rahi",
+   "total_ms": 5858,
+   "llm_calls": 3,
+   "llm_ms": [
+    1177,
+    838,
+    1046
+   ],
+   "tts_ms": [
+    1625
+   ],
+   "translit_calls": 2,
+   "translit_ms": 1163,
+   "other_ms": 9,
+   "reply": "जी, अब आवाज़ साफ़ आ रही है? मैं IndiaMART से Payal बोल रही हूँ, आप पेड सर्विसेज़ देख रहे थे। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "2 Connectivity (twice)",
+   "seller": "hello hello? kuch sunai nahi de raha, awaaz toot rahi hai",
+   "total_ms": 1036,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1034
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "आवाज़ साफ़ नहीं आ रही, मैं आपको थोड़ी देर में दोबारा call करती हूँ। धन्यवाद।"
+  },
+  {
+   "scenario": "3 Frustration (twice)",
+   "seller": "kitni baar call karoge, pareshan kar diya",
+   "total_ms": 3159,
+   "llm_calls": 1,
+   "llm_ms": [
+    1023
+   ],
+   "tts_ms": [
+    2129
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 7,
+   "reply": "जी, बार-बार call करने के लिए माफ़ी चाहती हूँ। आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "3 Frustration (twice)",
+   "seller": "bas karo, dimaag kharab kar diya aap logon ne",
+   "total_ms": 789,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    786
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 3,
+   "reply": "परेशानी के लिए माफ़ी चाहती हूँ। आपका दिन शुभ हो।"
+  },
+  {
+   "scenario": "4 Complaint, then support time (playbook example)",
+   "seller": "haan ji",
+   "total_ms": 1747,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1737
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 10,
+   "reply": "जी, आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "4 Complaint, then support time (playbook example)",
+   "seller": "kaam theek chal raha hai par IndiaMART se enquiry bahut kam aati hai",
+   "total_ms": 5648,
+   "llm_calls": 2,
+   "llm_ms": [
+    1631,
+    999
+   ],
+   "tts_ms": [
+    3006
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 12,
+   "reply": "जी, मैं समझ सकती हूँ, enquiries कम आना चिंता की बात है। हमारे executive आपकी profile और catalog ठीक करेंगे, और lead settings भी check करेंगे, ताकि आपको सही buyers की enquiries मिलें। क्या मैं उनके साथ आपकी meeting fix कर दूँ?"
+  },
+  {
+   "scenario": "4 Complaint, then support time (playbook example)",
+   "seller": "leads hi nahi aate, paisa diya tha kuch nahi hua",
+   "total_ms": 2230,
+   "llm_calls": 1,
+   "llm_ms": [
+    1200
+   ],
+   "tts_ms": [
+    1024
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 6,
+   "reply": "मुझे सच में अफसोस है कि ऐसा हुआ। क्या दिक्कत आई थी, थोड़ा बताएँगे?"
+  },
+  {
+   "scenario": "4 Complaint, then support time (playbook example)",
+   "seller": "kal shaam 5 baje",
+   "total_ms": 2344,
+   "llm_calls": 1,
+   "llm_ms": [
+    921
+   ],
+   "tts_ms": [
+    1414
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 8,
+   "reply": "आपकी बात मैंने note कर ली है, support team कल शाम 5 बजे आपसे संपर्क करेगी। समय देने के लिए धन्यवाद।"
+  },
+  {
+   "scenario": "5 Are you a bot?",
+   "seller": "aap robot ho kya?",
+   "total_ms": 3040,
+   "llm_calls": 1,
+   "llm_ms": [
+    813
+   ],
+   "tts_ms": [
+    2220
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 7,
+   "reply": "जी, मैं IndiaMART की virtual assistant हूँ, आपके account के बारे में call किया है। आप paid services देख रहे थे, और आपकी Cotton Fabric category में buyers उपलब्ध हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "6 Who is calling / why",
+   "seller": "kaun bol raha hai? kis liye call kiya?",
+   "total_ms": 6014,
+   "llm_calls": 3,
+   "llm_ms": [
+    727,
+    663,
+    686
+   ],
+   "tts_ms": [
+    2103
+   ],
+   "translit_calls": 3,
+   "translit_ms": 1827,
+   "other_ms": 8,
+   "reply": "जी, मैं IndiaMART से Payal बोल रही हूँ। आप IndiaMART की पेड सर्विसेज़ देख रहे थे, और आपकी कॉटन फैब्रिक category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "7 Not the right person",
+   "seller": "main owner nahi hoon, sir se baat kijiye",
+   "total_ms": 3083,
+   "llm_calls": 2,
+   "llm_ms": [
+    740,
+    777
+   ],
+   "tts_ms": [
+    1561
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "जी, समझ गई। क्या उनके लिए कोई number है, या आप बता देंगे? अगर number 78 पर खत्म होता है तो मैं connect कर लेती हूँ।"
+  },
+  {
+   "scenario": "7 Not the right person",
+   "seller": "unka naam Ramesh hai, number 9876543210",
+   "total_ms": 4303,
+   "llm_calls": 3,
+   "llm_ms": [
+    1671,
+    930,
+    829
+   ],
+   "tts_ms": [
+    868
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "ठीक है जी, हम सही व्यक्ति से connect कर लेंगे। धन्यवाद।"
+  },
+  {
+   "scenario": "8 Already with an executive",
+   "seller": "hamare executive Rakesh ji pehle se aate hain",
+   "total_ms": 1602,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1597
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "जी, बहुत अच्छा। अगर आपका कोई और doubt हो, तो मैं आपके account manager से आपकी meeting fix कर सकती हूँ। क्या ऐसा कुछ है?"
+  },
+  {
+   "scenario": "8 Already with an executive",
+   "seller": "unse bolna hamara catalog update karna hai",
+   "total_ms": 1638,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1633
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "जी, ज़रूर, आपके account manager इसमें मदद करेंगे। कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा?"
+  },
+  {
+   "scenario": "8b Already with an executive, nothing more",
+   "seller": "hamare executive Rakesh ji pehle se aate hain",
+   "total_ms": 1578,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1575
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 3,
+   "reply": "जी, बहुत अच्छा। अगर आपका कोई और doubt हो, तो मैं आपके account manager से आपकी meeting fix कर सकती हूँ। क्या ऐसा कुछ है?"
+  },
+  {
+   "scenario": "8b Already with an executive, nothing more",
+   "seller": "nahi ji, aur kuch nahi",
+   "total_ms": 1456,
+   "llm_calls": 1,
+   "llm_ms": [
+    754
+   ],
+   "tts_ms": [
+    696
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "ठीक है जी, धन्यवाद। आपका दिन शुभ हो।"
+  },
+  {
+   "scenario": "9 Not interested (twice)",
+   "seller": "nahi chahiye",
+   "total_ms": 1232,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1229
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "कोई बात नहीं जी। क्या आपके पास पहले से काफ़ी काम है, या online platform का कोई बुरा अनुभव रहा?"
+  },
+  {
+   "scenario": "9 Not interested (twice)",
+   "seller": "nahi chahiye, interest nahi hai",
+   "total_ms": 992,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    990
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "कोई बात नहीं जी। समय देने के लिए धन्यवाद, आपका दिन शुभ हो।"
+  },
+  {
+   "scenario": "9b Refused with a reason",
+   "seller": "abhi zaroorat nahi hai, stock already full hai",
+   "total_ms": 954,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    952
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "कोई बात नहीं जी। समय देने के लिए धन्यवाद, आपका दिन शुभ हो।"
+  },
+  {
+   "scenario": "10 Busy",
+   "seller": "abhi busy hoon, jaldi bataiye",
+   "total_ms": 5122,
+   "llm_calls": 3,
+   "llm_ms": [
+    700,
+    1125,
+    654
+   ],
+   "tts_ms": [
+    973
+   ],
+   "translit_calls": 3,
+   "translit_ms": 1666,
+   "other_ms": 5,
+   "reply": "जी, कल शाम 7 बजे call कर लूँगी, या WhatsApp पर details भेज दोन?"
+  },
+  {
+   "scenario": "11 Wants a human",
+   "seller": "manager se baat karao",
+   "total_ms": 2392,
+   "llm_calls": 1,
+   "llm_ms": [
+    908
+   ],
+   "tts_ms": [
+    1479
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "बिलकुल जी, मैं हमारे executive से आपकी बात करवा देती हूँ। कल शाम 7 बजे ठीक रहेगा, या परसों सुबह 11 बजे?"
+  },
+  {
+   "scenario": "11 Wants a human",
+   "seller": "kal subah 11 baje",
+   "total_ms": 2456,
+   "llm_calls": 1,
+   "llm_ms": [
+    851
+   ],
+   "tts_ms": [
+    1002
+   ],
+   "translit_calls": 1,
+   "translit_ms": 596,
+   "other_ms": 7,
+   "reply": "हमारे executive आपको कल सुबह 11 बजे पर call करेंगे। धन्यवाद।"
+  },
+  {
+   "scenario": "12 Wants WhatsApp",
+   "seller": "WhatsApp pe details bhej do",
+   "total_ms": 989,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    987
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "मैं details आपको WhatsApp पर भेज रही हूँ। धन्यवाद, आपका दिन शुभ हो।"
+  },
+  {
+   "scenario": "12b Question about the WhatsApp details",
+   "seller": "haan ji",
+   "total_ms": 1656,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1654
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 3,
+   "reply": "जी, आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "12b Question about the WhatsApp details",
+   "seller": "WhatsApp pe kya details milegi?",
+   "total_ms": 3783,
+   "llm_calls": 2,
+   "llm_ms": [
+    794,
+    727
+   ],
+   "tts_ms": [
+    2256
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 6,
+   "reply": "जी, मैं WhatsApp पर आपके competitors की buy leads, आपकी Cotton Fabric category की recent buy leads, और जो leads miss हो गई हैं, वो भेज दूंगी। क्या इसी number पर भेज दूँ?"
+  },
+  {
+   "scenario": "13 Gives a time (meeting)",
+   "seller": "haan ji",
+   "total_ms": 1715,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1713
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "जी, आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "13 Gives a time (meeting)",
+   "seller": "kaam achha chal raha hai, aur buyers chahiye",
+   "total_ms": 3948,
+   "llm_calls": 1,
+   "llm_ms": [
+    956
+   ],
+   "tts_ms": [
+    2987
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 6,
+   "reply": "जी, यह समझ सकती हूँ, enquiries कम आना चिंता की बात है। हमारे executive आपकी profile और catalog ठीक करके lead settings बदल देंगे, ताकि आपको सही buyers मिलें। क्या मैं कल शाम 4 बजे या परसों सुबह 11 बजे की meeting fix कर दूँ?"
+  },
+  {
+   "scenario": "13 Gives a time (meeting)",
+   "seller": "kal shaam 5 baje",
+   "total_ms": 3309,
+   "llm_calls": 2,
+   "llm_ms": [
+    1572,
+    799
+   ],
+   "tts_ms": [
+    934
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 4,
+   "reply": "बहुत अच्छा, कल शाम 5 बजे — मिलकर या online?"
+  },
+  {
+   "scenario": "13 Gives a time (meeting)",
+   "seller": "online",
+   "total_ms": 2372,
+   "llm_calls": 1,
+   "llm_ms": [
+    901
+   ],
+   "tts_ms": [
+    1466
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "आपकी meeting कल शाम 5 बजे के लिए fix हो गई है, online। Confirmation WhatsApp पर आ जाएगा। धन्यवाद।"
+  },
+  {
+   "scenario": "13b Meeting time outside 9-7",
+   "seller": "haan ji",
+   "total_ms": 1801,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1799
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "जी, आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "13b Meeting time outside 9-7",
+   "seller": "kaam achha chal raha hai, aur buyers chahiye",
+   "total_ms": 4288,
+   "llm_calls": 1,
+   "llm_ms": [
+    1259
+   ],
+   "tts_ms": [
+    3020
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 9,
+   "reply": "जी, काम अच्छा चल रहा है यह जानकर अच्छा लगा। हमारे executive आपकी profile और catalog ठीक करेंगे, और lead settings check करेंगे, ताकि आपको सही buyers की enquiries मिलें। कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा?"
+  },
+  {
+   "scenario": "13b Meeting time outside 9-7",
+   "seller": "kal shaam 8 baje",
+   "total_ms": 2293,
+   "llm_calls": 1,
+   "llm_ms": [
+    910
+   ],
+   "tts_ms": [
+    1377
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "माफ़ी चाहूँगी, meeting हम सुबह नौ से शाम सात बजे के बीच ही रख सकते हैं। कल शाम 7 बजे ठीक रहेगा?"
+  },
+  {
+   "scenario": "13d Seller picks the second slot",
+   "seller": "haan ji",
+   "total_ms": 1894,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1891
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 3,
+   "reply": "जी, आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "13d Seller picks the second slot",
+   "seller": "haan bataiye",
+   "total_ms": 3736,
+   "llm_calls": 1,
+   "llm_ms": [
+    1118
+   ],
+   "tts_ms": [
+    2613
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "बहुत अच्छा जी। हमारे executive आपकी profile और catalog ठीक करेंगे और lead settings check करेंगे, ताकि आपको सही buyers की enquiries मिलें। कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा?"
+  },
+  {
+   "scenario": "13d Seller picks the second slot",
+   "seller": "dusra wala theek rahega",
+   "total_ms": 1707,
+   "llm_calls": 1,
+   "llm_ms": [
+    727
+   ],
+   "tts_ms": [
+    976
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 4,
+   "reply": "बहुत अच्छा, परसों शाम 4 बजे — मिलकर या online?"
+  },
+  {
+   "scenario": "13d Seller picks the second slot",
+   "seller": "milkar",
+   "total_ms": 2288,
+   "llm_calls": 1,
+   "llm_ms": [
+    838
+   ],
+   "tts_ms": [
+    1445
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "आपकी meeting परसों शाम 4 बजे के लिए fix हो गई है, मिलकर। Confirmation WhatsApp पर आ जाएगा। धन्यवाद।"
+  },
+  {
+   "scenario": "13c Buy-lead question",
+   "seller": "haan ji",
+   "total_ms": 1822,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1820
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "जी, आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "13c Buy-lead question",
+   "seller": "aur buy leads kahan milenge?",
+   "total_ms": 2243,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    2238
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 4,
+   "reply": "आप अपने IndiaMART seller dashboard में login करके BuyLeads section में सभी buy leads देख सकते हैं — website पर, या IndiaMART app में भी। क्या आप कुछ और जानना चाहेंगे?"
+  },
+  {
+   "scenario": "14 Language change",
+   "seller": "Can you speak in English please?",
+   "total_ms": 2633,
+   "llm_calls": 1,
+   "llm_ms": [
+    832
+   ],
+   "tts_ms": [
+    1795
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 6,
+   "reply": "Sure, I'll speak in English. You were checking IndiaMART's paid services, and there are buyers available in your Cotton Fabric category. Would you like to know more about it?"
+  },
+  {
+   "scenario": "15 Need: few enquiries",
+   "seller": "haan ji",
+   "total_ms": 1830,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1828
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "जी, आप IndiaMART पर कुछ buy leads check कर रहे थे, और आपकी Men Socks category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "15 Need: few enquiries",
+   "seller": "enquiry bahut kam aati hai",
+   "total_ms": 3400,
+   "llm_calls": 1,
+   "llm_ms": [
+    806
+   ],
+   "tts_ms": [
+    2589
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 4,
+   "reply": "जी, मैं समझ सकती हूँ, enquiries कम आना चिंता की बात है। हमारे executive आपकी profile और catalog ठीक करेंगे, और lead settings check करके सही buyers की enquiries लाएंगे। क्या मैं उनके साथ आपकी meeting fix कर दूँ?"
+  },
+  {
+   "scenario": "16 Price question",
+   "seller": "kitna charge lagega?",
+   "total_ms": 4358,
+   "llm_calls": 2,
+   "llm_ms": [
+    876,
+    774
+   ],
+   "tts_ms": [
+    2701
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 7,
+   "reply": "जी, charges आपके plan और leads के हिसाब से होते हैं, executive मिलकर आपकी category के हिसाब से सही बता देंगे। आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "17 Confusion",
+   "seller": "matlab? samjha nahi",
+   "total_ms": 7286,
+   "llm_calls": 3,
+   "llm_ms": [
+    810,
+    743,
+    824
+   ],
+   "tts_ms": [
+    3141
+   ],
+   "translit_calls": 3,
+   "translit_ms": 1761,
+   "other_ms": 8,
+   "reply": "मैं इसलिए call कर रही हूँ क्योंकि आप पेड सर्विसेज़ देख रहे थे, और आपकी कॉटन फैब्रिक category में buyers available हैं। हमारे executive आपके catalog को ठीक करेंगे और lead settings check करेंगे, ताकि सही buyers की enquiries आएं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "18 Clear interest",
+   "seller": "kab aayenge? kaise hoga?",
+   "total_ms": 8465,
+   "llm_calls": 3,
+   "llm_ms": [
+    778,
+    867,
+    1580
+   ],
+   "tts_ms": [
+    2957
+   ],
+   "translit_calls": 4,
+   "translit_ms": 2275,
+   "other_ms": 7,
+   "reply": "जी, हमारे executive aapse मिलकर आपका catalog ठीक करेंगे, सही कीवर्ड्स ऐड करेंगे और lead settings चेक करेंगे, ताकि आपको सही buyer enquiries milein. कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा?"
+  },
+  {
+   "scenario": "20 Context captured",
+   "seller": "hum cotton fabric banate hain, Surat mein factory hai, export bhi karte hain",
+   "total_ms": 4329,
+   "llm_calls": 3,
+   "llm_ms": [
+    895,
+    869,
+    719
+   ],
+   "tts_ms": [
+    1299
+   ],
+   "translit_calls": 1,
+   "translit_ms": 543,
+   "other_ms": 4,
+   "reply": "बहुत अच्छा जी। कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा? मिलकर या online?"
+  },
+  {
+   "scenario": "21 Sarcastic flip after a pitch",
+   "seller": "Nahi achha nahi chal raha, bilkul achha nahi chal raha.",
+   "total_ms": 3410,
+   "llm_calls": 1,
+   "llm_ms": [
+    860
+   ],
+   "tts_ms": [
+    2542
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 8,
+   "reply": "I understand, ji. There have been many buyer enquiries in your Automatic Idli Making Machine category in Chennai. Since business is not going well, our executive can help improve your profile and lead settings. Would you like to know more about it?"
+  },
+  {
+   "scenario": "21 Sarcastic flip after a pitch",
+   "seller": "Bilkul kharab chal raha hai.",
+   "total_ms": 5815,
+   "llm_calls": 3,
+   "llm_ms": [
+    1716,
+    894,
+    837
+   ],
+   "tts_ms": [
+    2363
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 6,
+   "reply": "जी, मैं समझ सकती हूँ। हमारे executive आपकी profile और lead settings ठीक करके सही buyers की enquiries ला सकते हैं। क्या मैं कल सुबह 11 बजे या परसों शाम 4 बजे की meeting fix कर दूँ?"
+  },
+  {
+   "scenario": "21 Sarcastic flip after a pitch",
+   "seller": "Are sab badhiya chal raha hai, itna badhiya business hai, mujhe inquiries bhi aa rahi hai, sab ho raha hai.",
+   "total_ms": 2381,
+   "llm_calls": 1,
+   "llm_ms": [
+    895
+   ],
+   "tts_ms": [
+    1480
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 6,
+   "reply": "माफ़ी चाहती हूँ, शायद मैंने जल्दी पूछ लिया। अगर आप चाहें तो मैं WhatsApp पर details भेज सकती हूँ, या फिर बाद में call कर लूँ?"
+  },
+  {
+   "scenario": "22 Genuine flip is clarified once",
+   "seller": "kaam theek nahi chal raha",
+   "total_ms": 5468,
+   "llm_calls": 3,
+   "llm_ms": [
+    912,
+    1458,
+    798
+   ],
+   "tts_ms": [
+    2294
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 6,
+   "reply": "जी, enquiries कम आना चिंता की बात है। हमारे executive आपकी profile और catalog ठीक करेंगे, और lead settings check करके सही buyers की enquiries लाएंगे। क्या मैं उनके साथ आपकी meeting fix कर दूँ?"
+  },
+  {
+   "scenario": "22 Genuine flip is clarified once",
+   "seller": "haan enquiry to aa rahi hai",
+   "total_ms": 4669,
+   "llm_calls": 2,
+   "llm_ms": [
+    1975,
+    793
+   ],
+   "tts_ms": [
+    1897
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 4,
+   "reply": "जी, पहले आपने बताया था कि काम ठीक नहीं चल रहा, और अभी कह रहे हैं कि enquiries आ रही हैं — क्या enquiries तो आ रही हैं पर order नहीं बन रहे?"
+  },
+  {
+   "scenario": "22 Genuine flip is clarified once",
+   "seller": "haan, order nahi ban rahe",
+   "total_ms": 4694,
+   "llm_calls": 1,
+   "llm_ms": [
+    1563
+   ],
+   "tts_ms": [
+    3125
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 6,
+   "reply": "जी, समझ सकती हूँ, enquiries आना पर order न बनना परेशानी की बात है। हमारे executive profile, catalog और lead settings ठीक करेंगे ताकि आपको सही buyers मिलें। कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा? मिलकर या online?"
+  },
+  {
+   "scenario": "23 Repeated-calls venting, then engaged",
+   "seller": "",
+   "total_ms": 1782,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1780
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "Hello ji, can you hear me? This is Payal from IndiaMART. There have been many buyer enquiries in your Automatic Idli Making Machine category in Chennai."
+  },
+  {
+   "scenario": "23 Repeated-calls venting, then engaged",
+   "seller": "Yaar kyon baar baar phone karte ho?",
+   "total_ms": 1962,
+   "llm_calls": 1,
+   "llm_ms": [
+    706
+   ],
+   "tts_ms": [
+    1252
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 4,
+   "reply": "Ji, I am sorry for calling again. I will not disturb you further. Shall I send the details on WhatsApp instead?"
+  },
+  {
+   "scenario": "23 Repeated-calls venting, then engaged",
+   "seller": "Abhi main bol raha hoon baar baar call karte ho, kal phir se call karogi aap log.",
+   "total_ms": 558,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    556
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "Sorry ji. Please go ahead."
+  },
+  {
+   "scenario": "24 Frustrated but asking: answered, not cut",
+   "seller": "kitni baar call karoge",
+   "total_ms": 3192,
+   "llm_calls": 1,
+   "llm_ms": [
+    1052
+   ],
+   "tts_ms": [
+    2135
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "जी, मुझे अफसोस है कि बार-बार call गई। आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "24 Frustrated but asking: answered, not cut",
+   "seller": "pareshan ho gaya hoon, ye bataiye charge kitna lagta hai?",
+   "total_ms": 2637,
+   "llm_calls": 1,
+   "llm_ms": [
+    887
+   ],
+   "tts_ms": [
+    1746
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 4,
+   "reply": "जी, charges आपके plan और category के हिसाब से होते हैं, executive सही जानकारी दे देंगे। क्या मैं उनसे आपकी 15 minute की meeting fix कर दूँ?"
+  },
+  {
+   "scenario": "25 Master example: meeting",
+   "seller": "haan ji",
+   "total_ms": 1795,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    1793
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "जी, आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "25 Master example: meeting",
+   "seller": "haan bataiye",
+   "total_ms": 3444,
+   "llm_calls": 1,
+   "llm_ms": [
+    828
+   ],
+   "tts_ms": [
+    2610
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "जी, हमारे executive आपसे मिलकर आपकी profile और catalog ठीक करेंगे, और lead settings check करेंगे, ताकि आपको सही buyers की enquiries मिलें। कल सुबह 11 बजे या परसों शाम 4 बजे, क्या ठीक रहेगा?"
+  },
+  {
+   "scenario": "25 Master example: meeting",
+   "seller": "haan theek hai",
+   "total_ms": 1754,
+   "llm_calls": 1,
+   "llm_ms": [
+    736
+   ],
+   "tts_ms": [
+    1014
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 5,
+   "reply": "बहुत अच्छा, कल सुबह 11 बजे — मिलकर या online?"
+  },
+  {
+   "scenario": "25 Master example: meeting",
+   "seller": "milne ka time nahi hai",
+   "total_ms": 1717,
+   "llm_calls": 1,
+   "llm_ms": [
+    677
+   ],
+   "tts_ms": [
+    1037
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 4,
+   "reply": "कोई बात नहीं जी, online meeting कर लेते हैं। कल सुबह 11 बजे online ठीक रहेगा?"
+  },
+  {
+   "scenario": "25 Master example: meeting",
+   "seller": "haan",
+   "total_ms": 2217,
+   "llm_calls": 1,
+   "llm_ms": [
+    851
+   ],
+   "tts_ms": [
+    1359
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 6,
+   "reply": "आपकी meeting कल सुबह 11 बजे के लिए fix हो गई है, online। Confirmation WhatsApp पर आ जाएगा। धन्यवाद।"
+  },
+  {
+   "scenario": "Fatigued seller first reply",
+   "seller": "haan ji",
+   "total_ms": 2078,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    2076
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 2,
+   "reply": "जी, दोबारा call करने के लिए माफ़ी चाहती हूँ। आप IndiaMART पर कुछ buy leads check कर रहे थे, और आपकी Ball Pen category में buyers available हैं। क्या आप इसके बारे में जानना चाहेंगे?"
+  },
+  {
+   "scenario": "Cautious seller first reply",
+   "seller": "haan ji",
+   "total_ms": 2190,
+   "llm_calls": 0,
+   "llm_ms": [],
+   "tts_ms": [
+    2187
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 3,
+   "reply": "जी, पहले जो परेशानी हुई, उसके लिए माफ़ी चाहती हूँ। आप IndiaMART पर कुछ buy leads check कर रहे थे, और आपकी Clamps category में buyers available हैं। क्या दिक्कत आई थी, बताइएगा?"
+  },
+  {
+   "scenario": "English seller",
+   "seller": "Who is this?",
+   "total_ms": 2721,
+   "llm_calls": 1,
+   "llm_ms": [
+    715
+   ],
+   "tts_ms": [
+    2000
+   ],
+   "translit_calls": 0,
+   "translit_ms": 0,
+   "other_ms": 6,
+   "reply": "I'm Payal from IndiaMART. I'm calling because there have been many buyer enquiries in your Automatic Idli Making Machine category in Chennai. Would you like to know more about it?"
+  }
+ ]
+}

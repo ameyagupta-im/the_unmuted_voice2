@@ -1,0 +1,26 @@
+[
+  {
+    "turn": 2,
+    "t_sec": 10.5,
+    "kind": "persona",
+    "signal": "identity_question",
+    "detector": "regex",
+    "seller_said": "kaun bol raha hai?",
+    "trigger": "kaun bol",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "TRANSPARENT"
+      ],
+      "max_words": [
+        24,
+        30
+      ]
+    },
+    "reason": "Playbook scenario 6: identity_question -> TRANSPARENT.",
+    "evidence": [
+      "playbook",
+      "E15_seller_questions"
+    ]
+  }
+]

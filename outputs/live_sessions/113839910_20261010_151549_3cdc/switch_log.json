@@ -1,0 +1,58 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 10.3,
+    "kind": "persona",
+    "signal": "hangup_risk",
+    "detector": "barge_in",
+    "seller_said": "Yeh catalog hai.",
+    "trigger": "seller interrupted the opening",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "COMPRESSED"
+      ],
+      "max_words": [
+        32,
+        14
+      ],
+      "assertiveness": [
+        4,
+        3
+      ]
+    },
+    "reason": "Playbook scenario 19: hangup_risk -> COMPRESSED.",
+    "evidence": [
+      "playbook",
+      "model:hangup_auc_0.645"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 23.9,
+    "kind": "persona",
+    "signal": "connectivity",
+    "detector": "silence",
+    "seller_said": "(silence)",
+    "trigger": "no speech heard",
+    "change_made": {
+      "mode": [
+        "COMPRESSED",
+        "CLEAR_AUDIO"
+      ],
+      "pace": [
+        0.83,
+        0.78
+      ],
+      "assertiveness": [
+        3,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  }
+]

@@ -1,0 +1,148 @@
+{
+  "source": "83 recorded IndiaMART bot calls, transcribed with Sarvam Saaras",
+  "seller_phrasings": {
+    "price_query": [
+      "Charge charge charge chahiye",
+      "Accha, yeh kya pricing hai yeh sab cheezon ka?",
+      "Mujhmein kharcha toh nahi aayega ya zyada kya aayega?",
+      "Sir yeh aapki jo business profile hai Sanjha Sanjha Engineering Work. Ismein cast iron parts ki requirement padi hui hai Rajkot Gujarat ki, but aapki profile pe na price updated nahi hai sir.",
+      "Monthly ismein subscription kya hai?",
+      "Usmein main mil chuka hoon India Mart walon se... charges wagairah minimum charges aur vo sab."
+    ],
+    "busy": [
+      "Raj ji main abhi auto pe station hoon",
+      "Nahi Madam, aaj thoda se hum busy hain.",
+      "Kyonki abhi thoda sa bachcha log ke saath busy hain",
+      "Theek hai na, hum soch ke aapko batate hain ma'am. Abhi toh real recent mein mera koi program nahi hai film karane ka.",
+      "Madam aaj na idhar thoda festival hai toh main thoda vyast hoon main thoda der baad aapko kalu ek jagah par meeting mein ja raha tha main",
+      "Achha humko ek ghanta baad call kariyega na zara hum kahin aaye hue hain."
+    ],
+    "gives_time": [
+      "Twenty one ke main aaunga",
+      "Ek week ke baad",
+      "Kal wahi second half ke baad thoda bahut free rehta hai.",
+      "Second half mein kijiyega",
+      "Theek hai na Ma'am",
+      "Haan first start karega."
+    ],
+    "identity_question": [
+      "Ji kahan se bol rahe hain",
+      "Haan kaun",
+      "Haan Ma'am phone kehte the, tab kya kaam tha?",
+      "Actually na aapka yeh proprietor name sir Rajesh hi show kar raha hai unka pura naam Rajesh Chitranjaya karke hai",
+      "Aap Harjita bol rahe hain, kahan se bol rahe hain, kis kaaran se bolna hai zara batayenge.",
+      "Haan Shri ji Garments se bol rahe the"
+    ],
+    "not_interested": [
+      "nahi nahi beauty product nahi hai ma'am milunga",
+      "Toh theek hai lekin abhi jo paid service hai na woh abhi hum filhaal nahi kar payenge.",
+      "Nahi laayega, nahi laayega.",
+      "Nahi nahi thank you.",
+      "Abhi hum yeh phone package nahi dena ma'am yeh hamara startup hai ma'am.",
+      "Nahi nahi, vo toh hamara unse baat ho gaya tha, main bola abhi jab bhi aisa kuchh rahega toh hum log karwa lenge, abhi as of abhi aisa kuchh update karne ka toh socha nahi hai."
+    ],
+    "connectivity": [
+      "Haan aawaz aa rahi hai",
+      "Hello sir, aawaz aa rahi hai?",
+      "Haan, bola haan aare",
+      "Hello, haanji sir, ki aawaz aa rahi hai?"
+    ],
+    "interest": [
+      "Chalo theek hai aisa karte hain madam apan kal ka baat karte hain aapka jo vo executive tha jo last time aaya tha kya naam tha uska yaar.",
+      "Theek hai ma'am baat karke batayenge aapko",
+      "Theek hai.",
+      "Sir actually main iske regarding hi aapse ek baar na offline discussion chah rahi thi",
+      "Detail kar rahe hain.",
+      "Theek hai Madam, toh iske update ke liye kya karna padega?"
+    ],
+    "already_with_executive": [
+      "Ji ji ji haan good afternoon",
+      "Haraadan sir se baat kar lijiye na.",
+      "Pata hi hai na usko sab pata hai pehle bhi aaya hua hai visit hua hua tha",
+      "Aap jis vyakti se baat kar rahe hain unhone aapke call ko hold par rakha hai."
+    ],
+    "confusion": [
+      "Achha chhote de raha hai",
+      "Kya bol raha hai Madam?"
+    ],
+    "not_right_person": [
+      "Mari toh abhi hai nahi sir, Balaji Intex ka aane se baat karata hoon main aapko.",
+      "Enterprise"
+    ],
+    "complaint": [
+      "jab bhi aapka order mere paas ek do aave tabhi mere ko thoda yeh hoyenga trust hoyenga ki haan okay mere ko order aa raha hai toh main aage kaam kar sakta hoon."
+    ],
+    "need_few_enquiries": [
+      "Toh yeh main yahan se baithe hue toh nahi kar sakti, bas main ek kaam kar sakti hoon, ek business expert ko toh main aapki meeting kara deti hoon, woh aapke yahan aayenge, free of cost hai yeh, hai na? Aapki location pe aayenge, aapko connect karenge, aapko aapki profile update karke jaayenge basically woh, hai na?",
+      "Theek hai, koi baat nahi, toh main dekh leta hoon kya hai."
+    ],
+    "wants_whatsapp": [
+      "Ee number WhatsApp pe rahe hain."
+    ],
+    "opening": [
+      "Music koi jatan ab."
+    ],
+    "frustration": [
+      "Bahut baar toh phone aa chuka hai aur baar baar hi toh bola tha."
+    ]
+  },
+  "agent_lines": {
+    "busy": [
+      "Accha accha abhi aap out of station hain... raat ki kab tak available rahoge sir aap",
+      "Okay okay toh phir sir kal phir kitne baje tak connect kar lo iska",
+      "No issue sir aap ek baar meeting mein chale jao aap mere ko",
+      "Okay aap ek ghante ke baad free ho jaoge sir. Okay toh abhi sir time ho raha hai aapka ek bajne hi wala hai main do baje ke around aapko connect kar leti hoon do baje toh baat ho payegi na."
+    ],
+    "gives_time": [
+      "Twenty one agar sir aapko comfortable ho... ek online meeting hum log rakh sakte hain Zoom pe",
+      "teen se chaar ke chaar baje ke tak sir free ho jaoge aap",
+      "Parso ek baar subah mujhe itne baje phone kar lena hum log schedule kar lenge.",
+      "Haan ji main haan kal aap morning mein free rahenge na main das saade das ke around aapko ek baar connect kar loongi"
+    ],
+    "closing": [
+      "Accha accha second half ke baad hi ek baar na theek hai sir main ek baar check aapko connect kar loongi theek hai thank you sir",
+      "Ji ji theek hai kal second half okay sir kal second half mein hum log connect kar lenge mil lenge",
+      "Okay sure sir theek hai but time mein zaroor nikaliyeega",
+      "Okay sir thank you"
+    ],
+    "opening": [
+      "Haan very good afternoon ma'am main India Mart team se baat kar rahi thi ye Homey Free Strides mein baat ho rahi hai na",
+      "Ji sir, main India Mart team se baat kar rahi thi. Actually aapka ek firm tha sir, uske regarding kaafi queries wagairah thi customers ki."
+    ],
+    "price_query": [
+      "Particular jisko jo requirement rahegi woh mujhe share karenge uski requirement toh uske hisab se rate decide hoga aur phir kya hai ki raw material ke prices mein bhi fluctuation rehta hai.",
+      "Nahi, iske koi charges nahi rehte hain sir.",
+      "main package ke liye aapko nahin keh rahi hoon. main sirf do profile update karne ke liye keh rahi hoon.",
+      "Ji toh wahi cheez aapki na profile pe na ye cheez updated bhi hai, like mere ko na ye cheez update karwani hai taki zyada se zyada inquiries aa sake aapke paas direct inquiries hai na?"
+    ],
+    "connectivity": [
+      "Hello sir awaaz aa rahi hai aapko"
+    ],
+    "interest": [
+      "Wahin se aapke liye koi banda aayega, aap mere ko ek time bata do main kis time par aapke liye bhejungi.",
+      "Okay kya product purchase karna hai?"
+    ]
+  },
+  "mistakes": [
+    "quoted specific package prices (4000/month and 32000/year) instead of deferring to an executive.",
+    "failed to explain that the meeting is free of charge.",
+    "mispronounced 'indiamart' as 'india martins'",
+    "did not confirm the callback slot in a structured way (e.g., 'i will call you back in a week')",
+    "did not follow the 'busy' playbook by providing a one-line value proposition before asking for a callback time.",
+    "ignored seller's refusal of beauty products and mismatched profile.",
+    "failed to handle 'busy' signal by offering a callback or whatsapp alternative.",
+    "repeated the mismatch explanation multiple times without advancing the pitch.",
+    "did not use a concise value proposition before asking for time.",
+    "misinterpreted the seller's request to call back later ('baad mein baat kar loongi') as a request for a follow-up reminder instead of a direct callback.",
+    "failed to handle the seller's audio/connectivity issue ('ro nahi ro nahi aa rahi ho') with the standard 'kya aapko meri awaaz aa rahi hai?' script.",
+    "pitched pricing ('chaar hazaar ka charges') despite the playbook instructing to never quote a price.",
+    "failed to transition to the goal step after the seller expressed market slowdown interest.",
+    "quoted a specific conversion percentage (30 to 40%) and lead volume (70 leads) when the playbook strictly prohibits quoting prices or guaranteed metrics.",
+    "failed to confirm the callback slot explicitly after the seller gave a time."
+  ],
+  "speaking_rate_median_wps": {
+    "bot/bot": 3.44,
+    "bot/seller": 3.31
+  },
+  "dropped_unverified_or_unclean": 51
+}

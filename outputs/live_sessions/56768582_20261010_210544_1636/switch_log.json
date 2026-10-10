@@ -1,0 +1,251 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 20.7,
+    "kind": "goal",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Yaar bahut bekaar chal raha hai bhai, bahut zyada pareshan hoon, pata nahi kya ho raha hai business mein.",
+    "trigger": "pareshan",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "callback"
+      ],
+      "stage": [
+        "understand",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'frustration': goal moves to callback (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 1,
+    "t_sec": 20.7,
+    "kind": "persona",
+    "signal": "frustration",
+    "detector": "regex",
+    "seller_said": "Yaar bahut bekaar chal raha hai bhai, bahut zyada pareshan hoon, pata nahi kya ho raha hai business mein.",
+    "trigger": "pareshan",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CALM_EMPATHETIC"
+      ],
+      "pace": [
+        0.98,
+        0.92
+      ],
+      "max_words": [
+        17,
+        20
+      ],
+      "empathy": [
+        3,
+        5
+      ],
+      "assertiveness": [
+        4,
+        1
+      ]
+    },
+    "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration"
+    ]
+  },
+  {
+    "turn": 1,
+    "t_sec": 23.7,
+    "kind": "clarify",
+    "signal": "sarcasm",
+    "detector": "llm",
+    "seller_said": "Yaar bahut bekaar chal raha hai bhai, bahut zyada pareshan hoon, pata nahi kya ho raha hai business mein.",
+    "trigger": "",
+    "change_made": {
+      "sarcasm": [
+        false,
+        true
+      ]
+    },
+    "reason": "Seller expressed strong frustration and being troubled by business issues.",
+    "evidence": [
+      "playbook",
+      "E4_backoff_after_frustration",
+      "live:3419775_20261009_231212"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 73.5,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "regex:explicit_request",
+    "seller_said": "Are are are kahan ja rahe ho? Main toh yeh bol raha tha aap abhi mujhe call kar do, maine toh Telugu mein kuch bola hi nahi.",
+    "trigger": "Telugu mein",
+    "change_made": {
+      "language": [
+        "hi-IN",
+        "te-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 79.3,
+    "kind": "goal",
+    "signal": "goal_ask_limit",
+    "detector": "engine",
+    "seller_said": "Are are are kahan ja rahe ho? Main toh yeh bol raha tha aap abhi mujhe call kar do, maine toh Telugu mein kuch bola hi nahi.",
+    "trigger": "goal ask limit reached",
+    "change_made": {
+      "goal": [
+        "callback",
+        "info_whatsapp"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'goal_ask_limit': goal moves to info_whatsapp (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 93.7,
+    "kind": "persona",
+    "signal": "connectivity",
+    "detector": "silence",
+    "seller_said": "(silence)",
+    "trigger": "no speech heard",
+    "change_made": {
+      "mode": [
+        "CALM_EMPATHETIC",
+        "CLEAR_AUDIO"
+      ],
+      "pace": [
+        0.92,
+        0.9
+      ],
+      "max_words": [
+        20,
+        14
+      ],
+      "empathy": [
+        5,
+        3
+      ],
+      "assertiveness": [
+        1,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  },
+  {
+    "turn": 6,
+    "t_sec": 132.2,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "CLEAR_AUDIO",
+        "DEFAULT"
+      ],
+      "pace": [
+        0.9,
+        0.98
+      ],
+      "max_words": [
+        14,
+        17
+      ]
+    },
+    "reason": "Two turns without the signal behind CLEAR_AUDIO: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 7,
+    "t_sec": 144.2,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "regex:explicit_request",
+    "seller_said": "Behenchod Hindi mein baat kar le.",
+    "trigger": "Hindi mein",
+    "change_made": {
+      "language": [
+        "te-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 7,
+    "t_sec": 146.7,
+    "kind": "goal",
+    "signal": "not_interested",
+    "detector": "llm",
+    "seller_said": "Behenchod Hindi mein baat kar le.",
+    "trigger": "Seller clearly declined further engagement by not responding to the ask and showing disinterest.",
+    "change_made": {
+      "goal": [
+        "info_whatsapp",
+        "respectful_exit"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'not_interested': goal moves to respectful_exit (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 8,
+    "t_sec": 159.8,
+    "kind": "end",
+    "signal": "llm_outcome",
+    "detector": "llm",
+    "seller_said": "Haan main bol raha tha abhi call kar le.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "RESPECTFUL_EXIT"
+      ]
+    },
+    "reason": "LLM proposed RESPECTFUL_EXIT; supported by what the seller said.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

@@ -1,0 +1,1229 @@
+{
+  "n_calls": 83,
+  "agent_types": {
+    "bot": 83
+  },
+  "speaking_rate_median_wps": {
+    "bot/bot": 3.44,
+    "bot/seller": 3.31
+  },
+  "scenario_examples": {
+    "price_query": [
+      {
+        "seller_quote": "Charge charge charge chahiye",
+        "agent_response": "Sir charges to different thing hai pehle aap yeh dekhoge na ki kaisi inquiries aa rahi hai kya aa rahi hai uske baad hum log charges pe jaate hain",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent quoted package prices (4000/month and 32000/year) instead of deferring to the executive as instructed.",
+        "recording": "awanshika_101086220.aac"
+      },
+      {
+        "seller_quote": "Bata raha jaise pehle bhi baat hua tha. Toh vo kya monthly ya yearly kuch charges bata rahe the",
+        "agent_response": "Haan ji vo hamara hota hai sir six month ka hota hai annual hota hai two years ka hota hai three years ka hota hai matlab vo depend karta hai ki aap kaun sa package purchase kar rahe ho theek hai",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent avoided quoting a fixed price and explained that packages vary by duration and service level.",
+        "recording": "harshlata_64567455.aac"
+      },
+      {
+        "seller_quote": "Accha, yeh kya pricing hai yeh sab cheezon ka?",
+        "agent_response": "Aapke profile update karne ke liye koi charges wagairah diya?",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent avoided quoting a price and stated that the executive will explain it.",
+        "recording": "prerna_12080625.mp3"
+      },
+      {
+        "seller_quote": "Mujhmein kharcha toh nahi aayega ya zyada kya aayega?",
+        "agent_response": "Nahi ab ye dekho aapki jo meeting hogi bilkul ekdam free of cost hai iska koi kharcha nahi hai hai na.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Correctly avoided quoting a price and clarified the meeting is free.",
+        "recording": "prerna_124661655.mp3"
+      },
+      {
+        "seller_quote": "Sir yeh aapki jo business profile hai Sanjha Sanjha Engineering Work. Ismein cast iron parts ki requirement padi hui hai Rajkot Gujarat ki, but aapki profile pe na price updated nahi hai sir.",
+        "agent_response": "Okay. Okay. Toh koi baat nahi abhi kar deta hoon chalo. Oh kya rehta hai hamare wahan ki different different part ke different different price rehte hain.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent correctly avoided quoting a price and explained that rates depend on specific requirements and raw material fluctuations.",
+        "recording": "prerna_13364709.mp3"
+      },
+      {
+        "seller_quote": "Monthly ismein subscription kya hai?",
+        "agent_response": "Sir monthly hamara rehta hai chaar hazaar plus eighteen percent GST...",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "Agent quoted a price (4000 + 18% GST) instead of deflecting and offering an executive explanation.",
+        "recording": "prerna_146566090.aac"
+      },
+      {
+        "seller_quote": "Usmein main mil chuka hoon India Mart walon se... charges wagairah minimum charges aur vo sab.",
+        "agent_response": "Charges.",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent prompted a price discussion by repeating 'Charges' instead of deflecting and moving to the meeting.",
+        "recording": "prerna_190684756.mp3"
+      },
+      {
+        "seller_quote": "Kitna?",
+        "agent_response": "Ek saal ka battis hazaar plus atharah percent GST jismein har mahine aapko buyers provide hota hai, like har mahine aapko chaalis verified buyers milta hai.",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent quoted a specific price (Rs 32,000 + 18% GST), which violates the playbook rule to never quote prices.",
+        "recording": "prerna_190684756.mp3"
+      },
+      {
+        "seller_quote": "Achha nahi nahi agar bikta hai product toh charges kya hote hain?",
+        "agent_response": "Wo packages ka toh dekho sir ek saal ka price ek saal ka hota hai...",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent quoted a price (32,000 + 18% GST) instead of deflecting to an executive.",
+        "recording": "prerna_202215902.mp3"
+      },
+      {
+        "seller_quote": "Dusra email ID andar already hai, phone number bhi updated hai, email ID bhi updated hai. Okay price agar updated nahi hai toh woh main update kar dega.",
+        "agent_response": "Toh main kya kahi thi ki aapki jo price aur photos update nahi hai.",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent repeated the issue without explaining that the executive will handle it or moving to the goal step.",
+        "recording": "prerna_244946654.mp3"
+      },
+      {
+        "seller_quote": "Public karne ke liye kya hota hai, use hi official ho jayega na.",
+        "agent_response": "Charges toh tab lagte hain sir jab aap India Mart ka packages lete hain hai na.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Avoided quoting a price and explained that packages incur charges.",
+        "recording": "prerna_27459119.mp3"
+      },
+      {
+        "seller_quote": "jaise white shoes aapne daal rakha hai toh vo casual shoes aapne price nahi update kar rakha ki aap ek estimated price kya rahega aapka hai na?",
+        "agent_response": "like aap kya product sell karte hain, unki photos, kis price ko sell kar raha hai...",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent explained that the executive will explain the pricing and packages during the meeting rather than quoting a price.",
+        "recording": "prerna_31272734.mp3"
+      }
+    ],
+    "busy": [
+      {
+        "seller_quote": "Raj ji main abhi auto pe station hoon",
+        "agent_response": "Accha accha abhi aap out of station hain... raat ki kab tak available rahoge sir aap",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent acknowledged the seller's out-of-station status and asked for a suitable time to connect.",
+        "recording": "awanshika_101086220.aac"
+      },
+      {
+        "seller_quote": "Nahi Madam, aaj thoda se hum busy hain.",
+        "agent_response": "Okay okay toh phir sir kal phir kitne baje tak connect kar lo iska",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Offered an alternative by asking for a future callback time.",
+        "recording": "awanshika_10828196.aac"
+      },
+      {
+        "seller_quote": "Kyonki abhi thoda sa bachcha log ke saath busy hain",
+        "agent_response": "Okay okay. Toh leke aaye hue the aaj Makar Sankranti ka leke toh aap kal humko ek baar call kijiyega hum rahenge apna shop pe.",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent did not offer a value proposition or ask for a callback time before the seller proposed tomorrow.",
+        "recording": "awanshika_118725013.aac"
+      },
+      {
+        "seller_quote": "Theek hai na, hum soch ke aapko batate hain ma'am. Abhi toh real recent mein mera koi program nahi hai film karane ka.",
+        "agent_response": "No doubt sir, aapka matlab no problem sir, aapka koi vaisa program nahi hai...",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent ignored the seller's unavailability/busy signal and pivoted to asking for an address instead of offering a callback or WhatsApp.",
+        "recording": "awanshika_137053968.aac"
+      },
+      {
+        "seller_quote": "Madam aaj na idhar thoda festival hai toh main thoda vyast hoon main thoda der baad aapko kalu ek jagah par meeting mein ja raha tha main",
+        "agent_response": "Okay. Madam No issue sir aap ek baar meeting mein chale jao aap mere ko",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Agent acknowledged the seller's busy status and offered to call back later.",
+        "recording": "awanshika_67250732.aac"
+      },
+      {
+        "seller_quote": "Achha humko ek ghanta baad call kariyega na zara hum kahin aaye hue hain.",
+        "agent_response": "Okay aap ek ghante ke baad free ho jaoge sir. Okay toh abhi sir time ho raha hai aapka ek bajne hi wala hai main do baje ke around aapko connect kar leti hoon do baje toh baat ho payegi na.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent acknowledged the request and proposed a specific callback time (2 PM) instead of asking for a preference.",
+        "recording": "harshlata_12776719.aac"
+      },
+      {
+        "seller_quote": "Ma'am thoda busy hoon ma'am garta hoon thoda saamne",
+        "agent_response": "Kitne baje keh raha hoon? Paanch baje. Paanch baje. Okay, main aapko 5 PM aur 5:30 ek baar connect kar rahi hoon.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent offered a specific time slot after the seller indicated they were busy.",
+        "recording": "harshlata_148322522.aac"
+      },
+      {
+        "seller_quote": "Abhi dekhiye busy itna hai na counter mein abhi time nahi de payenge aapko.",
+        "agent_response": "Ji sir Okay toh aapka sir location kahan pe hai Ranchi mein",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent ignored the seller's statement of being busy and immediately asked for location instead of offering a callback or WhatsApp.",
+        "recording": "harshlata_20295392.aac"
+      },
+      {
+        "seller_quote": "Madam aadhi",
+        "agent_response": "Okay aapka free rah",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent did not provide a one-line value proposition and ask when to call back or offer WhatsApp details.",
+        "recording": "harshlata_61211332.aac"
+      },
+      {
+        "seller_quote": "Ma'am abhi na lunch kar rahe the, toh thodi der mein call kar sakte hain.",
+        "agent_response": "Abhi Haan ji aap aadhe ghante mein free ho jaoge na main ek baar aadhe ghante mein connect kar leti hoon aapko",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Offered a callback in half an hour after the seller indicated they were busy.",
+        "recording": "harshlata_73520409.aac"
+      },
+      {
+        "seller_quote": "Sunie na Madam abhi toh hum thoda byast hain abhi toh baat nahi kar payenge theek hai.",
+        "agent_response": "Toh kab call back kar lo sir",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent provided a one-line value proposition and asked for a convenient callback time.",
+        "recording": "namrata_197269280.aac"
+      },
+      {
+        "seller_quote": "Mam thoda abhi hum drive kar rahe hain aap baad mein kariye.",
+        "agent_response": "Understood sir, I will not take much of your time. Kis time call karun, ya WhatsApp par details bhej doon?",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent provided one line of value and asked for a preferred time or WhatsApp option as per the busy playbook.",
+        "recording": "namrata_78708987.aac"
+      }
+    ],
+    "gives_time": [
+      {
+        "seller_quote": "Twenty one ke main aaunga",
+        "agent_response": "Twenty one agar sir aapko comfortable ho... ek online meeting hum log rakh sakte hain Zoom pe",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent accepted the 9 PM slot and proposed scheduling an online meeting at that time.",
+        "recording": "awanshika_101086220.aac"
+      },
+      {
+        "seller_quote": "Ek week ke baad",
+        "agent_response": "Achha ek week ke baad theek hai sir no issue but jo maine bata diya hai na inquiry ki jagah aap apni site se bhi check kar lena.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent acknowledged the seller's availability window.",
+        "recording": "awanshika_101307612.aac"
+      },
+      {
+        "seller_quote": "Kal wahi second half ke baad thoda bahut free rehta hai.",
+        "agent_response": "Accha accha second half ke baad hi ek baar na theek hai sir main ek baar check aapko connect kar loongi theek hai thank you sir",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Confirmed the seller's proposed slot and closed the interaction.",
+        "recording": "awanshika_10828196.aac"
+      },
+      {
+        "seller_quote": "Second half mein kijiyega",
+        "agent_response": "Okay jaise aap bata rahe ho sir shop mein available rahoge toh ek achha yeh rahega ki sir ek baar hamara Namakumbh ke side udhar kal visit tha toh ek baar saamne se hi baith ke discuss kar lete hain sir cheezen.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent accepted the seller's proposed time and suggested an in-person meeting.",
+        "recording": "awanshika_118725013.aac"
+      },
+      {
+        "seller_quote": "Theek hai na Ma'am",
+        "agent_response": "Okay sure sir theek hai but time mein zaroor nikaliyeega",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent confirmed the seller's availability and locked in a meeting slot for the next day morning.",
+        "recording": "awanshika_137053968.aac"
+      },
+      {
+        "seller_quote": "Haan first start karega.",
+        "agent_response": "Doni doni aa rahe hain Haan",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller provided a time slot (first half), and the agent acknowledged it.",
+        "recording": "awanshika_160981394.aac"
+      },
+      {
+        "seller_quote": "Haan. Toh main kal parsoon main vapas aaunga.",
+        "agent_response": "Kalchi. Achha Wednesday ko.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent acknowledged the seller's availability and narrowed it down to Wednesday.",
+        "recording": "awanshika_23551741.aac"
+      },
+      {
+        "seller_quote": "Haan. Toh main kal parsoon main vapas aaunga.",
+        "agent_response": "Okay okay theek hai ek kaam karti hoon sir main ek aapka schedule set kar deti hoon meeting scheduler Wednesday ko ek baar hum log connect kar lenge jis bhi time aap free rahoge hum log ek online meeting ke through saari cheezein discuss kar lenge",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent confirmed the Wednesday slot and scheduled an online meeting.",
+        "recording": "awanshika_23551741.aac"
+      },
+      {
+        "seller_quote": "Theek hai koi dikkat nahi hai Theek hai",
+        "agent_response": "Ji sir thank you",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller agreed to a follow-up call, and the agent acknowledged and closed.",
+        "recording": "awanshika_238639637.aac"
+      },
+      {
+        "seller_quote": "Kal agar hota hai toh kal main baat karta hun unko bula lunga.",
+        "agent_response": "Accha theek hai unko main apne side pe",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller proposed a specific time (tomorrow), and the agent acknowledged it to confirm the callback slot.",
+        "recording": "awanshika_63880153.aac"
+      },
+      {
+        "seller_quote": "Theek hai main aapse aaj na second half ke baad baat karta hoon main ja hi raha hoon Mickey. Haan koi nahi.",
+        "agent_response": "Haan koi nahi main ek baar connect kar loongi sir apne side se bhi teen se chaar ke chaar baje ke tak sir free ho jaoge aap",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Agent confirmed the callback window (3 to 4 PM) based on the seller's availability.",
+        "recording": "awanshika_67250732.aac"
+      },
+      {
+        "seller_quote": "Matlab ki aaj hi aaiye kya na sir?",
+        "agent_response": "Haan ji haan ji haan ji",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller proposed a time (today), and the agent agreed, confirming the slot.",
+        "recording": "awanshika_6816684.aac"
+      }
+    ],
+    "identity_question": [
+      {
+        "seller_quote": "Ji kahan se bol rahe hain",
+        "agent_response": "Ji sir main India Martins ka Vanshika baat kar rahi thi aapse India Martins se sir Ranchi branch se",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent provided her name and branch location as required.",
+        "recording": "awanshika_101307612.aac"
+      },
+      {
+        "seller_quote": "Haan kaun",
+        "agent_response": "A very good afternoon sir main India team Savanshika baat kar rahi thi",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Agent introduced her name and team as per the identity_question playbook.",
+        "recording": "awanshika_67250732.aac"
+      },
+      {
+        "seller_quote": "Haan Ma'am phone kehte the, tab kya kaam tha?",
+        "agent_response": "Haan ji, very good afternoon Arvind sir. Main Harshata baat kar rahi thi India Mart se.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent introduced herself and her company in one sentence before proceeding.",
+        "recording": "harshlata_100899649.aac"
+      },
+      {
+        "seller_quote": "Actually na aapka yeh proprietor name sir Rajesh hi show kar raha hai unka pura naam Rajesh Chitranjaya karke hai",
+        "agent_response": "Nahi main Rajesh nahi ho raha. Jitna maine aapko pehle bhi bataya tha mera naam Abhinit hai.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent clarified its identity and resumed the conversation.",
+        "recording": "harshlata_153885310.aac"
+      },
+      {
+        "seller_quote": "Aap Harjita bol rahe hain, kahan se bol rahe hain, kis kaaran se bolna hai zara batayenge.",
+        "agent_response": "Haan ji sir main Ranchi branch se Harshita Business Growth Manager India Mart se baat kar rahi thi",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent correctly provided its name and reason in one sentence as per the playbook.",
+        "recording": "harshlata_192313419.aac"
+      },
+      {
+        "seller_quote": "Haan Shri ji Garments se bol rahe the",
+        "agent_response": "Main Namrata baat kar rahi thi India baat kar rahi thi.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent introduced its name and organization as required.",
+        "recording": "namrata_114026049.aac"
+      },
+      {
+        "seller_quote": "India maan.",
+        "agent_response": "Aapki actually profile aayi thi mere paas, main update kar di thi.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent briefly explained the reason for the call (profile update) and continued.",
+        "recording": "prerna_12080625.mp3"
+      },
+      {
+        "seller_quote": "Kaun bol rahe hain?",
+        "agent_response": "Toh main Premna baat kar rahi hoon India Mart se.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent stated its name and reason for calling in one sentence as required.",
+        "recording": "prerna_18921225.mp3"
+      },
+      {
+        "seller_quote": "Chintan ji se baat ho rahi hai",
+        "agent_response": "Haan, kaun?",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent correctly asked for the speaker's identity after the seller introduced themselves.",
+        "recording": "prerna_190684756.mp3"
+      },
+      {
+        "seller_quote": "Bhagwati",
+        "agent_response": "Okay Aurangabad sir aap kab jayenge?",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent stated its name and immediately resumed the pending meeting scheduling question.",
+        "recording": "prerna_217682621.mp3"
+      },
+      {
+        "seller_quote": "Aapke paas se bol rahe hoon pehle toh.",
+        "agent_response": "Main main India Mart se baat kar rahi hoon sir.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent stated its name and reason in one sentence, then resumed the pending point.",
+        "recording": "prerna_244946654.mp3"
+      },
+      {
+        "seller_quote": "Kaun bol raha hai?",
+        "agent_response": "Sir main Prerna baat kar rahi hoon, yeh Ganesh fabrication hai na profile aapki, yeh mere paas aayi thi, main account manager baat kar rahi hoon India Mart se.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Provided name and reason in one sentence as required.",
+        "recording": "prerna_27459119.mp3"
+      }
+    ],
+    "not_interested": [
+      {
+        "seller_quote": "nahi nahi beauty product nahi hai ma'am milunga",
+        "agent_response": "Okay toh sir kyonki yahan pe toh sir beauty services aur sunscreen skin creams wagairah mention nahi nahi",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent ignored the refusal and continued pitching instead of empathizing or offering a light option.",
+        "recording": "awanshika_137053968.aac"
+      },
+      {
+        "seller_quote": "Toh theek hai lekin abhi jo paid service hai na woh abhi hum filhaal nahi kar payenge.",
+        "agent_response": "Okay koi baat nahi sir aapki free listed profile mein bhi abhi aapko free listed wali inquiry bhi toh provide honi chahiye na atleast ab toh aapko toh ek baar main iske regarding hi aapse discussion karna chah rahi thi sir.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent acknowledged the refusal and pivoted to discussing free benefits instead of pushing the paid service.",
+        "recording": "harshlata_137488171.aac"
+      },
+      {
+        "seller_quote": "Accha baat hua tha abhi abhi lekin kuch nahi chahiye abhi hai na",
+        "agent_response": "Haan sir atleast ek baar milne ka toh mauka dete kam se kam hum saamne se aakar ke apna India Mart what is India Mart actually hum kya provide kar rahe hain aapko woh toh hum aapko present kar paate hain na sir call pe",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent gently pushed back on the refusal and continued the pitch.",
+        "recording": "harshlata_61419888.aac"
+      },
+      {
+        "seller_quote": "Nahi laayega, nahi laayega.",
+        "agent_response": "",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent did not ask for a gentle reason or offer the lightest option before ending.",
+        "recording": "namrata_130210136.aac"
+      },
+      {
+        "seller_quote": "Nahi nahi thank you.",
+        "agent_response": "Hello. Sir aapki na profile aayi thi mere paas, toh ismein main dekh pa rahi thi ki aap apne product ke liye plans dekh rahe the.",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent ignored the seller's refusal and continued pitching instead of asking for a gentle reason or offering WhatsApp info.",
+        "recording": "prerna_18921225.mp3"
+      },
+      {
+        "seller_quote": "Abhi hum yeh phone package nahi dena ma'am yeh hamara startup hai ma'am.",
+        "agent_response": "Main package ke liye baat nahi kar rahi hoon ma'am, aapki profile update ke liye baat kar rahi hoon, yeh ekdam free of cost hai...",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller refused a package; the agent clarified it was a free profile update, not a paid package.",
+        "recording": "prerna_235401400.mp3"
+      },
+      {
+        "seller_quote": "Nahi nahi, vo toh hamara unse baat ho gaya tha, main bola abhi jab bhi aisa kuchh rahega toh hum log karwa lenge, abhi as of abhi aisa kuchh update karne ka toh socha nahi hai.",
+        "agent_response": "As of me aisa kuch Update karne ka toh socha nahi hai...",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent acknowledged the refusal and continued to pitch the value of profile updates.",
+        "recording": "prerna_74463423.mp3"
+      },
+      {
+        "seller_quote": "Na na utna time hamara paas nahi hai ji.",
+        "agent_response": "Okay.",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent accepted the refusal without asking for a gentle reason or offering the lightest option (WhatsApp details) before exiting.",
+        "recording": "riya_20230702.mp4"
+      },
+      {
+        "seller_quote": "Ami actually India Mart-e na ei muhurte amar ami interested noi.",
+        "agent_response": null,
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent did not ask for a gentle reason or offer the lightest option (WhatsApp) after the refusal.",
+        "recording": "riya_27026959.mp4"
+      },
+      {
+        "seller_quote": "Mujhe nahi thiye madam.",
+        "agent_response": "Okay",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent accepted the refusal without asking for a gentle reason or offering the lightest option (WhatsApp info) before exiting.",
+        "recording": "riya_82956180.mp4"
+      }
+    ],
+    "connectivity": [
+      {
+        "seller_quote": "Accha theek hai theek hai Accha kal call kariyega na",
+        "agent_response": "Achha kal first half hai to second half hai ma'am",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller had audio trouble and asked to be called back, which the agent addressed by asking for a time preference.",
+        "recording": "awanshika_160981394.aac"
+      },
+      {
+        "seller_quote": "Haan aawaz aa rahi hai",
+        "agent_response": "Haan ji haan ji abhi awaaz aa rahi hai sir boliye na",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent confirmed the audio connection was restored before continuing.",
+        "recording": "harshlata_100899649.aac"
+      },
+      {
+        "seller_quote": "Hello sir, aawaz aa rahi hai?",
+        "agent_response": "Haan bolo",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent confirmed connectivity and proceeded with the call.",
+        "recording": "prerna_13364709.mp3"
+      },
+      {
+        "seller_quote": "Haan, bola haan aare",
+        "agent_response": "Hello sir awaaz aa rahi hai aapko",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent correctly identified a potential audio drop and checked connectivity.",
+        "recording": "prerna_193501727.mp3"
+      },
+      {
+        "seller_quote": "Hello, haanji sir, ki aawaz aa rahi hai?",
+        "agent_response": "Aawaz aa rahi hai aap India Mart se bol rahe hain kya? Ya Trade India India Mart se?",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent ignored the connectivity check and directly asked an identity question instead.",
+        "recording": "prerna_40982460.mp3"
+      }
+    ],
+    "interest": [
+      {
+        "seller_quote": "Chalo theek hai aisa karte hain madam apan kal ka baat karte hain aapka jo vo executive tha jo last time aaya tha kya naam tha uska yaar.",
+        "agent_response": "Ankit aaye the saath mein okay okay",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller expressed interest and suggested speaking to the executive tomorrow, which aligns with the interest playbook.",
+        "recording": "awanshika_63880153.aac"
+      },
+      {
+        "seller_quote": "Theek hai ma'am baat karke batayenge aapko",
+        "agent_response": "Ek baar aap sir se discuss kariye sir and then phir main aapko after two days ek baar connect karungi iske regarding and then phir hum log phir is par baat karte hain",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller showed conditional interest, so the agent moved to scheduling a follow-up callback.",
+        "recording": "harshlata_109757810.aac"
+      },
+      {
+        "seller_quote": "Accha, ab isse baad bhi ho payega, usse pehle toh nahi ho payega.",
+        "agent_response": "Okay toh main aapko sir ek baar twenty five connect kar loongi...",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller showed interest by agreeing to meet later, so the agent moved to scheduling.",
+        "recording": "harshlata_122893653.aac"
+      },
+      {
+        "seller_quote": "Theek hai.",
+        "agent_response": "Okay, toh sir jaise ki India Mart ke bare mein toh aapko idea hoga hi...",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Seller showed interest, so agent moved to explaining IndiaMART benefits.",
+        "recording": "harshlata_146552436.aac"
+      },
+      {
+        "seller_quote": "Sir actually main iske regarding hi aapse ek baar na offline discussion chah rahi thi",
+        "agent_response": "Aapka aapka banda kitne baje tak ke liye available rehta hai kab kitne baje se kitne baje tak ka",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller expressed interest in an offline meeting, so the agent moved directly to scheduling.",
+        "recording": "harshlata_153885310.aac"
+      },
+      {
+        "seller_quote": "Detail kar rahe hain.",
+        "agent_response": "Obviously wholesale price mein karte honge then sir aap matlab wholesale retail dono hi kar rahe hain na aap",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent recognized the seller's interest in detailing the business and continued the flow.",
+        "recording": "harshlata_218159899.aac"
+      },
+      {
+        "seller_quote": "Hum",
+        "agent_response": "Sei inquirygulo generate hochhilo segulo apnake ektu dekhiye ditam ebong profileta update kore ditam",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Seller showed interest, so the agent moved to explaining the value and proposing a meeting.",
+        "recording": "namrata_47567253.aac"
+      },
+      {
+        "seller_quote": "Theek hai Madam, toh iske update ke liye kya karna padega?",
+        "agent_response": "Haan, vo na aapko na hamare executive aayenge, vo aapko guide kar denge ki aap dono products kaise sell kar sakte hain, theek hai?",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Moved to the goal step (scheduling a meeting) after the seller showed interest.",
+        "recording": "prerna_124661655.mp3"
+      },
+      {
+        "seller_quote": "Copper, brass, bronze ye teeno mein mil jayega.",
+        "agent_response": "Scope jaasta",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller confirmed they supply the requested items, indicating interest.",
+        "recording": "prerna_13625912.mp3"
+      },
+      {
+        "seller_quote": "Okay, haanji.",
+        "agent_response": "Toh main kahungi ki buyers kya hai na aapko connect nahi kar pa rahe hain...",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Seller showed interest, so the agent moved to explaining the value proposition.",
+        "recording": "prerna_140650284.mp3"
+      },
+      {
+        "seller_quote": "Yes",
+        "agent_response": "Toh sir agar aap interested rehte toh ek baar saamne se time dete...",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Seller gave a positive signal, so the agent moved to the goal step.",
+        "recording": "prerna_146566090.aac"
+      },
+      {
+        "seller_quote": "Okay",
+        "agent_response": "Theek hai aur aapka account kis bank mein hai sir",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Seller showed continued interest, so the agent continued the pitch.",
+        "recording": "prerna_146566090.aac"
+      }
+    ],
+    "already_with_executive": [
+      {
+        "seller_quote": "Ji ji ji haan good afternoon",
+        "agent_response": "Haan aapka call aaya tha hum ek meeting mein the",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The seller acknowledged the call, and the agent correctly noted they were in a meeting.",
+        "recording": "awanshika_6816684.aac"
+      },
+      {
+        "seller_quote": "Haraadan sir se baat kar lijiye na.",
+        "agent_response": "Haraadan sir hi process karte hain na saaro cheez. Haan haan. Okay okay theek hai sir main unse connect kar le rahi hoon abhi vo free honge na unse connect ho jayega na.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Correctly acknowledged the seller's directive to connect with the executive and offered to facilitate it.",
+        "recording": "harshlata_183315103.aac"
+      },
+      {
+        "seller_quote": "Pata hi hai na usko sab pata hai pehle bhi aaya hua hai visit hua hua tha",
+        "agent_response": "Okay location aapke already pata hai unko. Theek hai sir aapke location pe jo bhi map ho rahe hain sir vo aap ek baar aapke location pe visit kar lenge and aapko saari cheezein details mein ek baar explain kar denge kya hai.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent acknowledged the seller's existing relationship with a local representative and pivoted to explaining the updated features.",
+        "recording": "harshlata_218159899.aac"
+      },
+      {
+        "seller_quote": "Aap jis vyakti se baat kar rahe hain unhone aapke call ko hold par rakha hai.",
+        "agent_response": "",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The call was put on hold by the seller's side, so the agent could not respond.",
+        "recording": "harshlata_49455557.aac"
+      }
+    ],
+    "confusion": [
+      {
+        "seller_quote": "Achha chhote de raha hai",
+        "agent_response": "Kahan the? India Mart",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent restated the purpose of the call in simple terms after the seller seemed confused.",
+        "recording": "namrata_114026049.aac"
+      },
+      {
+        "seller_quote": "Kya bol raha hai Madam?",
+        "agent_response": "Bulk ke jo orders hote hain like badi quantity ke orders aayenge sir aapke paas toh woh aap supply kar denge kar payenge na time se.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent restated the pending question in simpler terms after the seller expressed confusion.",
+        "recording": "prerna_96484735.mp3"
+      }
+    ],
+    "not_right_person": [
+      {
+        "seller_quote": "Mari toh abhi hai nahi sir, Balaji Intex ka aane se baat karata hoon main aapko.",
+        "agent_response": "Theek hai theek",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent acknowledged but did not ask for the right person's name and number before closing.",
+        "recording": "namrata_80720592.aac"
+      },
+      {
+        "seller_quote": "Enterprise",
+        "agent_response": "O achha apnar business-tai bondho hoye gechhe.",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent failed to ask for the right person or close the call after the seller indicated the business is closed.",
+        "recording": "riya_23177659.mp4"
+      }
+    ],
+    "complaint": [
+      {
+        "seller_quote": "Maine na kal complaint raise kiya jata hai. Jo mera mera jo profile hai na India Mart pe. Toh jab koi buyer. Jab koi buyer contact number par jaake mujhe call karta hai na toh vo doosra hi kisi ko toh ek call lag raha hai mera call mujhe receive nahi hota.",
+        "agent_response": "Main aapki ye jo dikkat aa rahi hai aapke mobile ki, isko solve karane ke liye vigilance executive ke saath meeting kara deti hoon.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent apologized implicitly by offering a solution and routed the issue to a support executive for a meeting.",
+        "recording": "prerna_128584394.mp3"
+      },
+      {
+        "seller_quote": "Are madam. Unhone aapko business ke liye bana kyon kar diya? Aapka to achha khaasa business. Are madam.",
+        "agent_response": "Haan Are madam maine cheque bhi diya tha bana karke unko vo wapas laake de diye bole jitna commitment kar rahe the utna bole nahi de payenge kaam kyonki aapka khaali ek hi product hai.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent apologized and explained the past issue without pitching.",
+        "recording": "prerna_28802600.mp3"
+      },
+      {
+        "seller_quote": "jab bhi aapka order mere paas ek do aave tabhi mere ko thoda yeh hoyenga trust hoyenga ki haan okay mere ko order aa raha hai toh main aage kaam kar sakta hoon.",
+        "agent_response": "Ji main bilkul aapki baat samajh gayi.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent acknowledged the seller's past frustration regarding upfront registration fees.",
+        "recording": "prerna_31272734.mp3"
+      }
+    ],
+    "need_few_enquiries": [
+      {
+        "seller_quote": "Hmm. Try the",
+        "agent_response": "Hai na. Tulsi vaas karun. Plan plan vagairah nahi ke liye.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "Seller seemed to be trying to figure out how to update the profile, so the agent empathized and offered executive help.",
+        "recording": "prerna_140650284.mp3"
+      },
+      {
+        "seller_quote": "Toh yeh main yahan se baithe hue toh nahi kar sakti, bas main ek kaam kar sakti hoon, ek business expert ko toh main aapki meeting kara deti hoon, woh aapke yahan aayenge, free of cost hai yeh, hai na? Aapki location pe aayenge, aapko connect karenge, aapko aapki profile update karke jaayenge basically woh, hai na?",
+        "agent_response": "Theek hai, kar dijiye aap, lekin Raipur Chhattisgarh ka bhejiyega, Aurangabad mein main rehta hi nahi hoon, Raipur Chhattisgarh.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent empathized with the seller's multiple profile issues and offered a free executive meeting to resolve them.",
+        "recording": "prerna_40982460.mp3"
+      },
+      {
+        "seller_quote": "Theek hai, koi baat nahi, toh main dekh leta hoon kya hai.",
+        "agent_response": "Mere ko ek baat bata dijiye, aap ye jaise near by ke aapke jo buyers hain, forty eight buyers hain, forty eight inquiries aayi hui hai matlab near by.",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent empathized with the seller's need to check and explained how the executive helps with inquiries.",
+        "recording": "prerna_47537357.mp3"
+      }
+    ],
+    "wants_whatsapp": [
+      {
+        "seller_quote": "Ee number WhatsApp pe rahe hain.",
+        "agent_response": "Okay",
+        "agent_type": "bot",
+        "ok": true,
+        "why": "The agent agreed to send details via WhatsApp and closed the call.",
+        "recording": "prerna_18921225.mp3"
+      }
+    ],
+    "opening": [
+      {
+        "seller_quote": "Music koi jatan ab.",
+        "agent_response": "Music ho koi jatan ab kaam na aave, usse kuch so.",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "This was an audio artifact/music before the agent properly initiated the call.",
+        "recording": "prerna_33933269.mp3"
+      }
+    ],
+    "frustration": [
+      {
+        "seller_quote": "Bahut baar toh phone aa chuka hai aur baar baar hi toh bola tha.",
+        "agent_response": "Kitna baar",
+        "agent_type": "bot",
+        "ok": false,
+        "why": "The agent ignored the seller's expressed frustration and simply repeated a question instead of apologizing.",
+        "recording": "riya_20230702.mp4"
+      }
+    ]
+  },
+  "scenario_handling": {
+    "price_query": {
+      "bot:missed": 6,
+      "bot:ok": 12
+    },
+    "busy": {
+      "bot:ok": 9,
+      "bot:missed": 5
+    },
+    "gives_time": {
+      "bot:ok": 70,
+      "bot:missed": 3
+    },
+    "identity_question": {
+      "bot:ok": 16,
+      "bot:missed": 3
+    },
+    "not_interested": {
+      "bot:missed": 6,
+      "bot:ok": 4
+    },
+    "connectivity": {
+      "bot:ok": 4,
+      "bot:missed": 1
+    },
+    "interest": {
+      "bot:ok": 45,
+      "bot:missed": 1
+    },
+    "already_with_executive": {
+      "bot:ok": 3,
+      "bot:missed": 1
+    },
+    "confusion": {
+      "bot:ok": 2
+    },
+    "not_right_person": {
+      "bot:missed": 2
+    },
+    "complaint": {
+      "bot:ok": 3
+    },
+    "need_few_enquiries": {
+      "bot:ok": 3
+    },
+    "wants_whatsapp": {
+      "bot:ok": 1
+    },
+    "opening": {
+      "bot:missed": 1
+    },
+    "frustration": {
+      "bot:missed": 1
+    }
+  },
+  "good_phrasings": {
+    "busy": [
+      {
+        "line": "Accha accha abhi aap out of station hain... raat ki kab tak available rahoge sir aap",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Okay okay toh phir sir kal phir kitne baje tak connect kar lo iska",
+        "agent_type": "bot"
+      },
+      {
+        "line": "No issue sir aap ek baar meeting mein chale jao aap mere ko",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Okay aap ek ghante ke baad free ho jaoge sir. Okay toh abhi sir time ho raha hai aapka ek bajne hi wala hai main do baje ke around aapko connect kar leti hoon do baje toh baat ho payegi na.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Kis time call karun, ya WhatsApp par details bhej doon?",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Abhi Haan ji aap aadhe ghante mein free ho jaoge na main ek baar aadhe ghante mein connect kar leti hoon aapko",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Toh kab call back kar lo sir",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Understood sir, I will not take much of your time. Kis time call karun, ya WhatsApp par details bhej doon?",
+        "agent_type": "bot"
+      }
+    ],
+    "gives_time": [
+      {
+        "line": "Twenty one agar sir aapko comfortable ho... ek online meeting hum log rakh sakte hain Zoom pe",
+        "agent_type": "bot"
+      },
+      {
+        "line": "teen se chaar ke chaar baje ke tak sir free ho jaoge aap",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Parso ek baar subah mujhe itne baje phone kar lena hum log schedule kar lenge.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Haan ji main haan kal aap morning mein free rahenge na main das saade das ke around aapko ek baar connect kar loongi",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Main ek kaam karti hoon, vo aap correct se kar lenge. Kal main do baje meeting fix karati hoon aapki, theek hai sir?",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Okay sir, baaki main aapko WhatsApp pe connect kar leti hoon, aap mere ko apna WhatsApp number bata sakte hain.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Monday kis time pe sir? Monday matlab aap mere ko ek time bata do das baje se leke chaar baje ke beech mein.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Okay no problem sir, main next Saturday aapki meeting fix kara deti hoon",
+        "agent_type": "bot"
+      }
+    ],
+    "identity_question": [
+      {
+        "line": "Ji sir main IndiaMart ka Vanshika baat kar rahi thi aapse IndiaMart se sir Ranchi branch se",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Haan ji, very good afternoon Arvind sir. Main Harshata baat kar rahi thi India Mart se.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Nahi main Rajesh nahi ho raha. Jitna maine aapko pehle bhi bataya tha mera naam Abhinit hai.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Haan ji sir main Ranchi branch se Harshita Business Growth Manager India Mart se baat kar rahi thi",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Main Namrata baat kar rahi thi India baat kar rahi thi.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Toh main Premna baat kar rahi hoon India Mart se.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Haan, kaun?",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Bhagwati. Okay Aurangabad sir aap kab jayenge?",
+        "agent_type": "bot"
+      }
+    ],
+    "closing": [
+      {
+        "line": "Accha accha second half ke baad hi ek baar na theek hai sir main ek baar check aapko connect kar loongi theek hai thank you sir",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Ji ji theek hai kal second half okay sir kal second half mein hum log connect kar lenge mil lenge",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Okay sure sir theek hai but time mein zaroor nikaliyeega",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Okay sir thank you",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Ji sir thank you",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Ankit aaye the saath mein okay okay",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Theek hai sir first half mein ya second half mein kal evar connection hai sir?",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Ek baar aap sir se discuss kariye sir and then phir main aapko after two days ek baar connect karungi iske regarding and then phir hum log phir is par baat karte hain",
+        "agent_type": "bot"
+      }
+    ],
+    "opening": [
+      {
+        "line": "Haan very good afternoon ma'am main India Mart team se baat kar rahi thi ye Homey Free Strides mein baat ho rahi hai na",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Ji sir, main India Mart team se baat kar rahi thi. Actually aapka ek firm tha sir, uske regarding kaafi queries wagairah thi customers ki.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Very good evening sir main Harshita baat kar rahi thi Amar Sanjeevani Natural Bee Product Private Limited ke regarding connect kiya tha maine.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Hello haan haan ji very good afternoon sir main Harshita baat kar rahi thi enrichment team India Mart Ranchi branch se aapka ek form registered hai India Mart ke upar Varanti Home Solution ke naam se uske regarding connect kiya hai maine",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Haan ji very good afternoon sir main Harshita baat kar rahi thi enlistment team India Mart se sir aapka ek age barve India Private Limited ke naam se business firm registered hai uske regarding karna kiya hai maine",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Ji very good afternoon sir main Harshita baat kar rahi thi India Mall ki aapka ek business firm hai Shri Aram Enterprises uske regarding connect kiya tha sir maine",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Hello haan I am very good afternoon sir main Harshita baat kar rahi thi enrichment team se Pappu Computer Services mein Pappu sir se baat ho rahi hai aap kahan se bol rahe hain Enrichment team India Mart Ranchi se sir",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Badi good evening sir, main Harshita baat kar rahi thi India Mart team se.",
+        "agent_type": "bot"
+      }
+    ],
+    "already_with_executive": [
+      {
+        "line": "Haan aapka call aaya tha hum ek meeting mein the",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Haraadan sir hi process karte hain na saaro cheez. Okay okay theek hai sir main unse connect kar le rahi hoon abhi.",
+        "agent_type": "bot"
+      }
+    ],
+    "understanding": [
+      {
+        "line": "Haan ji toh ismein sir jo aapka product wagairah hai yeh Ancol hai Ancol B wagairah hai Maan Tulsi Bees wagairah basically honey pe deal karte hain sir aap",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Okay okay koi baat nahi sir main teen baje available hainge ya phir saade teen mein sir",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Sei inquirygulo generate hochhilo segulo apnake ektu dekhiye ditam ebong profileta update kore ditam",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Aapki ye jo business profile registered hai, yeh aayi thi actually ismein aapka product alag hai aur product name alag bada hua hai",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Main ise dekh pa rahi hoon jaise aapne apne mere khayal se pandrah product update kare hain.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Aapko karne ki zaroorat nahi hai. Business expert ko bhej deti hoon main aapke office.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Ab jaise jitni zyada aapki profile update rahegi utni zyada iski visibility increase rahegi Google pe.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Main package ke liye baat nahi kar rahi hoon ma'am, aapki profile update ke liye baat kar rahi hoon, yeh ekdam free of cost hai...",
+        "agent_type": "bot"
+      }
+    ],
+    "not_interested": [
+      {
+        "line": "Haan sir atleast ek baar milne ka toh mauka dete kam se kam hum saamne se aakar ke apna India Mart what is India Mart actually hum kya provide kar rahe hain aapko woh toh hum aapko present kar paate hain na sir call pe",
+        "agent_type": "bot"
+      },
+      {
+        "line": "I understand. May I know the reason, or would you prefer I just send some basic details on WhatsApp?",
+        "agent_type": "bot"
+      }
+    ],
+    "price_query": [
+      {
+        "line": "Kyonki iske liye sir dekho meeting ke liye aur saari cheezein samajhne ke liye koi charges nahi lagte hain theek hai",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Nahi ab ye dekho aapki jo meeting hogi bilkul ekdam free of cost hai iska koi kharcha nahi hai hai na.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Particular jisko jo requirement rahegi woh mujhe share karenge uski requirement toh uske hisab se rate decide hoga aur phir kya hai ki raw material ke prices mein bhi fluctuation rehta hai.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "is ekdam free of cost hai iska koi charges vagairah nahi hai",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Nahi, iske koi charges nahi rehte hain sir.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "main package ke liye aapko nahin keh rahi hoon. main sirf do profile update karne ke liye keh rahi hoon.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Ji toh wahi cheez aapki na profile pe na ye cheez updated bhi hai, like mere ko na ye cheez update karwani hai taki zyada se zyada inquiries aa sake aapke paas direct inquiries hai na?",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Iske liye koi charges nahi lagta sir, plan matlab vo plan vagairah lene ke liye lagta hai charges...",
+        "agent_type": "bot"
+      }
+    ],
+    "complaint": [
+      {
+        "line": "Main aapki ye jo dikkat aa rahi hai aapke mobile ki, isko solve karane ke liye vigilance executive ke saath meeting kara deti hoon, vo aake aapke profile mein update kar denge jo bhi hoga, jo bhi dikkat badi hoogi guys, hai na?",
+        "agent_type": "bot"
+      }
+    ],
+    "connectivity": [
+      {
+        "line": "Hello sir awaaz aa rahi hai aapko",
+        "agent_type": "bot"
+      }
+    ],
+    "interest": [
+      {
+        "line": "Wahin se aapke liye koi banda aayega, aap mere ko ek time bata do main kis time par aapke liye bhejungi.",
+        "agent_type": "bot"
+      },
+      {
+        "line": "Okay kya product purchase karna hai?",
+        "agent_type": "bot"
+      }
+    ],
+    "need_few_enquiries": [
+      {
+        "line": "Mere ko ek baat bata dijiye, aap ye jaise near by ke aapke jo buyers hain, forty eight buyers hain, forty eight inquiries aayi hui hai matlab near by.",
+        "agent_type": "bot"
+      }
+    ],
+    "not_right_person": [
+      {
+        "line": "I am sorry, it seems I reached the wrong contact. Could you please share the right person's name and number?",
+        "agent_type": "bot"
+      }
+    ]
+  },
+  "common_mistakes": [
+    [
+      "quoted specific package prices (4000/month and 32000/year) instead of deferring to an executive.",
+      1
+    ],
+    [
+      "failed to explain that the meeting is free of charge.",
+      1
+    ],
+    [
+      "mispronounced 'indiamart' as 'india martins'",
+      1
+    ],
+    [
+      "did not confirm the callback slot in a structured way (e.g., 'i will call you back in a week')",
+      1
+    ],
+    [
+      "did not follow the 'busy' playbook by providing a one-line value proposition before asking for a callback time.",
+      1
+    ],
+    [
+      "ignored seller's refusal of beauty products and mismatched profile.",
+      1
+    ],
+    [
+      "failed to handle 'busy' signal by offering a callback or whatsapp alternative.",
+      1
+    ],
+    [
+      "repeated the mismatch explanation multiple times without advancing the pitch.",
+      1
+    ],
+    [
+      "did not use a concise value proposition before asking for time.",
+      1
+    ],
+    [
+      "misinterpreted the seller's request to call back later ('baad mein baat kar loongi') as a request for a follow-up reminder instead of a direct callback.",
+      1
+    ],
+    [
+      "failed to handle the seller's audio/connectivity issue ('ro nahi ro nahi aa rahi ho') with the standard 'kya aapko meri awaaz aa rahi hai?' script.",
+      1
+    ],
+    [
+      "pitched pricing ('chaar hazaar ka charges') despite the playbook instructing to never quote a price.",
+      1
+    ],
+    [
+      "failed to transition to the goal step after the seller expressed market slowdown interest.",
+      1
+    ],
+    [
+      "quoted a specific conversion percentage (30 to 40%) and lead volume (70 leads) when the playbook strictly prohibits quoting prices or guaranteed metrics.",
+      1
+    ],
+    [
+      "failed to confirm the callback slot explicitly after the seller gave a time.",
+      1
+    ],
+    [
+      "misheard 'meeting' as 'mickey' when repeating the seller's statement.",
+      1
+    ],
+    [
+      "continued pitching product margins (helmet) even after the seller clearly shifted to plastic frames and makhana export.",
+      1
+    ],
+    [
+      "pitched product benefits ('intermart aapko customer business la ke de raha hai') instead of focusing on scheduling a meeting as per the playbook.",
+      1
+    ],
+    [
+      "repeatedly pushed for a meeting even after the seller clearly stated their partner was against it and unavailable for 10-15 days.",
+      1
+    ],
+    [
+      "repeatedly pitched features without confirming if the seller had any specific questions or needs first.",
+      1
+    ],
+    [
+      "did not explicitly ask for the seller's preferred contact method before ending the call.",
+      1
+    ],
+    [
+      "repeated the time offer twice in the same breath instead of clarifying the 'three times' confusion.",
+      1
+    ],
+    [
+      "did not explicitly confirm the exact slot (5 pm or 5:30 pm) after the seller questioned the repeated connection attempts.",
+      1
+    ],
+    [
+      "quoted a price: the agent did not quote a price, but it did make a confusing statement about dropping the product ('we have dropped it') which was unnecessary.",
+      1
+    ],
+    [
+      "claimed to be human: the agent explicitly stated it is a virtual assistant ('indiamart se phone kar rahe ho na?').",
+      1
+    ]
+  ]
+}

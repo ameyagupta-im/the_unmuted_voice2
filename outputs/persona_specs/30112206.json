@@ -1,0 +1,51 @@
+{
+  "seller_id": 30112206,
+  "seller_type": "do_not_call",
+  "seller_type_label": "Do-not-call",
+  "seller_snapshot": {
+    "state": "Delhi",
+    "city": "New Delhi",
+    "business_type": "Proprietorship",
+    "turnover": "40 L - 1.5 Cr",
+    "category": "Brass Nuts",
+    "cqs": 11.0,
+    "enq_90d": null,
+    "attempts": 16.0,
+    "meetings": 0,
+    "not_interested": 6.0,
+    "call_later": 1.0,
+    "bucket": "PIM",
+    "best_hour": 11,
+    "own_english": null,
+    "seller_wps": null,
+    "exec_calls": 0,
+    "summary_flags": [
+      "interest"
+    ],
+    "past_objections": {},
+    "last_summaries": [
+      "The agent from IndiaMART called the lead from Gulshan Brass Industries. The lead expressed frustration, stating that they are not interested in doing business with IndiaMART and asked the agent to stop calling.",
+      "The agent called the lead from IndiaMART. The lead stated that they have already been contacted multiple times and are not interested, asking the agent not to disturb them."
+    ]
+  },
+  "goal": {
+    "value": null,
+    "reason": "do_not_call_requested=1: never dialled.",
+    "evidence": [
+      "policy:compliance",
+      "playbook"
+    ],
+    "confidence": "high"
+  },
+  "fallback_goals": [],
+  "voice": {},
+  "language": {},
+  "tone": {},
+  "conversation_plan": {},
+  "guardrails": [
+    "HARD STOP: do not call."
+  ],
+  "missing_fields": [],
+  "blocked": true,
+  "block_reason": "do_not_call_requested=1"
+}

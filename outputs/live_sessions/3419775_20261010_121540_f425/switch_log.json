@@ -1,0 +1,87 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 11.3,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Hello, mujhe English nahi samajh aata.",
+    "trigger": "seller spoke hi-IN",
+    "change_made": {
+      "language": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 62.2,
+    "kind": "goal",
+    "signal": "goal_ask_limit",
+    "detector": "engine",
+    "seller_said": "Nahi vo nahi bolega vo bolna nahi.",
+    "trigger": "goal ask limit reached",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "callback"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'goal_ask_limit': goal moves to callback (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 1597.1,
+    "kind": "goal",
+    "signal": "wants_whatsapp",
+    "detector": "regex",
+    "seller_said": "nahi whatsapp pe details nahi chaahiye . vaise kya details on whatsapp?",
+    "trigger": "whatsapp pe details",
+    "change_made": {
+      "goal": [
+        "callback",
+        "info_whatsapp"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'wants_whatsapp': goal moves to info_whatsapp (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 1597.1,
+    "kind": "end",
+    "signal": "wants_whatsapp",
+    "detector": "regex",
+    "seller_said": "nahi whatsapp pe details nahi chaahiye . vaise kya details on whatsapp?",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "INFO_SENT"
+      ]
+    },
+    "reason": "Seller wants details on WhatsApp: confirm and close.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

@@ -1,0 +1,341 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "callback"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {
+    "business_update": "Seller gets catalog from VANI."
+  },
+  "turns": 7,
+  "final_delivery": {
+    "language": "en-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "DEFAULT",
+    "pace": 0.93,
+    "max_words": 24,
+    "empathy": 3,
+    "assertiveness": 3,
+    "goal": "callback",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "goal_step": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 2,
+      "t_sec": 25.4,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Palak hai bahut dhang ka bana liye.",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 6,
+      "t_sec": 57.0,
+      "kind": "goal",
+      "signal": "goal_ask_limit",
+      "detector": "engine",
+      "seller_said": "Jo poochte hue.",
+      "trigger": "goal ask limit reached",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "callback"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'goal_ask_limit': goal moves to callback (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 7,
+      "t_sec": 61.8,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "",
+      "trigger": "seller spoke en-IN",
+      "change_made": {
+        "language": [
+          "hi-IN",
+          "en-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "Ji, I am Payal from IndiaMART. I am a virtual assistant. I wanted to understand how your Automatic Idli Making Machine business is doing right now.",
+      "after": "Ji, I am Payal from IndiaMART. I am a virtual assistant. I wanted to understand how your Automatic Idli Making Machine business is doing right now. Shall I set up a short meeting with our executive, online or at your place?"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "ठीक है, यह सुनकर अच्छा लगा। आपके Automatic Idli Making Machine category में अभी buyers enquiries भेज रहे हैं। क्या हम एक meeting रख लें, online या आपके पास?",
+      "after": "ठीक है, यह सुनकर अच्छा लगा। आपके Automatic Idli Making Machine category में अभी buyers enquiries भेज रहे हैं। क्या हम एक meeting रख लें, online या आपके पास?"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, products की quality अच्छी है। आपके Automatic Idli Making Machine category में buyers enquiries आ रही हैं। क्या कल सुबह 10 बजे के आसपास callback करूँ?",
+      "after": "जी, products की quality अच्छी है। आपके Automatic Idli Making Machine category में buyers enquiries आ रही हैं।"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, products की quality अच्छी है। आपके Automatic Idli Making Machine category में buyers enquiries आ रही हैं।",
+      "after": "जी, products की quality अच्छी है। आपके Automatic Idli Making Machine category में buyers enquiries आ रही हैं।"
+    },
+    {
+      "turn": 3,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, products की quality अच्छी है। आपके Automatic Idli Making Machine category में buyers enquiries आ रही हैं।",
+      "after": "जी, products की quality अच्छी है। आपके Automatic Idli Making Machine category में buyers enquiries आ रही हैं।"
+    },
+    {
+      "turn": 3,
+      "kind": "outcome_rejected",
+      "proposed": "CALLBACK_SCHEDULED"
+    },
+    {
+      "turn": 3,
+      "kind": "premature_close",
+      "action": "kept_call_open"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 4,
+      "kind": "repeat_sentence",
+      "action": "repaired",
+      "before": "जी, समझ गई। आपके Automatic Idli Making Machine category में अभी buyers enquiries आ रही हैं।",
+      "after": "जी, समझ गई।"
+    },
+    {
+      "turn": 4,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, समझ गई।",
+      "after": "जी, समझ गई। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?"
+    },
+    {
+      "turn": 4,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, समझ गई। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?",
+      "after": "जी, समझ गई।"
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 5,
+      "kind": "repeat_sentence",
+      "action": "repaired",
+      "before": "जी, समझ गई कि VANI से catalog मिल रहा है। मैं IndiaMART की virtual assistant हूँ। आपके Automatic Idli Making Machine category में buyers enquiries आ रही हैं।",
+      "after": "जी, समझ गई कि VANI से catalog मिल रहा है। मैं IndiaMART की virtual assistant हूँ।"
+    },
+    {
+      "turn": 5,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "जी, समझ गई कि VANI से catalog मिल रहा है। मैं IndiaMART की virtual assistant हूँ।",
+      "after": "जी, समझ गई कि VANI से catalog मिल रहा है। मैं IndiaMART की virtual assistant हूँ। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?"
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "जी, समझ गई कि VANI से catalog मिल रहा है। मैं IndiaMART की virtual assistant हूँ। क्या मैं हमारे executive के साथ एक छोटी meeting रख दूँ, online या आपके पास?",
+      "after": "जी, समझ गई कि VANI से catalog मिल रहा है। मैं IndiaMART की virtual assistant हूँ।"
+    },
+    {
+      "turn": 6,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 6,
+      "kind": "repeat_sentence",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 6,
+      "kind": "repeat_sentence",
+      "action": "repaired",
+      "before": "जी, आपके Automatic Idli Making Machine category में अभी buyers enquiries आ रही हैं। क्या हम कल सुबह 10 बजे के आसपास callback रख लें?",
+      "after": "क्या हम कल सुबह 10 बजे के आसपास callback रख लें?"
+    },
+    {
+      "turn": 6,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "क्या हम कल सुबह 10 बजे के आसपास callback रख लें?",
+      "after": "क्या हम कल सुबह 10 बजे के आसपास callback रख लें?"
+    },
+    {
+      "turn": 7,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 7,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 7,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I am Payal, IndiaMART's virtual assistant. Since you are checking, shall I call you back tomorrow around 10 AM?",
+      "after": "I am Payal, IndiaMART's virtual assistant. Since you are checking, shall I call you back tomorrow around 10 AM?"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Hello."
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, I am Payal from IndiaMART. I am a virtual assistant. I wanted to understand how your Automatic Idli Making Machine business is doing right now. Shall I set up a short meeting with our executive, online or at your place?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Palak hai bahut dhang ka bana liye."
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है, यह सुनकर अच्छा लगा। आपके Automatic Idli Making Machine category में अभी buyers enquiries भेज रहे हैं। क्या हम एक meeting रख लें, online या आपके पास?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Vani haath pair maar rahe the."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, products की quality अच्छी है। आपके Automatic Idli Making Machine category में buyers enquiries आ रही हैं।"
+    },
+    {
+      "speaker": "seller",
+      "text": "So dhanda vaangi emmer vida dhanda vaangi idhar vida dhanda vaangi."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, समझ गई।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Ella catalogum VANI-yil ninnu kittunnathu."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, समझ गई कि VANI से catalog मिल रहा है। मैं IndiaMART की virtual assistant हूँ।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Jo poochte hue."
+    },
+    {
+      "speaker": "vani",
+      "text": "क्या हम कल सुबह 10 बजे के आसपास callback रख लें?"
+    },
+    {
+      "speaker": "seller",
+      "text": "(silence)"
+    },
+    {
+      "speaker": "vani",
+      "text": "I am Payal, IndiaMART's virtual assistant. Since you are checking, shall I call you back tomorrow around 10 AM?"
+    }
+  ]
+}

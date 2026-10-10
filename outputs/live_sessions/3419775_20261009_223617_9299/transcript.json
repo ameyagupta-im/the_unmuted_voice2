@@ -1,0 +1,201 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "info_whatsapp"
+  ],
+  "final_outcome": "INFO_SENT",
+  "do_not_call": false,
+  "seller_disposition": "Curious",
+  "goal_achieved": "partly",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 5,
+  "final_delivery": {
+    "language": "en-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "DEFAULT",
+    "pace": 0.93,
+    "max_words": 24,
+    "empathy": 3,
+    "assertiveness": 3,
+    "goal": "info_whatsapp",
+    "stage": "wrap_up",
+    "counts": {
+      "understanding_question": 1,
+      "goal_step": 2,
+      "refusals": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 2,
+      "t_sec": 7.8,
+      "kind": "goal",
+      "signal": "refused_with_reason",
+      "detector": "regex",
+      "seller_said": "No I am not interested.",
+      "trigger": "no + reason",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "info_whatsapp"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'refused_with_reason': goal moves to info_whatsapp (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 16.9,
+      "kind": "end",
+      "signal": "wants_whatsapp",
+      "detector": "regex",
+      "seller_said": "Okay, send it on WhatsApp.",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "INFO_SENT"
+        ]
+      },
+      "reason": "Seller wants details on WhatsApp: confirm and close. Confirm it, then ask whether anything else is needed; close on a no.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 5,
+      "t_sec": 18.0,
+      "kind": "end",
+      "signal": "nothing_more",
+      "detector": "utterance",
+      "seller_said": "No, that's all. Thank you.",
+      "trigger": "",
+      "change_made": {
+        "stage": [
+          "wrap_up",
+          "closed"
+        ]
+      },
+      "reason": "Seller has nothing more after INFO_SENT: goodbye.",
+      "evidence": [
+        "playbook"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "That is good to hear, ji. Since buyers are showing interest in your Automatic Idli Making Machine category, our executive can help you get more enquiries. The meeting itself is completely free. Would you like to schedule a free meeting, in person or online, at your convenience?",
+      "after": "That is good to hear, ji. Since buyers are showing interest in your Automatic Idli Making Machine category, our executive can help you get more enquiries. The meeting itself is completely free. Would you like to schedule a free meeting, in person or online, at your convenience?"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "I completely understand, ji. Since a meeting is not needed right now, I can simply send the product details on WhatsApp for you. Shall I go ahead and send them?",
+      "after": "I completely understand, ji. Since a meeting is not needed right now, I can simply send the product details on WhatsApp for you. Shall I go ahead and send them?"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unsupported_outcome",
+      "action": "repaired",
+      "before": "Ji, I can share details about our services and how the app helps sellers on WhatsApp. I am IndiaMART's virtual assistant, and I apologise for the interruption.",
+      "after": "Ji, I can share details about our services and how the app helps sellers on WhatsApp. I am IndiaMART's virtual assistant, and I apologise for the interruption. Shall I send you the details on WhatsApp?"
+    },
+    {
+      "turn": 3,
+      "kind": "tier2_rejected",
+      "signal": "wants_whatsapp"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. How is your Automatic Idli Making Machine business going right now?"
+    },
+    {
+      "speaker": "seller",
+      "text": "It is going good."
+    },
+    {
+      "speaker": "vani",
+      "text": "That is good to hear, ji. Since buyers are showing interest in your Automatic Idli Making Machine category, our executive can help you get more enquiries. The meeting itself is completely free. Would you like to schedule a free meeting, in person or online, at your convenience?"
+    },
+    {
+      "speaker": "seller",
+      "text": "No I am not interested."
+    },
+    {
+      "speaker": "vani",
+      "text": "I completely understand, ji. Since a meeting is not needed right now, I can simply send the product …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "What details and what is app?"
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, I can share details about our services and how the app helps sellers on WhatsApp. I am IndiaMART's virtual assistant, and I apologise for the interruption. Shall I send you the details on WhatsApp?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Okay, send it on WhatsApp."
+    },
+    {
+      "speaker": "vani",
+      "text": "I am sending you the details on WhatsApp. Is there anything else I can help you with?"
+    },
+    {
+      "speaker": "seller",
+      "text": "No, that's all. Thank you."
+    },
+    {
+      "speaker": "vani",
+      "text": "Thank you for your time. Have a good day."
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "seller_id": 113839910,
+  "seller_type": "Warm, interested lead",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 3,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "ishita_enhi_customer",
+    "gender": "female",
+    "mode": "CLEAR_AUDIO",
+    "pace": 0.78,
+    "max_words": 14,
+    "empathy": 4,
+    "assertiveness": 4,
+    "goal": "meeting",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 3,
+      "connectivity": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 10.3,
+      "kind": "persona",
+      "signal": "hangup_risk",
+      "detector": "barge_in",
+      "seller_said": "Yeh catalog hai.",
+      "trigger": "seller interrupted the opening",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "COMPRESSED"
+        ],
+        "max_words": [
+          32,
+          14
+        ],
+        "assertiveness": [
+          4,
+          3
+        ]
+      },
+      "reason": "Playbook scenario 19: hangup_risk -> COMPRESSED.",
+      "evidence": [
+        "playbook",
+        "model:hangup_auc_0.645"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 23.9,
+      "kind": "persona",
+      "signal": "connectivity",
+      "detector": "silence",
+      "seller_said": "(silence)",
+      "trigger": "no speech heard",
+      "change_made": {
+        "mode": [
+          "COMPRESSED",
+          "CLEAR_AUDIO"
+        ],
+        "pace": [
+          0.83,
+          0.78
+        ],
+        "assertiveness": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 2,
+      "kind": "no_question",
+      "action": "llm_retry"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Payal बोल …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "Yeh catalog hai."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "Kyun bolna hai meri baat direct se ho rahi hai wo poocho na, dena ek second."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "(silence)"
+    },
+    {
+      "speaker": "vani",
+      "text": "हेलो जी, क्या मेरी आवाज़ आ रही है? मैं IndiaMART से Payal बोल रही हूँ, call इसलिए किया क्योंकि आपने IndiaMART का paid package लेने की कोशिश की थी।"
+    }
+  ],
+  "facts": {}
+}

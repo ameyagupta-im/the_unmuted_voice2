@@ -1,0 +1,204 @@
+{
+  "seller_id": 19070168,
+  "seller_type": "Small local trader",
+  "primary_goal": "nurture",
+  "goal_history": [
+    "nurture"
+  ],
+  "final_outcome": "IN_PROGRESS",
+  "do_not_call": false,
+  "seller_disposition": null,
+  "goal_achieved": "no",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 3,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "sanchita_enhi_companion",
+    "gender": "female",
+    "mode": "TRANSPARENT",
+    "pace": 1.1,
+    "max_words": 30,
+    "empathy": 5,
+    "assertiveness": 2,
+    "goal": "nurture",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 2,
+      "goal_step": 2
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 5.8,
+      "kind": "persona",
+      "signal": "confusion",
+      "detector": "llm",
+      "seller_said": "Enna maadhiri?",
+      "trigger": "Seller asked 'Enna maadhiri?' which means 'What like?' or 'Meaning?' in Tamil, indicating they did not understand the purpose of the call.",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "SIMPLE"
+        ],
+        "pace": [
+          1.1,
+          1.0
+        ],
+        "max_words": [
+          24,
+          20
+        ]
+      },
+      "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+      "evidence": [
+        "playbook",
+        "E3_pace"
+      ]
+    },
+    {
+      "turn": 2,
+      "t_sec": 9.6,
+      "kind": "persona",
+      "signal": "identity_question",
+      "detector": "regex",
+      "seller_said": "kaun bol raha hai?",
+      "trigger": "kaun bol",
+      "change_made": {
+        "mode": [
+          "SIMPLE",
+          "TRANSPARENT"
+        ],
+        "pace": [
+          1.0,
+          1.1
+        ],
+        "max_words": [
+          20,
+          30
+        ]
+      },
+      "reason": "Playbook scenario 6: identity_question -> TRANSPARENT.",
+      "evidence": [
+        "playbook",
+        "E15_seller_questions"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 13.3,
+      "kind": "recovery",
+      "signal": "transparent_done",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "TRANSPARENT",
+          "SIMPLE"
+        ]
+      },
+      "reason": "TRANSPARENT lasts one reply; resume the previous mode.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 13.3,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "SIMPLE",
+          "DEFAULT"
+        ],
+        "max_words": [
+          20,
+          24
+        ]
+      },
+      "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 13.3,
+      "kind": "persona",
+      "signal": "ai_bot_suspicion",
+      "detector": "regex",
+      "seller_said": "aap robot ho kya?",
+      "trigger": "robot",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "TRANSPARENT"
+        ],
+        "max_words": [
+          24,
+          30
+        ]
+      },
+      "reason": "Playbook scenario 5: ai_bot_suspicion -> TRANSPARENT.",
+      "evidence": [
+        "playbook",
+        "E9_ai_identity",
+        "policy:never_claim_human"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 1,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 1,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Payal बोल रही हूँ। call इसलिए किया क्योंकि आपने IndiaMART पर BuyLead लेने की कोशिश की थी। आपका Men Socks का काम अभी कैसा चल रहा है, IndiaMART से कुछ फ़ायदा हो रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Enna maadhiri?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं IndiaMART से call कर रही हूँ ताकि आपके Men Socks business को और buyers तक पहुँचाने में मदद कर सकूँ। मतलब, मैं यह जानना चाहती थी कि आपका काम कैसा चल रहा है और IndiaMART से आपको कोई फ़ायदा मिल रहा है क्या?"
+    },
+    {
+      "speaker": "seller",
+      "text": "kaun bol raha hai?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं Payal बोल रही हूँ IndiaMART से। मैं आपकी profile को बेहतर बनाने में मदद के लिए call कर रही हूँ। अब बताइए, आपके business में अभी enquiries कैसी आ रही हैं?"
+    },
+    {
+      "speaker": "seller",
+      "text": "aap robot ho kya?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं IndiaMART की virtual assistant हूँ। मैं बस यह जानना चाह रही थी कि आपके Men Socks के business में अभी enquiries कैसी चल रही हैं, और IndiaMART से आपको कोई फ़ायदा मिल रहा है?"
+    }
+  ],
+  "facts": {}
+}

@@ -1,0 +1,223 @@
+[
+  {
+    "seller_id": 3419775,
+    "label": "Chennai idli-machine maker, first contact",
+    "seller_type": "English-preferring professional",
+    "goal": "meeting",
+    "bot": "Payal",
+    "start": {
+      "language": "en-IN",
+      "speaker": "simran_en_customer",
+      "gender": "female",
+      "mode": "DEFAULT",
+      "pace": 0.93,
+      "max_words": 24,
+      "empathy": 3,
+      "assertiveness": 3,
+      "goal": "meeting",
+      "stage": "understand",
+      "counts": {
+        "understanding_question": 1
+      }
+    },
+    "end": {
+      "language": "en-IN",
+      "speaker": "simran_en_customer",
+      "gender": "female",
+      "mode": "DEFAULT",
+      "pace": 0.93,
+      "max_words": 24,
+      "empathy": 3,
+      "assertiveness": 3,
+      "goal": "info_whatsapp",
+      "stage": "goal_step",
+      "counts": {
+        "understanding_question": 1,
+        "goal_step": 0,
+        "refusals": 2
+      }
+    },
+    "goal_path": "meeting -> info_whatsapp -> respectful_exit -> info_whatsapp",
+    "switches": [
+      [
+        1,
+        "persona",
+        "identity_question",
+        "regex"
+      ],
+      [
+        2,
+        "recovery",
+        "transparent_done",
+        "engine"
+      ],
+      [
+        2,
+        "persona",
+        "confusion",
+        "regex"
+      ],
+      [
+        5,
+        "recovery",
+        "signal_resolved",
+        "engine"
+      ],
+      [
+        5,
+        "goal",
+        "refused_with_reason",
+        "regex"
+      ],
+      [
+        6,
+        "goal",
+        "not_interested",
+        "regex"
+      ],
+      [
+        6,
+        "goal",
+        "wants_whatsapp",
+        "llm"
+      ],
+      [
+        6,
+        "end",
+        "wants_whatsapp",
+        "llm"
+      ]
+    ],
+    "outcome": "INFO_SENT",
+    "goal_achieved": "partly",
+    "turns": 6,
+    "wall_sec": 33.1
+  },
+  {
+    "seller_id": 1243794,
+    "label": "Delhi clamps trader, called 20 times, past complaint about executive service",
+    "seller_type": "Fatigued repeat lead",
+    "goal": "complaint_recovery",
+    "bot": "Payal",
+    "start": {
+      "language": "hi-IN",
+      "speaker": "kavya_hi_conversational",
+      "gender": "female",
+      "mode": "DEFAULT",
+      "pace": 0.93,
+      "max_words": 18,
+      "empathy": 5,
+      "assertiveness": 1,
+      "goal": "complaint_recovery",
+      "stage": "understand",
+      "counts": {
+        "understanding_question": 1
+      }
+    },
+    "end": {
+      "language": "hi-IN",
+      "speaker": "kavya_hi_conversational",
+      "gender": "female",
+      "mode": "CALM_EMPATHETIC",
+      "pace": 0.87,
+      "max_words": 20,
+      "empathy": 5,
+      "assertiveness": 1,
+      "goal": "complaint_recovery",
+      "stage": "goal_step",
+      "counts": {
+        "understanding_question": 1,
+        "frustration": 1,
+        "goal_step": 1
+      }
+    },
+    "goal_path": "complaint_recovery",
+    "switches": [
+      [
+        1,
+        "persona",
+        "frustration",
+        "regex"
+      ],
+      [
+        2,
+        "end",
+        "llm_outcome",
+        "llm"
+      ]
+    ],
+    "outcome": "COMPLAINT_LOGGED",
+    "goal_achieved": "yes",
+    "turns": 2,
+    "wall_sec": 11.6
+  },
+  {
+    "seller_id": 56768582,
+    "label": "Hyderabad rice-bran firm, Rs 25-100 Cr, busy owner",
+    "seller_type": "Busy business owner",
+    "goal": "meeting",
+    "bot": "Rohan",
+    "start": {
+      "language": "hi-IN",
+      "speaker": "shubh_hi_customer",
+      "gender": "male",
+      "mode": "DEFAULT",
+      "pace": 0.98,
+      "max_words": 17,
+      "empathy": 3,
+      "assertiveness": 4,
+      "goal": "meeting",
+      "stage": "understand",
+      "counts": {
+        "understanding_question": 1
+      }
+    },
+    "end": {
+      "language": "te-IN",
+      "speaker": "shubh_hi_customer",
+      "gender": "male",
+      "mode": "DEFAULT",
+      "pace": 0.98,
+      "max_words": 17,
+      "empathy": 4,
+      "assertiveness": 4,
+      "goal": "meeting",
+      "stage": "goal_step",
+      "counts": {
+        "understanding_question": 1,
+        "goal_step": 2
+      }
+    },
+    "goal_path": "meeting",
+    "switches": [
+      [
+        1,
+        "persona",
+        "identity_question",
+        "regex"
+      ],
+      [
+        2,
+        "recovery",
+        "transparent_done",
+        "engine"
+      ],
+      [
+        3,
+        "language",
+        "language_switch",
+        "stt_language"
+      ],
+      [
+        3,
+        "end",
+        "do_not_call",
+        "regex"
+      ]
+    ],
+    "outcome": "DO_NOT_CALL",
+    "goal_achieved": "no",
+    "turns": 3,
+    "wall_sec": 19.8
+  }
+]

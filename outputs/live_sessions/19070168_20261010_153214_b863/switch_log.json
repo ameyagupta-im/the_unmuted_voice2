@@ -1,0 +1,50 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 55.9,
+    "kind": "persona",
+    "signal": "connectivity",
+    "detector": "regex",
+    "seller_said": "Hello hello hello.",
+    "trigger": "Hello hello hello.",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CLEAR_AUDIO"
+      ],
+      "pace": [
+        1.1,
+        1.02
+      ],
+      "max_words": [
+        24,
+        14
+      ]
+    },
+    "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 68.6,
+    "kind": "end",
+    "signal": "connectivity",
+    "detector": "llm",
+    "seller_said": "Awaaz aa rahi hai, aap kya pooch rahe the mujhse?",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "CALL_BACK_LATER"
+      ]
+    },
+    "reason": "Second audio failure: call back later.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  }
+]

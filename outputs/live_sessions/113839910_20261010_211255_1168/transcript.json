@@ -1,0 +1,265 @@
+{
+  "seller_id": 113839910,
+  "seller_type": "Warm, interested lead",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting",
+    "callback"
+  ],
+  "final_outcome": "CALL_BACK_LATER",
+  "do_not_call": false,
+  "seller_disposition": "Unknown",
+  "goal_achieved": "partly",
+  "slot": null,
+  "seller_insights": {},
+  "turns": 4,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "ishita_enhi_customer",
+    "gender": "female",
+    "mode": "CALM_EMPATHETIC",
+    "pace": 0.78,
+    "max_words": 20,
+    "empathy": 5,
+    "assertiveness": 1,
+    "goal": "callback",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 1,
+      "connectivity": 2,
+      "goal_step": 1,
+      "frustration": 1
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 19.7,
+      "kind": "persona",
+      "signal": "connectivity",
+      "detector": "llm",
+      "seller_said": "Hello.",
+      "trigger": "Seller said only 'Hello' which is a common indicator of not hearing clearly or checking audio.",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CLEAR_AUDIO"
+        ],
+        "pace": [
+          0.83,
+          0.78
+        ],
+        "max_words": [
+          32,
+          14
+        ]
+      },
+      "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 75.8,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "CLEAR_AUDIO",
+          "DEFAULT"
+        ],
+        "pace": [
+          0.78,
+          0.83
+        ],
+        "max_words": [
+          14,
+          32
+        ]
+      },
+      "reason": "Two turns without the signal behind CLEAR_AUDIO: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 75.8,
+      "kind": "goal",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Are nahi yaar bahut pareshan kar rakha hai tum logon ne, kya karte rehte ho bhai itne call itne call.",
+      "trigger": "pareshan",
+      "change_made": {
+        "goal": [
+          "meeting",
+          "callback"
+        ],
+        "stage": [
+          "goal_step",
+          "goal_step"
+        ]
+      },
+      "reason": "Seller revealed 'frustration': goal moves to callback (playbook mid-call goal switch).",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 75.8,
+      "kind": "persona",
+      "signal": "frustration",
+      "detector": "regex",
+      "seller_said": "Are nahi yaar bahut pareshan kar rakha hai tum logon ne, kya karte rehte ho bhai itne call itne call.",
+      "trigger": "pareshan",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CALM_EMPATHETIC"
+        ],
+        "pace": [
+          0.83,
+          0.78
+        ],
+        "max_words": [
+          32,
+          20
+        ],
+        "empathy": [
+          4,
+          5
+        ],
+        "assertiveness": [
+          4,
+          1
+        ]
+      },
+      "reason": "Playbook scenario 3: frustration -> CALM_EMPATHETIC.",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 78.5,
+      "kind": "clarify",
+      "signal": "sarcasm",
+      "detector": "llm",
+      "seller_said": "Are nahi yaar bahut pareshan kar rakha hai tum logon ne, kya karte rehte ho bhai itne call itne call.",
+      "trigger": "",
+      "change_made": {
+        "sarcasm": [
+          false,
+          true
+        ]
+      },
+      "reason": "Seller expressed being very annoyed by repeated calls.",
+      "evidence": [
+        "playbook",
+        "E4_backoff_after_frustration",
+        "live:3419775_20261009_231212"
+      ]
+    },
+    {
+      "turn": 4,
+      "t_sec": 98.9,
+      "kind": "end",
+      "signal": "connectivity",
+      "detector": "silence",
+      "seller_said": "(silence)",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "CALL_BACK_LATER"
+        ]
+      },
+      "reason": "Second audio failure: call back later.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 2,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "unasked_va",
+      "action": "llm_retry"
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART से Payal बोल रही हूँ। call इसलिए किया क्योंकि आपने IndiaMART का paid package लेने की कोशिश की थी। आपका Cotton Fabric का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Hello."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, क्या मेरी आवाज़ साफ़ आ रही है आपको? अगर हाँ, तो मैं बता दूँ कि मैं IndiaMART से Payal बात कर रही हूँ और आपके business को grow करने में मदद के लिए call किया है।"
+    },
+    {
+      "speaker": "seller",
+      "text": "Accha batao kaise help karoge meri grow karne mein business."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, executive आपके catalog और profile को free में set up कर देते हैं ताकि New Delhi के buyers की enquiries सीधे आपको मिलें। क्या हम इस बारे में बात करने के लिए एक meeting रख लें?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Are nahi yaar bahut pareshan kar rakha hai tum logon ne, kya karte rehte ho bhai itne call itne call."
+    },
+    {
+      "speaker": "vani",
+      "text": "मैं माफ़ी चाहती हूँ कि आपको बार-बार call आई। बस 30 second लूंगी — हमारे executive आपके catalog को free में set up कर देते हैं। क्या हम कल शाम 7 बजे बात कर लें?"
+    },
+    {
+      "speaker": "seller",
+      "text": "(silence)"
+    },
+    {
+      "speaker": "vani",
+      "text": "आवाज़ साफ़ नहीं आ रही, मैं आपको थोड़ी देर में दोबारा call करती हूँ। धन्यवाद।"
+    }
+  ],
+  "facts": {},
+  "integrations": {
+    "crm": {
+      "ts": "2026-10-10T21:14:35+0530",
+      "mode": "dry_run",
+      "call_id": "113839910_20261010_211255_1168",
+      "seller_id": 113839910,
+      "vani_outcome": "CALL_BACK_LATER",
+      "disposition_label": "Call Later",
+      "meeting_fixed": false,
+      "slot": null,
+      "do_not_call": false,
+      "goal_achieved": "partly",
+      "primary_goal": "meeting",
+      "goal_history": [
+        "meeting",
+        "callback"
+      ],
+      "seller_insights": {},
+      "turns": 4,
+      "completed": true
+    }
+  }
+}

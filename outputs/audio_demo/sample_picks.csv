@@ -1,0 +1,5 @@
+attempt_id,fk_glusr_usr_id,disposition_label,lead_call_duration,call_recording_url
+345096,113839910,Meeting Fixed,75.0,https://squadiq-call-recs.s3.amazonaws.com/5VJVYF505.mp3
+253122,19070168,Not Interested,24.0,https://squadiq-call-recs.s3.amazonaws.com/NUJ02AWP4.mp3
+262845,42896003,General (talked),48.0,https://squadiq-call-recs.s3.amazonaws.com/N5YW7FUR4.mp3
+342425,263553634,Call Later / Busy,63.0,https://squadiq-call-recs.s3.amazonaws.com/VT9B02XZ4.mp3

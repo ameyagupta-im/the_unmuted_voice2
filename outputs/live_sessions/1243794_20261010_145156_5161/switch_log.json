@@ -1,0 +1,22 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 15.4,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "",
+    "trigger": "seller spoke en-IN",
+    "change_made": {
+      "language": [
+        "hi-IN",
+        "en-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  }
+]

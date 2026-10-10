@@ -1,0 +1,125 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 5.8,
+    "kind": "persona",
+    "signal": "confusion",
+    "detector": "llm",
+    "seller_said": "Enna maadhiri?",
+    "trigger": "Seller asked 'Enna maadhiri?' which means 'What like?' or 'Meaning?' in Tamil, indicating they did not understand the purpose of the call.",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "SIMPLE"
+      ],
+      "pace": [
+        1.1,
+        1.0
+      ],
+      "max_words": [
+        24,
+        20
+      ]
+    },
+    "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+    "evidence": [
+      "playbook",
+      "E3_pace"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 9.6,
+    "kind": "persona",
+    "signal": "identity_question",
+    "detector": "regex",
+    "seller_said": "kaun bol raha hai?",
+    "trigger": "kaun bol",
+    "change_made": {
+      "mode": [
+        "SIMPLE",
+        "TRANSPARENT"
+      ],
+      "pace": [
+        1.0,
+        1.1
+      ],
+      "max_words": [
+        20,
+        30
+      ]
+    },
+    "reason": "Playbook scenario 6: identity_question -> TRANSPARENT.",
+    "evidence": [
+      "playbook",
+      "E15_seller_questions"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 13.3,
+    "kind": "recovery",
+    "signal": "transparent_done",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "TRANSPARENT",
+        "SIMPLE"
+      ]
+    },
+    "reason": "TRANSPARENT lasts one reply; resume the previous mode.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 13.3,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "SIMPLE",
+        "DEFAULT"
+      ],
+      "max_words": [
+        20,
+        24
+      ]
+    },
+    "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 13.3,
+    "kind": "persona",
+    "signal": "ai_bot_suspicion",
+    "detector": "regex",
+    "seller_said": "aap robot ho kya?",
+    "trigger": "robot",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "TRANSPARENT"
+      ],
+      "max_words": [
+        24,
+        30
+      ]
+    },
+    "reason": "Playbook scenario 5: ai_bot_suspicion -> TRANSPARENT.",
+    "evidence": [
+      "playbook",
+      "E9_ai_identity",
+      "policy:never_claim_human"
+    ]
+  }
+]

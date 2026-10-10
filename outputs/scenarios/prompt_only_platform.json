@@ -1,0 +1,824 @@
+[
+  {
+    "scenario": "Question about WhatsApp details is answered, not closed",
+    "seller": 3419775,
+    "runs": 2,
+    "passes": {
+      "not closed on the question": 0,
+      "answers then asks": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "It is going good.",
+          "reply": "Main IndiaMART se Payal bol rahi hoon. Chennai mein aapki Automatic Idli Making Machine category mein kaafi buyer enquiries aayi hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "No I am not interested.",
+          "reply": "Koi baat nahi. Kya aapke paas pehle se kaafi kaam hai, ya online platform ka koi bura anubhav raha?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "What details on WhatsApp?",
+          "reply": "Main WhatsApp par aapko yeh bhejungi: aapke Automatic Idli Making Machine category ke competitors ne ab tak kitni buy leads li hain, haal ki buy leads, aur kaun si chhoot gayi hain. Kya isi number par bhej doon?",
+          "outcome": "INFO_SENT",
+          "end": false
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "It is going good.",
+          "reply": "Main IndiaMART se Payal bol rahi hoon. Chennai mein aapki Automatic Idli Making Machine category mein kaafi buyer enquiries aayi hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "No I am not interested.",
+          "reply": "Koi baat nahi. Kya aapke paas pehle se kaafi kaam hai, ya online platform ka koi bura anubhav raha?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "What details on WhatsApp?",
+          "reply": "Main WhatsApp par aapko yeh bhejungi: aapki Automatic Idli Making Machine category ke competitors ne ab tak kitni buy leads li hain, haal ki buy leads, aur kaun si chhoot gayi hain. Kya isi number par bhej doon?",
+          "outcome": "INFO_SENT",
+          "end": false
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "WhatsApp request: confirm and close",
+    "seller": 113839910,
+    "runs": 2,
+    "passes": {
+      "confirms WhatsApp": 2,
+      "closes, or confirms the number first (master 12)": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "WhatsApp pe details bhej do",
+          "reply": "Bilkul, main WhatsApp par bhej deti hoon: aapke competitors ne ab tak kitni buy leads li hain, aapki category ki haal ki buy leads, aur kaun si leads aapse chhoot gayi hain. Kya isi number par bhej doon?",
+          "outcome": "INFO_SENT",
+          "end": false
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "WhatsApp pe details bhej do",
+          "reply": "Bilkul, main WhatsApp par bhej deti hoon. Aapke competitors ne ab tak kitni buy leads li hain, aapki category ki haal ki buy leads, aur kaun si leads aapse chhoot gayi hain — yeh sab main bhejungi. Kya isi number par bhej doon?",
+          "outcome": "INFO_SENT",
+          "end": false
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Not interested twice: polite exit, no WhatsApp",
+    "seller": 113839910,
+    "runs": 2,
+    "passes": {
+      "first no: one reason question": 2,
+      "second no: closes": 2,
+      "no WhatsApp offered or promised": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "nahi chahiye",
+          "reply": "कोई बात नहीं। क्या आपके पास पहले से काफ़ी काम है, या online platform का कोई बुरा अनुभव रहा?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "nahi chahiye, interest nahi hai",
+          "reply": "कोई बात नहीं। समय देने के लिए धन्यवाद, आपका दिन शुभ हो।",
+          "outcome": "IN_PROGRESS",
+          "end": true
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "nahi chahiye",
+          "reply": "कोई बात नहीं। क्या आपके पास पहले से ही काफी काम है, या online platform का कोई बुरा अनुभव रहा है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "nahi chahiye, interest nahi hai",
+          "reply": "कोई बात नहीं। समय देने के लिए धन्यवाद, आपका दिन शुभ हो।",
+          "outcome": "IN_PROGRESS",
+          "end": true
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Meeting: the seller picks the slot",
+    "seller": 113839910,
+    "runs": 2,
+    "passes": {
+      "two slots offered": 2,
+      "not closed before in person / online": 2,
+      "fixed at the end": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "haan ji",
+          "reply": "आप IndiaMART की paid services देख रहे थे, और आपकी Cotton Fabric category में buyers available हैं। क्या आप iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "haan bataiye",
+          "reply": "Hamare executive aapki profile aur catalogue theek karenge aur lead settings check karenge, taaki aapko sahi buyers ki enquiries milein. Kal subah 11 baje ya parso shaam 4 baje, kya theek rahega?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "dusra wala theek rahega",
+          "reply": "Bahut achha, toh parso shaam 4 baje rakh deti hoon, milkar ya online?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "online",
+          "reply": "Aapki meeting parso shaam 4 baje ke liye fix ho gayi hai, online. Confirmation WhatsApp par aa jayega. Dhanyavaad.",
+          "outcome": "MEETING_FIXED",
+          "end": true
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "haan ji",
+          "reply": "Aap IndiaMART ki paid services dekh rahe the, aur aapki Cotton Fabric category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "haan bataiye",
+          "reply": "Hamare executive aapse milkar aapki profile aur catalogue theek karenge aur lead settings check karenge, taaki aapko sahi buyers ki enquiries milein. Kal subah 11 baje ya parso shaam 4 baje, kya theek rahega?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "dusra wala theek rahega",
+          "reply": "Bahut achha, toh parso shaam 4 baje rakh deti hoon, milkar ya online?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "online",
+          "reply": "Aapki meeting parso shaam 4 baje ke liye fix ho gayi hai, online. Confirmation WhatsApp par aa jayega. Dhanyavaad.",
+          "outcome": "MEETING_FIXED",
+          "end": true
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Meeting time outside 9 AM-6 PM",
+    "seller": 113839910,
+    "runs": 2,
+    "passes": {
+      "not fixed at 8 PM": 2,
+      "says the window / offers a slot inside it": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "haan ji",
+          "reply": "Main IndiaMART se Payal bol rahi hoon. Aap IndiaMART ki paid services dekh rahe the, aur aapki Cotton Fabric category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaam achha hai, aur buyers chahiye",
+          "reply": "Bahut achha, samajh gayi. Hamare executive aapse milkar aapki profile aur catalogue theek karenge, aur lead settings check karenge, taaki aapko sahi buyers ki enquiries milein. Kal subah 11 baje ya parso shaam 4 baje, kya theek rahega?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kal raat 8 baje",
+          "reply": "Maafi chahungi, meeting hum subah nau se shaam chhe baje ke beech hi rakh sakte hain. Kal dopahar barah baje theek rahega?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "haan ji",
+          "reply": "Main IndiaMART se Payal bol rahi hoon. Aap IndiaMART ki paid services dekh rahe the, aur aapki Cotton Fabric category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaam achha hai, aur buyers chahiye",
+          "reply": "Samajh sakti hoon, sahi buyers milna zaroori hai. Hamare executive aapki profile aur catalogue theek karenge, aur lead settings check karke sahi enquiries laayenge. Kal subah 11 baje ya parso shaam 4 baje, kya theek rahega? Milkar ya online?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kal raat 8 baje",
+          "reply": "Maafi chahungi, meeting hum subah nau se shaam chhe baje ke beech hi rakh sakte hain. Kal dopahar barah baje theek rahega?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Insists on hours outside the window",
+    "seller": 113839910,
+    "runs": 2,
+    "passes": {
+      "timings fixed + WhatsApp details": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "haan ji",
+          "reply": "Main IndiaMART se Payal bol rahi hoon. Aap IndiaMART ki paid services dekh rahe the, aur aapki Cotton Fabric category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaam achha hai, aur buyers chahiye",
+          "reply": "Bahut achha, samajh gayi. Hamare executive aapse milkar aapki profile aur catalogue theek karenge, aur lead settings check karenge, taaki aapko sahi buyers ki enquiries milein. Kal subah 11 baje ya parso shaam 4 baje, kya theek rahega?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kal raat 8 baje",
+          "reply": "Maafi chahungi, meeting hum subah nau se shaam chhe baje ke beech hi rakh sakte hain. Kal dopahar barah baje theek rahega?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "nahi, raat 8 baje hi ho payega",
+          "reply": "Maafi chahungi, hamari meeting timings subah nau se shaam chhe baje tak fixed hain. Main details aapko WhatsApp par bhej rahi hoon, jab suvidha ho is samay mein koi slot bata dijiyega. Dhanyavaad, aapka din shubh ho.",
+          "outcome": "INFO_SENT",
+          "end": true
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "haan ji",
+          "reply": "Main IndiaMART se Payal bol rahi hoon. Aap IndiaMART ki paid services dekh rahe the, aur aapki Cotton Fabric category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaam achha hai, aur buyers chahiye",
+          "reply": "Samajh sakti hoon, sahi buyers milna zaroori hai. Hamare executive milkar aapki profile aur catalogue theek karenge, aur lead settings check karenge, taaki aapko sahi enquiries milein. Kal subah 11 baje ya parso shaam 4 baje, kya theek rahega?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kal raat 8 baje",
+          "reply": "Maafi chahungi, meeting hum subah nau se shaam chhe baje ke beech hi rakh sakte hain. Kal dopahar barah baje theek rahega?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "nahi, raat 8 baje hi ho payega",
+          "reply": "Maafi chahungi, hamari meeting timings subah nau se shaam chhe baje tak fixed hain. Main details aapko WhatsApp par bhej rahi hoon, jab suvidha ho is samay mein koi slot bata dijiyega. Dhanyavaad, aapka din shubh ho.",
+          "outcome": "INFO_SENT",
+          "end": true
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Understanding question not re-asked",
+    "seller": 3419775,
+    "runs": 2,
+    "passes": {
+      "not re-asked": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Nahi achha nahi chal raha, bilkul achha nahi chal raha.",
+          "reply": "Main samajh sakti hoon, enquiries kam aana chinta ki baat hai. Aapki Automatic Idli Making Machine category mein Chennai mein buyers available hain, aur hamare executive aapki profile aur catalogue theek kar sakte hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Nahi achha nahi chal raha, bilkul achha nahi chal raha.",
+          "reply": "Main samajh sakti hoon, enquiries kam aana chinta ki baat hai. Main IndiaMART se Payal bol rahi hoon, aur Chennai mein aapki Automatic Idli Making Machine category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Bad-business report is not a yes or a refusal",
+    "seller": 113839910,
+    "runs": 2,
+    "passes": {
+      "no outcome": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaam theek nahi chal raha",
+          "reply": "Samajh sakti hoon, enquiries kam aana chinta ki baat hai. Hamare executive aapki profile aur catalogue theek karenge, taaki aapko sahi buyers ki enquiries milein. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Bilkul kharab chal raha hai.",
+          "reply": "Yeh sunkar afsos hua. Executive milkar aapka catalog aur lead settings theek karenge, taaki aapko relevant enquiries milein. Kal subah 11 baje ya parso shaam 4 baje, kya theek rahega, milkar ya online?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaam theek nahi chal raha",
+          "reply": "Main samajh sakti hoon, kaam theek na chalna chinta ki baat hai. Main IndiaMART se Payal bol rahi hoon, aap paid services dekh rahe the, aur aapki category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Bilkul kharab chal raha hai.",
+          "reply": "Samajh sakti hoon, yeh sunkar afsos hua. Hamare executive aapki profile, catalogue aur lead settings theek kar denge, taaki aapko sahi buyers ki enquiries milein. Kya main unse aapki meeting fix kar doon, kal subah 11 baje ya parso shaam 4 baje?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Genuine flip is clarified",
+    "seller": 113839910,
+    "runs": 2,
+    "passes": {
+      "asks about orders / conversion": 0,
+      "no outcome": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaam theek nahi chal raha",
+          "reply": "Samajh sakti hoon, kaam theek nahi chalna chinta ki baat hai. Main IndiaMART se Payal bol rahi hoon, aap IndiaMART ki paid services dekh rahe the, aur aapki Cotton Fabric category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "haan enquiry to aa rahi hai",
+          "reply": "Achha, enquiries toh aa rahi hain. Hamare executive aapki profile aur catalogue theek karenge aur lead settings check karenge, taaki aapko sahi buyers ki enquiries milein. Kal subah 11 baje ya parso shaam 4 baje, kya theek rahega?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaam theek nahi chal raha",
+          "reply": "Samajh sakti hoon, kaam theek na chalna chinta ki baat hai. Main IndiaMART se Payal bol rahi hoon, aap paid services dekh rahe the, aur aapki category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "haan enquiry to aa rahi hai",
+          "reply": "Achha, enquiries aa rahi hain. Par sahi buyers tak pahunchne ke liye hamare executive aapka profile aur catalogue theek karenge, aur lead settings check karenge. Kal subah 11 baje ya parso shaam 4 baje, kya theek rahega?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Sarcastic flip after a pitch",
+    "seller": 3419775,
+    "runs": 2,
+    "passes": {
+      "never 'good to hear'": 2,
+      "no pitch": 1
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Nahi achha nahi chal raha, bilkul achha nahi chal raha.",
+          "reply": "Main samajh sakti hoon, business theek na chalna chinta ki baat hai. Aapki Automatic Idli Making Machine category mein Chennai mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Bilkul kharab chal raha hai.",
+          "reply": "Samajh sakti hoon, enquiries kam aana pareshani deta hai. Hamare executive aapki profile aur catalogue theek karenge, taaki sahi buyers ki enquiries aayein. Kya main unse aapki meeting fix kar doon?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Are sab badhiya chal raha hai, itna badhiya business hai, mujhe inquiries bhi aa rahi hai, sab ho raha hai.",
+          "reply": "Achha, toh enquiries aa rahi hain par order nahi ban rahe, kya baat hai?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Nahi achha nahi chal raha, bilkul achha nahi chal raha.",
+          "reply": "Main samajh sakti hoon, kaam theek na chalna chinta ki baat hai. Aapki Automatic Idli Making Machine category mein Chennai mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Bilkul kharab chal raha hai.",
+          "reply": "Samajh sakti hoon, enquiries kam aana mushkil hota hai. Hamare executive aapki profile aur catalogue theek karenge, taaki aapko sahi buyers ki enquiries milein. Kya main unse aapki meeting fix kar doon?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Are sab badhiya chal raha hai, itna badhiya business hai, mujhe inquiries bhi aa rahi hai, sab ho raha hai.",
+          "reply": "Achha, matlab enquiries aa rahi hain par shayad order nahi ban pa rahe? Kya main executive se aapki meeting fix kar doon taaki yeh theek ho sake?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Short Hinglish question keeps Hindi",
+    "seller": 3419775,
+    "runs": 2,
+    "passes": {
+      "reply stays in Hindi (either script)": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Chaudah bada hai ji.",
+          "reply": "Main samajh gayi. Aapki Automatic Idli Making Machine category mein Chennai mein buyers ki enquiries aayi hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Meeting nahi chahiye.",
+          "reply": "Koi baat nahi. Kya aapke paas pehle se kaafi kaam hai, ya online platform ka koi bura anubhav raha?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Kaun si details?",
+          "reply": "Main WhatsApp par aapko yeh bhejungi: aapki category ke competitors ne ab tak kitni buy leads li hain, aapki category ki haal ki buy leads, aur kaun si buy leads aapse chhoot gayi hain. Kya isi number par bhej doon?",
+          "outcome": "INFO_SENT",
+          "end": false
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Chaudah bada hai ji.",
+          "reply": "Main samajh gayi. Aap Automatic Idli Making Machine, Disposable Glasses aur Domestic Atta Chakki jaise products deal karte hain, aur Chennai mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Meeting nahi chahiye.",
+          "reply": "Koi baat nahi. Kya aapke paas pehle se kaafi kaam hai, ya online platform ka koi bura anubhav raha?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Kaun si details?",
+          "reply": "Main WhatsApp par aapko yeh bhejungi: aapke Automatic Idli Making Machine category ke competitors ne ab tak kitni buy leads li hain, haal ki buy leads, aur kaun si leads aapse chhoot gayi hain. Kya isi number par bhej doon?",
+          "outcome": "INFO_SENT",
+          "end": false
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Venting about calls: no further call offered, not cut while talking",
+    "seller": 3419775,
+    "runs": 2,
+    "passes": {
+      "no further call offered": 0,
+      "call kept going": 1
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Yaar kyon baar baar phone karte ho?",
+          "reply": "Mujhe afsos hai ki baar baar call karni padi. Main IndiaMART se Payal bol rahi hoon, Chennai mein aapki Automatic Idli Making Machine category mein buyers available hain. Kya main aapko baad mein call karoon, ya WhatsApp par details bhej doon?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Abhi main bol raha hoon baar baar call karte ho, kal phir se call karogi aap log.",
+          "reply": "Maafi chahti hoon. Main abhi call rok deti hoon. Jab suvidha ho, tab bata dijiyega.",
+          "outcome": "IN_PROGRESS",
+          "end": true
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "Hello, this is Payal from IndiaMART. Am I speaking with the person who handles the Automatic Idli Making Machine business?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Yaar kyon baar baar phone karte ho?",
+          "reply": "Mujhe afsos hai ki baar baar call karna pada. Main IndiaMART se Payal bol rahi hoon, Chennai mein aapki Automatic Idli Making Machine category mein buyers available hain. Kya main aapko WhatsApp par details bhej doon, ya baad mein call karoon?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "Abhi main bol raha hoon baar baar call karte ho, kal phir se call karogi aap log.",
+          "reply": "Maafi chahti hoon. Main aapko dobara call nahi karungi. Kya main abhi WhatsApp par details bhej doon?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Buy-lead question -> seller dashboard, no meeting",
+    "seller": 113839910,
+    "runs": 2,
+    "passes": {
+      "seller dashboard + BuyLeads": 2,
+      "no meeting ask": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaam theek hai",
+          "reply": "Aap IndiaMART ki paid services dekh rahe the, aur aapki Cotton Fabric category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "aur buy leads kahan milenge?",
+          "reply": "Aap apne IndiaMART seller dashboard mein login karke BuyLeads section mein sabhi buy leads dekh sakte hain — website par, ya IndiaMART app mein bhi. Kya aap iske baare mein aur jaanna chahenge?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaam theek hai",
+          "reply": "Aap IndiaMART की paid services देख रहे थे, aur aapki Cotton Fabric category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "aur buy leads kahan milenge?",
+          "reply": "Aap apne IndiaMART seller dashboard mein login karke BuyLeads section mein sabhi buy leads dekh sakte hain — website par, ya IndiaMART app mein bhi. Kya aap iske baare mein aur jaanna chahenge?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Virtual assistant only when asked",
+    "seller": 113839910,
+    "runs": 2,
+    "passes": {
+      "not on 'kaun bol raha hai'": 2,
+      "yes on 'robot ho?'": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaun bol raha hai?",
+          "reply": "Main IndiaMART se Payal bol rahi hoon. Aap IndiaMART ki paid services dekh rahe the, aur aapki Cotton Fabric category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "aap robot ho kya?",
+          "reply": "Main IndiaMART ki virtual assistant hoon, aapke IndiaMART account ke baare mein call kiya hai. Hamare executive aapse milkar aapki profile aur catalogue theek karenge aur lead settings check karenge, taaki aapko sahi buyers ki enquiries milein. Kal subah 11 baje ya parso shaam 4 baje, kya theek rahega?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "kaun bol raha hai?",
+          "reply": "Main IndiaMART se Payal bol rahi hoon. Aap IndiaMART ki paid services dekh rahe the, aur aapki Cotton Fabric category mein buyers available hain. Kya aap iske baare mein jaanna chahenge?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "aap robot ho kya?",
+          "reply": "Main IndiaMART ki virtual assistant hoon, aapke IndiaMART account ke baare mein call kiya hai. Hamare executive aapki profile aur catalogue theek karenge aur lead settings check karenge, taaki aapko sahi buyers ki enquiries milein. Kal subah 11 baje ya parso shaam 4 baje, kya theek rahega?",
+          "outcome": "IN_PROGRESS",
+          "end": false
+        }
+      ]
+    ]
+  },
+  {
+    "scenario": "Misheard 'what is app' = WhatsApp",
+    "seller": 113839910,
+    "runs": 2,
+    "passes": {
+      "understood as WhatsApp": 2
+    },
+    "examples": [
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "what is app pe details bhej do",
+          "reply": "Main WhatsApp par aapko yeh bhejungi: aapke competitors ne ab tak kitni buy leads li hain, aapki category ki haal ki buy leads, aur kaun si leads aapse chhoot gayi hain. Kya isi number par bhej doon?",
+          "outcome": "INFO_SENT",
+          "end": false
+        }
+      ],
+      [
+        {
+          "seller": null,
+          "reply": "नमस्ते, मैं IndiaMART से Payal बोल रही हूँ। क्या मेरी बात Cotton Fabric का काम देखने वाले से हो रही है?",
+          "outcome": null,
+          "end": false
+        },
+        {
+          "seller": "what is app pe details bhej do",
+          "reply": "Main aapko WhatsApp par yeh bhejungi: aapke competitors ne ab tak kitni buy leads li hain, aapki category ki haal ki buy leads, aur kaun si leads aapse chhoot gayi hain. Kya isi number par bhej doon?",
+          "outcome": "INFO_SENT",
+          "end": false
+        }
+      ]
+    ]
+  }
+]

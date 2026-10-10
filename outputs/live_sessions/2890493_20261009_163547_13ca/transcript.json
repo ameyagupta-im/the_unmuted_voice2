@@ -1,0 +1,108 @@
+{
+  "seller_id": 2890493,
+  "seller_type": "Repeat deferrer",
+  "goal": "secure_callback",
+  "final_outcome": "in_progress",
+  "turns": 2,
+  "initial_delivery": {
+    "language": "hi-IN",
+    "gender": "male",
+    "style": "patient",
+    "speaker": "aditya_hi_conversational",
+    "pace": 0.92,
+    "formality": "formal",
+    "english_share": 0.35,
+    "warmth": 0.65,
+    "empathy": 0.75,
+    "max_words": 38,
+    "mode": "normal"
+  },
+  "final_delivery": {
+    "language": "te-IN",
+    "gender": "male",
+    "style": "patient",
+    "speaker": "tarun_te_narration",
+    "pace": 0.98,
+    "formality": "formal",
+    "english_share": 0.35,
+    "warmth": 0.65,
+    "empathy": 0.75,
+    "max_words": 18,
+    "mode": "brief"
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 3.7,
+      "signal": "rush",
+      "detector": "regex",
+      "seller_said": "Haan bolo, par jaldi, customer baitha hai",
+      "trigger": "jaldi",
+      "change_made": {
+        "mode": [
+          "normal",
+          "brief"
+        ],
+        "pace": [
+          0.92,
+          0.98
+        ],
+        "max_words": [
+          38,
+          18
+        ]
+      },
+      "reason": "Seller wants it quick: cut to one value line and the single ask. Speech is only nudged faster (max 1.05) because in past calls faster delivery fixed fewer meetings (E3); brevity comes from saying less.",
+      "evidence": [
+        "E2_interrupted_opening",
+        "E3_pace"
+      ]
+    },
+    {
+      "turn": 2,
+      "t_sec": 8.4,
+      "signal": "language_switch",
+      "detector": "regex:explicit_request",
+      "seller_said": "Telugulo matladandi, naaku Hindi antha raadu.",
+      "trigger": "Telugulo",
+      "change_made": {
+        "language": [
+          "hi-IN",
+          "te-IN"
+        ],
+        "speaker": [
+          "aditya_hi_conversational",
+          "tarun_te_narration"
+        ]
+      },
+      "reason": "Seller switched to te-IN: reply and voice follow the seller's language from this turn on.",
+      "evidence": [
+        "E8_state_language_prior",
+        "policy:supported_languages"
+      ]
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "नमस्ते जी, मैं IndiaMART का virtual assistant बोल रहा हूँ। पिछली बार आपने call back माँगा था। क्या अभी बात करने का सही समय है, या मैं किसी और समय call करूँ?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Haan bolo, par jaldi, customer baitha hai"
+    },
+    {
+      "speaker": "vani",
+      "text": "ठीक है जी। पिछले 90 दिनों में Hyderabad में Ball Pen के लिए 12 buyer enquiries आई हैं। आप किस समय call back चाहेंगे?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Telugulo matladandi, naaku Hindi antha raadu."
+    },
+    {
+      "speaker": "vani",
+      "text": "సరేనండి. గత 90 రోజుల్లో Hyderabad లో Ball Pen కోసం 12 buyer enquiries వచ్చాయి. మీరు ఏ time కి callback చేయమంటారు?"
+    }
+  ],
+  "guard_corrections": []
+}

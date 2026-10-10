@@ -1,0 +1,104 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 26.3,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Boloon haan Payal ji badhiya chal raha dhandha to yaar bataiye matlab kya inquiry hai kis buyer ki inquiry aayi hai?",
+    "trigger": "seller spoke hi-IN",
+    "change_made": {
+      "language": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 1,
+    "t_sec": 26.3,
+    "kind": "persona",
+    "signal": "confusion",
+    "detector": "regex",
+    "seller_said": "Boloon haan Payal ji badhiya chal raha dhandha to yaar bataiye matlab kya inquiry hai kis buyer ki inquiry aayi hai?",
+    "trigger": "matlab",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "SIMPLE"
+      ],
+      "pace": [
+        0.93,
+        0.83
+      ],
+      "max_words": [
+        24,
+        20
+      ],
+      "empathy": [
+        3,
+        4
+      ]
+    },
+    "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+    "evidence": [
+      "playbook",
+      "E3_pace"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 76.2,
+    "kind": "recovery",
+    "signal": "signal_resolved",
+    "detector": "engine",
+    "seller_said": "",
+    "trigger": "",
+    "change_made": {
+      "mode": [
+        "SIMPLE",
+        "DEFAULT"
+      ],
+      "pace": [
+        0.83,
+        0.93
+      ],
+      "max_words": [
+        20,
+        24
+      ]
+    },
+    "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+    "evidence": [
+      "playbook"
+    ]
+  },
+  {
+    "turn": 5,
+    "t_sec": 101.7,
+    "kind": "goal",
+    "signal": "goal_ask_limit",
+    "detector": "engine",
+    "seller_said": "Kab tak aa jayega vo executive?",
+    "trigger": "goal ask limit reached",
+    "change_made": {
+      "goal": [
+        "meeting",
+        "callback"
+      ],
+      "stage": [
+        "goal_step",
+        "goal_step"
+      ]
+    },
+    "reason": "Seller revealed 'goal_ask_limit': goal moves to callback (playbook mid-call goal switch).",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]

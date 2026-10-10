@@ -1,0 +1,52 @@
+{
+  "name": "dryrun test vani_female_calm",
+  "start_timestamp": "2026-10-10T11:45:18+05:30",
+  "end_timestamp": "2026-10-13T11:45:18+05:30",
+  "allowed_schedule": {
+    "allowed_start_time": "09:00",
+    "allowed_end_time": "21:00",
+    "allowed_days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "timezone": "Asia/Kolkata"
+  },
+  "app_config": {
+    "app_id": "",
+    "app_version": null,
+    "app_type": "agent",
+    "attempts_per_second": 1.0,
+    "connection_configs": [
+      {
+        "connection_id": "{connection_id}",
+        "agent_phone_number": "{agent_phone_number}"
+      }
+    ],
+    "retry_config": {
+      "max_retries": 2,
+      "retry_interval_minutes": [
+        120,
+        240
+      ],
+      "retry_on": {
+        "busy": {
+          "enabled": true
+        },
+        "no_answer": {
+          "enabled": true
+        },
+        "failed": {
+          "enabled": true
+        },
+        "short_duration": {
+          "enabled": false,
+          "threshold_seconds": 10
+        }
+      }
+    }
+  }
+}

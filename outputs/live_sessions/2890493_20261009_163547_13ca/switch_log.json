@@ -1,0 +1,52 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 3.7,
+    "signal": "rush",
+    "detector": "regex",
+    "seller_said": "Haan bolo, par jaldi, customer baitha hai",
+    "trigger": "jaldi",
+    "change_made": {
+      "mode": [
+        "normal",
+        "brief"
+      ],
+      "pace": [
+        0.92,
+        0.98
+      ],
+      "max_words": [
+        38,
+        18
+      ]
+    },
+    "reason": "Seller wants it quick: cut to one value line and the single ask. Speech is only nudged faster (max 1.05) because in past calls faster delivery fixed fewer meetings (E3); brevity comes from saying less.",
+    "evidence": [
+      "E2_interrupted_opening",
+      "E3_pace"
+    ]
+  },
+  {
+    "turn": 2,
+    "t_sec": 8.4,
+    "signal": "language_switch",
+    "detector": "regex:explicit_request",
+    "seller_said": "Telugulo matladandi, naaku Hindi antha raadu.",
+    "trigger": "Telugulo",
+    "change_made": {
+      "language": [
+        "hi-IN",
+        "te-IN"
+      ],
+      "speaker": [
+        "aditya_hi_conversational",
+        "tarun_te_narration"
+      ]
+    },
+    "reason": "Seller switched to te-IN: reply and voice follow the seller's language from this turn on.",
+    "evidence": [
+      "E8_state_language_prior",
+      "policy:supported_languages"
+    ]
+  }
+]

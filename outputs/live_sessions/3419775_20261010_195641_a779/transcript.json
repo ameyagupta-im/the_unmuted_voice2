@@ -1,0 +1,386 @@
+{
+  "seller_id": 3419775,
+  "seller_type": "English-preferring professional",
+  "primary_goal": "meeting",
+  "goal_history": [
+    "meeting"
+  ],
+  "final_outcome": "CALL_BACK_LATER",
+  "do_not_call": false,
+  "seller_disposition": "Unknown",
+  "goal_achieved": "partly",
+  "slot": null,
+  "seller_insights": {
+    "business_status": "good"
+  },
+  "turns": 6,
+  "final_delivery": {
+    "language": "hi-IN",
+    "speaker": "simran_en_customer",
+    "gender": "female",
+    "mode": "DEFAULT",
+    "pace": 0.93,
+    "max_words": 24,
+    "empathy": 3,
+    "assertiveness": 3,
+    "goal": "meeting",
+    "stage": "goal_step",
+    "counts": {
+      "understanding_question": 2,
+      "connectivity": 2,
+      "goal_step": 3
+    }
+  },
+  "switch_log": [
+    {
+      "turn": 1,
+      "t_sec": 13.3,
+      "kind": "persona",
+      "signal": "connectivity",
+      "detector": "regex",
+      "seller_said": "Hello hello.",
+      "trigger": "Hello hello.",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "CLEAR_AUDIO"
+        ],
+        "pace": [
+          0.93,
+          0.85
+        ],
+        "max_words": [
+          24,
+          14
+        ]
+      },
+      "reason": "Playbook scenario 2: connectivity -> CLEAR_AUDIO.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    },
+    {
+      "turn": 2,
+      "t_sec": 24.9,
+      "kind": "language",
+      "signal": "language_switch",
+      "detector": "stt_language",
+      "seller_said": "Haan ji haan ji aapne kyon call kiya hai matlab mera man nahin hai is call ka main kaat raha hoon call aap kahan se bol rahe hain?",
+      "trigger": "seller spoke hi-IN",
+      "change_made": {
+        "language": [
+          "en-IN",
+          "hi-IN"
+        ]
+      },
+      "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+      "evidence": [
+        "playbook",
+        "E8_state_language_prior"
+      ]
+    },
+    {
+      "turn": 2,
+      "t_sec": 24.9,
+      "kind": "persona",
+      "signal": "identity_question",
+      "detector": "regex",
+      "seller_said": "Haan ji haan ji aapne kyon call kiya hai matlab mera man nahin hai is call ka main kaat raha hoon call aap kahan se bol rahe hain?",
+      "trigger": "kahan se bol",
+      "change_made": {
+        "mode": [
+          "CLEAR_AUDIO",
+          "TRANSPARENT"
+        ],
+        "pace": [
+          0.85,
+          0.93
+        ],
+        "max_words": [
+          14,
+          30
+        ],
+        "empathy": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 6: identity_question -> TRANSPARENT.",
+      "evidence": [
+        "playbook",
+        "E15_seller_questions"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 54.4,
+      "kind": "recovery",
+      "signal": "transparent_done",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "TRANSPARENT",
+          "CLEAR_AUDIO"
+        ]
+      },
+      "reason": "TRANSPARENT lasts one reply; resume the previous mode.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 54.4,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "CLEAR_AUDIO",
+          "DEFAULT"
+        ],
+        "max_words": [
+          14,
+          24
+        ]
+      },
+      "reason": "Two turns without the signal behind CLEAR_AUDIO: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 3,
+      "t_sec": 54.4,
+      "kind": "persona",
+      "signal": "confusion",
+      "detector": "regex",
+      "seller_said": "Accha hi chal raha hai matlab kuch khaas nahi it's going normal.",
+      "trigger": "matlab",
+      "change_made": {
+        "mode": [
+          "DEFAULT",
+          "SIMPLE"
+        ],
+        "pace": [
+          0.93,
+          0.83
+        ],
+        "max_words": [
+          24,
+          20
+        ],
+        "empathy": [
+          3,
+          4
+        ]
+      },
+      "reason": "Playbook scenario 17: confusion -> SIMPLE.",
+      "evidence": [
+        "playbook",
+        "E3_pace"
+      ]
+    },
+    {
+      "turn": 5,
+      "t_sec": 121.3,
+      "kind": "recovery",
+      "signal": "signal_resolved",
+      "detector": "engine",
+      "seller_said": "",
+      "trigger": "",
+      "change_made": {
+        "mode": [
+          "SIMPLE",
+          "DEFAULT"
+        ],
+        "pace": [
+          0.83,
+          0.93
+        ],
+        "max_words": [
+          20,
+          24
+        ]
+      },
+      "reason": "Two turns without the signal behind SIMPLE: back to the seller's default persona.",
+      "evidence": [
+        "playbook"
+      ]
+    },
+    {
+      "turn": 6,
+      "t_sec": 133.0,
+      "kind": "end",
+      "signal": "connectivity",
+      "detector": "silence",
+      "seller_said": "(silence)",
+      "trigger": "",
+      "change_made": {
+        "outcome": [
+          "IN_PROGRESS",
+          "CALL_BACK_LATER"
+        ]
+      },
+      "reason": "Second audio failure: call back later.",
+      "evidence": [
+        "playbook",
+        "E10_objection_recoverability"
+      ]
+    }
+  ],
+  "guard_corrections": [
+    {
+      "turn": 2,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 2,
+      "kind": "no_question",
+      "action": "repaired",
+      "before": "जी, मैं Payal बोल रही हूँ IndiaMART से। आपके Automatic Idli Making Machine catalog पर buyers enquiries भेज रहे हैं, और उसे बेहतर बनाने के लिए मैं call कर रही हूँ।",
+      "after": "जी, मैं Payal बोल रही हूँ IndiaMART से। आपके Automatic Idli Making Machine catalog पर buyers enquiries भेज रहे हैं, और उसे बेहतर बनाने के लिए मैं call कर रही हूँ। आपका Automatic Idli Making Machine का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "turn": 3,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 3,
+      "kind": "no_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "llm_retry"
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Ji, online meeting zyada convenient rehti hai. Kal subah 11 baje ya parso shaam 4 baje mein se koi bhi slot aapke liye theek rahega.",
+      "after": "Ji, online meeting zyada convenient rehti hai. Kal subah 11 baje ya parso shaam 4 baje mein se koi bhi slot aapke liye theek rahega."
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Ji, online meeting zyada convenient rehti hai. Kal subah 11 baje ya parso shaam 4 baje mein se koi bhi slot aapke liye theek rahega.",
+      "after": "Ji, online meeting zyada convenient rehti hai. Kal subah 11 baje ya parso shaam 4 baje mein se koi bhi slot aapke liye theek rahega."
+    },
+    {
+      "turn": 5,
+      "kind": "drop_question",
+      "action": "repaired",
+      "before": "Ji, online meeting zyada convenient rehti hai. Kal subah 11 baje ya parso shaam 4 baje mein se koi bhi slot aapke liye theek rahega.",
+      "after": "Ji, online meeting zyada convenient rehti hai. Kal subah 11 baje ya parso shaam 4 baje mein se koi bhi slot aapke liye theek rahega."
+    }
+  ],
+  "transcript": [
+    {
+      "speaker": "vani",
+      "text": "Hello, this is Payal from IndiaMART. I'm calling because buyers in Chennai are sending enquiries in your Automatic Idli Making Machine category. …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "Hello hello."
+    },
+    {
+      "speaker": "vani",
+      "text": "Can you hear me clearly, ji?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Haan ji haan ji aapne kyon call kiya hai matlab mera man nahin hai is call ka main kaat raha hoon call aap kahan se bol rahe hain?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, मैं Payal बोल रही हूँ IndiaMART से। आपके Automatic Idli Making Machine catalog पर buyers enquiries भेज रहे हैं, और उसे बेहतर बनाने के लिए मैं call कर रही हूँ। आपका Automatic Idli Making Machine का काम अभी कैसा चल रहा है?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Accha hi chal raha hai matlab kuch khaas nahi it's going normal."
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, समझ गई। आपके catalog को बेहतर बनाने और ज्यादा orders पाने के लिए, हमारे executive free में सब set up कर देते हैं। क्या हम कल सुबह 11 बजे या परसों शाम 4 बजे एक free meeting रख लें?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Nahi mujhe time suit nahi karta, kya aap in donon time ke alava koi aur time bata sakte ho?"
+    },
+    {
+      "speaker": "vani",
+      "text": "जी, कल सुबह 11 या परसों शाम 4 के अलावा, कल दोपहर 12 या 2 बजे भी चल सकता है। आपके लिए कौन सा time ठीक रहेगा, और meeting मिलkar करनी है या online?"
+    },
+    {
+      "speaker": "seller",
+      "text": "Meeting milkar bhi ho sakti hai online bhi ho sakti hai aap batao kya better rahega and aap meri meeting ek kaam karo na aap subah nau baje kyon nahi aa sakte mujhe office jaana hota hai nau baje."
+    },
+    {
+      "speaker": "vani",
+      "text": "Ji, online meeting zyada convenient rehti hai. Kal subah 11 baje ya parso shaam 4 baje …",
+      "interrupted": true
+    },
+    {
+      "speaker": "seller",
+      "text": "(silence)"
+    },
+    {
+      "speaker": "vani",
+      "text": "आवाज़ साफ़ नहीं आ रही, मैं आपको थोड़ी देर में दोबारा call करती हूँ। धन्यवाद।"
+    }
+  ],
+  "facts": {
+    "business_status": [
+      {
+        "turn": 3,
+        "value": "good",
+        "words": "Accha hi chal raha hai matlab kuch khaas nahi it's going normal.",
+        "source": "rules"
+      }
+    ]
+  },
+  "integrations": {
+    "crm": {
+      "ts": "2026-10-10T19:58:56+0530",
+      "mode": "dry_run",
+      "call_id": "3419775_20261010_195641_a779",
+      "seller_id": 3419775,
+      "vani_outcome": "CALL_BACK_LATER",
+      "disposition_label": "Call Later",
+      "meeting_fixed": false,
+      "slot": null,
+      "do_not_call": false,
+      "goal_achieved": "partly",
+      "primary_goal": "meeting",
+      "goal_history": [
+        "meeting"
+      ],
+      "seller_insights": {
+        "business_status": "good"
+      },
+      "turns": 6,
+      "completed": true
+    }
+  }
+}

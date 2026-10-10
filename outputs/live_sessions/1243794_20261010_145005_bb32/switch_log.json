@@ -1,0 +1,89 @@
+[
+  {
+    "turn": 1,
+    "t_sec": 22.5,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "",
+    "trigger": "seller spoke en-IN",
+    "change_made": {
+      "language": [
+        "hi-IN",
+        "en-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 3,
+    "t_sec": 44.5,
+    "kind": "persona",
+    "signal": "complaint",
+    "detector": "llm",
+    "seller_said": "Eh product hi sahi nahi dikha te mainu.",
+    "trigger": "Seller explicitly stated the product was not displaying correctly, which is a problem with the platform/product listing.",
+    "change_made": {
+      "mode": [
+        "DEFAULT",
+        "CALM_EMPATHETIC"
+      ],
+      "pace": [
+        0.93,
+        0.87
+      ],
+      "max_words": [
+        18,
+        20
+      ]
+    },
+    "reason": "Playbook scenario 4: complaint -> CALM_EMPATHETIC.",
+    "evidence": [
+      "playbook",
+      "E10_objection_recoverability"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 61.1,
+    "kind": "language",
+    "signal": "language_switch",
+    "detector": "stt_language",
+    "seller_said": "Vani catalog.",
+    "trigger": "seller spoke hi-IN",
+    "change_made": {
+      "language": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    "reason": "Seller switched language: switch fully, repeat the pending point; the voice stays the same.",
+    "evidence": [
+      "playbook",
+      "E8_state_language_prior"
+    ]
+  },
+  {
+    "turn": 4,
+    "t_sec": 62.3,
+    "kind": "end",
+    "signal": "llm_outcome",
+    "detector": "llm",
+    "seller_said": "Vani catalog.",
+    "trigger": "",
+    "change_made": {
+      "outcome": [
+        "IN_PROGRESS",
+        "COMPLAINT_LOGGED"
+      ]
+    },
+    "reason": "LLM proposed COMPLAINT_LOGGED; supported by what the seller said.",
+    "evidence": [
+      "playbook"
+    ]
+  }
+]
